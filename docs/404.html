@@ -89,8 +89,7 @@
 the table of contents to find the page you are looking for.</p>
 </div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><div id="gitalk-container">
-  <script>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><script>
   var gitalk = new Gitalk({
   clientID: '53dd2b6aebd309a16d4e', // GitHub Application Client ID
   clientSecret: '9349eba841a53231102a12b8ac2407485c56bf78', // GitHub Application Client Secret
@@ -98,8 +97,8 @@ the table of contents to find the page you are looking for.</p>
   owner: 'wangchenglong99',          // 仓库的创建者，
   admin: ['wangchenglong99'],        // 如果仓库有多个人可以操作，那么在这里以数组形式写出
 })
-gitalk.render('gitalk-container');    // 渲染Gitalk评论组件
-  </script>
+  gitalk.render('gitalk-container');    // 渲染Gitalk评论组件
+</script><div id="gitalk-container">
 </div>
   <div class="chapter-nav">
 <div class="empty"></div>
