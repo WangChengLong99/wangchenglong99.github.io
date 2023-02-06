@@ -103,7 +103,7 @@ Xie, Yihui. <em>Bookdown: Authoring Books and Technical Documents with r Markdow
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><div id="gitalk-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><script src="md5.min.js"></script><div id="gitalk-container"></div>
 <script type="text/javascript">
   var gitalk = new Gitalk({
   clientID: '53dd2b6aebd309a16d4e', // GitHub Application Client ID
@@ -111,7 +111,10 @@ Xie, Yihui. <em>Bookdown: Authoring Books and Technical Documents with r Markdow
   repo: 'wangchenglong99.github.io',      // 存放评论的仓库
   owner: 'wangchenglong99',          // 仓库的创建者，
   admin: ['wangchenglong99'],        // 如果仓库有多个人可以操作，那么在这里以数组形式写出
-  id: location.hash.substr(1),
+  id: md5(location.pathname),
+  distractionFreeMode: false,
+  title: document.title,
+  <!--body:  '文章链接：'+ decodeURIComponent(location.origin+location.pathname),-->
 })
   gitalk.render('gitalk-container');    // 渲染Gitalk评论组件
 </script><div class="chapter-nav">
@@ -136,7 +139,7 @@ Xie, Yihui. <em>Bookdown: Authoring Books and Technical Documents with r Markdow
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-06.</p>
+    <p>"<strong>A Minimal Book Example</strong>" was written by John Doe. It was last built on 2023-02-07.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
