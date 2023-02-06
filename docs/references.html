@@ -102,6 +102,19 @@ Xie, Yihui. <em>Bookdown: Authoring Books and Technical Documents with r Markdow
 
 
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script><div id="gitalk-container">
+  <script>
+  var gitalk = new Gitalk({
+  clientID: '53dd2b6aebd309a16d4e', // GitHub Application Client ID
+  clientSecret: '9349eba841a53231102a12b8ac2407485c56bf78', // GitHub Application Client Secret
+  repo: 'https://github.com/WangChengLong99/wangchenglong99.github.io'      // 存放评论的仓库
+  owner: 'wangchenglong99',          // 仓库的创建者，
+  admin: ['wangchenglong99'],        // 如果仓库有多个人可以操作，那么在这里以数组形式写出
+})
+gitalk.render('gitalk-container');    // 渲染Gitalk评论组件
+  </script>
+</div>
   <div class="chapter-nav">
 <div class="prev"><a href="sharing-your-book.html"><span class="header-section-number">7</span> Sharing your book</a></div>
 <div class="empty"></div>

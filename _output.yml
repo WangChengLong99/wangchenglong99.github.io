@@ -7,6 +7,8 @@ bookdown::bs4_book:
     base: https://github.com/wangchenglong99/wangchenglong99.github.io
     branch: main
 #    subdir: docs
+  includes:
+    after_body: gitalk.html
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
