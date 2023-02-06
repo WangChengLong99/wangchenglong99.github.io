@@ -6,6 +6,7 @@ bookdown::bs4_book:
     base: https://github.com/wangchenglong99/wangchenglong99.github.io
     branch: main
     subdir: docs
+  edit: https://github.com/WangChengLong99/wangchenglong99.github.io/edit/master/%s
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
