@@ -31,4 +31,11 @@ knitr::kable(
   head(pressure, 10), caption = 'Here is a nice table!',
   booktabs = TRUE
 )
+a = c(1,2)
+b = c(3,4)
+c = c(5,6)
+d = c(5,6)
+e = c(5,6)
+f = c(5,6)
+g = c(5,6)
 ```

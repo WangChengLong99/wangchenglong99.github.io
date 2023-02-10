@@ -13,6 +13,9 @@ description: |
   set in the _output.yml file.
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
+# output:
+#   html_document:
+#     cold_folding: show
 ---
 
 # About
@@ -58,3 +61,4 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+

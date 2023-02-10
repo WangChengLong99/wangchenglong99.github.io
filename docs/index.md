@@ -1,7 +1,7 @@
 --- 
 title: "A Minimal Book Example"
 author: "John Doe"
-date: "2023-02-07"
+date: "2023-02-11"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -13,6 +13,9 @@ description: |
   set in the _output.yml file.
 biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
+# output:
+#   html_document:
+#     cold_folding: show
 ---
 
 # About
@@ -52,6 +55,7 @@ As you work, you may start a local server to live preview this HTML book. This p
 ```r
 bookdown::serve_book()
 ```
+
 
 
 

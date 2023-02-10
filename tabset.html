@@ -1,0 +1,143 @@
+<style>
+
+/* Style the tab */
+/* .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+} */
+.tab {
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    /* margin-bottom: 8px; */
+    margin-left: -8px;
+    /* margin-right: 0px; */
+    /* border-bottom:1px solid #e0e0e0; */
+    height: 32px;
+    flex-basis: 100px;
+    /* background-color: aliceblue; */
+}
+
+/* Style the buttons inside the tab */
+/* .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+} */
+
+.tab button {
+    background-color: inherit;
+    margin:0;
+    text-align: center;
+    font-weight: 500;
+    width: 100px;
+    height: 100%;
+    /* padding:5px,5px; */
+    border: none;
+    font-size: 13px;
+    line-height: 32px;
+    letter-spacing: .5px;
+}
+
+/* Change background color of buttons on hover */
+/* .tab button:hover {
+    background-color: #ddd;
+} */
+.tab button:hover {
+    background-color: aliceblue;
+}
+
+/* Create an active/current tablink class */
+/* .tab button.active {
+    background-color: #ccc;
+} */
+.tab button.active {
+    border-bottom: 2px solid rgb(33,150,243);
+    background-color: aliceblue;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+/* Style the tab content */
+/* .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+} */
+.tabcontent {
+    display: none;
+    /* border: 1px solid aliceblue; */
+    background-color: aliceblue;
+    padding: 0;
+    /* margin-top: -8px; */
+ }
+
+.tabheader{
+    display: none;
+}
+</style>
+
+<script>
+    var tab = document.getElementsByClassName("tabset");
+    for(i=0;i<tab.length;i++){
+    var hL = tab[i].children[0].nodeName[1];
+    var tabContents = tab[i].getElementsByTagName("h"+String(Number(hL)+1));
+    var tabCon = document.createElement("div");
+    tabCon.className = "tab";
+    tab[i].insertBefore(tabCon,tabContents[0].parentNode);
+     for(j=0;j<tabContents.length;j++){
+         var tabConDiv = tabContents[j].parentNode;
+         var tabId = tabConDiv.getAttribute("id");
+         var tabNumber = tabConDiv.getAttribute("number").replaceAll('.','-');
+         var newID = tabNumber + '-' + tabId;
+         var button = document.createElement("button");
+         button.className = "tablinks";
+         button.setAttribute("onclick","openTab(event,'"+newID+"')");
+         button.innerText = tabId.split('-')[0];
+        //  button.innerText = tabContents[j].innerText;
+         tabCon.appendChild(button);
+         tabConDiv.setAttribute("id",newID);
+         tabConDiv.className = "tabcontent";
+         tabContents[j].innerHTML = "";
+         tabContents[j].className = "tabheader";
+     }
+     tabContents[0].parentNode.style.display = "block";
+     tabCon.children[0].className += " active"
+    }
+
+function openTab(evt,tabName){
+    var i, tabcontent, tablinks;
+//     tabcontent = document.getElementsByClassName("tabcontent");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//   }
+//     tablinks = document.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//     tablinks[i].className = tablinks[i].className.replace(" active", "");
+//   }
+//   document.getElementById(tabName).style.display = "block";
+//   evt.currentTarget.className += " active";
+    var container = evt.currentTarget.parentNode;
+    tabcontent = container.parentNode.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+  }
+    tablinks = container.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+

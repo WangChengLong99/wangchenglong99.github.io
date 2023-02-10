@@ -1,4 +1,7 @@
 h1:cover-image-path-to-the-social-sharing-image-like-imagescover.jpg cover-image: path to the social sharing image like images/cover.jpg
+h1:output output:
+h1:html_document html_document:
+h1:cold_folding-show cold_folding: show
 h1:about About
 h2:usage Usage
 h2:render-book Render book

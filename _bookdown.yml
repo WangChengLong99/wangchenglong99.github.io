@@ -4,5 +4,24 @@ new_session: true
 before_chapter_script: _common.R
 delete_merged_file: true
 language:
+  label:
+    fig: '图 '
+    tab: '表 '
+    eq:  '公式 '
+    lem: 'Lemma '
+    cor: 'Corollary '
+    prp: 'Proposition '
+    cnj: 'Conjecture '
+    exr: 'Exercise '
+    hyp: 'Hypothesis '
+    remark: 'Remark. '
+    solution: 'Solution. '
+    thm: '定理'
+    def: '定义'
+    exm: '例'
+    proof: '证明: '
   ui:
-    chapter_name: "章节 "
+#    edit: 编辑本页
+#    chapter_name: !expr function(i) paste('第',i,'章',sep="")
+    chapter_name: ['第','章']
+#    appendix_name: ''

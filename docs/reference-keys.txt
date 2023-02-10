@@ -1,10 +1,14 @@
 fig:nice-fig
 tab:nice-tab
 eq:binom
+thm:tri
 about
 usage
 render-book
 preview-book
+tabset
+tab1
+tab2
 hello-bookdown
 a-section
 cross
@@ -22,3 +26,10 @@ sharing-your-book
 publishing
 pages
 metadata-for-sharing
+tabset-test
+这是一个tabset标签页
+python
+r
+第二个tabset标签页
+python-1
+r-1

@@ -1,6 +1,6 @@
 bookdown::bs4_book:
   css: style.css
-  edit: https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/%s
+#  edit: https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/%s
   theme:
     primary: "#096B72"
   repo:
@@ -8,11 +8,13 @@ bookdown::bs4_book:
     branch: main
 #    subdir: docs
   includes:
-    after_body: gitalk.html
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
+    in_header: scrollCode.html
+    after_body: [gitalk.html,tabset.html]
+# bookdown::pdf_book:
+#   includes:
+#     in_header: preamble.tex
+#   latex_engine: xelatex
+#   citation_package: natbib
+#   keep_tex: yes
+#bookdown::epub_book: default
+
