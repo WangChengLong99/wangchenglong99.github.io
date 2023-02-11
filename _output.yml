@@ -8,7 +8,7 @@ bookdown::bs4_book:
     branch: main
 #    subdir: docs
   includes:
-    in_header: scrollCode.html
+    in_header: [logo.html,scrollCode.html]
     after_body: [gitalk.html,tabset.html]
 # bookdown::pdf_book:
 #   includes:
