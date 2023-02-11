@@ -9,7 +9,7 @@ bookdown::bs4_book:
 #    subdir: docs
   includes:
     in_header: [scrollCode.html,logo.html]
-    after_body: [gitalk.html,tabset.html]
+    after_body: [tabset.html,giscus.html]
 # bookdown::pdf_book:
 #   includes:
 #     in_header: preamble.tex

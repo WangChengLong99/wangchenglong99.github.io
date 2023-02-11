@@ -131,23 +131,7 @@
 
 </div>
 </div>
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha512-MLcK/YRapzET1qTBXrOiZE6bGBgtATMo2bIyalVJ8EKDEGNoeA3SPQkvWAR0zNS650YG13ocXBMeioDuZcSRuQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-<!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> --><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js" integrity="sha512-Z6q/CxNjbGeWbPamDjp/I737f5LnynAOjJl85FlT75YW3eWmldnn2wj3nhMVEaqMeatyUmvKyfCaM5TND0yRhQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- <script src="md5.min.js"></script> --><script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js" integrity="sha512-8pbzenDolL1l5OPSsoURCx9TEdMFTaeFipASVrMYKhuYtly+k3tcsQYliOEKTmuB1t7yuzAiVo+yd7SJz+ijFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><div id="gitalk-container"></div>
-<script type="text/javascript">
-  var gitalk = new Gitalk({
-  clientID: '53dd2b6aebd309a16d4e', // GitHub Application Client ID
-  clientSecret: '9349eba841a53231102a12b8ac2407485c56bf78', // GitHub Application Client Secret
-  repo: 'wangchenglong99.github.io',      // 存放评论的仓库
-  owner: 'wangchenglong99',          // 仓库的创建者，
-  admin: ['wangchenglong99'],        // 如果仓库有多个人可以操作，那么在这里以数组形式写出
-  id: window.location.pathname.slice(1,-5),
-  // id: location.pathname,
-  distractionFreeMode: false,
-})
-  gitalk.render('gitalk-container');    // 渲染Gitalk评论组件
-</script><style>
+<style>
 
 /* Style the tab */
 /* .tab {
@@ -163,7 +147,7 @@
     flex-wrap: wrap;
     padding: 0;
     /* margin-bottom: 8px; */
-    margin-left: -8px;
+    /* margin-left: -8px; */
     /* margin-right: 0px; */
     /* border-bottom:1px solid #e0e0e0; */
     height: 32px;
@@ -227,7 +211,8 @@
     display: none;
     /* border: 1px solid aliceblue; */
     background-color: aliceblue;
-    padding: 0;
+    padding: 0px;
+    /* margin-left: -8px; */
     /* margin-top: -8px; */
  }
 
@@ -287,7 +272,17 @@ function openTab(evt,tabName){
   document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-</script><div class="chapter-nav">
+</script><div class="giscus">
+<script src="https://giscus.app/client.js" data-repo="wangchenglong99/wangchenglong99.github.io" data-repo-id="R_kgDOI6UvHg" data-category="Announcements" data-category-id="DIC_kwDOI6UvHs4CUJAN" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light_high_contrast" data-lang="zn-CN" lang:="en">
+        crossorigin="anonymous"
+        async>
+</script><div></div>
+  
+
+  
+
+</div>
+<div class="chapter-nav">
 <div class="prev"><a href="blocks.html"><span class="header-section-number">6</span> Blocks</a></div>
 <div class="next"><a href="tabset-test.html"><span class="header-section-number">8</span> tabset test</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
@@ -306,8 +301,6 @@ function openTab(evt,tabName){
         </ul>
 </div>
     </nav>
-</div>
-
 </div>
 </div> <!-- .container -->
 
@@ -351,5 +344,6 @@ for (let popover of popovers) {
   }
 }
 </script>
+</div>
 </body>
 </html>
