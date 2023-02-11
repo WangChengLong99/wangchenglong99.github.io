@@ -8,8 +8,8 @@ bookdown::bs4_book:
     branch: main
 #    subdir: docs
   includes:
-    in_header: [scrollCode.html]
-    after_body: [gitalk.html,tabset.html,logo.html]
+    in_header: [scrollCode.html,logo.html]
+    after_body: [gitalk.html,tabset.html]
 # bookdown::pdf_book:
 #   includes:
 #     in_header: preamble.tex
