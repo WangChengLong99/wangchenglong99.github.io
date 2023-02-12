@@ -1,9 +1,6 @@
+h1:bibliography-book.bib-packages.bib bibliography: [book.bib, packages.bib]
 h1:cover-image-path-to-the-social-sharing-image-like-imagescover.jpg cover-image: path to the social sharing image like images/cover.jpg
-h1:output output:
-h1:html_document html_document:
-h1:cold_folding-show cold_folding: show
-h1:about About
-h2:usage Usage
-h2:render-book Render book
-h2:preview-book Preview book
+h1:biblio-style-apalike biblio-style: apalike
+h1:关于 关于
+h2:to-do-list to do list
 
