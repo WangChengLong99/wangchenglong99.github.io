@@ -3,14 +3,16 @@ bookdown::bs4_book:
 #  edit: https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/%s
   theme:
     primary: "#096B72"
+    # base_font: "宋体"
   repo:
     base: https://github.com/wangchenglong99/wangchenglong99.github.io
     branch: main
 #    subdir: docs
   includes:
     in_header: [scrollCode.html,logo.html]
-    after_body: [tabset.html,giscus.html,deleteTabHeader.html]
-    # after_body: [tabset.html,giscus.html]
+    # after_body: [tabset.html,giscus.html,deleteTabHeader.html]
+    after_body: [tabset.html,giscus.html]
+    # 首行缩进.html
 # bookdown::pdf_book:
 #   includes:
 #     in_header: preamble.tex

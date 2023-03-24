@@ -3,4 +3,12 @@ h1:cover-image-path-to-the-social-sharing-image-like-imagescover.jpg cover-image
 h1:biblio-style-apalike biblio-style: apalike
 h1:关于 关于
 h2:to-do-list to do list
+h2:特征工程 特征工程
+h2:数据可视化 数据可视化
+h3:introduction introduction
+h3:matplotlib matplotlib
+h3:plotly plotly
+h3:tableau tableau
+h2:以markdown形式输出表格 以markdown形式输出表格
+h2:输出流程图 输出流程图
 

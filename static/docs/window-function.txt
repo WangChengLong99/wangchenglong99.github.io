@@ -1,0 +1,47 @@
+<table frame="box" rules="all" summary="A reference that lists window functions."><colgroup><col style="width: 28%"><col style="width: 71%"></colgroup><thead><tr><th>Name</th>
+<th>Description</th>
+</tr></thead><tbody><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_cume-dist"><code class="literal">CUME_DIST()</code></a></td>
+<td>
+      Cumulative distribution value
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_dense-rank"><code class="literal">DENSE_RANK()</code></a></td>
+<td>
+      Rank of current row within its partition, without gaps
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_first-value"><code class="literal">FIRST_VALUE()</code></a></td>
+<td>
+      Value of argument from first row of window frame
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_lag"><code class="literal">LAG()</code></a></td>
+<td>
+      Value of argument from row lagging current row within partition
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_last-value"><code class="literal">LAST_VALUE()</code></a></td>
+<td>
+      Value of argument from last row of window frame
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_lead"><code class="literal">LEAD()</code></a></td>
+<td>
+      Value of argument from row leading current row within partition
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_nth-value"><code class="literal">NTH_VALUE()</code></a></td>
+<td>
+      Value of argument from N-th row of window frame
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_ntile"><code class="literal">NTILE()</code></a></td>
+<td>
+      Bucket number of current row within its partition.
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_percent-rank"><code class="literal">PERCENT_RANK()</code></a></td>
+<td>
+      Percentage rank value
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_rank"><code class="literal">RANK()</code></a></td>
+<td>
+      Rank of current row within its partition, with gaps
+    </td>
+</tr><tr><td><a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_row-number"><code class="literal">ROW_NUMBER()</code></a></td>
+<td>
+      Number of current row within its partition
+    </td>
+</tr></tbody></table>

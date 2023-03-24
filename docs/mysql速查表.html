@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>第8章 mysql速查表 | wcl</title>
+<meta name="author" content="第8章 mysql速查表 | wcl">
+<meta name="description" content="8.1 数据类型  8.1.1 数值型  8.1.1.1 整数型   8.1.1.2 浮点数    8.1.2 时间与日期   8.1.3 字符串    8.2 数学运算符   8.3 比较运算符   8.4 逻辑运算符   8.5 函数  8.5.1 数学函数 函数 作用 ABS(X) 绝对值 SQRT(x) 平方 MOD(X) 求余 CEIL(X) 上整数 FLOOR(X) 下整数...">
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta property="og:title" content="第8章 mysql速查表 | wcl">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/mysql速查表.html">
+<meta property="og:description" content="8.1 数据类型  8.1.1 数值型  8.1.1.1 整数型   8.1.1.2 浮点数    8.1.2 时间与日期   8.1.3 字符串    8.2 数学运算符   8.3 比较运算符   8.4 逻辑运算符   8.5 函数  8.5.1 数学函数 函数 作用 ABS(X) 绝对值 SQRT(x) 平方 MOD(X) 求余 CEIL(X) 上整数 FLOOR(X) 下整数...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第8章 mysql速查表 | wcl">
+<meta name="twitter:description" content="8.1 数据类型  8.1.1 数值型  8.1.1.1 整数型   8.1.1.2 浮点数    8.1.2 时间与日期   8.1.3 字符串    8.2 数学运算符   8.3 比较运算符   8.4 逻辑运算符   8.5 函数  8.5.1 数学函数 函数 作用 ABS(X) 绝对值 SQRT(x) 平方 MOD(X) 求余 CEIL(X) 上整数 FLOOR(X) 下整数...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/d3-3.3.8/d3.min.js"></script><script src="libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/chromatography-0.1/chromatography.js"></script><script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script><style>
+    /* pre {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    pre[class] {
+      max-height: 100px;
+    } */
+
+    .scroll-200 {
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: inherit;
+    }
+    </style>
+<link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">wcl</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">关于</a></li>
+<li class="book-part">数据</li>
+<li><a class="" href="introduction-1.html">introduction</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li class="book-part">可视化</li>
+<li><a class="" href="introduction-2.html">introduction</a></li>
+<li><a class="" href="matplotlib-1.html"><span class="header-section-number">6</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li class="book-part">数据库</li>
+<li><a class="" href="introduction-3.html">introduction</a></li>
+<li><a class="active" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li class="book-part">机器学习</li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/wangchenglong99/wangchenglong99.github.io">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="mysql速查表" class="section level1" number="8">
+<h1>
+<span class="header-section-number">第8章</span> mysql速查表<a class="anchor" aria-label="anchor" href="#mysql%E9%80%9F%E6%9F%A5%E8%A1%A8"><i class="fas fa-link"></i></a>
+</h1>
+<div id="数据类型" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> 数据类型<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><i class="fas fa-link"></i></a>
+</h2>
+<div id="数值型" class="section level3 tabset" number="8.1.1">
+<h3>
+<span class="header-section-number">8.1.1</span> 数值型<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%80%BC%E5%9E%8B"><i class="fas fa-link"></i></a>
+</h3>
+<div id="整数型" class="section level4" number="8.1.1.1">
+<h4>
+<span class="header-section-number">8.1.1.1</span> 整数型<a class="anchor" aria-label="anchor" href="#%E6%95%B4%E6%95%B0%E5%9E%8B"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B4%E6%95%B0%E5%9E%8B.png" width="95%" style="display: block; margin: auto;"></div>
+</div>
+<div id="浮点数" class="section level4" number="8.1.1.2">
+<h4>
+<span class="header-section-number">8.1.1.2</span> 浮点数<a class="anchor" aria-label="anchor" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%B5%AE%E7%82%B9%E6%95%B0.png" width="95%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="时间与日期" class="section level3" number="8.1.2">
+<h3>
+<span class="header-section-number">8.1.2</span> 时间与日期<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%A5%E6%9C%9F"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%97%B6%E9%97%B4.png" width="95%" style="display: block; margin: auto;"></div>
+</div>
+<div id="字符串" class="section level3" number="8.1.3">
+<h3>
+<span class="header-section-number">8.1.3</span> 字符串<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%96%87%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.png" width="95%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="数学运算符" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> 数学运算符<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97%E7%AC%A6"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6.png" width="95%" style="display: block; margin: auto;"></div>
+</div>
+<div id="比较运算符" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> 比较运算符<a class="anchor" aria-label="anchor" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6.png" width="95%" style="display: block; margin: auto;"></div>
+</div>
+<div id="逻辑运算符" class="section level2" number="8.4">
+<h2>
+<span class="header-section-number">8.4</span> 逻辑运算符<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6.png" width="95%" style="display: block; margin: auto;"></div>
+</div>
+<div id="函数-1" class="section level2" number="8.5">
+<h2>
+<span class="header-section-number">8.5</span> 函数<a class="anchor" aria-label="anchor" href="#%E5%87%BD%E6%95%B0-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="数学函数" class="section level3" number="8.5.1">
+<h3>
+<span class="header-section-number">8.5.1</span> 数学函数<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>函数</th>
+<th>作用</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>ABS(X)</td>
+<td>绝对值</td>
+</tr>
+<tr class="even">
+<td>SQRT(x)</td>
+<td>平方</td>
+</tr>
+<tr class="odd">
+<td>MOD(X)</td>
+<td>求余</td>
+</tr>
+<tr class="even">
+<td>CEIL(X)</td>
+<td>上整数</td>
+</tr>
+<tr class="odd">
+<td>FLOOR(X)</td>
+<td>下整数</td>
+</tr>
+<tr class="even">
+<td>RAND()</td>
+<td>返回随机的一个随机数</td>
+</tr>
+<tr class="odd">
+<td>RAND(X)</td>
+<td>对于不同的X，有固定的相对应的随机数</td>
+</tr>
+<tr class="even">
+<td>ROUND(X)</td>
+<td>四舍五入</td>
+</tr>
+<tr class="odd">
+<td>ROUND(X,Y)</td>
+<td>Y为保留到小数点后几位</td>
+</tr>
+<tr class="even">
+<td>TRUNCATE(x,y)</td>
+<td>)返回被舍去至小数点后y位的数字</td>
+</tr>
+<tr class="odd">
+<td>PI(x)</td>
+<td><span class="math inline">\(\pi\)</span></td>
+</tr>
+<tr class="even">
+<td>SIGN(X)</td>
+<td>返回数值的符号，x的值为负、零或正时返回结果依次为-1、0或1</td>
+</tr>
+<tr class="odd">
+<td>POW(x,y)</td>
+<td><span class="math inline">\(x^y\)</span></td>
+</tr>
+<tr class="even">
+<td>exp(x)</td>
+<td><span class="math inline">\(e^x\)</span></td>
+</tr>
+<tr class="odd">
+<td>log(x)</td>
+<td><span class="math inline">\(\ln x\)</span></td>
+</tr>
+<tr class="even">
+<td>log10(x)</td>
+<td><span class="math inline">\(\log_{10} x\)</span></td>
+</tr>
+<tr class="odd">
+<td>radians</td>
+<td>转化为弧度制</td>
+</tr>
+<tr class="even">
+<td>degrees</td>
+<td>转化为角度制</td>
+</tr>
+<tr class="odd">
+<td>sin(x),asin(x)</td>
+<td>正弦，反正弦</td>
+</tr>
+<tr class="even">
+<td>cos(x),acos(x)</td>
+<td>余弦，反余弦</td>
+</tr>
+<tr class="odd">
+<td>tan(X),atan(x),cot(x)</td>
+<td>正切，反正切，余切</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="字符串函数" class="section level3" number="8.5.2">
+<h3>
+<span class="header-section-number">8.5.2</span> 字符串函数<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="4%">
+<col width="13%">
+<col width="81%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>函数名称</th>
+<th>作 用</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>LENGTH</td>
+<td>计算字符串长度函数，返回字符串的字节长度</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>CONCAT</td>
+<td>合并字符串函数，返回结果为连接参数产生的字符串，参数可以使一个或多个</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>INSERT</td>
+<td>替换字符串函数</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>LOWER</td>
+<td>将字符串中的字母转换为小写</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>UPPER</td>
+<td>将字符串中的字母转换为大写</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>LEFT</td>
+<td>从左侧字截取符串，返回字符串左边的若干个字符</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>RIGHT</td>
+<td>从右侧字截取符串，返回字符串右边的若干个字符</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>TRIM</td>
+<td>删除字符串左右两侧的空格</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>REPLACE</td>
+<td>字符串替换函数，返回替换后的新字符串</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>SUBSTRING</td>
+<td>截取字符串，返回从指定位置开始的指定长度的字符换</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>REVERSE</td>
+<td>字符串反转（逆序）函数，返回与原始字符串顺序相反的字符串</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="聚合函数" class="section level3" number="8.5.3">
+<h3>
+<span class="header-section-number">8.5.3</span> 聚合函数<a class="anchor" aria-label="anchor" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>函数名称</th>
+<th>作用</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>MAX</td>
+<td>查询指定列的最大值</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>MIN</td>
+<td>查询指定列的最小值</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>COUNT</td>
+<td>统计查询结果的行数</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>SUM</td>
+<td>求和，返回指定列的总和</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>AVG</td>
+<td>求平均值，返回指定列数据的平均值</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="时间函数" class="section level3" number="8.5.4">
+<h3>
+<span class="header-section-number">8.5.4</span> 时间函数<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="4%">
+<col width="26%">
+<col width="69%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>函数名称</th>
+<th>作 用</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>CURDATE 和 CURRENT_DATE</td>
+<td>两个函数作用相同，返回当前系统的日期值</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>CURTIME 和 CURRENT_TIME</td>
+<td>两个函数作用相同，返回当前系统的时间值</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>NOW 和 SYSDATE</td>
+<td>两个函数作用相同，返回当前系统的日期和时间值</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>UNIX_TIMESTAMP</td>
+<td>获取UNIX时间戳函数，返回一个以 UNIX 时间戳为基础的无符号整数</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>FROM_UNIXTIME</td>
+<td>将 UNIX 时间戳转换为时间格式，与UNIX_TIMESTAMP互为反函数</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>MONTH</td>
+<td>获取指定日期中的月份</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>MONTHNAME</td>
+<td>获取指定日期中的月份英文名称</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>DAYNAME</td>
+<td>获取指定曰期对应的星期几的英文名称</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>DAYOFWEEK</td>
+<td>获取指定日期对应的一周的索引位置值</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>WEEK</td>
+<td>获取指定日期是一年中的第几周，返回值的范围是否为 0〜52 或 1〜53</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>DAYOFYEAR</td>
+<td>获取指定曰期是一年中的第几天，返回值范围是1~366</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>DAYOFMONTH</td>
+<td>获取指定日期是一个月中是第几天，返回值范围是1~31</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>YEAR</td>
+<td>获取年份，返回值范围是 1970〜2069</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>TIME_TO_SEC</td>
+<td>将时间参数转换为秒数</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>SEC_TO_TIME</td>
+<td>将秒数转换为时间，与TIME_TO_SEC 互为反函数</td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>DATE_ADD 和 ADDDATE</td>
+<td>两个函数功能相同，都是向日期添加指定的时间间隔</td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td>DATE_SUB 和 SUBDATE</td>
+<td>两个函数功能相同，都是向日期减去指定的时间间隔</td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td>ADDTIME</td>
+<td>时间加法运算，在原始时间上添加指定的时间</td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td>SUBTIME</td>
+<td>时间减法运算，在原始时间上减去指定的时间</td>
+</tr>
+<tr class="even">
+<td>19</td>
+<td>DATEDIFF</td>
+<td>获取两个日期之间间隔，返回参数 1 减去参数 2 的值</td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>DATE_FORMAT</td>
+<td>格式化指定的日期，根据参数返回指定格式的值</td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td>WEEKDAY</td>
+<td>获取指定日期在一周内的对应的工作日索引</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="条件函数" class="section level3" number="8.5.5">
+<h3>
+<span class="header-section-number">8.5.5</span> 条件函数<a class="anchor" aria-label="anchor" href="#%E6%9D%A1%E4%BB%B6%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>函数名称</th>
+<th>作用</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>IF</td>
+<td>判断，流程控制</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>IFNULL</td>
+<td>判断是否为空</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>CASE</td>
+<td>搜索语句</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="正则表达式" class="section level2" number="8.6">
+<h2>
+<span class="header-section-number">8.6</span> 正则表达式<a class="anchor" aria-label="anchor" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" width="95%" style="display: block; margin: auto;"></div>
+<p>where expr REGXEP 正则表达式</p>
+</div>
+<div id="窗口函数-1" class="section level2" number="8.7">
+<h2>
+<span class="header-section-number">8.7</span> 窗口函数<a class="anchor" aria-label="anchor" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0-1"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/165210822">原文</a></p>
+<p>窗口函数是为了干什么，它并不会将多行查询结果合并为一行，而是将结果放回多行当中。也就是说，窗口函数是不需要GROUP BY的。它在形式上利用partition by来进行分区，然后操作，但是结果行数并没有发生变化.</p>
+<p>语法</p>
+<p>窗口函数</p>
+<pre><code>window_function_name(window_name/expression)
+
+OVER (
+
+[partition_defintion]: partition by
+
+[order_definition] : order by
+
+[frame_definition] : 
+)</code></pre>
+<p>partition by:分区而非分组，对窗口函数和over中的order by，frame起作用,但是对任何聚合函数没有作用，即使是over中的聚合函数。通过partition by，可以在每个分区内通过窗口函数进行排序和求和等操作。若是想整体操作，那其实不是窗口函数的功能，可以在外部通过order by，group by操作实现.</p>
+<p>order by:排序操作，有分区操作则对每个分区内部进行排序</p>
+<p>frame结构:在分区内进一步细分，比如确定值范围，确定行范围，某一行之前之后的范围。</p>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb538"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb538-1"><a href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html#cb538-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"./static/docs/window-function.txt"</span>,<span class="st">"r"</span>) <span class="im">as</span> f:</span>
+<span id="cb538-2"><a href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html#cb538-2" aria-hidden="true" tabindex="-1"></a>  w <span class="op">=</span> f.read()</span>
+<span id="cb538-3"><a href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html#cb538-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(w)</span></code></pre></div>
+<div class="inline-table"><table frame="box" rules="all" summary="A reference that lists window functions." class="table table-sm">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 71%">
+</colgroup>
+<thead><tr>
+<th>
+Name
+</th>
+<th>
+Description
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_cume-dist"><code class="literal">CUME_DIST()</code></a>
+</td>
+<td>
+Cumulative distribution value
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_dense-rank"><code class="literal">DENSE_RANK()</code></a>
+</td>
+<td>
+Rank of current row within its partition, without gaps
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_first-value"><code class="literal">FIRST_VALUE()</code></a>
+</td>
+<td>
+Value of argument from first row of window frame
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_lag"><code class="literal">LAG()</code></a>
+</td>
+<td>
+Value of argument from row lagging current row within partition
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_last-value"><code class="literal">LAST_VALUE()</code></a>
+</td>
+<td>
+Value of argument from last row of window frame
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_lead"><code class="literal">LEAD()</code></a>
+</td>
+<td>
+Value of argument from row leading current row within partition
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_nth-value"><code class="literal">NTH_VALUE()</code></a>
+</td>
+<td>
+Value of argument from N-th row of window frame
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_ntile"><code class="literal">NTILE()</code></a>
+</td>
+<td>
+Bucket number of current row within its partition.
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_percent-rank"><code class="literal">PERCENT_RANK()</code></a>
+</td>
+<td>
+Percentage rank value
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_rank"><code class="literal">RANK()</code></a>
+</td>
+<td>
+Rank of current row within its partition, with gaps
+</td>
+</tr>
+<tr>
+<td>
+<a class="link" href="https://dev.mysql.com/doc/refman/8.0/en/window-function-descriptions.html#function_row-number"><code class="literal">ROW_NUMBER()</code></a>
+</td>
+<td>
+Number of current row within its partition
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<style>
+
+/* Style the tab */
+/* .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+} */
+.tab {
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    /* margin-bottom: 8px; */
+    /* margin-left: -8px; */
+    /* margin-right: 0px; */
+    /* border-bottom:1px solid #e0e0e0; */
+    height: 32px;
+    /*flex-basis: 100px;*/
+    /* background-color: aliceblue; */
+}
+
+/* Style the buttons inside the tab */
+/* .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+} */
+
+.tab button {
+    background-color: inherit;
+    margin:0;
+    text-align: center;
+    font-weight: 500;
+    min-width: 100px;
+    /*width:fit-content;*/
+    height: 100%;
+    /* padding:5px,5px; */
+    border: none;
+    font-size: 1rem;
+    font-weight:400;
+    line-height: 32px;
+    letter-spacing: .5px;
+}
+
+/* Change background color of buttons on hover */
+/* .tab button:hover {
+    background-color: #ddd;
+} */
+.tab button:hover {
+    background-color: aliceblue;
+}
+
+/* Create an active/current tablink class */
+/* .tab button.active {
+    background-color: #ccc;
+} */
+.tab button.active {
+    border-bottom: 2px solid rgb(33,150,243);
+    background-color: aliceblue;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+/* Style the tab content */
+/* .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+} */
+.tabcontent {
+    display: none;
+    /* border: 1px solid aliceblue; */
+    /*background-color: aliceblue;*/
+    /* margin-left: -8px; */
+    /* margin-top: -8px; */
+ }
+
+.tabheader{
+    display: none;
+}
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+  margin-left: 0px;
+}
+</style>
+<script>
+    var tab = document.getElementsByClassName("tabset");
+    for(i=0;i<tab.length;i++){
+    var hL = tab[i].children[0].nodeName[1];
+    var tabContents = tab[i].getElementsByTagName("h"+String(Number(hL)+1));
+    var tabCon = document.createElement("div");
+    tabCon.className = "tab";
+    tab[i].insertBefore(tabCon,tabContents[0].parentNode);
+     for(j=0;j<tabContents.length;j++){
+         var tabConDiv = tabContents[j].parentNode;
+         var tabId = tabConDiv.getAttribute("id");
+         var tabNumber = tabConDiv.getAttribute("number").replaceAll('.','-');
+         var newID = tabNumber + '-' + tabId;
+         var button = document.createElement("button");
+         button.className = "tablinks";
+         button.setAttribute("onclick","openTab(event,'"+newID+"')");
+         button.innerText = tabId.split('-')[0];
+        //  button.innerText = tabContents[j].innerText;
+         tabCon.appendChild(button);
+         tabConDiv.setAttribute("id",newID);
+         tabConDiv.className = "tabcontent";
+         tabContents[j].innerHTML = "";
+         tabContents[j].className = "tabheader";
+     }
+     tabContents[0].parentNode.style.display = "block";
+     tabCon.children[0].className += " active"
+    }
+
+function openTab(evt,tabName){
+    var i, tabcontent, tablinks;
+//     tabcontent = document.getElementsByClassName("tabcontent");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//   }
+//     tablinks = document.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//     tablinks[i].className = tablinks[i].className.replace(" active", "");
+//   }
+//   document.getElementById(tabName).style.display = "block";
+//   evt.currentTarget.className += " active";
+    var container = evt.currentTarget.parentNode;
+    tabcontent = container.parentNode.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+  }
+    tablinks = container.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script><div class="giscus">
+<script src="https://giscus.app/client.js" data-repo="wangchenglong99/wangchenglong99.github.io" data-repo-id="R_kgDOI6UvHg" data-category="Announcements" data-category-id="DIC_kwDOI6UvHs4CUJAN" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light_high_contrast" data-lang="zh-CN" crossorigin="anonymous" async>
+</script><div></div>
+  
+
+  
+
+</div>
+<div class="chapter-nav">
+<div class="prev"><a href="introduction-3.html">introduction</a></div>
+<div class="next"><a href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#mysql%E9%80%9F%E6%9F%A5%E8%A1%A8"><span class="header-section-number">8</span> mysql速查表</a></li>
+<li>
+<a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="header-section-number">8.1</span> 数据类型</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B"><span class="header-section-number">8.1.1</span> 数值型</a></li>
+<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%A5%E6%9C%9F"><span class="header-section-number">8.1.2</span> 时间与日期</a></li>
+<li><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="header-section-number">8.1.3</span> 字符串</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="header-section-number">8.2</span> 数学运算符</a></li>
+<li><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="header-section-number">8.3</span> 比较运算符</a></li>
+<li><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="header-section-number">8.4</span> 逻辑运算符</a></li>
+<li>
+<a class="nav-link" href="#%E5%87%BD%E6%95%B0-1"><span class="header-section-number">8.5</span> 函数</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.1</span> 数学函数</a></li>
+<li><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.2</span> 字符串函数</a></li>
+<li><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.3</span> 聚合函数</a></li>
+<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.4</span> 时间函数</a></li>
+<li><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.5</span> 条件函数</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="header-section-number">8.6</span> 正则表达式</a></li>
+<li><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0-1"><span class="header-section-number">8.7</span> 窗口函数</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/Mysql.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/wangchenglong99/wangchenglong99.github.io/edit/main/Mysql.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2023-03-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</div>
+</body>
+</html>

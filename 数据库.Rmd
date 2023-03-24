@@ -1,0 +1,10 @@
+# (PART\*) 数据库 {-}
+
+# introduction {-}
+
+主要介绍了mysql和hive
+
+数据库的软件很多，但是大部分sql语言是同样的，同时也有一些自己特殊的，
+
+[sql语言总结](https://www.yuque.com/wojiushiwo-vejdk/dqtv9u/cbwiudhkbd54pbgg)
+

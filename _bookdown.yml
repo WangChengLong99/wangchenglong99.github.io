@@ -25,3 +25,20 @@ language:
 #    chapter_name: !expr function(i) paste('第',i,'章',sep="")
     chapter_name: ['第','章']
 #    appendix_name: ''
+rmd_files:
+  html: ["index.Rmd",
+         "数据.Rmd",
+            "数据编码.Rmd",
+            "数据获取与存储.Rmd",
+            "数据清洗.Rmd",
+            "数据操作.Rmd",
+            "时间序列.Rmd",
+         "数据可视化.Rmd",
+            "matplotlib.Rmd",
+            #"图表种类.Rmd",
+            "图表实例.Rmd",
+         "数据库.Rmd",
+            "Mysql.Rmd",
+            "PyMysql.RMd",
+         "机器学习.Rmd",
+            ]

@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>第2章 数据获取与存储 | wcl</title>
+<meta name="author" content="第2章 数据获取与存储 | wcl">
+<meta name="description" content="严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。 爬虫参考  2.1 文本文件  2.1.1 分隔文件  2.1.1.1 读取 ...">
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta property="og:title" content="第2章 数据获取与存储 | wcl">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/数据获取与存储.html">
+<meta property="og:description" content="严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。 爬虫参考  2.1 文本文件  2.1.1 分隔文件  2.1.1.1 读取 ...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第2章 数据获取与存储 | wcl">
+<meta name="twitter:description" content="严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。 爬虫参考  2.1 文本文件  2.1.1 分隔文件  2.1.1.1 读取 ...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/d3-3.3.8/d3.min.js"></script><script src="libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/chromatography-0.1/chromatography.js"></script><script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script><style>
+    /* pre {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    pre[class] {
+      max-height: 100px;
+    } */
+
+    .scroll-200 {
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: inherit;
+    }
+    </style>
+<link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">wcl</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">关于</a></li>
+<li class="book-part">数据</li>
+<li><a class="" href="introduction-1.html">introduction</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
+<li><a class="active" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li class="book-part">可视化</li>
+<li><a class="" href="introduction-2.html">introduction</a></li>
+<li><a class="" href="matplotlib-1.html"><span class="header-section-number">6</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li class="book-part">数据库</li>
+<li><a class="" href="introduction-3.html">introduction</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li class="book-part">机器学习</li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/wangchenglong99/wangchenglong99.github.io">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据获取与存储" class="section level1" number="2">
+<h1>
+<span class="header-section-number">第2章</span> 数据获取与存储<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8"><i class="fas fa-link"></i></a>
+</h1>
+<p>严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。</p>
+<p><a href="https://wcl99.netlify.app/python/python%E7%88%AC%E8%99%AB/pc/">爬虫参考</a></p>
+<div id="文本文件" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> 文本文件<a class="anchor" aria-label="anchor" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><i class="fas fa-link"></i></a>
+</h2>
+<div id="分隔文件" class="section level3 tabset" number="2.1.1">
+<h3>
+<span class="header-section-number">2.1.1</span> 分隔文件<a class="anchor" aria-label="anchor" href="#%E5%88%86%E9%9A%94%E6%96%87%E4%BB%B6"><i class="fas fa-link"></i></a>
+</h3>
+<div id="读取" class="section level4" number="2.1.1.1">
+<h4>
+<span class="header-section-number">2.1.1.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/python%E8%AF%BB%E5%8F%96csv%E6%96%87%E4%BB%B6.png" width="95%" style="display: block; margin: auto;"></div>
+<p>利用pd.read_csv()方法,主要参数为是否包括表头，是否某些行不读取，缺失值如何表示，是否让某些列作为索引，对某些列传递某些函数做某些处理，编码，是否分块读取，日期处理</p>
+<ul>
+<li>分块读入csv文件</li>
+</ul>
+<p>使用<code>chunksize</code>参数,生成的对象可迭代，类似于生成器，可以通过next方法获取下一个chunksize数量的,也可以通过.get_chunk(size)方法获得任意行数的数据，再调用next方法会从当前块位置到当前块结束的位置。</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb7-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb7-1" aria-hidden="true" tabindex="-1"></a>student <span class="op">=</span> pd.read_csv(<span class="st">"data/数据/学生.csv"</span>,chunksize<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb7-2"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb7-2" aria-hidden="true" tabindex="-1"></a>student.get_chunk(<span class="dv">7</span>).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>姓名</th>
+<th>性别</th>
+<th>班级</th>
+<th>数学</th>
+<th>语文</th>
+<th>英语</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>男</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>女</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>女</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>男</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a5</td>
+<td>男</td>
+<td>高一(5)班</td>
+<td>56</td>
+<td>83</td>
+<td>72</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>a6</td>
+<td>男</td>
+<td>高一(6)班</td>
+<td>65</td>
+<td>71</td>
+<td>76</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>a7</td>
+<td>男</td>
+<td>高一(7)班</td>
+<td>71</td>
+<td>71</td>
+<td>84</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">next</span>(student).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>姓名</th>
+<th>性别</th>
+<th>班级</th>
+<th>数学</th>
+<th>语文</th>
+<th>英语</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>7</td>
+<td>a8</td>
+<td>女</td>
+<td>高一(8)班</td>
+<td>58</td>
+<td>73</td>
+<td>78</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>a9</td>
+<td>男</td>
+<td>高一(9)班</td>
+<td>71</td>
+<td>73</td>
+<td>73</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>a10</td>
+<td>女</td>
+<td>高一(10)班</td>
+<td>54</td>
+<td>71</td>
+<td>75</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>a11</td>
+<td>女</td>
+<td>高一(11)班</td>
+<td>62</td>
+<td>74</td>
+<td>69</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>a12</td>
+<td>女</td>
+<td>高一(12)班</td>
+<td>67</td>
+<td>73</td>
+<td>74</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="存储csv文件" class="section level4" number="2.1.1.2">
+<h4>
+<span class="header-section-number">2.1.1.2</span> 存储csv文件<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8csv%E6%96%87%E4%BB%B6"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th>参数</th>
+<th>取值</th>
+<th>作用</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>path</td>
+<td>string</td>
+<td>存储路径</td>
+</tr>
+<tr class="even">
+<td>index</td>
+<td>bool,默认true</td>
+<td>会默认存储index，如果index是有意义的，可以存，没有意义设置为False</td>
+</tr>
+<tr class="odd">
+<td>encoding</td>
+<td>optional</td>
+<td>设置存储文件的编码</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="json" class="section level3 tabset" number="2.1.2">
+<h3>
+<span class="header-section-number">2.1.2</span> json<a class="anchor" aria-label="anchor" href="#json"><i class="fas fa-link"></i></a>
+</h3>
+<div id="读取-1" class="section level4" number="2.1.2.1">
+<h4>
+<span class="header-section-number">2.1.2.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96-1"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb9-2"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data/数据/information.json"</span>,<span class="st">"r"</span>) <span class="im">as</span> fp:</span>
+<span id="cb9-3"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb9-3" aria-hidden="true" tabindex="-1"></a>    jf <span class="op">=</span> fp.read()</span>
+<span id="cb9-4"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb9-4" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> json.loads(jf) <span class="co">#将json对象转化为python对象，比如对于空值的表示是不一样的,result为python字典</span></span>
+<span id="cb9-5"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb9-5" aria-hidden="true" tabindex="-1"></a>json.dumps(result)<span class="co">#转回为json对象,为字符串</span></span>
+<span id="cb9-6"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#使用pandas读取json数据为DataFrame时每个键的内容必须长度一致,默认json数据数组中的每个对象是表里的一行</span></span></code></pre></div>
+<pre class="scroll-200"><code>'{"name": "Wes", "places_lived": ["United States", "Spain", "Germany"], "pet": null, "siblings": [{"name": "Scott", "age": 30, "pets": ["Zeus", "Zuko"]}, {"name": "Katie", "age": 38, "pets": ["Sixes", "Stache", "Cisco"]}]}'</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb11-1" aria-hidden="true" tabindex="-1"></a>pd.read_json(<span class="st">"data/数据/information.json"</span>)</span></code></pre></div>
+<pre><code>Error in py_call_impl(callable, dots$args, dots$keywords): ValueError: All arrays must be of the same length</code></pre>
+<p>键名必为字符串，值可以为列表，字符串，bool等.</p>
+</div>
+<div id="存储" class="section level4" number="2.1.2.2">
+<h4>
+<span class="header-section-number">2.1.2.2</span> 存储<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8"><i class="fas fa-link"></i></a>
+</h4>
+<p>序列和数据框都有to_json方法，存储的每一个键值对存储一个字段</p>
+</div>
+</div>
+<div id="html" class="section level3 tabset" number="2.1.3">
+<h3>
+<span class="header-section-number">2.1.3</span> html<a class="anchor" aria-label="anchor" href="#html"><i class="fas fa-link"></i></a>
+</h3>
+<div id="读取-2" class="section level4" number="2.1.3.1">
+<h4>
+<span class="header-section-number">2.1.3.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96-2"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-1" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> pd.read_html(</span>
+<span id="cb13-2"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb13-3"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;table&gt;</span></span>
+<span id="cb13-4"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;tr&gt;</span></span>
+<span id="cb13-5"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;th&gt;函数&lt;/th&gt;</span></span>
+<span id="cb13-6"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;th&gt;作用&lt;/th&gt;</span></span>
+<span id="cb13-7"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/tr&gt; </span></span>
+<span id="cb13-8"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;tr&gt;</span></span>
+<span id="cb13-9"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;td&gt;pd.read_html()&lt;/td&gt;</span></span>
+<span id="cb13-10"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;td&gt;从html文件中读取表格&lt;/td&gt;</span></span>
+<span id="cb13-11"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/tr&gt; </span></span>
+<span id="cb13-12"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;/table&gt;</span></span>
+<span id="cb13-13"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
+<span id="cb13-14"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-15"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb13-15" aria-hidden="true" tabindex="-1"></a>table[<span class="dv">0</span>].pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>函数</th>
+<th>作用</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td>0</td>
+<td>pd.read_html()</td>
+<td>从html文件中读取表格</td>
+</tr></tbody>
+</table></div>
+<p>pd.read_html()主要从table标签中读取数据,返回的df对象的list</p>
+</div>
+<div id="存储为html" class="section level4" number="2.1.3.2">
+<h4>
+<span class="header-section-number">2.1.3.2</span> 存储为html<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8%E4%B8%BAhtml"><i class="fas fa-link"></i></a>
+</h4>
+<p>DataFrame.to_html(buf=None, columns=None,col_space=None, header=True， index=True,na_rep=‘NaN’,formatters=None, float_format=None, sparsify=None, index_names=True,justify=None,bold_rows=True,classes=None, escape=True, max_rows=None, max_cols=None,show_dimensions=False,notebook=False, decimal=‘.’, border=None)</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th>参数</th>
+<th>解释</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>buf</td>
+<td>StringIO-like, 可选写入缓冲区。</td>
+</tr>
+<tr class="even">
+<td>columns</td>
+<td>sequence，可选要转化的列的列名；默认值 None 为所有列转化。</td>
+</tr>
+<tr class="odd">
+<td>col_space</td>
+<td>int，可选每列的最小宽度。</td>
+</tr>
+<tr class="even">
+<td>header</td>
+<td>bool，可选是否打印列标签，默认为 True。</td>
+</tr>
+<tr class="odd">
+<td>index</td>
+<td>布尔值，可选是否打印索引（行）标签，默认为 True。</td>
+</tr>
+<tr class="even">
+<td>na_rep</td>
+<td>字符串，可选指定 NAN 的字符串表示形式，默认为 ‘NaN’。</td>
+</tr>
+<tr class="odd">
+<td>formatters</td>
+<td>多个单参数函数组成的列表或字典，可选格式化程序可按列表的所索引或字典的键名称应用于列元素，默认为 None。每个单参数函数的结果必须是一个 unicode 字符串。列表的长度必须等于列数。</td>
+</tr>
+<tr class="even">
+<td>float_format</td>
+<td>单参数函数，可选用于将列元素设置为浮点数的格式化程序功能，默认为无。此单参数函数的结果必须是 unicode 字符串。</td>
+</tr>
+<tr class="odd">
+<td>sparsify</td>
+<td>bool，可选默认为 True。输入 False 时，对于具有层次结构索引的 DataFrame，会在每一行打印多重索引。</td>
+</tr>
+<tr class="even">
+<td>index_names</td>
+<td>bool，可选打印索引名称，默认为 True。</td>
+</tr>
+<tr class="odd">
+<td>line_width</td>
+<td>int，可选换行符的宽度，默认为不换行。</td>
+</tr>
+<tr class="even">
+<td>justify</td>
+<td>列标签对齐方式, 可选左右对齐列标签。默认为 None时，使用打印配置中的选项（由 set_option 控制），则右对齐。</td>
+</tr>
+<tr class="odd">
+<td>bold_rows</td>
+<td>bool, 可选对横向表格线进行加粗。</td>
+</tr>
+<tr class="even">
+<td>classes</td>
+<td>CSS类(es)适用于生成的html表, 可选默认 None</td>
+</tr>
+<tr class="odd">
+<td>escape</td>
+<td>bool, 可选将 “&lt;”, “&gt;”, “&amp;” 转化成 html 安全序列，默认 True。</td>
+</tr>
+<tr class="even">
+<td>max_rows</td>
+<td>int, 可选显示最大行数。</td>
+</tr>
+<tr class="odd">
+<td>max_cols</td>
+<td>int, 可选显示最大列数。</td>
+</tr>
+<tr class="even">
+<td>decimal</td>
+<td>str, 可选小数分隔符, 默认为 ‘.’。</td>
+</tr>
+<tr class="odd">
+<td>border</td>
+<td>int， 可选表格外边框宽度，默认为 1，参数为 0 时表格无边框。数值越大外边框越宽。</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div id="二进制" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> 二进制<a class="anchor" aria-label="anchor" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6"><i class="fas fa-link"></i></a>
+</h2>
+<div id="excel" class="section level3 tabset" number="2.2.1">
+<h3>
+<span class="header-section-number">2.2.1</span> excel<a class="anchor" aria-label="anchor" href="#excel"><i class="fas fa-link"></i></a>
+</h3>
+<div id="读取-3" class="section level4" number="2.2.1.1">
+<h4>
+<span class="header-section-number">2.2.1.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96-3"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb14-1" aria-hidden="true" tabindex="-1"></a>pd.read_excel(<span class="st">"data/数据/ex2.xlsx"</span>,<span class="st">"Sheet1"</span>,index_col<span class="op">=</span>[<span class="dv">0</span>]).head(<span class="dv">3</span>).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>d</th>
+<th>message</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>hello</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+<td>world</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>12</td>
+<td>foo</td>
+</tr>
+</tbody>
+</table></div>
+<p>基本格式和读取csv文件差不多，只不过多了sheet_name参数,存储时也多了一个，可以指定sheet</p>
+</div>
+<div id="存储-1" class="section level4" number="2.2.1.2">
+<h4>
+<span class="header-section-number">2.2.1.2</span> 存储<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8-1"><i class="fas fa-link"></i></a>
+</h4>
+<p><code>.to_excel()</code></p>
+</div>
+</div>
+<div id="hdf5" class="section level3" number="2.2.2">
+<h3>
+<span class="header-section-number">2.2.2</span> HDF5<a class="anchor" aria-label="anchor" href="#hdf5"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># frame = pd.DataFrame({"a":np.random.randn(10)})</span></span>
+<span id="cb15-2"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># store = pd.HDFStore("data/数据/mydata.h5")</span></span>
+<span id="cb15-3"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># store['obj1'] = frame</span></span>
+<span id="cb15-4"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># store['boj2'] = frame</span></span>
+<span id="cb15-5"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co"># store</span></span>
+<span id="cb15-6"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># store = pd.read_hdf("data/数据/mydata.h5","obj1",where=['index&lt;5'])</span></span>
+<span id="cb15-7"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb15-7" aria-hidden="true" tabindex="-1"></a>store <span class="op">=</span> pd.read_hdf(<span class="st">"data/数据/mydata.h5"</span>,<span class="st">"obj1"</span>)</span>
+<span id="cb15-8"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb15-8" aria-hidden="true" tabindex="-1"></a>store.head()</span></code></pre></div>
+<pre class="scroll-200"><code>          a
+0 -0.041783
+1 -0.558127
+2  0.589053
+3 -1.141734
+4  0.019748</code></pre>
+<p>HDF5是一个备受好评的文件格式，用于存储大量的科学数组数据。它以C库的形式提供，并且具有许多其他语言的接口，包括Java、Julia、MATLAB和Python。HDF5中的“HDF”代表分层数据格式。每个HDF5文件可以存储多个数据集并且支持元数据。与更简单的格式相比，HDF5支持多种压缩模式的即时压缩，使得重复模式的数据可以更高效地存储。HDF5适用于处理不适合在内存中存储的超大型数据，可以使你高效读写大型数组的一小块。尽管可以通过使用PyTables或h5py等库直接访问HDF5文件，但pandas提供了一个高阶的接口，可以简化Series和DataFrame的存储。HDFStore类像字典一样工作并处理低级别细节，包含在HDF5文件中的对象可以使用相同的字典型API进行检索。</p>
+
+</div>
+</div>
+</div>
+<style>
+
+/* Style the tab */
+/* .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+} */
+.tab {
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    /* margin-bottom: 8px; */
+    /* margin-left: -8px; */
+    /* margin-right: 0px; */
+    /* border-bottom:1px solid #e0e0e0; */
+    height: 32px;
+    /*flex-basis: 100px;*/
+    /* background-color: aliceblue; */
+}
+
+/* Style the buttons inside the tab */
+/* .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+} */
+
+.tab button {
+    background-color: inherit;
+    margin:0;
+    text-align: center;
+    font-weight: 500;
+    min-width: 100px;
+    /*width:fit-content;*/
+    height: 100%;
+    /* padding:5px,5px; */
+    border: none;
+    font-size: 1rem;
+    font-weight:400;
+    line-height: 32px;
+    letter-spacing: .5px;
+}
+
+/* Change background color of buttons on hover */
+/* .tab button:hover {
+    background-color: #ddd;
+} */
+.tab button:hover {
+    background-color: aliceblue;
+}
+
+/* Create an active/current tablink class */
+/* .tab button.active {
+    background-color: #ccc;
+} */
+.tab button.active {
+    border-bottom: 2px solid rgb(33,150,243);
+    background-color: aliceblue;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+/* Style the tab content */
+/* .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+} */
+.tabcontent {
+    display: none;
+    /* border: 1px solid aliceblue; */
+    /*background-color: aliceblue;*/
+    /* margin-left: -8px; */
+    /* margin-top: -8px; */
+ }
+
+.tabheader{
+    display: none;
+}
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+  margin-left: 0px;
+}
+</style>
+<script>
+    var tab = document.getElementsByClassName("tabset");
+    for(i=0;i<tab.length;i++){
+    var hL = tab[i].children[0].nodeName[1];
+    var tabContents = tab[i].getElementsByTagName("h"+String(Number(hL)+1));
+    var tabCon = document.createElement("div");
+    tabCon.className = "tab";
+    tab[i].insertBefore(tabCon,tabContents[0].parentNode);
+     for(j=0;j<tabContents.length;j++){
+         var tabConDiv = tabContents[j].parentNode;
+         var tabId = tabConDiv.getAttribute("id");
+         var tabNumber = tabConDiv.getAttribute("number").replaceAll('.','-');
+         var newID = tabNumber + '-' + tabId;
+         var button = document.createElement("button");
+         button.className = "tablinks";
+         button.setAttribute("onclick","openTab(event,'"+newID+"')");
+         button.innerText = tabId.split('-')[0];
+        //  button.innerText = tabContents[j].innerText;
+         tabCon.appendChild(button);
+         tabConDiv.setAttribute("id",newID);
+         tabConDiv.className = "tabcontent";
+         tabContents[j].innerHTML = "";
+         tabContents[j].className = "tabheader";
+     }
+     tabContents[0].parentNode.style.display = "block";
+     tabCon.children[0].className += " active"
+    }
+
+function openTab(evt,tabName){
+    var i, tabcontent, tablinks;
+//     tabcontent = document.getElementsByClassName("tabcontent");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//   }
+//     tablinks = document.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//     tablinks[i].className = tablinks[i].className.replace(" active", "");
+//   }
+//   document.getElementById(tabName).style.display = "block";
+//   evt.currentTarget.className += " active";
+    var container = evt.currentTarget.parentNode;
+    tabcontent = container.parentNode.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+  }
+    tablinks = container.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script><div class="giscus">
+<script src="https://giscus.app/client.js" data-repo="wangchenglong99/wangchenglong99.github.io" data-repo-id="R_kgDOI6UvHg" data-category="Announcements" data-category-id="DIC_kwDOI6UvHs4CUJAN" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light_high_contrast" data-lang="zh-CN" crossorigin="anonymous" async>
+</script><div></div>
+  
+
+  
+
+</div>
+<div class="chapter-nav">
+<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></div>
+<div class="next"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8"><span class="header-section-number">2</span> 数据获取与存储</a></li>
+<li>
+<a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="header-section-number">2.1</span> 文本文件</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%88%86%E9%9A%94%E6%96%87%E4%BB%B6"><span class="header-section-number">2.1.1</span> 分隔文件</a></li>
+<li><a class="nav-link" href="#json"><span class="header-section-number">2.1.2</span> json</a></li>
+<li><a class="nav-link" href="#html"><span class="header-section-number">2.1.3</span> html</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="header-section-number">2.2</span> 二进制</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#excel"><span class="header-section-number">2.2.1</span> excel</a></li>
+<li><a class="nav-link" href="#hdf5"><span class="header-section-number">2.2.2</span> HDF5</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/wangchenglong99/wangchenglong99.github.io/edit/main/%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2023-03-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</div>
+</body>
+</html>

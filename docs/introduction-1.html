@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>introduction | wcl</title>
+<meta name="author" content="introduction | wcl">
+<meta name="description" content="介绍了数据的编码，获取，清洗，操作。   /* Style the tab */ /* .tab {   overflow: hidden;   border: 1px solid #ccc;   background-color: #f1f1f1; } */ .tab {   overflow: hidden;   display: flex;   align-items:...">
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta property="og:title" content="introduction | wcl">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/introduction-1.html">
+<meta property="og:description" content="介绍了数据的编码，获取，清洗，操作。   /* Style the tab */ /* .tab {   overflow: hidden;   border: 1px solid #ccc;   background-color: #f1f1f1; } */ .tab {   overflow: hidden;   display: flex;   align-items:...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="introduction | wcl">
+<meta name="twitter:description" content="介绍了数据的编码，获取，清洗，操作。   /* Style the tab */ /* .tab {   overflow: hidden;   border: 1px solid #ccc;   background-color: #f1f1f1; } */ .tab {   overflow: hidden;   display: flex;   align-items:...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/d3-3.3.8/d3.min.js"></script><script src="libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/chromatography-0.1/chromatography.js"></script><script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script><style>
+    /* pre {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    pre[class] {
+      max-height: 100px;
+    } */
+
+    .scroll-200 {
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: inherit;
+    }
+    </style>
+<link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">wcl</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">关于</a></li>
+<li class="book-part">数据</li>
+<li><a class="active" href="introduction-1.html">introduction</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li class="book-part">可视化</li>
+<li><a class="" href="introduction-2.html">introduction</a></li>
+<li><a class="" href="matplotlib-1.html"><span class="header-section-number">6</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li class="book-part">数据库</li>
+<li><a class="" href="introduction-3.html">introduction</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li class="book-part">机器学习</li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/wangchenglong99/wangchenglong99.github.io">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="introduction-1" class="section level1 unnumbered">
+<h1>introduction<a class="anchor" aria-label="anchor" href="#introduction-1"><i class="fas fa-link"></i></a>
+</h1>
+<p>介绍了数据的编码，获取，清洗，操作。</p>
+
+</div>
+<style>
+
+/* Style the tab */
+/* .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+} */
+.tab {
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    /* margin-bottom: 8px; */
+    /* margin-left: -8px; */
+    /* margin-right: 0px; */
+    /* border-bottom:1px solid #e0e0e0; */
+    height: 32px;
+    /*flex-basis: 100px;*/
+    /* background-color: aliceblue; */
+}
+
+/* Style the buttons inside the tab */
+/* .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+} */
+
+.tab button {
+    background-color: inherit;
+    margin:0;
+    text-align: center;
+    font-weight: 500;
+    min-width: 100px;
+    /*width:fit-content;*/
+    height: 100%;
+    /* padding:5px,5px; */
+    border: none;
+    font-size: 1rem;
+    font-weight:400;
+    line-height: 32px;
+    letter-spacing: .5px;
+}
+
+/* Change background color of buttons on hover */
+/* .tab button:hover {
+    background-color: #ddd;
+} */
+.tab button:hover {
+    background-color: aliceblue;
+}
+
+/* Create an active/current tablink class */
+/* .tab button.active {
+    background-color: #ccc;
+} */
+.tab button.active {
+    border-bottom: 2px solid rgb(33,150,243);
+    background-color: aliceblue;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+/* Style the tab content */
+/* .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+} */
+.tabcontent {
+    display: none;
+    /* border: 1px solid aliceblue; */
+    /*background-color: aliceblue;*/
+    /* margin-left: -8px; */
+    /* margin-top: -8px; */
+ }
+
+.tabheader{
+    display: none;
+}
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+  margin-left: 0px;
+}
+</style>
+<script>
+    var tab = document.getElementsByClassName("tabset");
+    for(i=0;i<tab.length;i++){
+    var hL = tab[i].children[0].nodeName[1];
+    var tabContents = tab[i].getElementsByTagName("h"+String(Number(hL)+1));
+    var tabCon = document.createElement("div");
+    tabCon.className = "tab";
+    tab[i].insertBefore(tabCon,tabContents[0].parentNode);
+     for(j=0;j<tabContents.length;j++){
+         var tabConDiv = tabContents[j].parentNode;
+         var tabId = tabConDiv.getAttribute("id");
+         var tabNumber = tabConDiv.getAttribute("number").replaceAll('.','-');
+         var newID = tabNumber + '-' + tabId;
+         var button = document.createElement("button");
+         button.className = "tablinks";
+         button.setAttribute("onclick","openTab(event,'"+newID+"')");
+         button.innerText = tabId.split('-')[0];
+        //  button.innerText = tabContents[j].innerText;
+         tabCon.appendChild(button);
+         tabConDiv.setAttribute("id",newID);
+         tabConDiv.className = "tabcontent";
+         tabContents[j].innerHTML = "";
+         tabContents[j].className = "tabheader";
+     }
+     tabContents[0].parentNode.style.display = "block";
+     tabCon.children[0].className += " active"
+    }
+
+function openTab(evt,tabName){
+    var i, tabcontent, tablinks;
+//     tabcontent = document.getElementsByClassName("tabcontent");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//   }
+//     tablinks = document.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//     tablinks[i].className = tablinks[i].className.replace(" active", "");
+//   }
+//   document.getElementById(tabName).style.display = "block";
+//   evt.currentTarget.className += " active";
+    var container = evt.currentTarget.parentNode;
+    tabcontent = container.parentNode.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+  }
+    tablinks = container.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script><div class="giscus">
+<script src="https://giscus.app/client.js" data-repo="wangchenglong99/wangchenglong99.github.io" data-repo-id="R_kgDOI6UvHg" data-category="Announcements" data-category-id="DIC_kwDOI6UvHs4CUJAN" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light_high_contrast" data-lang="zh-CN" crossorigin="anonymous" async>
+</script><div></div>
+  
+
+  
+
+</div>
+<div class="chapter-nav">
+<div class="prev"><a href="index.html">关于</a></div>
+<div class="next"><a href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav"><li><a class="nav-link" href="#introduction-1">introduction</a></li></ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/%E6%95%B0%E6%8D%AE.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/wangchenglong99/wangchenglong99.github.io/edit/main/%E6%95%B0%E6%8D%AE.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2023-03-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</div>
+</body>
+</html>

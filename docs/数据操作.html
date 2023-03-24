@@ -1,0 +1,3304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>第4章 数据操作 | wcl</title>
+<meta name="author" content="第4章 数据操作 | wcl">
+<meta name="description" content="import pandas as pd import numpy as np import matplotlib.pyplot as plt pd.set_option('mode.chained_assignment', None) plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta property="og:title" content="第4章 数据操作 | wcl">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/数据操作.html">
+<meta property="og:description" content="import pandas as pd import numpy as np import matplotlib.pyplot as plt pd.set_option('mode.chained_assignment', None) plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第4章 数据操作 | wcl">
+<meta name="twitter:description" content="import pandas as pd import numpy as np import matplotlib.pyplot as plt pd.set_option('mode.chained_assignment', None) plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/d3-3.3.8/d3.min.js"></script><script src="libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/chromatography-0.1/chromatography.js"></script><script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script><style>
+    /* pre {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    pre[class] {
+      max-height: 100px;
+    } */
+
+    .scroll-200 {
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: inherit;
+    }
+    </style>
+<link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">wcl</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">关于</a></li>
+<li class="book-part">数据</li>
+<li><a class="" href="introduction-1.html">introduction</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
+<li><a class="active" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li class="book-part">可视化</li>
+<li><a class="" href="introduction-2.html">introduction</a></li>
+<li><a class="" href="matplotlib-1.html"><span class="header-section-number">6</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li class="book-part">数据库</li>
+<li><a class="" href="introduction-3.html">introduction</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li class="book-part">机器学习</li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/wangchenglong99/wangchenglong99.github.io">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据操作" class="section level1" number="4">
+<h1>
+<span class="header-section-number">第4章</span> 数据操作<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><i class="fas fa-link"></i></a>
+</h1>
+<div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb83-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb83-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb83-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-4" aria-hidden="true" tabindex="-1"></a>pd.set_option(<span class="st">'mode.chained_assignment'</span>, <span class="va">None</span>)</span>
+<span id="cb83-5"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-5" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.sans-serif'</span>]<span class="op">=</span>[<span class="st">'Simhei'</span>]<span class="op">;</span> <span class="co">#SimHei黑体 </span></span>
+<span id="cb83-6"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-6" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>]<span class="op">=</span><span class="va">False</span><span class="op">;</span> <span class="co">#正常显示图中负号</span></span>
+<span id="cb83-7"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-7" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"data/数据/学生.csv"</span>)</span>
+<span id="cb83-8"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-8" aria-hidden="true" tabindex="-1"></a>sd <span class="op">=</span> data.head()</span>
+<span id="cb83-9"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-9" aria-hidden="true" tabindex="-1"></a>sd.columns <span class="op">=</span> [<span class="st">"name"</span>,<span class="st">"sex"</span>,<span class="st">"class"</span>,<span class="st">"math"</span>,<span class="st">"chinese"</span>,<span class="st">"english"</span>]</span>
+<span id="cb83-10"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-10" aria-hidden="true" tabindex="-1"></a>data.head().pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>姓名</th>
+<th>性别</th>
+<th>班级</th>
+<th>数学</th>
+<th>语文</th>
+<th>英语</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>男</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>女</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>女</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>男</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a5</td>
+<td>男</td>
+<td>高一(5)班</td>
+<td>56</td>
+<td>83</td>
+<td>72</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb84-1" aria-hidden="true" tabindex="-1"></a>sd.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>name</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>男</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>女</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>女</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>男</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a5</td>
+<td>男</td>
+<td>高一(5)班</td>
+<td>56</td>
+<td>83</td>
+<td>72</td>
+</tr>
+</tbody>
+</table></div>
+<div id="列" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> 列<a class="anchor" aria-label="anchor" href="#%E5%88%97"><i class="fas fa-link"></i></a>
+</h2>
+<div class="sourceCode" id="cb85"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb85-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb85-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-2" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(</span>
+<span id="cb85-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-3" aria-hidden="true" tabindex="-1"></a>  [</span>
+<span id="cb85-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-4" aria-hidden="true" tabindex="-1"></a>   [<span class="st">"返回列名"</span>,<span class="st">"sd.columns&lt;br/&gt;</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(sd.columns)],</span>
+<span id="cb85-5"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-5" aria-hidden="true" tabindex="-1"></a>   [<span class="st">"非列表"</span>,<span class="st">"type(sd.columns):</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="bu">type</span>(sd.columns))]</span>
+<span id="cb85-6"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-6" aria-hidden="true" tabindex="-1"></a>],columns<span class="op">=</span>[<span class="st">"特性"</span>,<span class="st">"操作"</span>]</span>
+<span id="cb85-7"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb85-8"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-8" aria-hidden="true" tabindex="-1"></a>.set_index(<span class="st">"特性"</span>)</span>
+<span id="cb85-9"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-9" aria-hidden="true" tabindex="-1"></a>.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span>
+<span id="cb85-10"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb85-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="9%">
+<col width="90%">
+</colgroup>
+<thead><tr class="header">
+<th>特性</th>
+<th>操作</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>返回列名</td>
+<td>sd.columns<br>Index([‘name’, ‘sex’, ‘class’, ‘math’, ‘chinese’, ‘english’], dtype=‘object’)</td>
+</tr>
+<tr class="even">
+<td>非列表</td>
+<td>type(sd.columns):&lt;class ‘pandas.core.indexes.base.Index’&gt;</td>
+</tr>
+</tbody>
+</table></div>
+<div id="选取列" class="section level3 tabset" number="4.1.1">
+<h3>
+<span class="header-section-number">4.1.1</span> 选取列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%88%97"><i class="fas fa-link"></i></a>
+</h3>
+<div id="选取一列" class="section level4" number="4.1.1.1">
+<h4>
+<span class="header-section-number">4.1.1.1</span> 选取一列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E4%B8%80%E5%88%97"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb86-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-2" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(</span>
+<span id="cb86-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-3" aria-hidden="true" tabindex="-1"></a>  [</span>
+<span id="cb86-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-4" aria-hidden="true" tabindex="-1"></a>    [<span class="st">"sd.sex"</span>,<span class="st">"返回序列,列名不能存在空格&lt;br/&gt;</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(sd.sex).replace(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,<span class="st">"&lt;br/&gt;"</span>)],</span>
+<span id="cb86-5"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-5" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'sd["sex"]'</span>,<span class="st">"返回序列&lt;br/&gt;</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(sd[<span class="st">"sex"</span>]).replace(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,<span class="st">"&lt;br/&gt;"</span>)],</span>
+<span id="cb86-6"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-6" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'sd[["sex"]]'</span>,<span class="st">"返回数据框，数据框的任何切片返回的都是数据框&lt;br/&gt;</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(sd[[<span class="st">"sex"</span>]]).replace(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,<span class="st">"&lt;br/&gt;"</span>)]</span>
+<span id="cb86-7"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-7" aria-hidden="true" tabindex="-1"></a>],columns<span class="op">=</span>[<span class="st">"方法"</span>,<span class="st">"解释"</span>]</span>
+<span id="cb86-8"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb86-9"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-9" aria-hidden="true" tabindex="-1"></a>.set_index(<span class="st">"方法"</span>)</span>
+<span id="cb86-10"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-10" aria-hidden="true" tabindex="-1"></a>.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span>
+<span id="cb86-11"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="10%">
+<col width="89%">
+</colgroup>
+<thead><tr class="header">
+<th>方法</th>
+<th>解释</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>sd.sex</td>
+<td>返回序列,列名不能存在空格<br>0 男<br>1 女<br>2 女<br>3 男<br>4 男<br>Name: sex, dtype: object</td>
+</tr>
+<tr class="even">
+<td>sd[“sex”]</td>
+<td>返回序列<br>0 男<br>1 女<br>2 女<br>3 男<br>4 男<br>Name: sex, dtype: object</td>
+</tr>
+<tr class="odd">
+<td>sd[[“sex”]]</td>
+<td>返回数据框，数据框的任何切片返回的都是数据框<br> sex<br>0 男<br>1 女<br>2 女<br>3 男<br>4 男</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="选取多列" class="section level4" number="4.1.1.2">
+<h4>
+<span class="header-section-number">4.1.1.2</span> 选取多列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%A4%9A%E5%88%97"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb87"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb87-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb87-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb87-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb87-2" aria-hidden="true" tabindex="-1"></a>  pd.DataFrame(</span>
+<span id="cb87-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb87-3" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb87-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb87-4" aria-hidden="true" tabindex="-1"></a>      [<span class="st">'sd[["name","sex"]]'</span>,<span class="st">"</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(sd[[<span class="st">"name"</span>,<span class="st">"sex"</span>]]).replace(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>,<span class="st">"&lt;/br&gt;"</span>)],</span>
+<span id="cb87-5"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb87-5" aria-hidden="true" tabindex="-1"></a>],columns<span class="op">=</span>[<span class="st">"方法"</span>,<span class="st">"解释"</span>]</span>
+<span id="cb87-6"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb87-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb87-7"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb87-7" aria-hidden="true" tabindex="-1"></a>.set_index(<span class="st">"方法"</span>)</span>
+<span id="cb87-8"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb87-8" aria-hidden="true" tabindex="-1"></a>.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span>
+<span id="cb87-9"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb87-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="18%">
+<col width="81%">
+</colgroup>
+<thead><tr class="header">
+<th>方法</th>
+<th>解释</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td>sd[[“name”,“sex”]]</td>
+<td>name sex0 a1 男1 a2 女2 a3 女3 a4 男4 a5 男</td>
+</tr></tbody>
+</table></div>
+</div>
+<div id="根据类型选取列" class="section level4" number="4.1.1.3">
+<h4>
+<span class="header-section-number">4.1.1.3</span> 根据类型选取列<a class="anchor" aria-label="anchor" href="#%E6%A0%B9%E6%8D%AE%E7%B1%BB%E5%9E%8B%E9%80%89%E5%8F%96%E5%88%97"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb88"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb88-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb88-1" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb88-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb88-2" aria-hidden="true" tabindex="-1"></a>sd.select_dtypes(include<span class="op">=</span>[<span class="bu">int</span>])</span>
+<span id="cb88-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb88-3" aria-hidden="true" tabindex="-1"></a>.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span>
+<span id="cb88-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb88-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>56</td>
+<td>83</td>
+<td>72</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="增加列" class="section level3 tabset" number="4.1.2">
+<h3>
+<span class="header-section-number">4.1.2</span> 增加列<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><i class="fas fa-link"></i></a>
+</h3>
+<div id="增加一列" class="section level4" number="4.1.2.1">
+<h4>
+<span class="header-section-number">4.1.2.1</span> 增加一列<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E5%88%97"><i class="fas fa-link"></i></a>
+</h4>
+<p>本质上是增加相同长度的序列,例外情况是当添加序列时存在<code>对齐</code>的情况</p>
+<p>会存在SettingWithCopyWarning, 关闭命令:<code>pd.set_option('mode.chained_assignment', None)</code></p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb89-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 增加相同长度的序列</span></span>
+<span id="cb89-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="co"># sd.newcol1 = np.random.randn(5)不允许属性方式</span></span>
+<span id="cb89-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 通过计算</span></span>
+<span id="cb89-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb89-4" aria-hidden="true" tabindex="-1"></a>sd[<span class="st">"total"</span>] <span class="op">=</span> sd.math <span class="op">+</span> sd.english <span class="op">+</span> sd.chinese</span>
+<span id="cb89-5"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb89-5" aria-hidden="true" tabindex="-1"></a>sd[<span class="st">"newcol2"</span>] <span class="op">=</span> np.random.randn(<span class="dv">5</span>)</span>
+<span id="cb89-6"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb89-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 通过序列的index对齐,最好不要这样做</span></span>
+<span id="cb89-7"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb89-7" aria-hidden="true" tabindex="-1"></a>age <span class="op">=</span> pd.Series([<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>],index<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>])</span>
+<span id="cb89-8"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb89-8" aria-hidden="true" tabindex="-1"></a>sd[<span class="st">"age"</span>] <span class="op">=</span> age</span>
+<span id="cb89-9"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb89-9" aria-hidden="true" tabindex="-1"></a>sd.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="4%">
+<col width="9%">
+<col width="7%">
+<col width="12%">
+<col width="9%">
+<col width="12%">
+<col width="12%">
+<col width="10%">
+<col width="13%">
+<col width="7%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>name</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+<th>total</th>
+<th>newcol2</th>
+<th>age</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>男</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>0.0863531</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>女</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>1.07214</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>女</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+<td>212</td>
+<td>0.427536</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>男</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>-0.928761</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a5</td>
+<td>男</td>
+<td>高一(5)班</td>
+<td>56</td>
+<td>83</td>
+<td>72</td>
+<td>211</td>
+<td>-0.524937</td>
+<td>nan</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="增加多列" class="section level4" number="4.1.2.2">
+<h4>
+<span class="header-section-number">4.1.2.2</span> 增加多列<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E5%A4%9A%E5%88%97"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 直接赋值</span></span>
+<span id="cb90-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb90-2" aria-hidden="true" tabindex="-1"></a>sd[[<span class="st">"newcol3"</span>,<span class="st">"newcol4"</span>]] <span class="op">=</span> np.ones((<span class="dv">5</span>,<span class="dv">2</span>))</span>
+<span id="cb90-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb90-3" aria-hidden="true" tabindex="-1"></a>sd.iloc[:,<span class="op">-</span><span class="dv">5</span>:].pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>total</th>
+<th>newcol2</th>
+<th>age</th>
+<th>newcol3</th>
+<th>newcol4</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>190</td>
+<td>0.0863531</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>213</td>
+<td>1.07214</td>
+<td>12</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>212</td>
+<td>0.427536</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>193</td>
+<td>-0.928761</td>
+<td>13</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>211</td>
+<td>-0.524937</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="assign" class="section level4" number="4.1.2.3">
+<h4>
+<span class="header-section-number">4.1.2.3</span> assign<a class="anchor" aria-label="anchor" href="#assign"><i class="fas fa-link"></i></a>
+</h4>
+<p>assign函数的优点在于当我们并没有DataFrame的引用时，我们只需传递一个可调用对象定义一个操作链即可</p>
+<p>返回副本</p>
+<p>参数是**kwargs，既可以是等式也可以是lambda 函数（x是assigned to的数据框），函数名和表达式名是列名，（python&gt;=3.6）,后面的参数可以引用前面的参数创造出来的列</p>
+<pre><code>dfa = pd.DataFrame({"A": [1, 2, 3], "B": [4, 5, 6]})
+dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb92-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb92-1" aria-hidden="true" tabindex="-1"></a>sd.assign(newcol5 <span class="op">=</span> sd.newcol3<span class="op">+</span>sd.newcol4).iloc[:,<span class="op">-</span><span class="dv">5</span>:].pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>newcol2</th>
+<th>age</th>
+<th>newcol3</th>
+<th>newcol4</th>
+<th>newcol5</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.0863531</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1.07214</td>
+<td>12</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.427536</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>-0.928761</td>
+<td>13</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>-0.524937</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb93-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb93-1" aria-hidden="true" tabindex="-1"></a>sd.assign(newcol6 <span class="op">=</span> <span class="kw">lambda</span> df:df.newcol2<span class="op">*</span>df.newcol4).iloc[:,<span class="op">-</span><span class="dv">5</span>:].pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))<span class="co">#df代表操作的df</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>newcol2</th>
+<th>age</th>
+<th>newcol3</th>
+<th>newcol4</th>
+<th>newcol6</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0.0863531</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+<td>0.0863531</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1.07214</td>
+<td>12</td>
+<td>1</td>
+<td>1</td>
+<td>1.07214</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>0.427536</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+<td>0.427536</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>-0.928761</td>
+<td>13</td>
+<td>1</td>
+<td>1</td>
+<td>-0.928761</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>-0.524937</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+<td>-0.524937</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="insert" class="section level4" number="4.1.2.4">
+<h4>
+<span class="header-section-number">4.1.2.4</span> insert<a class="anchor" aria-label="anchor" href="#insert"><i class="fas fa-link"></i></a>
+</h4>
+<p>可以选择位置添加列，操作原数据</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb94-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb94-1" aria-hidden="true" tabindex="-1"></a>sd.insert(<span class="dv">1</span>,<span class="st">"newcol1"</span>,sd.sex)<span class="co">#location,name,data</span></span>
+<span id="cb94-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb94-2" aria-hidden="true" tabindex="-1"></a>sd.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="3%">
+<col width="6%">
+<col width="9%">
+<col width="5%">
+<col width="9%">
+<col width="6%">
+<col width="9%">
+<col width="9%">
+<col width="7%">
+<col width="9%">
+<col width="5%">
+<col width="9%">
+<col width="9%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>name</th>
+<th>newcol1</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+<th>total</th>
+<th>newcol2</th>
+<th>age</th>
+<th>newcol3</th>
+<th>newcol4</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>男</td>
+<td>男</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>0.0863531</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>女</td>
+<td>女</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>1.07214</td>
+<td>12</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>女</td>
+<td>女</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+<td>212</td>
+<td>0.427536</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>男</td>
+<td>男</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>-0.928761</td>
+<td>13</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a5</td>
+<td>男</td>
+<td>男</td>
+<td>高一(5)班</td>
+<td>56</td>
+<td>83</td>
+<td>72</td>
+<td>211</td>
+<td>-0.524937</td>
+<td>nan</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="merge" class="section level4" number="4.1.2.5">
+<h4>
+<span class="header-section-number">4.1.2.5</span> merge<a class="anchor" aria-label="anchor" href="#merge"><i class="fas fa-link"></i></a>
+</h4>
+<p>pandas provides a single function, merge(), as the entry point for all standard database join operations between DataFrame or named Series objects:</p>
+<pre><code>pd.merge(
+left,#DataFrame or named Series
+right,#DataFrame or named Series
+how="inner",# 'left','right','outer','inner','cross'
+on=None,#当left与right的关系列同名时，使用on,如果没有被传递且left_index和right_index都是False,he intersection of the columns in the DataFrames and/or Series will be inferred to be the join keys.
+left_on=None,#left中被用作key的列名
+right_on=None,#right中被用作key的列名
+left_index=False,#if True,index被用作key
+right_index=False,# if True,index被用作key
+sort=True,#sort by tht join key
+suffixes=("_x", "_y"),#当合并过后的对象仍然存在着来自两个不同对象的相同列名，可以加后缀
+copy=True,
+indicator=False,
+validate=None,#检查是一对多等等
+)</code></pre>
+<ul>
+<li>how</li>
+</ul>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="33%">
+<col width="33%">
+<col width="33%">
+</colgroup>
+<thead><tr class="header">
+<th>Merge method</th>
+<th>SQL Join Name</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>left</td>
+<td>LEFT OUTER JOIN</td>
+<td>Use keys from left frame only</td>
+</tr>
+<tr class="even">
+<td>right</td>
+<td>RIGHT OUTER JOIN</td>
+<td>Use keys from right frame only</td>
+</tr>
+<tr class="odd">
+<td>outer</td>
+<td>FULL OUTER JOIN</td>
+<td>Use union of keys from both frames</td>
+</tr>
+<tr class="even">
+<td>inner</td>
+<td>INNER JOIN</td>
+<td>Use intersection of keys from both frames</td>
+</tr>
+<tr class="odd">
+<td>cross</td>
+<td>CROSS JOIN</td>
+<td>Create the cartesian product of rows of both frames</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>validate:当不满足validate设置的参数时，会发生报错
+<ul>
+<li>“one_to_one” or “1:1”: checks if merge keys are unique in both left and right datasets.</li>
+<li>“one_to_many” or “1:m”: checks if merge keys are unique in left dataset.</li>
+<li>“many_to_one” or “m:1”: checks if merge keys are unique in right dataset.</li>
+<li>“many_to_many” or “m:m”: allowed, but does not result in checks.</li>
+</ul>
+</li>
+<li>indicator
+<ul>
+<li>当设置为True时，可以添加一列表明该行的key存在于left还是right还是both都有</li>
+<li>当设置为字符串时，该列的名则为该字符串</li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb96-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">"col1"</span>: [<span class="dv">0</span>, <span class="dv">1</span>], <span class="st">"col_left"</span>: [<span class="st">"a"</span>, <span class="st">"b"</span>]})</span>
+<span id="cb96-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb96-2" aria-hidden="true" tabindex="-1"></a>df2 <span class="op">=</span> pd.DataFrame({<span class="st">"col1"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>], <span class="st">"col_right"</span>: [<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>]})</span>
+<span id="cb96-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb96-3" aria-hidden="true" tabindex="-1"></a>pd.merge(df1, df2, on<span class="op">=</span><span class="st">"col1"</span>, how<span class="op">=</span><span class="st">"outer"</span>, indicator<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>   col1 col_left  col_right      _merge
+0     0        a        NaN   left_only
+1     1        b        2.0        both
+2     2      NaN        2.0  right_only
+3     2      NaN        2.0  right_only</code></pre>
+</div>
+<div id="join" class="section level4" number="4.1.2.6">
+<h4>
+<span class="header-section-number">4.1.2.6</span> join<a class="anchor" aria-label="anchor" href="#join"><i class="fas fa-link"></i></a>
+</h4>
+<pre><code>DataFrame.join():
+left.join(right)#按照index，how='left'的方式来join，join后索引依然是索引
+左右一个MultiIndex,一个singly-indexed，将会匹配两个index中的同名的level，所以传入的index应该有name,最后所有level都会被保存
+两边都是MultiIndex,则右边的所有level的index都会被匹配，且必须是左边的index的子集
+当两边是MultiIndex，但是只需要匹配一个时，可以result = pd.merge(left.reset_index(), right.reset_index(), on=["key"], how="inner").set_index(["key", "X", "Y"])
+left.join(right,on=key_or_Keys)，左边的列和右边的index，保留左边的index         pd.merge(left,right,left_on=key_or_keys, right_index=True, how="left", sort=False)
+left.join(right,on=keys) 则right必须是Multiindex
+left.join(right,lsuffix="_x",rsuffix="_r")#可以给两个同名列加后缀
+left.join([right1,right2]):可以根据index合并多个DataFrame</code></pre>
+</div>
+</div>
+<div id="替换列" class="section level3" number="4.1.3">
+<h3>
+<span class="header-section-number">4.1.3</span> 替换列<a class="anchor" aria-label="anchor" href="#%E6%9B%BF%E6%8D%A2%E5%88%97"><i class="fas fa-link"></i></a>
+</h3>
+<p>利用增加同名列替换列</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb99-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb99-1" aria-hidden="true" tabindex="-1"></a>sd[<span class="st">"sex"</span>] <span class="op">=</span> sd.sex.<span class="bu">map</span>({<span class="st">"男"</span>:<span class="st">"men"</span>,<span class="st">"女"</span>:<span class="st">"women"</span>})</span>
+<span id="cb99-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb99-2" aria-hidden="true" tabindex="-1"></a>sd.iloc[:,:<span class="dv">5</span>].pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>name</th>
+<th>newcol1</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>男</td>
+<td>men</td>
+<td>高一(1)班</td>
+<td>61</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>女</td>
+<td>women</td>
+<td>高一(2)班</td>
+<td>62</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>女</td>
+<td>women</td>
+<td>高一(3)班</td>
+<td>58</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>男</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a5</td>
+<td>男</td>
+<td>men</td>
+<td>高一(5)班</td>
+<td>56</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="删除列" class="section level3 tabset" number="4.1.4">
+<h3>
+<span class="header-section-number">4.1.4</span> 删除列<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E5%88%97"><i class="fas fa-link"></i></a>
+</h3>
+<div id="del" class="section level4" number="4.1.4.1">
+<h4>
+<span class="header-section-number">4.1.4.1</span> del<a class="anchor" aria-label="anchor" href="#del"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb100"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb100-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> sd[<span class="st">"newcol4"</span>]<span class="co">#直接删除</span></span>
+<span id="cb100-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="co"># del sd.newcol3 不支持属性</span></span></code></pre></div>
+</div>
+<div id="dropaxis" class="section level4" number="4.1.4.2">
+<h4>
+<span class="header-section-number">4.1.4.2</span> .drop(axis)<a class="anchor" aria-label="anchor" href="#dropaxis"><i class="fas fa-link"></i></a>
+</h4>
+<p>使用drop方法一定要指定axis，返回副本</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb101-1" aria-hidden="true" tabindex="-1"></a>sd.drop([<span class="st">"newcol2"</span>,<span class="st">"newcol3"</span>],axis<span class="op">=</span><span class="dv">1</span>).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))<span class="co">#返回副本</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="4%">
+<col width="9%">
+<col width="12%">
+<col width="8%">
+<col width="12%">
+<col width="9%">
+<col width="12%">
+<col width="12%">
+<col width="10%">
+<col width="8%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>name</th>
+<th>newcol1</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+<th>total</th>
+<th>age</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>男</td>
+<td>men</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>女</td>
+<td>women</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>女</td>
+<td>women</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+<td>212</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>男</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a5</td>
+<td>男</td>
+<td>men</td>
+<td>高一(5)班</td>
+<td>56</td>
+<td>83</td>
+<td>72</td>
+<td>211</td>
+<td>nan</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="pop" class="section level4" number="4.1.4.3">
+<h4>
+<span class="header-section-number">4.1.4.3</span> .pop()<a class="anchor" aria-label="anchor" href="#pop"><i class="fas fa-link"></i></a>
+</h4>
+<p>删除列，并且返回列，</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb102-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb102-1" aria-hidden="true" tabindex="-1"></a>sd.pop(<span class="st">"newcol3"</span>)</span></code></pre></div>
+<p>0 1.0
+1 1.0
+2 1.0
+3 1.0
+4 1.0
+Name: newcol3, dtype: float64</p>
+<div class="sourceCode" id="cb103"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb103-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb103-1" aria-hidden="true" tabindex="-1"></a>sd.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="4%">
+<col width="8%">
+<col width="11%">
+<col width="7%">
+<col width="11%">
+<col width="8%">
+<col width="11%">
+<col width="11%">
+<col width="9%">
+<col width="12%">
+<col width="7%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>name</th>
+<th>newcol1</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+<th>total</th>
+<th>newcol2</th>
+<th>age</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>男</td>
+<td>men</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>0.0863531</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>女</td>
+<td>women</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>1.07214</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>女</td>
+<td>women</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+<td>212</td>
+<td>0.427536</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>男</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>-0.928761</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a5</td>
+<td>男</td>
+<td>men</td>
+<td>高一(5)班</td>
+<td>56</td>
+<td>83</td>
+<td>72</td>
+<td>211</td>
+<td>-0.524937</td>
+<td>nan</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> sd[<span class="st">"newcol2"</span>]</span>
+<span id="cb104-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb104-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> sd[<span class="st">"newcol1"</span>]</span></code></pre></div>
+</div>
+</div>
+</div>
+<div id="行" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> 行<a class="anchor" aria-label="anchor" href="#%E8%A1%8C"><i class="fas fa-link"></i></a>
+</h2>
+<div id="选取行" class="section level3 tabset" number="4.2.1">
+<h3>
+<span class="header-section-number">4.2.1</span> 选取行<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E8%A1%8C"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>选取的行的索引就是原数据的索引，不会重新自然排列.</strong></p>
+<div id="直接选取" class="section level4" number="4.2.1.1">
+<h4>
+<span class="header-section-number">4.2.1.1</span> 直接选取<a class="anchor" aria-label="anchor" href="#%E7%9B%B4%E6%8E%A5%E9%80%89%E5%8F%96"><i class="fas fa-link"></i></a>
+</h4>
+<p>可以直接利用切片选择行</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb105-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb105-1" aria-hidden="true" tabindex="-1"></a>sd[:<span class="dv">1</span>]<span class="co">#选取第一行</span></span></code></pre></div>
+<pre class="scroll-200"><code>  name  sex   class  math  chinese  english  total  age
+0   a1  men  高一(1)班    61       59       70    190  NaN</code></pre>
+<div class="sourceCode" id="cb107"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb107-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb107-1" aria-hidden="true" tabindex="-1"></a>sd.loc[<span class="dv">0</span>]<span class="co">#根据行标签</span></span></code></pre></div>
+<pre class="scroll-200"><code>name           a1
+sex           men
+class      高一(1)班
+math           61
+chinese        59
+english        70
+total         190
+age           NaN
+Name: 0, dtype: object</code></pre>
+<div class="sourceCode" id="cb109"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb109-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb109-1" aria-hidden="true" tabindex="-1"></a>sd.iloc[<span class="dv">0</span>]<span class="co">#根据行位置</span></span></code></pre></div>
+<pre class="scroll-200"><code>name           a1
+sex           men
+class      高一(1)班
+math           61
+chinese        59
+english        70
+total         190
+age           NaN
+Name: 0, dtype: object</code></pre>
+<div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb111-1" aria-hidden="true" tabindex="-1"></a>sd.iloc[<span class="dv">0</span>:<span class="dv">3</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>  name    sex   class  math  chinese  english  total   age
+0   a1    men  高一(1)班    61       59       70    190   NaN
+1   a2  women  高一(2)班    62       77       74    213  12.0
+2   a3  women  高一(3)班    58       71       83    212   NaN</code></pre>
+</div>
+<div id="take" class="section level4" number="4.2.1.2">
+<h4>
+<span class="header-section-number">4.2.1.2</span> .take()<a class="anchor" aria-label="anchor" href="#take"><i class="fas fa-link"></i></a>
+</h4>
+<pre><code>s.take([[0,1,3]])
+df.take([1,4,3])
+frm.take([0,2],axis=1)
+不支持Boolean indices</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb114-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb114-1" aria-hidden="true" tabindex="-1"></a>sd.take([<span class="dv">0</span>,<span class="dv">1</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="5%">
+<col width="10%">
+<col width="9%">
+<col width="14%">
+<col width="10%">
+<col width="14%">
+<col width="14%">
+<col width="11%">
+<col width="9%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>name</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+<th>total</th>
+<th>age</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>men</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>women</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>12</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="逻辑选取" class="section level4" number="4.2.1.3">
+<h4>
+<span class="header-section-number">4.2.1.3</span> 逻辑选取<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E9%80%89%E5%8F%96"><i class="fas fa-link"></i></a>
+</h4>
+<p>注意逻辑选取后的索引不会编程自然索引，依然保持原索引</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb115-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb115-1" aria-hidden="true" tabindex="-1"></a>sd[sd.math <span class="op">&gt;</span> <span class="dv">80</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>Empty DataFrame
+Columns: [name, sex, class, math, chinese, english, total, age]
+Index: []</code></pre>
+<div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb117-1" aria-hidden="true" tabindex="-1"></a>sd[[<span class="va">True</span>,<span class="va">False</span>,<span class="va">True</span>,<span class="va">False</span>,<span class="va">True</span>]]</span></code></pre></div>
+<pre class="scroll-200"><code>  name    sex   class  math  chinese  english  total  age
+0   a1    men  高一(1)班    61       59       70    190  NaN
+2   a3  women  高一(3)班    58       71       83    212  NaN
+4   a5    men  高一(5)班    56       83       72    211  NaN</code></pre>
+</div>
+<div id="query" class="section level4" number="4.2.1.4">
+<h4>
+<span class="header-section-number">4.2.1.4</span> .query()<a class="anchor" aria-label="anchor" href="#query"><i class="fas fa-link"></i></a>
+</h4>
+<p>query也是逻辑选取，但是可以用简便的语言操作比较复杂的逻辑，以字符串的形式设置条件</p>
+<pre><code>df.query('a&lt;b and b&lt;c')
+df.query('index_name&lt;column_name')#当index_name与column name重名时，优先考虑index_name
+df.query('index &lt; column_name')
+df.query('ilevel_0 == ')#means “index level 0” for the 0th level of the index
+df.query('a in b') == df[df['a'].isin(df['b')]
+df.query('a == ['a','b','c']') == df[df['a'].isin(['a','b','c])]# !=
+df.query('~bools')</code></pre>
+<p>使用query()的情况:当有很多个表格有着相同的列名，需要进行相同的操作，则可以map(lambda frame: frame.query(expr), [df, df2])</p>
+</div>
+</div>
+<div id="增加行" class="section level3 tabset" number="4.2.2">
+<h3>
+<span class="header-section-number">4.2.2</span> 增加行<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E8%A1%8C"><i class="fas fa-link"></i></a>
+</h3>
+<p>append方法不能用了，主要就是为了增加数据集。</p>
+<div id="concat" class="section level4" number="4.2.2.1">
+<h4>
+<span class="header-section-number">4.2.2.1</span> .concat()<a class="anchor" aria-label="anchor" href="#concat"><i class="fas fa-link"></i></a>
+</h4>
+<p>根据列名或行名触发对齐机制,返回副本</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb120-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb120-1" aria-hidden="true" tabindex="-1"></a>pd.concat(</span>
+<span id="cb120-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb120-2" aria-hidden="true" tabindex="-1"></a>  [sd,pd.DataFrame([[<span class="st">"a6"</span>,<span class="st">"add"</span>]],columns<span class="op">=</span>[<span class="st">"name"</span>,<span class="st">"notexist"</span>])],</span>
+<span id="cb120-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb120-3" aria-hidden="true" tabindex="-1"></a>  axis <span class="op">=</span><span class="dv">0</span></span>
+<span id="cb120-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb120-4" aria-hidden="true" tabindex="-1"></a>).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="4%">
+<col width="9%">
+<col width="7%">
+<col width="12%">
+<col width="9%">
+<col width="12%">
+<col width="12%">
+<col width="10%">
+<col width="7%">
+<col width="13%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>name</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+<th>total</th>
+<th>age</th>
+<th>notexist</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>men</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>women</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>12</td>
+<td>nan</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>women</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+<td>212</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+<td>nan</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a5</td>
+<td>men</td>
+<td>高一(5)班</td>
+<td>56</td>
+<td>83</td>
+<td>72</td>
+<td>211</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>a6</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+<td>add</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>.concat():沿着某条轴，合并DataFrame或Series，默认沿着行合并，index合并，轴标签取union
+<ul>
+<li>axis:{0,1,…}</li>
+<li>join:{‘inner’,‘outer’}</li>
+<li>default:outer for union；inner:intersection</li>
+<li>ignore_index:default False ,设置为真时，原有concatenation axis上的value不被使用，重设为0,…,n-1</li>
+<li>keys:Construct hierarchical index using the passed keys as the outermost level.可以标识数据是从那个原数据合并过来的</li>
+<li>levels:list of sequences, default None. Specific levels (unique values) to use for constructing a MultiIndex. Otherwise they will be inferred from the keys.</li>
+<li>names:names for the levels in the resulting hirechical index</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="替换行" class="section level3" number="4.2.3">
+<h3>
+<span class="header-section-number">4.2.3</span> 替换行<a class="anchor" aria-label="anchor" href="#%E6%9B%BF%E6%8D%A2%E8%A1%8C"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb121"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb121-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb121-1" aria-hidden="true" tabindex="-1"></a>sd[<span class="dv">4</span>:<span class="dv">5</span>] <span class="op">=</span> sd[<span class="dv">3</span>:<span class="dv">4</span>]</span>
+<span id="cb121-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb121-2" aria-hidden="true" tabindex="-1"></a>sd.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="5%">
+<col width="10%">
+<col width="9%">
+<col width="14%">
+<col width="10%">
+<col width="14%">
+<col width="14%">
+<col width="11%">
+<col width="9%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>name</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+<th>total</th>
+<th>age</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>men</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>women</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>women</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+<td>212</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a4</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="删除行" class="section level3" number="4.2.4">
+<h3>
+<span class="header-section-number">4.2.4</span> 删除行<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E8%A1%8C"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb122"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb122-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb122-1" aria-hidden="true" tabindex="-1"></a>sd.drop(<span class="dv">4</span>,axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>  name    sex   class  math  chinese  english  total   age
+0   a1    men  高一(1)班    61       59       70    190   NaN
+1   a2  women  高一(2)班    62       77       74    213  12.0
+2   a3  women  高一(3)班    58       71       83    212   NaN
+3   a4    men  高一(4)班    65       57       71    193  13.0</code></pre>
+</div>
+</div>
+<div id="任意值scalar" class="section level2" number="4.3">
+<h2>
+<span class="header-section-number">4.3</span> 任意值/scalar<a class="anchor" aria-label="anchor" href="#%E4%BB%BB%E6%84%8F%E5%80%BCscalar"><i class="fas fa-link"></i></a>
+</h2>
+<p>也就是行索引和列索引的组合</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>Object Type</th>
+<th>Indexers</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Series</td>
+<td>s.loc[indexer]</td>
+</tr>
+<tr class="even">
+<td>DataFrame</td>
+<td>df.loc[row_indexer,column_indexer]</td>
+</tr>
+</tbody>
+</table></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>Object Type</th>
+<th>Selection</th>
+<th>Return Value Type</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Series</td>
+<td>series[label]</td>
+<td>scalar value</td>
+</tr>
+<tr class="even">
+<td>DataFrame</td>
+<td>frame[colname]</td>
+<td>Series corresponding to colname</td>
+</tr>
+</tbody>
+</table></div>
+<div id="ilocloc" class="section level3" number="4.3.1">
+<h3>
+<span class="header-section-number">4.3.1</span> .iloc/loc<a class="anchor" aria-label="anchor" href="#ilocloc"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>.loc<a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a>
+<ul>
+<li>.loc[‘a’]</li>
+<li>.loc[[‘a’,‘b’,‘c’]]:至少有一个不存在时，报错，即必须全部是标签</li>
+<li>.loc[‘a’:‘f’]
+<ul>
+<li>当’a’和’f’标签都存在时，返回二者之间的elements</li>
+<li>当’a’和’f’中有一个存在，且按照规则排序好，则返回排序在二者之间的</li>
+<li>当至少有一个不存在，且index没有排序好，则会报错</li>
+<li>当有duplicate labels,且“a”,’f’中有duplicate label，则报错</li>
+</ul>
+</li>
+<li>.loc[a boolean array]：df.loc[:,df.loc[‘a’]&gt;0],NA算作False</li>
+<li>.loc[func]:<code>df.loc[:,lambda df:['A','B']]</code>,<code>df.loc[lambda df:df["a"]&gt;0,:]</code>
+<ul>
+<li>
+<p>lambda中的df代表新创建出来的df，这样我们就可以使用链式的方法</p>
+<pre><code>  bb = pd.read_csv('data/baseball.csv', index_col='id')
+  (bb.groupby(['year', 'team']).sum()
+     .loc[lambda df: df['r'] &gt; 100])#df指代新创建出来的df</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>.iloc<a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a>:不可以超出索引值
+<ul>
+<li>.iloc[1]</li>
+<li>.iloc[[1,3,5]</li>
+<li>.iloc[1:3]</li>
+<li>.iloc[a boolean array]</li>
+<li>.iloc[func]</li>
+</ul>
+</li>
+<li>Note:
+<ul>
+<li>pandas aligns all AXES when setting Series and DataFrame from .loc, and .iloc.This will not modify df because the column alignment is before value assignment.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="iatat" class="section level3" number="4.3.2">
+<h3>
+<span class="header-section-number">4.3.2</span> .iat/at<a class="anchor" aria-label="anchor" href="#iatat"><i class="fas fa-link"></i></a>
+</h3>
+<p>快速取标量值</p>
+<pre><code>s = pd.Series([0, 1, 2, 3, 4, 5])
+s.iat[5]
+df.at[2,'b']
+df.iat[2,1]</code></pre>
+</div>
+<div id="wheremask" class="section level3" number="4.3.3">
+<h3>
+<span class="header-section-number">4.3.3</span> where/mask<a class="anchor" aria-label="anchor" href="#wheremask"><i class="fas fa-link"></i></a>
+</h3>
+<p>.where()方法与boolean array方法不同点在于where返回的对象形状与 原对象相同，条件不满足的地方用NaN填补
+.mask()方法是.where()的逆方法，满足条件的被mask</p>
+<ul>
+<li>Series:s,where(s&gt;0)</li>
+<li>DataFrame:df.where(df&lt;0,-df)-df当条件不满足时用-df中相应位置的值填补，== np.where(df&gt;0,df,-df)
+<ul>
+<li>inplace=True:直接修改原数据，默认不修改</li>
+<li>axis,level:df2.where(df2&gt;0,df2[‘A’],axis=‘index’) == df2.apply(lambda x,y:x.where(x&gt;0,y),y=df2[‘A’])</li>
+<li>accept a callable as <code>condition</code> and <code>other</code> arguments:df3.where(lambda x: x &gt; 4, lambda x: x + 10) x代表df3</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="索引" class="section level2" number="4.4">
+<h2>
+<span class="header-section-number">4.4</span> 索引<a class="anchor" aria-label="anchor" href="#%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+</h2>
+<p>pandas对象的轴标签有着很多作用</p>
+<ul>
+<li>identifies data(比如，metadata元数据)</li>
+<li>自动和明确的数据对齐</li>
+<li>可以直观的获取和设置数据集的子集</li>
+</ul>
+<div id="索引name" class="section level3 tabset" number="4.4.1">
+<h3>
+<span class="header-section-number">4.4.1</span> 索引name<a class="anchor" aria-label="anchor" href="#%E7%B4%A2%E5%BC%95name"><i class="fas fa-link"></i></a>
+</h3>
+<div id="通过indexcolumns属性" class="section level4" number="4.4.1.1">
+<h4>
+<span class="header-section-number">4.4.1.1</span> 通过index/columns属性<a class="anchor" aria-label="anchor" href="#%E9%80%9A%E8%BF%87indexcolumns%E5%B1%9E%E6%80%A7"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb126"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb126-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb126-1" aria-hidden="true" tabindex="-1"></a>sd.index</span></code></pre></div>
+<pre class="scroll-200"><code>RangeIndex(start=0, stop=5, step=1)</code></pre>
+<div class="sourceCode" id="cb128"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb128-1" aria-hidden="true" tabindex="-1"></a>sd.index.name <span class="op">=</span> <span class="st">"ind"</span></span>
+<span id="cb128-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb128-2" aria-hidden="true" tabindex="-1"></a>sd.index</span></code></pre></div>
+<pre class="scroll-200"><code>RangeIndex(start=0, stop=5, step=1, name='ind')</code></pre>
+</div>
+<div id="rename_axis" class="section level4" number="4.4.1.2">
+<h4>
+<span class="header-section-number">4.4.1.2</span> .rename_axis()<a class="anchor" aria-label="anchor" href="#rename_axis"><i class="fas fa-link"></i></a>
+</h4>
+<p>返回副本</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb130-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb130-1" aria-hidden="true" tabindex="-1"></a>sd.rename_axis(index<span class="op">=</span>{<span class="st">"ind"</span>:<span class="st">"newind"</span>})</span></code></pre></div>
+<pre class="scroll-200"><code>       name    sex   class  math  chinese  english  total   age
+newind                                                         
+0        a1    men  高一(1)班    61       59       70    190   NaN
+1        a2  women  高一(2)班    62       77       74    213  12.0
+2        a3  women  高一(3)班    58       71       83    212   NaN
+3        a4    men  高一(4)班    65       57       71    193  13.0
+4        a4    men  高一(4)班    65       57       71    193  13.0</code></pre>
+</div>
+</div>
+<div id="重排序" class="section level3" number="4.4.2">
+<h3>
+<span class="header-section-number">4.4.2</span> 重排序<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+</h3>
+<p>.reindex(),可同时对index和columns进行重排序</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb132-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb132-1" aria-hidden="true" tabindex="-1"></a>sd.reindex([<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="8%">
+<col width="10%">
+<col width="8%">
+<col width="13%">
+<col width="10%">
+<col width="13%">
+<col width="13%">
+<col width="11%">
+<col width="8%">
+</colgroup>
+<thead><tr class="header">
+<th>ind</th>
+<th>name</th>
+<th>sex</th>
+<th>class</th>
+<th>math</th>
+<th>chinese</th>
+<th>english</th>
+<th>total</th>
+<th>age</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>men</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>a4</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>women</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+<td>212</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>a2</td>
+<td>women</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>12</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>.reindex()
+<ul>
+<li>重新排序</li>
+<li>当新标签不是已有标签时，插入空值</li>
+<li>Series.reindex()</li>
+<li>df.reindex(index=,columns=)</li>
+</ul>
+</li>
+</ul>
+<p><strong>shared index:df1.reindex(df2.index,axis=“index”)#两个DataFrame的index是同一个对象</strong></p>
+<ul>
+<li>.reindex_like()
+<ul>
+<li>df.reindex_like(df2)#把index和column设置的和df2一样</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="重命名" class="section level3 tabset" number="4.4.3">
+<h3>
+<span class="header-section-number">4.4.3</span> 重命名<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E5%91%BD%E5%90%8D"><i class="fas fa-link"></i></a>
+</h3>
+<div id="index.columns" class="section level4" number="4.4.3.1">
+<h4>
+<span class="header-section-number">4.4.3.1</span> .index/.columns<a class="anchor" aria-label="anchor" href="#index.columns"><i class="fas fa-link"></i></a>
+</h4>
+<p>必须全体重新命名，直接对原函数操作，传递同等长度的序列</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb133-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb133-1" aria-hidden="true" tabindex="-1"></a>source_col <span class="op">=</span> sd.columns</span>
+<span id="cb133-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb133-2" aria-hidden="true" tabindex="-1"></a>sd.index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">5</span>)</span>
+<span id="cb133-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb133-3" aria-hidden="true" tabindex="-1"></a>sd.columns <span class="op">=</span> <span class="bu">range</span>(sd.shape[<span class="dv">1</span>])</span>
+<span id="cb133-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb133-4" aria-hidden="true" tabindex="-1"></a>sd.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>a1</td>
+<td>men</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>a2</td>
+<td>women</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>a3</td>
+<td>women</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+<td>212</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>a4</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>a4</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="rename" class="section level4" number="4.4.3.2">
+<h4>
+<span class="header-section-number">4.4.3.2</span> .rename()<a class="anchor" aria-label="anchor" href="#rename"><i class="fas fa-link"></i></a>
+</h4>
+<p>返回副本，可以设置inplace=True修改原数据，可以对单个索引名称更改，要指定对应关系</p>
+<ul>
+<li>.rename:对原有的名称改名，被map的原有名称改名，非原有名称的map不会报错，没有被map的原有名称不变
+<ul>
+<li>可以把column map（dict or Series）</li>
+<li>或者传递任意函数，但是要返回一系列唯一值</li>
+<li>数据框要指定index,columns</li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb134"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb134-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb134-1" aria-hidden="true" tabindex="-1"></a>sd.rename(index<span class="op">=</span><span class="kw">lambda</span> x:x<span class="op">+</span><span class="dv">1</span>,</span>
+<span id="cb134-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb134-2" aria-hidden="true" tabindex="-1"></a>columns<span class="op">=</span>{<span class="dv">0</span>:<span class="st">"zero"</span>,<span class="dv">6</span>:<span class="st">"six"</span>},inplace<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb134-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb134-3" aria-hidden="true" tabindex="-1"></a>sd.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th></th>
+<th>zero</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>six</th>
+<th>7</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>a1</td>
+<td>men</td>
+<td>高一(1)班</td>
+<td>61</td>
+<td>59</td>
+<td>70</td>
+<td>190</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>a2</td>
+<td>women</td>
+<td>高一(2)班</td>
+<td>62</td>
+<td>77</td>
+<td>74</td>
+<td>213</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>a3</td>
+<td>women</td>
+<td>高一(3)班</td>
+<td>58</td>
+<td>71</td>
+<td>83</td>
+<td>212</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>a4</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>a4</td>
+<td>men</td>
+<td>高一(4)班</td>
+<td>65</td>
+<td>57</td>
+<td>71</td>
+<td>193</td>
+<td>13</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div id="map-1" class="section level4" number="4.4.3.3">
+<h4>
+<span class="header-section-number">4.4.3.3</span> .map()<a class="anchor" aria-label="anchor" href="#map-1"><i class="fas fa-link"></i></a>
+</h4>
+<p><code>sd.index = sd.index.map()</code></p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb135-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb135-1" aria-hidden="true" tabindex="-1"></a>sd.index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">5</span>)</span>
+<span id="cb135-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb135-2" aria-hidden="true" tabindex="-1"></a>sd.columns <span class="op">=</span> source_col</span></code></pre></div>
+</div>
+</div>
+<div id="设置列为索引" class="section level3" number="4.4.4">
+<h3>
+<span class="header-section-number">4.4.4</span> 设置列为索引<a class="anchor" aria-label="anchor" href="#%E8%AE%BE%E7%BD%AE%E5%88%97%E4%B8%BA%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+</h3>
+<p>.set_index(),默认返回副本,默认替代原索引，默认删除原列</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb136-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb136-1" aria-hidden="true" tabindex="-1"></a>sd.set_index(<span class="st">"sex"</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>      name   class  math  chinese  english  total   age
+sex                                                    
+men     a1  高一(1)班    61       59       70    190   NaN
+women   a2  高一(2)班    62       77       74    213  12.0
+women   a3  高一(3)班    58       71       83    212   NaN
+men     a4  高一(4)班    65       57       71    193  13.0
+men     a4  高一(4)班    65       57       71    193  13.0</code></pre>
+</div>
+<div id="重置索引" class="section level3" number="4.4.5">
+<h3>
+<span class="header-section-number">4.4.5</span> 重置索引<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E7%BD%AE%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+</h3>
+<p>默认将原索引变为列，设置drop=True不变成列</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb138-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb138-1" aria-hidden="true" tabindex="-1"></a>sd.set_index(<span class="st">"sex"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>  name   class  math  chinese  english  total   age
+0   a1  高一(1)班    61       59       70    190   NaN
+1   a2  高一(2)班    62       77       74    213  12.0
+2   a3  高一(3)班    58       71       83    212   NaN
+3   a4  高一(4)班    65       57       71    193  13.0
+4   a4  高一(4)班    65       57       71    193  13.0</code></pre>
+</div>
+<div id="多层索引" class="section level3 tabset" number="4.4.6">
+<h3>
+<span class="header-section-number">4.4.6</span> 多层索引<a class="anchor" aria-label="anchor" href="#%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb140"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb140-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> itertools</span>
+<span id="cb140-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb140-2" aria-hidden="true" tabindex="-1"></a>hindex <span class="op">=</span> pd.MultiIndex.from_tuples(itertools.product([<span class="st">"one"</span>,<span class="st">"two"</span>],[<span class="dv">1</span>,<span class="dv">2</span>]))</span>
+<span id="cb140-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb140-3" aria-hidden="true" tabindex="-1"></a>hcolumns <span class="op">=</span> pd.MultiIndex.from_tuples(itertools.product([<span class="st">"A"</span>,<span class="st">"B"</span>],[<span class="st">"a"</span>,<span class="st">"b"</span>]))</span>
+<span id="cb140-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb140-4" aria-hidden="true" tabindex="-1"></a>multi_index <span class="op">=</span> pd.DataFrame(np.random.randn(<span class="dv">16</span>).reshape(<span class="dv">4</span>,<span class="dv">4</span>),</span>
+<span id="cb140-5"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb140-5" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> hindex,</span>
+<span id="cb140-6"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb140-6" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> hcolumns</span>
+<span id="cb140-7"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb140-7" aria-hidden="true" tabindex="-1"></a>) </span>
+<span id="cb140-8"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb140-8" aria-hidden="true" tabindex="-1"></a>multi_index</span></code></pre></div>
+<pre class="scroll-200"><code>              A                   B          
+              a         b         a         b
+one 1 -0.431666 -0.685187 -0.060368  0.537350
+    2 -0.278520  0.336091  0.243528  0.846737
+two 1  0.661588  0.286640  0.365079 -0.456392
+    2 -1.118182 -0.028495 -0.407556 -0.811054</code></pre>
+<p>rename,reset_index,reindex都可以根据level参数指定对那层的索引操作。</p>
+<div id="轴name" class="section level4" number="4.4.6.1">
+<h4>
+<span class="header-section-number">4.4.6.1</span> 轴name<a class="anchor" aria-label="anchor" href="#%E8%BD%B4name"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb142"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb142-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb142-1" aria-hidden="true" tabindex="-1"></a>multi_index.index.names <span class="op">=</span> [<span class="st">"font"</span>,<span class="st">"number"</span>]</span>
+<span id="cb142-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb142-2" aria-hidden="true" tabindex="-1"></a>multi_index.columns.names <span class="op">=</span> [<span class="st">"upper"</span>,<span class="st">"lower"</span>]</span>
+<span id="cb142-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb142-3" aria-hidden="true" tabindex="-1"></a>multi_index</span></code></pre></div>
+<pre class="scroll-200"><code>upper               A                   B          
+lower               a         b         a         b
+font number                                        
+one  1      -0.431666 -0.685187 -0.060368  0.537350
+     2      -0.278520  0.336091  0.243528  0.846737
+two  1       0.661588  0.286640  0.365079 -0.456392
+     2      -1.118182 -0.028495 -0.407556 -0.811054</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb144-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb144-1" aria-hidden="true" tabindex="-1"></a>multi_index.rename_axis(columns <span class="op">=</span> {<span class="st">"upper"</span>:<span class="st">"UPPER"</span>})</span></code></pre></div>
+<pre class="scroll-200"><code>UPPER               A                   B          
+lower               a         b         a         b
+font number                                        
+one  1      -0.431666 -0.685187 -0.060368  0.537350
+     2      -0.278520  0.336091  0.243528  0.846737
+two  1       0.661588  0.286640  0.365079 -0.456392
+     2      -1.118182 -0.028495 -0.407556 -0.811054</code></pre>
+</div>
+<div id="获取轴" class="section level4" number="4.4.6.2">
+<h4>
+<span class="header-section-number">4.4.6.2</span> 获取轴<a class="anchor" aria-label="anchor" href="#%E8%8E%B7%E5%8F%96%E8%BD%B4"><i class="fas fa-link"></i></a>
+</h4>
+<p>MultiIndex.get_level_values</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb146-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb146-1" aria-hidden="true" tabindex="-1"></a>multi_index.index</span></code></pre></div>
+<pre class="scroll-200"><code>MultiIndex([('one', 1),
+            ('one', 2),
+            ('two', 1),
+            ('two', 2)],
+           names=['font', 'number'])</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb148-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb148-1" aria-hidden="true" tabindex="-1"></a>multi_index.columns</span></code></pre></div>
+<pre class="scroll-200"><code>MultiIndex([('A', 'a'),
+            ('A', 'b'),
+            ('B', 'a'),
+            ('B', 'b')],
+           names=['upper', 'lower'])</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb150-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb150-1" aria-hidden="true" tabindex="-1"></a>multi_index.index.get_level_values(<span class="dv">0</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>Index(['one', 'one', 'two', 'two'], dtype='object', name='font')</code></pre>
+</div>
+</div>
+<div id="选取多层索引" class="section level3 tabset" number="4.4.7">
+<h3>
+<span class="header-section-number">4.4.7</span> 选取多层索引<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+</h3>
+<div id="xs" class="section level4" number="4.4.7.1">
+<h4>
+<span class="header-section-number">4.4.7.1</span> .xs<a class="anchor" aria-label="anchor" href="#xs"><i class="fas fa-link"></i></a>
+</h4>
+<p>选取行或列</p>
+<pre><code>.xs(
+  key:label or tuple of label
+  axis: 默认0，行
+  level: first n levels n=1 or len(key)
+)</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb153-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb153-1" aria-hidden="true" tabindex="-1"></a>multi_index.xs(<span class="st">"one"</span>)<span class="co">#可以直接选取最外层的key</span></span></code></pre></div>
+<pre class="scroll-200"><code>upper          A                   B          
+lower          a         b         a         b
+number                                        
+1      -0.431666 -0.685187 -0.060368  0.537350
+2      -0.278520  0.336091  0.243528  0.846737</code></pre>
+<div class="sourceCode" id="cb155"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb155-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb155-1" aria-hidden="true" tabindex="-1"></a>multi_index.xs((<span class="st">"one"</span>,<span class="dv">1</span>))<span class="co">#用tuple，不要用list</span></span></code></pre></div>
+<pre class="scroll-200"><code>upper  lower
+A      a       -0.431666
+       b       -0.685187
+B      a       -0.060368
+       b        0.537350
+Name: (one, 1), dtype: float64</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb157-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb157-1" aria-hidden="true" tabindex="-1"></a>multi_index.xs(<span class="dv">1</span>,level<span class="op">=</span><span class="dv">1</span>)<span class="co">#直接选取内层的需要指定level</span></span></code></pre></div>
+<pre class="scroll-200"><code>upper         A                   B          
+lower         a         b         a         b
+font                                         
+one   -0.431666 -0.685187 -0.060368  0.537350
+two    0.661588  0.286640  0.365079 -0.456392</code></pre>
+</div>
+<div id="loc" class="section level4" number="4.4.7.2">
+<h4>
+<span class="header-section-number">4.4.7.2</span> .loc<a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a><a class="anchor" aria-label="anchor" href="#loc"><i class="fas fa-link"></i></a>
+</h4>
+<p>任意选取行列</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb159-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb159-1" aria-hidden="true" tabindex="-1"></a>multi_index.loc[<span class="st">"one"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>upper          A                   B          
+lower          a         b         a         b
+number                                        
+1      -0.431666 -0.685187 -0.060368  0.537350
+2      -0.278520  0.336091  0.243528  0.846737</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb161-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb161-1" aria-hidden="true" tabindex="-1"></a>multi_index.loc[<span class="st">"one"</span>,<span class="dv">1</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>upper  lower
+A      a       -0.431666
+       b       -0.685187
+B      a       -0.060368
+       b        0.537350
+Name: (one, 1), dtype: float64</code></pre>
+<div class="sourceCode" id="cb163"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb163-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb163-1" aria-hidden="true" tabindex="-1"></a>multi_index.loc[[<span class="st">"one"</span>]]</span></code></pre></div>
+<pre class="scroll-200"><code>upper               A                   B          
+lower               a         b         a         b
+font number                                        
+one  1      -0.431666 -0.685187 -0.060368  0.537350
+     2      -0.278520  0.336091  0.243528  0.846737</code></pre>
+<div class="sourceCode" id="cb165"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb165-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb165-1" aria-hidden="true" tabindex="-1"></a>multi_index.loc[(<span class="st">"one"</span>,<span class="dv">1</span>),<span class="st">"A"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>lower
+a   -0.431666
+b   -0.685187
+Name: (one, 1), dtype: float64</code></pre>
+</div>
+<div id="section" class="section level4" number="4.4.7.3">
+<h4>
+<span class="header-section-number">4.4.7.3</span> <a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a><a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
+</h4>
+<p>只能选取列</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb167-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb167-1" aria-hidden="true" tabindex="-1"></a>multi_index[<span class="st">"A"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>lower               a         b
+font number                    
+one  1      -0.431666 -0.685187
+     2      -0.278520  0.336091
+two  1       0.661588  0.286640
+     2      -1.118182 -0.028495</code></pre>
+<div class="sourceCode" id="cb169"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb169-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb169-1" aria-hidden="true" tabindex="-1"></a>multi_index[<span class="st">"A"</span>,<span class="st">"a"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>font  number
+one   1        -0.431666
+      2        -0.278520
+two   1         0.661588
+      2        -1.118182
+Name: (A, a), dtype: float64</code></pre>
+<div class="sourceCode" id="cb171"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb171-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb171-1" aria-hidden="true" tabindex="-1"></a>multi_index[[<span class="st">"A"</span>]]</span></code></pre></div>
+<pre class="scroll-200"><code>upper               A          
+lower               a         b
+font number                    
+one  1      -0.431666 -0.685187
+     2      -0.278520  0.336091
+two  1       0.661588  0.286640
+     2      -1.118182 -0.028495</code></pre>
+</div>
+<div id="同时选取行和列" class="section level4" number="4.4.7.4">
+<h4>
+<span class="header-section-number">4.4.7.4</span> 同时选取行和列<a class="anchor" aria-label="anchor" href="#%E5%90%8C%E6%97%B6%E9%80%89%E5%8F%96%E8%A1%8C%E5%92%8C%E5%88%97"><i class="fas fa-link"></i></a>
+</h4>
+<p>除了.loc方法,可以进行组合</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb173-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb173-1" aria-hidden="true" tabindex="-1"></a>multi_index.loc[<span class="st">"one"</span>][<span class="st">"A"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>lower          a         b
+number                    
+1      -0.431666 -0.685187
+2      -0.278520  0.336091</code></pre>
+</div>
+</div>
+<div id="调换多个index的顺序" class="section level3" number="4.4.8">
+<h3>
+<span class="header-section-number">4.4.8</span> 调换多个index的顺序<a class="anchor" aria-label="anchor" href="#%E8%B0%83%E6%8D%A2%E5%A4%9A%E4%B8%AAindex%E7%9A%84%E9%A1%BA%E5%BA%8F"><i class="fas fa-link"></i></a>
+</h3>
+<p>返回副本，可以指定axis</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb175-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb175-1" aria-hidden="true" tabindex="-1"></a>multi_index.swaplevel()<span class="co">#调换最内层的两个index</span></span></code></pre></div>
+<pre class="scroll-200"><code>upper               A                   B          
+lower               a         b         a         b
+number font                                        
+1      one  -0.431666 -0.685187 -0.060368  0.537350
+2      one  -0.278520  0.336091  0.243528  0.846737
+1      two   0.661588  0.286640  0.365079 -0.456392
+2      two  -1.118182 -0.028495 -0.407556 -0.811054</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb177-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb177-1" aria-hidden="true" tabindex="-1"></a>multi_index.swaplevel(<span class="dv">0</span>)<span class="co">#直接调换到最内层</span></span></code></pre></div>
+<pre class="scroll-200"><code>upper               A                   B          
+lower               a         b         a         b
+number font                                        
+1      one  -0.431666 -0.685187 -0.060368  0.537350
+2      one  -0.278520  0.336091  0.243528  0.846737
+1      two   0.661588  0.286640  0.365079 -0.456392
+2      two  -1.118182 -0.028495 -0.407556 -0.811054</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb179-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb179-1" aria-hidden="true" tabindex="-1"></a>multi_index.swaplevel(<span class="st">"upper"</span>,axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>lower               a         b         a         b
+upper               A         A         B         B
+font number                                        
+one  1      -0.431666 -0.685187 -0.060368  0.537350
+     2      -0.278520  0.336091  0.243528  0.846737
+two  1       0.661588  0.286640  0.365079 -0.456392
+     2      -1.118182 -0.028495 -0.407556 -0.811054</code></pre>
+<div class="sourceCode" id="cb181"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb181-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb181-1" aria-hidden="true" tabindex="-1"></a>multi_index.swaplevel(<span class="dv">0</span>,<span class="dv">1</span>)<span class="co">#调换这两个level的index</span></span></code></pre></div>
+<pre class="scroll-200"><code>upper               A                   B          
+lower               a         b         a         b
+number font                                        
+1      one  -0.431666 -0.685187 -0.060368  0.537350
+2      one  -0.278520  0.336091  0.243528  0.846737
+1      two   0.661588  0.286640  0.365079 -0.456392
+2      two  -1.118182 -0.028495 -0.407556 -0.811054</code></pre>
+</div>
+<div id="index和column的互换" class="section level3 tabset" number="4.4.9">
+<h3>
+<span class="header-section-number">4.4.9</span> index和column的互换<a class="anchor" aria-label="anchor" href="#index%E5%92%8Ccolumn%E7%9A%84%E4%BA%92%E6%8D%A2"><i class="fas fa-link"></i></a>
+</h3>
+<div id="stack" class="section level4" number="4.4.9.1">
+<h4>
+<span class="header-section-number">4.4.9.1</span> .stack()<a class="anchor" aria-label="anchor" href="#stack"><i class="fas fa-link"></i></a>
+</h4>
+<p>堆叠，堆叠以常识理解肯定指的上下结构，但是这里指的是左右的堆叠,或者我们可以理解为该index自己变成了列形式，所以较stack</p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb183-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb183-1" aria-hidden="true" tabindex="-1"></a>multi_index.stack(<span class="dv">0</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>lower                     a         b
+font number upper                    
+one  1      A     -0.431666 -0.685187
+            B     -0.060368  0.537350
+     2      A     -0.278520  0.336091
+            B      0.243528  0.846737
+two  1      A      0.661588  0.286640
+            B      0.365079 -0.456392
+     2      A     -1.118182 -0.028495
+            B     -0.407556 -0.811054</code></pre>
+<div class="sourceCode" id="cb185"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb185-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb185-1" aria-hidden="true" tabindex="-1"></a>multi_index.stack(<span class="st">"upper"</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>lower                     a         b
+font number upper                    
+one  1      A     -0.431666 -0.685187
+            B     -0.060368  0.537350
+     2      A     -0.278520  0.336091
+            B      0.243528  0.846737
+two  1      A      0.661588  0.286640
+            B      0.365079 -0.456392
+     2      A     -1.118182 -0.028495
+            B     -0.407556 -0.811054</code></pre>
+<div class="sourceCode" id="cb187"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb187-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb187-1" aria-hidden="true" tabindex="-1"></a>multi_index.stack([<span class="st">"upper"</span>,<span class="st">"lower"</span>])</span></code></pre></div>
+<pre class="scroll-200"><code>font  number  upper  lower
+one   1       A      a       -0.431666
+                     b       -0.685187
+              B      a       -0.060368
+                     b        0.537350
+      2       A      a       -0.278520
+                     b        0.336091
+              B      a        0.243528
+                     b        0.846737
+two   1       A      a        0.661588
+                     b        0.286640
+              B      a        0.365079
+                     b       -0.456392
+      2       A      a       -1.118182
+                     b       -0.028495
+              B      a       -0.407556
+                     b       -0.811054
+dtype: float64</code></pre>
+</div>
+<div id="unstack" class="section level4" number="4.4.9.2">
+<h4>
+<span class="header-section-number">4.4.9.2</span> .unstack()<a class="anchor" aria-label="anchor" href="#unstack"><i class="fas fa-link"></i></a>
+</h4>
+<p>取消堆叠，即将行索引变成列索引</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb189-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb189-1" aria-hidden="true" tabindex="-1"></a>multi_index.unstack(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>upper          A                      ...         B                    
+lower          a                   b  ...         a         b          
+number         1         2         1  ...         2         1         2
+font                                  ...                              
+one    -0.431666 -0.278520 -0.685187  ...  0.243528  0.537350  0.846737
+two     0.661588 -1.118182  0.286640  ... -0.407556 -0.456392 -0.811054
+
+[2 rows x 8 columns]</code></pre>
+</div>
+</div>
+</div>
+<div id="排序" class="section level2" number="4.5">
+<h2>
+<span class="header-section-number">4.5</span> 排序<a class="anchor" aria-label="anchor" href="#%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+</h2>
+<div id="sort_index根据标签排序" class="section level3" number="4.5.1">
+<h3>
+<span class="header-section-number">4.5.1</span> .sort_index():根据标签排序<a class="anchor" aria-label="anchor" href="#sort_index%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>axis:对于df来说,默认为0</li>
+<li>ascending:默认升序，值为True</li>
+<li>key:根据作用于每一个元素的函数返回值来排序，<code>lambda x:x</code>,x指代每一个元素</li>
+<li>level:对于MultiIndex objects，可以设置level属性,level=“a”:索引名</li>
+</ul>
+</div>
+<div id="sort_values根据值排序" class="section level3" number="4.5.2">
+<h3>
+<span class="header-section-number">4.5.2</span> .sort_values():根据值排序<a class="anchor" aria-label="anchor" href="#sort_values%E6%A0%B9%E6%8D%AE%E5%80%BC%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Series:
+<ul>
+<li>key:</li>
+</ul>
+</li>
+<li>DataFrame:
+<ul>
+<li>by:scalar or <a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a>,确定用于排序的一个或多个列</li>
+<li>key:</li>
+</ul>
+</li>
+<li>by index and values:
+<ul>
+<li>对于一个多层索引，我们按索引和值同时排序,比如先按索引排序，然后对每个索引的内部值再按值排序</li>
+</ul>
+</li>
+<li>sorting by a MultiIndex column
+<ul>
+<li>.sort_values(by=(“a”,“two”)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="nlargest.nsmallest" class="section level3" number="4.5.3">
+<h3>
+<span class="header-section-number">4.5.3</span> .nlargest(),.nsmallest()<a class="anchor" aria-label="anchor" href="#nlargest.nsmallest"><i class="fas fa-link"></i></a>
+</h3>
+<pre><code>* df.nlargest(5,["a","c"])#先按照a排序，在按照c排序</code></pre>
+</div>
+</div>
+<div id="数学运算" class="section level2" number="4.6">
+<h2>
+<span class="header-section-number">4.6</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><i class="fas fa-link"></i></a>
+</h2>
+<div id="序列或数据框" class="section level3" number="4.6.1">
+<h3>
+<span class="header-section-number">4.6.1</span> 序列或数据框<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E6%88%96%E6%95%B0%E6%8D%AE%E6%A1%86"><i class="fas fa-link"></i></a>
+</h3>
+<p>直接使用numpy函数对整体进行操作</p>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0%E8%A1%A5%E5%85%85.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb192-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb192-1" aria-hidden="true" tabindex="-1"></a>np.floor(sd.math)</span></code></pre></div>
+<pre class="scroll-200"><code>0    61.0
+1    62.0
+2    58.0
+3    65.0
+4    65.0
+Name: math, dtype: float64</code></pre>
+<div class="sourceCode" id="cb194"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb194-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb194-1" aria-hidden="true" tabindex="-1"></a>np.<span class="bu">round</span>(sd[[<span class="st">"math"</span>]])</span></code></pre></div>
+<pre class="scroll-200"><code>   math
+0    61
+1    62
+2    58
+3    65
+4    65</code></pre>
+</div>
+<div id="同维度的序列" class="section level3 tabset" number="4.6.2">
+<h3>
+<span class="header-section-number">4.6.2</span> 同维度的序列<a class="anchor" aria-label="anchor" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
+</h3>
+<p>依照对齐机制进行算数运算和比较</p>
+<div id="数学运算-1" class="section level4" number="4.6.2.1">
+<h4>
+<span class="header-section-number">4.6.2.1</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97-1"><i class="fas fa-link"></i></a>
+</h4>
+<p>加减乘除,取负值</p>
+<div class="sourceCode" id="cb196"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb196-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb196-1" aria-hidden="true" tabindex="-1"></a>sd.math <span class="op">+</span> sd.english</span></code></pre></div>
+<pre class="scroll-200"><code>0    131
+1    136
+2    141
+3    136
+4    136
+dtype: int64</code></pre>
+<div class="sourceCode" id="cb198"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb198-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="op">-</span>sd.math</span></code></pre></div>
+<pre class="scroll-200"><code>0   -61
+1   -62
+2   -58
+3   -65
+4   -65
+Name: math, dtype: int64</code></pre>
+</div>
+<div id="逻辑运算" class="section level4" number="4.6.2.2">
+<h4>
+<span class="header-section-number">4.6.2.2</span> 逻辑运算<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb200"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb200-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb200-1" aria-hidden="true" tabindex="-1"></a>sd.math <span class="op">&gt;</span> sd.english</span></code></pre></div>
+<pre class="scroll-200"><code>0    False
+1    False
+2    False
+3    False
+4    False
+dtype: bool</code></pre>
+<div class="sourceCode" id="cb202"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb202-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb202-1" aria-hidden="true" tabindex="-1"></a>(sd.math <span class="op">&gt;</span> sd.english) <span class="op">&amp;</span> (sd.math <span class="op">&lt;</span> sd.chinese)</span></code></pre></div>
+<pre class="scroll-200"><code>0    False
+1    False
+2    False
+3    False
+4    False
+dtype: bool</code></pre>
+</div>
+</div>
+<div id="序列和标量" class="section level3 tabset" number="4.6.3">
+<h3>
+<span class="header-section-number">4.6.3</span> 序列和标量<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E5%92%8C%E6%A0%87%E9%87%8F"><i class="fas fa-link"></i></a>
+</h3>
+<div id="数学运算-2" class="section level4" number="4.6.3.1">
+<h4>
+<span class="header-section-number">4.6.3.1</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97-2"><i class="fas fa-link"></i></a>
+</h4>
+<p>加减乘除</p>
+<div class="sourceCode" id="cb204"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb204-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb204-1" aria-hidden="true" tabindex="-1"></a>sd.math <span class="op">+</span> <span class="dv">3</span></span></code></pre></div>
+<pre class="scroll-200"><code>0    64
+1    65
+2    61
+3    68
+4    68
+Name: math, dtype: int64</code></pre>
+</div>
+<div id="逻辑运算-1" class="section level4" number="4.6.3.2">
+<h4>
+<span class="header-section-number">4.6.3.2</span> 逻辑运算<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97-1"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb206"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb206-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb206-1" aria-hidden="true" tabindex="-1"></a>sd.math <span class="op">&gt;</span> <span class="dv">80</span></span></code></pre></div>
+<pre class="scroll-200"><code>0    False
+1    False
+2    False
+3    False
+4    False
+Name: math, dtype: bool</code></pre>
+<div class="sourceCode" id="cb208"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb208-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb208-1" aria-hidden="true" tabindex="-1"></a>(sd.math <span class="op">&gt;</span> <span class="dv">80</span>) <span class="op">&amp;</span> (sd.math <span class="op">&lt;</span> <span class="dv">90</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>0    False
+1    False
+2    False
+3    False
+4    False
+Name: math, dtype: bool</code></pre>
+</div>
+</div>
+<div id="同维度的数据框" class="section level3 tabset" number="4.6.4">
+<h3>
+<span class="header-section-number">4.6.4</span> 同维度的数据框<a class="anchor" aria-label="anchor" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A1%86"><i class="fas fa-link"></i></a>
+</h3>
+<p>数学运算和逻辑运算都按照列名对齐</p>
+<div id="数学运算-3" class="section level4" number="4.6.4.1">
+<h4>
+<span class="header-section-number">4.6.4.1</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97-3"><i class="fas fa-link"></i></a>
+</h4>
+<p>加减乘除,取负值</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb210-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb210-1" aria-hidden="true" tabindex="-1"></a>sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]] <span class="op">+</span> sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]]</span></code></pre></div>
+<pre class="scroll-200"><code>   math  english
+0   122      140
+1   124      148
+2   116      166
+3   130      142
+4   130      142</code></pre>
+</div>
+<div id="逻辑运算-2" class="section level4" number="4.6.4.2">
+<h4>
+<span class="header-section-number">4.6.4.2</span> 逻辑运算<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97-2"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb212"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb212-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb212-1" aria-hidden="true" tabindex="-1"></a>sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]] <span class="op">&gt;</span> <span class="dv">80</span></span></code></pre></div>
+<pre class="scroll-200"><code>    math  english
+0  False    False
+1  False    False
+2  False     True
+3  False    False
+4  False    False</code></pre>
+<div class="sourceCode" id="cb214"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb214-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb214-1" aria-hidden="true" tabindex="-1"></a>(sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]] <span class="op">&gt;</span> <span class="dv">80</span>) <span class="op">&amp;</span> (sd[[<span class="st">"math"</span>,<span class="st">"chinese"</span>]] <span class="op">&lt;</span> <span class="dv">90</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>   chinese  english   math
+0      NaN      NaN  False
+1      NaN      NaN  False
+2      NaN      NaN  False
+3      NaN      NaN  False
+4      NaN      NaN  False</code></pre>
+</div>
+<div id="使用numpy" class="section level4" number="4.6.4.3">
+<h4>
+<span class="header-section-number">4.6.4.3</span> 使用numpy<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8numpy"><i class="fas fa-link"></i></a>
+</h4>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E4%BA%8C%E5%85%83%E9%80%9A%E7%94%A8%E5%87%BD%E6%95%B0.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb216-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb216-1" aria-hidden="true" tabindex="-1"></a>np.power(sd[[<span class="st">"english"</span>,<span class="st">"math"</span>,<span class="st">"chinese"</span>]],np.random.randint(<span class="dv">5</span>,size<span class="op">=</span>(sd.shape[<span class="dv">0</span>],<span class="dv">3</span>)))</span></code></pre></div>
+<pre class="scroll-200"><code>    english  math   chinese
+0  24010000  3721  12117361
+1        74    62      5929
+2  47458321    58    357911
+3      5041     1      3249
+4         1    65      3249</code></pre>
+</div>
+</div>
+<div id="数据框和标量" class="section level3" number="4.6.5">
+<h3>
+<span class="header-section-number">4.6.5</span> 数据框和标量<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E6%A0%87%E9%87%8F"><i class="fas fa-link"></i></a>
+</h3>
+<p>和序列同样</p>
+</div>
+<div id="数据框和序列" class="section level3" number="4.6.6">
+<h3>
+<span class="header-section-number">4.6.6</span> 数据框和序列<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
+</h3>
+<p>默认按照列名对齐，可以进行算数操作和逻辑操作</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb218-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb218-1" aria-hidden="true" tabindex="-1"></a>sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]] <span class="op">-</span> sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]].iloc[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>   math  english
+0    -4       -1
+1    -3        3
+2    -7       12
+3     0        0
+4     0        0</code></pre>
+<div class="sourceCode" id="cb220"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb220-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb220-1" aria-hidden="true" tabindex="-1"></a>sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]] <span class="op">&gt;</span> sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]].iloc[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>    math  english
+0  False    False
+1  False     True
+2  False     True
+3  False    False
+4  False    False</code></pre>
+</div>
+</div>
+<div id="统计方法" class="section level2" number="4.7">
+<h2>
+<span class="header-section-number">4.7</span> 统计方法<a class="anchor" aria-label="anchor" href="#%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1.png" width="95%" style="display: block; margin: auto;"></div>
+<p>对于数据框来说，它的sum，min等聚合函数可以选择axis，甚至可以选择index来聚合,但是不能再指定level了。</p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb222-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb222-1" aria-hidden="true" tabindex="-1"></a>multi_index.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>upper  lower
+A      a       -1.166780
+       b       -0.090952
+B      a        0.140683
+       b        0.116641
+dtype: float64</code></pre>
+<div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95.png" width="95%" style="display: block; margin: auto;"></div>
+<p>value_counts如果传递多列，则返回多列的组合值的value_counts(),多列以multi_index展示.</p>
+<div id="相关和协方差" class="section level3" number="4.7.1">
+<h3>
+<span class="header-section-number">4.7.1</span> 相关和协方差<a class="anchor" aria-label="anchor" href="#%E7%9B%B8%E5%85%B3%E5%92%8C%E5%8D%8F%E6%96%B9%E5%B7%AE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th>函数</th>
+<th>描述</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>df.cor()</td>
+<td>计算两两列相关的矩阵</td>
+</tr>
+<tr class="even">
+<td>df.corwith(df.col)</td>
+<td>传入某列或其他序列时，返回每一列与该列的相关性</td>
+</tr>
+<tr class="odd">
+<td>df.cov()</td>
+<td>计算协方差矩阵</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div id="函数" class="section level2" number="4.8">
+<h2>
+<span class="header-section-number">4.8</span> 函数<a class="anchor" aria-label="anchor" href="#%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h2>
+<p>对行或者列或者整体或者每个元素进行函数应用。</p>
+<div id="apply" class="section level3" number="4.8.1">
+<h3>
+<span class="header-section-number">4.8.1</span> .apply()<a class="anchor" aria-label="anchor" href="#apply"><i class="fas fa-link"></i></a>
+</h3>
+<p>对行或列操作，操作对象默认为序列,但是不能应用多个函数,不能指定对象，长度变不变都可以。</p>
+<ul>
+<li>.apply(func,axis):
+<ul>
+<li>arg
+<ul>
+<li>func:可以是函数，也可以是字符串形式的名称，如“mean”,也可以是一些Series方法，如<code>pd.Series.interpolate</code>，</li>
+<li>axis:确定沿着那条轴应用函数</li>
+<li>args:iterable,func中的参数，以形参形式给出</li>
+<li>**kwargs：func中的参数，以关键字形式给出</li>
+<li>raw:默认False，会在应用函数之前把每row或column转换成Series，设置为True，则当成ndarray处理</li>
+</ul>
+</li>
+<li>return:
+<ul>
+<li>func返回Series，则最终输出是一个DataFrame</li>
+<li>func返回其他任何类型，最终输出是一个Series</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="agg" class="section level3" number="4.8.2">
+<h3>
+<span class="header-section-number">4.8.2</span> .agg()<a class="anchor" aria-label="anchor" href="#agg"><i class="fas fa-link"></i></a>
+</h3>
+<p>只对列起作用,可以指定对象，可以指定多个函数,只能执行聚合操作，操作对象为序列，长度会发生变化</p>
+<ul>
+<li>.agg([“sum”])#对每一列作用函数</li>
+<li>.agg([“sum”,“mean”])#对每一列作用多个函数
+<ul>
+<li>.agg([“sum”,lambda x:x.mean()])#lambda函数的名lambda</li>
+<li>.agg([“sum”,func])#自定义函数的名为该函数名</li>
+<li>.agg({“A”:[“sum”,“mean”],“B”:[“median”]})#为不同的列定义不同的函数,顺序不被确定，可以用OrderedDict类</li>
+<li>当混合类型中的某些列不能作用函数时，将不会作用</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="transform" class="section level3" number="4.8.3">
+<h3>
+<span class="header-section-number">4.8.3</span> .transform()<a class="anchor" aria-label="anchor" href="#transform"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>应用于所有元素，也可以传递字典对不同的列的每个元素应用不同的函数,操作对象为数据框。长度必须保持不变。
+<ul>
+<li>.transform() allows input functions as: a NumPy function, a string function name or a user defined function.</li>
+<li>Passing multiple functions will yield a column MultiIndexed DataFrame. The first level will be the original frame column names; the second level will be the names of the transforming functions.</li>
+<li>Passing multiple functions to a Series will yield a DataFrame. The resulting column names will be the transforming functions.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="applymap" class="section level3" number="4.8.4">
+<h3>
+<span class="header-section-number">4.8.4</span> .applymap()<a class="anchor" aria-label="anchor" href="#applymap"><i class="fas fa-link"></i></a>
+</h3>
+<p>应用于每个单元格,只能定义一个函数</p>
+</div>
+<div id="pipe" class="section level3" number="4.8.5">
+<h3>
+<span class="header-section-number">4.8.5</span> .pipe()<a class="anchor" aria-label="anchor" href="#pipe"><i class="fas fa-link"></i></a>
+</h3>
+<p>对整个数据框进行任意操作</p>
+<p>DataFrames和Series是可以传递给函数的，但是如果函数是在一个链式中，考虑使用<code><a href="https://rdrr.io/r/base/connections.html">pipe()</a></code>方法</p>
+<ul>
+<li>function(df,arg1) 则df.pipe(func,arg1) df默认以第一参数传递给func</li>
+<li>function(arg1,data) 则需要把func和代表data的关键字写在一起形成关键字对,如df.pipe((func,“data”),agr1)</li>
+</ul>
+</div>
+</div>
+<div id="透视表" class="section level2" number="4.9">
+<h2>
+<span class="header-section-number">4.9</span> 透视表<a class="anchor" aria-label="anchor" href="#%E9%80%8F%E8%A7%86%E8%A1%A8"><i class="fas fa-link"></i></a>
+</h2>
+<p>透视表</p>
+<div id="pivot" class="section level3" number="4.9.1">
+<h3>
+<span class="header-section-number">4.9.1</span> .pivot()<a class="anchor" aria-label="anchor" href="#pivot"><i class="fas fa-link"></i></a>
+</h3>
+<p>index.columns,value 都可以是列名或列名的列表，当value为列表时，会形成column的stack，相当于分别计算每个列的pivot，然后再左右concat。</p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb224-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb224-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'foo'</span>: [<span class="st">'one'</span>, <span class="st">'one'</span>, <span class="st">'one'</span>, <span class="st">'two'</span>, <span class="st">'two'</span>,</span>
+<span id="cb224-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb224-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">'two'</span>],</span>
+<span id="cb224-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb224-3" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'bar'</span>: [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>],</span>
+<span id="cb224-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb224-4" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'baz'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>],</span>
+<span id="cb224-5"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb224-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">'zoo'</span>: [<span class="st">'x'</span>, <span class="st">'y'</span>, <span class="st">'z'</span>, <span class="st">'q'</span>, <span class="st">'w'</span>, <span class="st">'t'</span>]})</span>
+<span id="cb224-6"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb224-6" aria-hidden="true" tabindex="-1"></a>pivot_df <span class="op">=</span> df.pivot(index<span class="op">=</span><span class="st">'foo'</span>, columns<span class="op">=</span><span class="st">'bar'</span>, values<span class="op">=</span>[<span class="st">'baz'</span>, <span class="st">'zoo'</span>])</span>
+<span id="cb224-7"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb224-7" aria-hidden="true" tabindex="-1"></a>pivot_df</span></code></pre></div>
+<pre class="scroll-200"><code>    baz       zoo      
+bar   A  B  C   A  B  C
+foo                    
+one   1  2  3   x  y  z
+two   4  5  6   q  w  t</code></pre>
+</div>
+<div id="pivot_table" class="section level3" number="4.9.2">
+<h3>
+<span class="header-section-number">4.9.2</span> .pivot_table()<a class="anchor" aria-label="anchor" href="#pivot_table"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>.pivot_table()/DataFrame().pivot_table():唯一的特点是可以应用函数
+<ul>
+<li>data:</li>
+<li>values:a column or a list of columns ，如果不给，则剩下的所有非index和column的列都被视作value</li>
+<li>index:a column, Grouper, array which has the same length as data, or list of them. Keys to group by on the pivot table index. If an array is passed, it is being used as the same manner as column values.</li>
+<li>columns:同index</li>
+<li>aggfunc: function to use for aggregation, defaulting to numpy.mean.</li>
+<li>margins:If you pass margins=True to pivot_table, special All columns and rows will be added with partial group aggregates across the categories on the rows and columns:</li>
+<li>margins_name</li>
+<li>fill_value: scalar</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="pd.crosstab" class="section level3" number="4.9.3">
+<h3>
+<span class="header-section-number">4.9.3</span> pd.crosstab()<a class="anchor" aria-label="anchor" href="#pd.crosstab"><i class="fas fa-link"></i></a>
+</h3>
+<p>和pivot_table()没有太大区别,但是传递的是序列,并不是dataframe方法.默认返回频次.</p>
+</div>
+<div id="melt" class="section level3" number="4.9.4">
+<h3>
+<span class="header-section-number">4.9.4</span> melt<a class="anchor" aria-label="anchor" href="#melt"><i class="fas fa-link"></i></a>
+</h3>
+<p>pivot的逆操作,相当于把一列的各个种类再次归为一列，对于有多层column的，要把column的组合值作为一类，有几层就还原为几列。</p>
+<p>但是对于unpivot，stack和unstack明显更方便，只能说这个函数的意义不是unpivot，而是把几个列组合成一个列，其他几个id列保持不变，剩下的舍弃。</p>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<thead><tr class="header">
+<th>参数</th>
+<th>描述</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>id_vars</td>
+<td>列表,作为id，保持不动,从unpivot的角度来说，应该先把index reset_idnex()作为id列</td>
+</tr>
+<tr class="even">
+<td>value_vars</td>
+<td>列表,多层column则以元组包裹，如[(),()],将会根据层数生成相应的列数,另值也会单独的还原为value列</td>
+</tr>
+<tr class="odd">
+<td>value_name</td>
+<td>值列的列名，默认”value”</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb226"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb226-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb226-1" aria-hidden="true" tabindex="-1"></a>pivot_df.stack(level<span class="op">=</span><span class="dv">1</span>).reset_index()</span></code></pre></div>
+<pre class="scroll-200"><code>   foo bar baz zoo
+0  one   A   1   x
+1  one   B   2   y
+2  one   C   3   z
+3  two   A   4   q
+4  two   B   5   w
+5  two   C   6   t</code></pre>
+</div>
+</div>
+<div id="分组.groupby" class="section level2" number="4.10">
+<h2>
+<span class="header-section-number">4.10</span> 分组.groupby()<a class="anchor" aria-label="anchor" href="#%E5%88%86%E7%BB%84.groupby"><i class="fas fa-link"></i></a>
+</h2>
+<p>split-apply-combine</p>
+<ul>
+<li>grouped = df.groupby(,axis=,sort=True，dropna=True,as_index=True):
+<ul>
+<li>用来分组的不一定要是某个列，可以是很多种
+<ul>
+<li>可以是一个python函数作用于每个轴标签, 返回相同值的为一个group,each of the axis labels，但是原索引依然是保存的</li>
+<li>也可以是一个和df等长的list或array</li>
+<li>也可以是一个字典或Series，提供了轴标签到group name 的映射，只对提供了的轴标签进行映射</li>
+<li>一个index level的名字，通过传递level参数</li>
+<li>上面几种形式的任意组合的列表</li>
+</ul>
+</li>
+<li>也可以是level和column的混合
+<ul>
+<li>.groupby(pd.Grouper(level=level_name/level_id),column_name)</li>
+<li>.groupby([level_name,column_name])#会自动去找index和column中满足的name</li>
+</ul>
+</li>
+<li>不仅可以对index聚合，也可以对column聚合，通过axis=1</li>
+<li>默认会按照聚合的key来排序，设置为False可以加快速度</li>
+<li>默认去除key中的缺失值，不作为一类，dropna=True</li>
+<li><strong>默认用来聚合的类是作为index的，设置as_index为False可以变为列</strong></li>
+</ul>
+</li>
+</ul>
+<div class="sourceCode" id="cb228"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb228-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-1" aria-hidden="true" tabindex="-1"></a>gd <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb228-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-2" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb228-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"number"</span>:[<span class="st">"A"</span>,<span class="st">"B"</span>]<span class="op">*</span><span class="dv">3</span>,</span>
+<span id="cb228-4"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"font"</span>:[<span class="st">"one"</span>,<span class="st">"two"</span>,<span class="st">"three"</span>]<span class="op">*</span><span class="dv">2</span>,</span>
+<span id="cb228-5"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"score1"</span>:np.random.randn(<span class="dv">6</span>),</span>
+<span id="cb228-6"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"score2"</span>:np.random.randn(<span class="dv">6</span>)</span>
+<span id="cb228-7"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb228-8"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb228-9"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-9" aria-hidden="true" tabindex="-1"></a>gd</span></code></pre></div>
+<pre class="scroll-200"><code>  number   font    score1    score2
+0      A    one -1.570729  0.272257
+1      B    two -0.735969 -1.142494
+2      A  three  0.808487  1.668910
+3      B    one -1.053417 -0.567368
+4      A    two -1.914172 -0.948358
+5      B  three  0.210793  0.676685</code></pre>
+<div class="sourceCode" id="cb230"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb230-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb230-1" aria-hidden="true" tabindex="-1"></a>gd.groupby([<span class="st">"number"</span>])</span></code></pre></div>
+<pre class="scroll-200"><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000025C892D5CA0&gt;</code></pre>
+<div class="sourceCode" id="cb232"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb232-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb232-1" aria-hidden="true" tabindex="-1"></a>gdn <span class="op">=</span> gd.groupby([<span class="st">"number"</span>])</span>
+<span id="cb232-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb232-2" aria-hidden="true" tabindex="-1"></a>gdn.groups <span class="co">#{index,row_label}</span></span></code></pre></div>
+<pre class="scroll-200"><code>{'A': [0, 2, 4], 'B': [1, 3, 5]}</code></pre>
+<div class="sourceCode" id="cb234"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb234-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb234-1" aria-hidden="true" tabindex="-1"></a>gdn.get_group(<span class="st">"A"</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>  number   font    score1    score2
+0      A    one -1.570729  0.272257
+2      A  three  0.808487  1.668910
+4      A    two -1.914172 -0.948358</code></pre>
+<div class="sourceCode" id="cb236"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb236-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb236-1" aria-hidden="true" tabindex="-1"></a>gdn.ngroup() <span class="co">#以数字代表种类，反映每行属于哪一类</span></span></code></pre></div>
+<pre class="scroll-200"><code>0    0
+1    1
+2    0
+3    1
+4    0
+5    1
+dtype: int64</code></pre>
+<div class="sourceCode" id="cb238"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb238-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb238-1" aria-hidden="true" tabindex="-1"></a>gdn.ngroups  <span class="co">#返回种类的个数</span></span></code></pre></div>
+<pre class="scroll-200"><code>2</code></pre>
+<div id="选取" class="section level3 tabset" number="4.10.1">
+<h3>
+<span class="header-section-number">4.10.1</span> 选取<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96"><i class="fas fa-link"></i></a>
+</h3>
+<p>从split的角度，我们无法选择行，可以选择列。</p>
+<div id="选取列-1" class="section level4" number="4.10.1.1">
+<h4>
+<span class="header-section-number">4.10.1.1</span> 选取列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%88%97-1"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb240"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb240-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb240-1" aria-hidden="true" tabindex="-1"></a>gdn[<span class="st">"font"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x0000025C882D85E0&gt;</code></pre>
+<div class="sourceCode" id="cb242"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb242-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb242-1" aria-hidden="true" tabindex="-1"></a>gdn[[<span class="st">"font"</span>]]</span></code></pre></div>
+<pre class="scroll-200"><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000025C882D8670&gt;</code></pre>
+</div>
+<div id="filter" class="section level4" number="4.10.1.2">
+<h4>
+<span class="header-section-number">4.10.1.2</span> .filter()<a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
+</h4>
+<pre><code>&gt;&gt;&gt; df = pd.DataFrame(np.array(([1, 2, 3], [4, 5, 6])),
+...                   index=['mouse', 'rabbit'],
+...                   columns=['one', 'two', 'three'])
+&gt;&gt;&gt; df
+        one  two  three
+mouse     1    2      3
+rabbit    4    5      6
+
+&gt;&gt;&gt; # select columns by name
+&gt;&gt;&gt; df.filter(items=['one', 'three'])
+         one  three
+mouse     1      3
+rabbit    4      6
+
+&gt;&gt;&gt; # select columns by regular expression
+&gt;&gt;&gt; df.filter(regex='e$', axis=1)
+         one  three
+mouse     1      3
+rabbit    4      6
+
+&gt;&gt;&gt; # select rows containing 'bbi'
+&gt;&gt;&gt; df.filter(like='bbi', axis=0)
+         one  two  three
+rabbit    4    5      6</code></pre>
+</div>
+<div id="head.tail" class="section level4" number="4.10.1.3">
+<h4>
+<span class="header-section-number">4.10.1.3</span> .head()/.tail()<a class="anchor" aria-label="anchor" href="#head.tail"><i class="fas fa-link"></i></a>
+</h4>
+<p>没啥意义，相当于没有groupby，返回原数据框样式.</p>
+<div class="sourceCode" id="cb245"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb245-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb245-1" aria-hidden="true" tabindex="-1"></a>gdn.head()</span></code></pre></div>
+<pre class="scroll-200"><code>  number   font    score1    score2
+0      A    one -1.570729  0.272257
+1      B    two -0.735969 -1.142494
+2      A  three  0.808487  1.668910
+3      B    one -1.053417 -0.567368
+4      A    two -1.914172 -0.948358
+5      B  three  0.210793  0.676685</code></pre>
+</div>
+<div id="take-1" class="section level4" number="4.10.1.4">
+<h4>
+<span class="header-section-number">4.10.1.4</span> .take()<a class="anchor" aria-label="anchor" href="#take-1"><i class="fas fa-link"></i></a>
+</h4>
+<p>给与行号，返回每个组相应位置的行。行索引保留。不可超过</p>
+<div class="sourceCode" id="cb247"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb247-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb247-1" aria-hidden="true" tabindex="-1"></a>gdn.take([<span class="dv">0</span>,<span class="dv">1</span>])</span></code></pre></div>
+<pre class="scroll-200"><code>           font    score1    score2
+number                             
+A      0    one -1.570729  0.272257
+       2  three  0.808487  1.668910
+B      1    two -0.735969 -1.142494
+       3    one -1.053417 -0.567368</code></pre>
+</div>
+</div>
+<div id="应用聚合函数" class="section level3" number="4.10.2">
+<h3>
+<span class="header-section-number">4.10.2</span> 应用聚合函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h3>
+<p>如果是对数值列操作的聚合函数，要选出相应的聚合函数</p>
+<ul>
+<li>.all()</li>
+<li>.any()</li>
+<li>.count()</li>
+<li>.idxmax()</li>
+<li>.idxmin()</li>
+<li>.max()</li>
+<li>.min()</li>
+<li>.mean()</li>
+<li>.median()</li>
+<li>.nunique()返会非重复行个数，对于单列就是返回种类数</li>
+<li>.var()</li>
+<li>.std()</li>
+<li>.quantile()</li>
+<li>.sum()</li>
+<li>.prod()</li>
+</ul>
+</div>
+<div id="应用统计函数" class="section level3" number="4.10.3">
+<h3>
+<span class="header-section-number">4.10.3</span> 应用统计函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>.cov()</li>
+<li>.corr()</li>
+<li>.corrwith()#传递同等长度的序列</li>
+<li>.value_counts()#返回每个组的value_counts()</li>
+<li>.describe() # 就是原数据框的describe</li>
+<li>.sample()</li>
+</ul>
+</div>
+<div id="应用窗口函数" class="section level3" number="4.10.4">
+<h3>
+<span class="header-section-number">4.10.4</span> 应用窗口函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>.bfill()</li>
+<li>.ffill()</li>
+<li>.shift(n) n阶滞后</li>
+<li>.rolling()</li>
+<li>.cumsum()</li>
+<li>.cummax()</li>
+<li>.cummin()</li>
+<li>.cumprod()</li>
+<li>.cumcount()返回每一组的各个row的出现顺序，从零开始计数</li>
+<li>.diff()</li>
+<li>.first()</li>
+<li>.last()</li>
+<li>.nth()</li>
+<li>.rank()</li>
+<li>.expand()将会对每个组中的每个成员进行累计的函数操作，比如sum函数会变成累加</li>
+<li>.resample()重新定义频率</li>
+</ul>
+</div>
+<div id="应用自定义函数" class="section level3" number="4.10.5">
+<h3>
+<span class="header-section-number">4.10.5</span> 应用自定义函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+</h3>
+<p>将每个组视为一个dataframe,然后对每个组应用函数。如果想对整个组进行聚合操作，可以利用dataframe的values属性获取array数组，通过numpy函数对数组进行整体聚合操作.比如<code>lambda x:np.sum(x.values)</code></p>
+<ul>
+<li>.pipe()</li>
+<li>.apply()</li>
+<li>.agg()</li>
+<li>.transform()</li>
+</ul>
+</div>
+<div id="迭代每个组" class="section level3" number="4.10.6">
+<h3>
+<span class="header-section-number">4.10.6</span> 迭代每个组<a class="anchor" aria-label="anchor" href="#%E8%BF%AD%E4%BB%A3%E6%AF%8F%E4%B8%AA%E7%BB%84"><i class="fas fa-link"></i></a>
+</h3>
+<pre><code>for name,group in grouped:
+    print(name)
+    print(group)</code></pre>
+</div>
+</div>
+<div id="方法链" class="section level2" number="4.11">
+<h2>
+<span class="header-section-number">4.11</span> 方法链<a class="anchor" aria-label="anchor" href="#%E6%96%B9%E6%B3%95%E9%93%BE"><i class="fas fa-link"></i></a>
+</h2>
+<p>以括号包裹，多行书写,避免中间变量的定义</p>
+<pre><code>df = (pd.melt(df)
+.rename(columns={'variable':'var','value':'val'})
+.query('val &gt;= 200')
+)</code></pre>
+</div>
+<div id="采样" class="section level2" number="4.12">
+<h2>
+<span class="header-section-number">4.12</span> 采样<a class="anchor" aria-label="anchor" href="#%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
+</h2>
+<div id="随机重排序" class="section level3" number="4.12.1">
+<h3>
+<span class="header-section-number">4.12.1</span> 随机重排序<a class="anchor" aria-label="anchor" href="#%E9%9A%8F%E6%9C%BA%E9%87%8D%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb251"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb251-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="co">#生成新序列</span></span>
+<span id="cb251-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb251-2" aria-hidden="true" tabindex="-1"></a>np.random.permutation(<span class="bu">range</span>(<span class="dv">5</span>))</span></code></pre></div>
+<pre class="scroll-200"><code>array([0, 4, 3, 2, 1])</code></pre>
+<div class="sourceCode" id="cb253"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb253-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb253-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb253-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb253-2" aria-hidden="true" tabindex="-1"></a><span class="co">#打乱原序列，不生成新序列</span></span>
+<span id="cb253-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb253-3" aria-hidden="true" tabindex="-1"></a>random.shuffle(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">6</span>)))</span></code></pre></div>
+</div>
+<div id="随机采样" class="section level3 tabset" number="4.12.2">
+<h3>
+<span class="header-section-number">4.12.2</span> 随机采样<a class="anchor" aria-label="anchor" href="#%E9%9A%8F%E6%9C%BA%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
+</h3>
+<div id="random.sample" class="section level4" number="4.12.2.1">
+<h4>
+<span class="header-section-number">4.12.2.1</span> random.sample()<a class="anchor" aria-label="anchor" href="#random.sample"><i class="fas fa-link"></i></a>
+</h4>
+<p>不能超过序列个数</p>
+<p><code>sample(population,k,*,counts)</code></p>
+<div class="sourceCode" id="cb254"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb254-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb254-1" aria-hidden="true" tabindex="-1"></a>random.sample(<span class="bu">range</span>(<span class="dv">5</span>),<span class="dv">3</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>[2, 3, 0]</code></pre>
+<div class="sourceCode" id="cb256"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb256-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb256-1" aria-hidden="true" tabindex="-1"></a>random.sample([<span class="st">'a'</span>,<span class="st">'b'</span>],counts<span class="op">=</span>[<span class="dv">4</span>,<span class="dv">2</span>],k<span class="op">=</span><span class="dv">5</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>['a', 'b', 'a', 'a', 'b']</code></pre>
+</div>
+<div id="random.choices" class="section level4" number="4.12.2.2">
+<h4>
+<span class="header-section-number">4.12.2.2</span> random.choice(s)()<a class="anchor" aria-label="anchor" href="#random.choices"><i class="fas fa-link"></i></a>
+</h4>
+<pre><code>random.choices(population,weights=None,*,cum_weights=None,k=1)
+给定weights或cum_weights,不能同时给，最终都会转为cum_weight来进行计算，长度必须和population的长度相同，对应的各个值的概率。
+k决定了生成样本的个数
+大样本下各个值的概率应该与给定的weights相符</code></pre>
+<div class="sourceCode" id="cb259"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb259-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb259-1" aria-hidden="true" tabindex="-1"></a>random.choice(<span class="bu">range</span>(<span class="dv">5</span>))</span></code></pre></div>
+<pre class="scroll-200"><code>4</code></pre>
+<div class="sourceCode" id="cb261"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb261-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb261-1" aria-hidden="true" tabindex="-1"></a>random.choices([<span class="st">'a'</span>,<span class="st">'b'</span>],weights<span class="op">=</span>[<span class="dv">2</span>,<span class="dv">1</span>],k<span class="op">=</span><span class="dv">12</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>['a', 'b', 'a', 'a', 'a', 'a', 'b', 'a', 'a', 'a', 'a', 'a']</code></pre>
+</div>
+<div id="df.sample" class="section level4" number="4.12.2.3">
+<h4>
+<span class="header-section-number">4.12.2.3</span> df.sample()<a class="anchor" aria-label="anchor" href="#df.sample"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb263"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb263-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb263-1" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.DataFrame(np.random.randn(<span class="dv">8</span>),index<span class="op">=</span>pd.date_range(<span class="st">"2022"</span>,<span class="st">"2030"</span>,freq<span class="op">=</span><span class="st">"Y"</span>))</span>
+<span id="cb263-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb263-2" aria-hidden="true" tabindex="-1"></a>ts.sample(<span class="dv">3</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>                   0
+2029-12-31  1.106913
+2024-12-31  0.415389
+2023-12-31 -0.309705</code></pre>
+<div class="sourceCode" id="cb265"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb265-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb265-1" aria-hidden="true" tabindex="-1"></a>ts.sample(<span class="dv">5</span>,replace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>                   0
+2023-12-31 -0.309705
+2022-12-31  1.726147
+2029-12-31  1.106913
+2026-12-31 -0.675781
+2025-12-31  1.162013</code></pre>
+
+</div>
+</div>
+</div>
+</div>
+<style>
+
+/* Style the tab */
+/* .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+} */
+.tab {
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    /* margin-bottom: 8px; */
+    /* margin-left: -8px; */
+    /* margin-right: 0px; */
+    /* border-bottom:1px solid #e0e0e0; */
+    height: 32px;
+    /*flex-basis: 100px;*/
+    /* background-color: aliceblue; */
+}
+
+/* Style the buttons inside the tab */
+/* .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+} */
+
+.tab button {
+    background-color: inherit;
+    margin:0;
+    text-align: center;
+    font-weight: 500;
+    min-width: 100px;
+    /*width:fit-content;*/
+    height: 100%;
+    /* padding:5px,5px; */
+    border: none;
+    font-size: 1rem;
+    font-weight:400;
+    line-height: 32px;
+    letter-spacing: .5px;
+}
+
+/* Change background color of buttons on hover */
+/* .tab button:hover {
+    background-color: #ddd;
+} */
+.tab button:hover {
+    background-color: aliceblue;
+}
+
+/* Create an active/current tablink class */
+/* .tab button.active {
+    background-color: #ccc;
+} */
+.tab button.active {
+    border-bottom: 2px solid rgb(33,150,243);
+    background-color: aliceblue;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+/* Style the tab content */
+/* .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+} */
+.tabcontent {
+    display: none;
+    /* border: 1px solid aliceblue; */
+    /*background-color: aliceblue;*/
+    /* margin-left: -8px; */
+    /* margin-top: -8px; */
+ }
+
+.tabheader{
+    display: none;
+}
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+  margin-left: 0px;
+}
+</style>
+<script>
+    var tab = document.getElementsByClassName("tabset");
+    for(i=0;i<tab.length;i++){
+    var hL = tab[i].children[0].nodeName[1];
+    var tabContents = tab[i].getElementsByTagName("h"+String(Number(hL)+1));
+    var tabCon = document.createElement("div");
+    tabCon.className = "tab";
+    tab[i].insertBefore(tabCon,tabContents[0].parentNode);
+     for(j=0;j<tabContents.length;j++){
+         var tabConDiv = tabContents[j].parentNode;
+         var tabId = tabConDiv.getAttribute("id");
+         var tabNumber = tabConDiv.getAttribute("number").replaceAll('.','-');
+         var newID = tabNumber + '-' + tabId;
+         var button = document.createElement("button");
+         button.className = "tablinks";
+         button.setAttribute("onclick","openTab(event,'"+newID+"')");
+         button.innerText = tabId.split('-')[0];
+        //  button.innerText = tabContents[j].innerText;
+         tabCon.appendChild(button);
+         tabConDiv.setAttribute("id",newID);
+         tabConDiv.className = "tabcontent";
+         tabContents[j].innerHTML = "";
+         tabContents[j].className = "tabheader";
+     }
+     tabContents[0].parentNode.style.display = "block";
+     tabCon.children[0].className += " active"
+    }
+
+function openTab(evt,tabName){
+    var i, tabcontent, tablinks;
+//     tabcontent = document.getElementsByClassName("tabcontent");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//   }
+//     tablinks = document.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//     tablinks[i].className = tablinks[i].className.replace(" active", "");
+//   }
+//   document.getElementById(tabName).style.display = "block";
+//   evt.currentTarget.className += " active";
+    var container = evt.currentTarget.parentNode;
+    tabcontent = container.parentNode.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+  }
+    tablinks = container.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script><div class="giscus">
+<script src="https://giscus.app/client.js" data-repo="wangchenglong99/wangchenglong99.github.io" data-repo-id="R_kgDOI6UvHg" data-category="Announcements" data-category-id="DIC_kwDOI6UvHs4CUJAN" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light_high_contrast" data-lang="zh-CN" crossorigin="anonymous" async>
+</script><div></div>
+  
+
+  
+
+</div>
+<div class="chapter-nav">
+<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></div>
+<div class="next"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="header-section-number">4</span> 数据操作</a></li>
+<li>
+<a class="nav-link" href="#%E5%88%97"><span class="header-section-number">4.1</span> 列</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E9%80%89%E5%8F%96%E5%88%97"><span class="header-section-number">4.1.1</span> 选取列</a></li>
+<li><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><span class="header-section-number">4.1.2</span> 增加列</a></li>
+<li><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%88%97"><span class="header-section-number">4.1.3</span> 替换列</a></li>
+<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%88%97"><span class="header-section-number">4.1.4</span> 删除列</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E8%A1%8C"><span class="header-section-number">4.2</span> 行</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E9%80%89%E5%8F%96%E8%A1%8C"><span class="header-section-number">4.2.1</span> 选取行</a></li>
+<li><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E8%A1%8C"><span class="header-section-number">4.2.2</span> 增加行</a></li>
+<li><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E8%A1%8C"><span class="header-section-number">4.2.3</span> 替换行</a></li>
+<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%8C"><span class="header-section-number">4.2.4</span> 删除行</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E5%80%BCscalar"><span class="header-section-number">4.3</span> 任意值/scalar</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ilocloc"><span class="header-section-number">4.3.1</span> .iloc/loc</a></li>
+<li><a class="nav-link" href="#iatat"><span class="header-section-number">4.3.2</span> .iat/at</a></li>
+<li><a class="nav-link" href="#wheremask"><span class="header-section-number">4.3.3</span> where/mask</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4</span> 索引</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E7%B4%A2%E5%BC%95name"><span class="header-section-number">4.4.1</span> 索引name</a></li>
+<li><a class="nav-link" href="#%E9%87%8D%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.4.2</span> 重排序</a></li>
+<li><a class="nav-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D"><span class="header-section-number">4.4.3</span> 重命名</a></li>
+<li><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%88%97%E4%B8%BA%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4.4</span> 设置列为索引</a></li>
+<li><a class="nav-link" href="#%E9%87%8D%E7%BD%AE%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4.5</span> 重置索引</a></li>
+<li><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4.6</span> 多层索引</a></li>
+<li><a class="nav-link" href="#%E9%80%89%E5%8F%96%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4.7</span> 选取多层索引</a></li>
+<li><a class="nav-link" href="#%E8%B0%83%E6%8D%A2%E5%A4%9A%E4%B8%AAindex%E7%9A%84%E9%A1%BA%E5%BA%8F"><span class="header-section-number">4.4.8</span> 调换多个index的顺序</a></li>
+<li><a class="nav-link" href="#index%E5%92%8Ccolumn%E7%9A%84%E4%BA%92%E6%8D%A2"><span class="header-section-number">4.4.9</span> index和column的互换</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.5</span> 排序</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sort_index%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.5.1</span> .sort_index():根据标签排序</a></li>
+<li><a class="nav-link" href="#sort_values%E6%A0%B9%E6%8D%AE%E5%80%BC%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.5.2</span> .sort_values():根据值排序</a></li>
+<li><a class="nav-link" href="#nlargest.nsmallest"><span class="header-section-number">4.5.3</span> .nlargest(),.nsmallest()</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="header-section-number">4.6</span> 数学运算</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E6%88%96%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="header-section-number">4.6.1</span> 序列或数据框</a></li>
+<li><a class="nav-link" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E5%BA%8F%E5%88%97"><span class="header-section-number">4.6.2</span> 同维度的序列</a></li>
+<li><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%92%8C%E6%A0%87%E9%87%8F"><span class="header-section-number">4.6.3</span> 序列和标量</a></li>
+<li><a class="nav-link" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="header-section-number">4.6.4</span> 同维度的数据框</a></li>
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E6%A0%87%E9%87%8F"><span class="header-section-number">4.6.5</span> 数据框和标量</a></li>
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E5%BA%8F%E5%88%97"><span class="header-section-number">4.6.6</span> 数据框和序列</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="header-section-number">4.7</span> 统计方法</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%92%8C%E5%8D%8F%E6%96%B9%E5%B7%AE"><span class="header-section-number">4.7.1</span> 相关和协方差</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="header-section-number">4.8</span> 函数</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#apply"><span class="header-section-number">4.8.1</span> .apply()</a></li>
+<li><a class="nav-link" href="#agg"><span class="header-section-number">4.8.2</span> .agg()</a></li>
+<li><a class="nav-link" href="#transform"><span class="header-section-number">4.8.3</span> .transform()</a></li>
+<li><a class="nav-link" href="#applymap"><span class="header-section-number">4.8.4</span> .applymap()</a></li>
+<li><a class="nav-link" href="#pipe"><span class="header-section-number">4.8.5</span> .pipe()</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E9%80%8F%E8%A7%86%E8%A1%A8"><span class="header-section-number">4.9</span> 透视表</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pivot"><span class="header-section-number">4.9.1</span> .pivot()</a></li>
+<li><a class="nav-link" href="#pivot_table"><span class="header-section-number">4.9.2</span> .pivot_table()</a></li>
+<li><a class="nav-link" href="#pd.crosstab"><span class="header-section-number">4.9.3</span> pd.crosstab()</a></li>
+<li><a class="nav-link" href="#melt"><span class="header-section-number">4.9.4</span> melt</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E5%88%86%E7%BB%84.groupby"><span class="header-section-number">4.10</span> 分组.groupby()</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E9%80%89%E5%8F%96"><span class="header-section-number">4.10.1</span> 选取</a></li>
+<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="header-section-number">4.10.2</span> 应用聚合函数</a></li>
+<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><span class="header-section-number">4.10.3</span> 应用统计函数</a></li>
+<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="header-section-number">4.10.4</span> 应用窗口函数</a></li>
+<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="header-section-number">4.10.5</span> 应用自定义函数</a></li>
+<li><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%AF%8F%E4%B8%AA%E7%BB%84"><span class="header-section-number">4.10.6</span> 迭代每个组</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%93%BE"><span class="header-section-number">4.11</span> 方法链</a></li>
+<li>
+<a class="nav-link" href="#%E9%87%87%E6%A0%B7"><span class="header-section-number">4.12</span> 采样</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E9%87%8D%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.12.1</span> 随机重排序</a></li>
+<li><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E9%87%87%E6%A0%B7"><span class="header-section-number">4.12.2</span> 随机采样</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/wangchenglong99/wangchenglong99.github.io/edit/main/%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2023-03-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</div>
+</body>
+</html>

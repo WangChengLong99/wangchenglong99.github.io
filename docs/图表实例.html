@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>第7章 图表实例 | wcl</title>
+<meta name="author" content="第7章 图表实例 | wcl">
+<meta name="description" content='import pandas as pd import numpy as np import matplotlib as mpl #mpl.use("agg") import matplotlib.pyplot as plt import matplotlib.lines as mlines import matplotlib.patches as mpatches from...'>
+<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta property="og:title" content="第7章 图表实例 | wcl">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/图表实例.html">
+<meta property="og:description" content='import pandas as pd import numpy as np import matplotlib as mpl #mpl.use("agg") import matplotlib.pyplot as plt import matplotlib.lines as mlines import matplotlib.patches as mpatches from...'>
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第7章 图表实例 | wcl">
+<meta name="twitter:description" content='import pandas as pd import numpy as np import matplotlib as mpl #mpl.use("agg") import matplotlib.pyplot as plt import matplotlib.lines as mlines import matplotlib.patches as mpatches from...'>
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/d3-3.3.8/d3.min.js"></script><script src="libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="libs/chromatography-0.1/chromatography.js"></script><script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script><style>
+    /* pre {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+
+    pre[class] {
+      max-height: 100px;
+    } */
+
+    .scroll-200 {
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: inherit;
+    }
+    </style>
+<link rel="shortcut icon" type="image/x-icon" href="icon/favicon.ico">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">wcl</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">关于</a></li>
+<li class="book-part">数据</li>
+<li><a class="" href="introduction-1.html">introduction</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li class="book-part">可视化</li>
+<li><a class="" href="introduction-2.html">introduction</a></li>
+<li><a class="" href="matplotlib-1.html"><span class="header-section-number">6</span> matplotlib</a></li>
+<li><a class="active" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li class="book-part">数据库</li>
+<li><a class="" href="introduction-3.html">introduction</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li class="book-part">机器学习</li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/wangchenglong99/wangchenglong99.github.io">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="图表实例" class="section level1" number="7">
+<h1>
+<span class="header-section-number">第7章</span> 图表实例<a class="anchor" aria-label="anchor" href="#%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B"><i class="fas fa-link"></i></a>
+</h1>
+<div class="sourceCode" id="cb456"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb456-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb456-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb456-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
+<span id="cb456-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-4" aria-hidden="true" tabindex="-1"></a><span class="co">#mpl.use("agg")</span></span>
+<span id="cb456-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb456-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.lines <span class="im">as</span> mlines</span>
+<span id="cb456-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches</span>
+<span id="cb456-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.legend_handler <span class="im">import</span> HandlerLine2D, HandlerTuple </span>
+<span id="cb456-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.random <span class="im">import</span> randn</span>
+<span id="cb456-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb456-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> ticker</span>
+<span id="cb456-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.gridspec <span class="im">import</span> GridSpec</span>
+<span id="cb456-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-13" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.sans-serif'</span>]<span class="op">=</span>[<span class="st">'Simhei'</span>]<span class="op">;</span> <span class="co">#SimHei黑体 </span></span>
+<span id="cb456-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-14" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>]<span class="op">=</span><span class="va">False</span><span class="op">;</span> <span class="co">#正常显示图中负号</span></span>
+<span id="cb456-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-15" aria-hidden="true" tabindex="-1"></a><span class="co">#teacher = pd.read_csv("data/数据/school/1_teacher.csv")</span></span>
+<span id="cb456-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-16" aria-hidden="true" tabindex="-1"></a>student <span class="op">=</span> pd.read_csv(<span class="st">"data/数据/school/2_student_info.csv"</span>)</span>
+<span id="cb456-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-17" aria-hidden="true" tabindex="-1"></a><span class="co">#kaoqin = pd.read_csv("data/数据/school/3_kaoqin.csv")</span></span>
+<span id="cb456-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-18" aria-hidden="true" tabindex="-1"></a><span class="co">#kaoqin_type = pd.read_csv("data/数据/school/4_kaoqintype.csv")</span></span>
+<span id="cb456-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-19" aria-hidden="true" tabindex="-1"></a>chengji <span class="op">=</span> pd.read_csv(<span class="st">"data/数据/school/5_chengji.csv"</span>)</span>
+<span id="cb456-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-20" aria-hidden="true" tabindex="-1"></a><span class="co">#exam_type = pd.read_csv("data/数据/school/6_exam_type.csv")</span></span>
+<span id="cb456-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-21" aria-hidden="true" tabindex="-1"></a><span class="co">#consumption = pd.read_csv("data/数据/school/7_consumption.csv")</span></span>
+<span id="cb456-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-22" aria-hidden="true" tabindex="-1"></a><span class="co">#teacher.head().pipe(lambda df:print(df.to_markdown(tablefmt="github")))</span></span>
+<span id="cb456-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-23" aria-hidden="true" tabindex="-1"></a>student.head().pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span>
+<span id="cb456-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-24" aria-hidden="true" tabindex="-1"></a><span class="co">#kaoqin.head().pipe(lambda df:print(df.to_markdown(tablefmt="github")))</span></span>
+<span id="cb456-25"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb456-25" aria-hidden="true" tabindex="-1"></a><span class="co">#kaoqin_type.head().pipe(lambda df:print(df.to_markdown(tablefmt="github")))</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="1%">
+<col width="7%">
+<col width="5%">
+<col width="4%">
+<col width="6%">
+<col width="7%">
+<col width="6%">
+<col width="8%">
+<col width="9%">
+<col width="6%">
+<col width="4%">
+<col width="6%">
+<col width="5%">
+<col width="8%">
+<col width="7%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>bf_StudentID</th>
+<th>bf_Name</th>
+<th>bf_sex</th>
+<th>bf_nation</th>
+<th>bf_BornDate</th>
+<th>cla_Name</th>
+<th>bf_NativePlace</th>
+<th>Bf_ResidenceType</th>
+<th>bf_policy</th>
+<th>cla_id</th>
+<th>cla_term</th>
+<th>bf_zhusu</th>
+<th>bf_leaveSchool</th>
+<th>bf_qinshihao</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>14454</td>
+<td>陈某某</td>
+<td>女</td>
+<td>汉族</td>
+<td>2001</td>
+<td>白-高二(01)</td>
+<td>宁波</td>
+<td>城镇</td>
+<td>共青团员</td>
+<td>901</td>
+<td>2018-2019-1</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>14479</td>
+<td>曹某某</td>
+<td>男</td>
+<td>汉族</td>
+<td>nan</td>
+<td>白-高二(01)</td>
+<td>nan</td>
+<td>城镇</td>
+<td>共青团员</td>
+<td>901</td>
+<td>2018-2019-1</td>
+<td>1</td>
+<td>nan</td>
+<td>315</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>14486</td>
+<td>金某某</td>
+<td>男</td>
+<td>汉族</td>
+<td>nan</td>
+<td>白-高二(01)</td>
+<td>nan</td>
+<td>城镇</td>
+<td>共青团员</td>
+<td>901</td>
+<td>2018-2019-1</td>
+<td>1</td>
+<td>nan</td>
+<td>321</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>14549</td>
+<td>张某某</td>
+<td>女</td>
+<td>汉族</td>
+<td>2002</td>
+<td>白-高二(07)</td>
+<td>浙江平湖</td>
+<td>城镇</td>
+<td>共青团员</td>
+<td>907</td>
+<td>2018-2019-1</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>14550</td>
+<td>张某某</td>
+<td>女</td>
+<td>汉族</td>
+<td>2001</td>
+<td>白-高二(04)</td>
+<td>浙江宁波</td>
+<td>城镇</td>
+<td>共青团员</td>
+<td>904</td>
+<td>2018-2019-1</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+</tbody>
+</table></div>
+<div class="sourceCode" id="cb457"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb457-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb457-1" aria-hidden="true" tabindex="-1"></a>chengji.head().pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span>
+<span id="cb457-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb457-2" aria-hidden="true" tabindex="-1"></a><span class="co">#exam_type.head().pipe(lambda df:print(df.to_markdown(tablefmt="github")))</span></span>
+<span id="cb457-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb457-3" aria-hidden="true" tabindex="-1"></a><span class="co">#consumption.head().pipe(lambda df:print(df.to_markdown(tablefmt="github")))</span></span></code></pre></div>
+<div class="inline-table"><table class="table table-sm">
+<colgroup>
+<col width="1%">
+<col width="6%">
+<col width="7%">
+<col width="12%">
+<col width="6%">
+<col width="7%">
+<col width="6%">
+<col width="6%">
+<col width="9%">
+<col width="8%">
+<col width="6%">
+<col width="7%">
+<col width="7%">
+<col width="6%">
+</colgroup>
+<thead><tr class="header">
+<th></th>
+<th>mes_TestID</th>
+<th>exam_number</th>
+<th>exam_numname</th>
+<th>mes_sub_id</th>
+<th>mes_sub_name</th>
+<th>exam_term</th>
+<th>exam_type</th>
+<th>exam_sdate</th>
+<th>mes_StudentID</th>
+<th>mes_Score</th>
+<th>mes_Z_Score</th>
+<th>mes_T_Score</th>
+<th>mes_dengdi</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>136424</td>
+<td>282</td>
+<td>2017年9月宁波市“十校联考”</td>
+<td>17</td>
+<td>政治</td>
+<td>2017-2018-1</td>
+<td>7</td>
+<td>2017/9/20 00:00:00</td>
+<td>13539</td>
+<td>-2</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>136424</td>
+<td>282</td>
+<td>2017年9月宁波市“十校联考”</td>
+<td>17</td>
+<td>政治</td>
+<td>2017-2018-1</td>
+<td>7</td>
+<td>2017/9/20 00:00:00</td>
+<td>13548</td>
+<td>90</td>
+<td>1.07451</td>
+<td>88.5961</td>
+<td>0.137615</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>136424</td>
+<td>282</td>
+<td>2017年9月宁波市“十校联考”</td>
+<td>17</td>
+<td>政治</td>
+<td>2017-2018-1</td>
+<td>7</td>
+<td>2017/9/20 00:00:00</td>
+<td>13551</td>
+<td>91</td>
+<td>1.19415</td>
+<td>89.5532</td>
+<td>0.0917431</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>136424</td>
+<td>282</td>
+<td>2017年9月宁波市“十校联考”</td>
+<td>17</td>
+<td>政治</td>
+<td>2017-2018-1</td>
+<td>7</td>
+<td>2017/9/20 00:00:00</td>
+<td>13555</td>
+<td>-2</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>136424</td>
+<td>282</td>
+<td>2017年9月宁波市“十校联考”</td>
+<td>17</td>
+<td>政治</td>
+<td>2017-2018-1</td>
+<td>7</td>
+<td>2017/9/20 00:00:00</td>
+<td>13559</td>
+<td>-2</td>
+<td>nan</td>
+<td>nan</td>
+<td>nan</td>
+</tr>
+</tbody>
+</table></div>
+<div id="绘制流程" class="section level2" number="7.1">
+<h2>
+<span class="header-section-number">7.1</span> 绘制流程<a class="anchor" aria-label="anchor" href="#%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="static/image/%E5%8F%AF%E8%A7%86%E5%8C%96/%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B.jpg" width="95%" style="display: block; margin: auto;"></div>
+</div>
+<div id="参考" class="section level2" number="7.2">
+<h2>
+<span class="header-section-number">7.2</span> 参考<a class="anchor" aria-label="anchor" href="#%E5%8F%82%E8%80%83"><i class="fas fa-link"></i></a>
+</h2>
+<a href="./static/html/python%E5%8F%AF%E8%A7%86%E5%8C%96.html" target="_blank">python可视化.html</a><br><iframe src="./static/html/python%E5%8F%AF%E8%A7%86%E5%8C%96.html" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500">
+</iframe>
+</div>
+<div id="axes参数设置" class="section level2" number="7.3">
+<h2>
+<span class="header-section-number">7.3</span> axes参数设置<a class="anchor" aria-label="anchor" href="#axes%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><i class="fas fa-link"></i></a>
+</h2>
+<div id="tick_labels" class="section level3" number="7.3.1">
+<h3>
+<span class="header-section-number">7.3.1</span> tick_labels<a class="anchor" aria-label="anchor" href="#tick_labels"><i class="fas fa-link"></i></a>
+</h3>
+<pre><code>#获取label对象
+ax.xaxis.get_ticklabels()
+#获取label对象并且设置label
+for label in ax.xaxis.get_ticklabels():
+    # 调用x轴刻度标签实例，是一个text实例
+    label.set_color('red') # 颜色
+    label.set_rotation(45) # 旋转角度
+    label.set_fontsize(16) # 字体大小
+#更改label和tick值,tick设置为[]，ticks消失
+# ax.xaxis.set_ticklabels()不被鼓励
+ax.set_xticks(ticks,labels,minor=False,)
+ax.yaxis.set_ticks(ticks,labels,minor=False)</code></pre>
+</div>
+<div id="ticks" class="section level3" number="7.3.2">
+<h3>
+<span class="header-section-number">7.3.2</span> ticks<a class="anchor" aria-label="anchor" href="#ticks"><i class="fas fa-link"></i></a>
+</h3>
+<p>grid被包括在ticks中</p>
+<pre><code>#获取ticks在一条轴上的位置
+ax.xaxis.get_ticklocs(minor=False)
+
+#设置一条轴的位置 上下左右或者让ticks和轴消失，label不消失
+ax.xaxis.set_ticks_position()#{'top', 'bottom', 'both', 'default', 'none'}
+
+# 获取ticks的线条,并且设置格式
+for line in ax.xaxis.get_ticklines(minor=False):
+    # 调用y轴刻度线条实例, 是一个Line2D实例
+    line.set_markeredgecolor('green')    # 颜色
+    line.set_markersize(25)    # marker大小
+    line.set_markeredgewidth(2)# marker粗细
+
+#设置ticks的参数
+ax.xaxis.set_tick_params(which="major",rotation=45)#left,right,labelleft,labelright,gridon
+ax.tick_params(axis=,which=,rotation=)
+
+#设置刻度规模
+ax.set_yscale()#设置x轴的规模，也就是量级，比如"linear", "log", "symlog", "logit"
+ax.set_xscale()
+ax.autoscale_view()#自动调整比例
+- `matplotlib.scale.LinearScale`
+- `matplotlib.scale.LogScale`
+- `matplotlib.scale.SymmetricalLogScale`
+- `matplotlib.scale.LogitScale`
+- `matplotlib.scale.FuncScale`
+
+direction : {'in', 'out', 'inout'}
+    Puts ticks inside the Axes, outside the Axes, or both.
+length : float
+    Tick length in points.
+width : float
+    Tick width in points.
+color : color
+    Tick color.
+pad : float
+    Distance in points between tick and label.
+labelsize : float or str
+    Tick label font size in points or as a string (e.g., 'large').
+labelcolor : color
+    Tick label color.
+colors : color
+    Tick color and label color.
+zorder : float
+    Tick and label zorder.
+bottom, top, left, right : bool
+    Whether to draw the respective ticks.
+labelbottom, labeltop, labelleft, labelright : bool
+    Whether to draw the respective tick labels.
+labelrotation : float
+    Tick label rotation
+grid_color : color
+    Gridline color.
+grid_alpha : float
+    Transparency of gridlines: 0 (transparent) to 1 (opaque).
+grid_linewidth : float
+    Width of gridlines in points.
+grid_linestyle : str
+    Any valid `.Line2D` line style spec.</code></pre>
+</div>
+<div id="ticks-formator" class="section level3" number="7.3.3">
+<h3>
+<span class="header-section-number">7.3.3</span> ticks-formator<a class="anchor" aria-label="anchor" href="#ticks-formator"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="static/image/%E5%8F%AF%E8%A7%86%E5%8C%96/format.png" width="95%" style="display: block; margin: auto;"></div>
+</div>
+<div id="ticks-locator" class="section level3" number="7.3.4">
+<h3>
+<span class="header-section-number">7.3.4</span> ticks-locator<a class="anchor" aria-label="anchor" href="#ticks-locator"><i class="fas fa-link"></i></a>
+</h3>
+<pre><code>locator=plt.MaxNLocator(nbins=7)#自动选择合适的位置，并且刻度之间最多不超过7（nbins）个间隔
+locator=plt.FixedLocator(locs=[0,0.5,1.5,2.5,3.5,4.5,5.5,6])#直接指定刻度所在的位置  
+locator=plt.AutoLocator()#自动分配刻度值的位置  
+locator=plt.IndexLocator(offset=0.5, base=1)#面元间距是1，从0.5开始  
+locator=plt.MultipleLocator(1.5)#将刻度的标签设置为1.5的倍数  
+locator=plt.LinearLocator(numticks=5)#线性划分5等分，4个刻度  </code></pre>
+</div>
+<div id="pad" class="section level3" number="7.3.5">
+<h3>
+<span class="header-section-number">7.3.5</span> pad<a class="anchor" aria-label="anchor" href="#pad"><i class="fas fa-link"></i></a>
+</h3>
+<p>控制ticks与轴标签之间的距离</p>
+<pre><code>ax.xaxis.labelpad = 5
+ax.yaxis.labelpad = 5</code></pre>
+</div>
+<div id="spines" class="section level3" number="7.3.6">
+<h3>
+<span class="header-section-number">7.3.6</span> spines<a class="anchor" aria-label="anchor" href="#spines"><i class="fas fa-link"></i></a>
+</h3>
+<p>设置四个轴线</p>
+<pre><code>ax.spines['left'].set_position('center')#set_position('center')将 x 和 y 轴放置在相应数据范围之间。 在这种情况下， y 轴上的数据范围是 -1 到 +1，所以中心点是 0，而 x 轴上的数据范围是 0 到 6，所以中心点是3。 因此，交点为(3, 0)。
+ax.spines['right'].set_visible(False)#设置轴是否可见
+ax.spines['top'].set_color('r')
+ax.spines['top'].set_linewidth(1.7)
+#关闭所有轴线
+for spine in ax.spines.values():
+    spine.set_visible(False)
+    </code></pre>
+</div>
+<div id="轴范围" class="section level3" number="7.3.7">
+<h3>
+<span class="header-section-number">7.3.7</span> 轴范围<a class="anchor" aria-label="anchor" href="#%E8%BD%B4%E8%8C%83%E5%9B%B4"><i class="fas fa-link"></i></a>
+</h3>
+<pre><code>ax.set_[xy]lim()#设置轴范围
+ax.xaxis.get_data_interval()# 获取轴刻度范围</code></pre>
+</div>
+<div id="调整多图间距" class="section level3" number="7.3.8">
+<h3>
+<span class="header-section-number">7.3.8</span> 调整多图间距<a class="anchor" aria-label="anchor" href="#%E8%B0%83%E6%95%B4%E5%A4%9A%E5%9B%BE%E9%97%B4%E8%B7%9D"><i class="fas fa-link"></i></a>
+</h3>
+<div class="inline-figure"><img src="static/image/%E5%8F%AF%E8%A7%86%E5%8C%96/adjust.png" width="95%" style="display: block; margin: auto;"></div>
+<p>也可以在最后加上fig.tight_layout(),会默认起到优化作用</p>
+</div>
+</div>
+<div id="图例" class="section level2" number="7.4">
+<h2>
+<span class="header-section-number">7.4</span> 图例<a class="anchor" aria-label="anchor" href="#%E5%9B%BE%E4%BE%8B"><i class="fas fa-link"></i></a>
+</h2>
+<div class="inline-figure"><img src="static/image/%E5%8F%AF%E8%A7%86%E5%8C%96/legend.png" width="95%" style="display: block; margin: auto;"></div>
+<div id="图例样式设置" class="section level3 tabset" number="7.4.1">
+<h3>
+<span class="header-section-number">7.4.1</span> 图例样式设置<a class="anchor" aria-label="anchor" href="#%E5%9B%BE%E4%BE%8B%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE"><i class="fas fa-link"></i></a>
+</h3>
+<div id="主要参数" class="section level4" number="7.4.1.1">
+<h4>
+<span class="header-section-number">7.4.1.1</span> 主要参数<a class="anchor" aria-label="anchor" href="#%E4%B8%BB%E8%A6%81%E5%8F%82%E6%95%B0"><i class="fas fa-link"></i></a>
+</h4>
+<pre><code>handles : sequence of `.Artist`, optional
+A list of Artists (lines, patches) to be added to the legend.
+Use this together with *labels*, if you need full control on what
+is shown in the legend and the automatic mechanism described above
+is not sufficient.
+
+The length of handles and labels should be the same in this
+case. If they are not, they are truncated to the smaller length.
+
+labels : list of str, optional
+A list of labels to show next to the artists.
+Use this together with *handles*, if you need full control on what
+is shown in the legend and the automatic mechanism described above
+is not sufficient.
+
+bbox_to_anchor : `.BboxBase`, 2-tuple, or 4-tuple of floats
+Box that is used to position the legend in conjunction with *loc*.
+Defaults to `axes.bbox` (if called as a method to `.Axes.legend`) or
+`figure.bbox` (if `.Figure.legend`).  This argument allows arbitrary
+placement of the legend.
+
+Bbox coordinates are interpreted in the coordinate system given by
+*bbox_transform*, with the default transform
+Axes or Figure coordinates, depending on which ``legend`` is called.
+
+If a 4-tuple or `.BboxBase` is given, then it specifies the bbox
+``(x, y, width, height)`` that the legend is placed in.
+To put the legend in the best location in the bottom right
+quadrant of the axes (or figure)::
+
+    loc='best', bbox_to_anchor=(0.5, 0., 0.5, 0.5)
+
+A 2-tuple ``(x, y)`` places the corner of the legend specified by *loc* at
+x, y.  For example, to put the legend's upper right-hand corner in the
+center of the axes (or figure) the following keywords can be used::
+
+    loc='upper right', bbox_to_anchor=(0.5, 0.5)</code></pre>
+<p>ncols : int, default: 1
+The number of columns that the legend has.</p>
+</div>
+<div id="其他参数" class="section level4" number="7.4.1.2">
+<h4>
+<span class="header-section-number">7.4.1.2</span> 其他参数<a class="anchor" aria-label="anchor" href="#%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0"><i class="fas fa-link"></i></a>
+</h4>
+<pre><code>For backward compatibility, the spelling *ncol* is also supported
+but it is discouraged. If both are given, *ncols* takes precedence.
+
+loc : str or pair of floats, default: :rc:`legend.loc`
+  The location of the legend.
+
+  The strings
+  ``'upper left', 'upper right', 'lower left', 'lower right'``
+  place the legend at the corresponding corner of the axes/figure.
+
+  The strings
+  ``'upper center', 'lower center', 'center left', 'center right'``
+  place the legend at the center of the corresponding edge of the
+  axes/figure.
+
+  The string ``'center'`` places the legend at the center of the axes/figure.
+
+  The string ``'best'`` places the legend at the location, among the nine
+  locations defined so far, with the minimum overlap with other drawn
+  artists.  This option can be quite slow for plots with large amounts of
+  data; your plotting speed may benefit from providing a specific location.
+
+  The location can also be a 2-tuple giving the coordinates of the lower-left
+  corner of the legend in axes coordinates (in which case *bbox_to_anchor*
+  will be ignored).
+
+  For back-compatibility, ``'center right'`` (but no other location) can also
+  be spelled ``'right'``, and each "string" locations can also be given as a
+  numeric value:
+
+      ===============   =============
+      Location String   Location Code
+      ===============   =============
+      'best'            0
+      'upper right'     1
+      'upper left'      2
+      'lower left'      3
+      'lower right'     4
+      'right'           5
+      'center left'     6
+      'center right'    7
+      'lower center'    8
+      'upper center'    9
+      'center'          10
+      ===============   =============
+
+prop : None or `matplotlib.font_manager.FontProperties` or dict
+  The font properties of the legend. If None (default), the current
+  :data:`matplotlib.rcParams` will be used.
+
+fontsize : int or {'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large'}
+  The font size of the legend. If the value is numeric the size will be the
+  absolute font size in points. String values are relative to the current
+  default font size. This argument is only used if *prop* is not specified.
+
+labelcolor : str or list, default: :rc:`legend.labelcolor`
+  The color of the text in the legend. Either a valid color string
+  (for example, 'red'), or a list of color strings. The labelcolor can
+  also be made to match the color of the line or marker using 'linecolor',
+  'markerfacecolor' (or 'mfc'), or 'markeredgecolor' (or 'mec').
+
+  Labelcolor can be set globally using :rc:`legend.labelcolor`. If None,
+  use :rc:`text.color`.
+
+numpoints : int, default: :rc:`legend.numpoints`
+  The number of marker points in the legend when creating a legend
+  entry for a `.Line2D` (line).
+
+scatterpoints : int, default: :rc:`legend.scatterpoints`
+  The number of marker points in the legend when creating
+  a legend entry for a `.PathCollection` (scatter plot).
+
+scatteryoffsets : iterable of floats, default: ``[0.375, 0.5, 0.3125]``
+  The vertical offset (relative to the font size) for the markers
+  created for a scatter plot legend entry. 0.0 is at the base the
+  legend text, and 1.0 is at the top. To draw all markers at the
+  same height, set to ``[0.5]``.
+
+markerscale : float, default: :rc:`legend.markerscale`
+  The relative size of legend markers compared with the originally
+  drawn ones.
+
+markerfirst : bool, default: True
+  If *True*, legend marker is placed to the left of the legend label.
+  If *False*, legend marker is placed to the right of the legend label.
+
+reverse : bool, default: False
+  If *True*, the legend labels are displayed in reverse order from the input.
+  If *False*, the legend labels are displayed in the same order as the input.
+
+  .. versionadded:: 3.7
+
+frameon : bool, default: :rc:`legend.frameon`
+  Whether the legend should be drawn on a patch (frame).
+
+fancybox : bool, default: :rc:`legend.fancybox`
+  Whether round edges should be enabled around the `.FancyBboxPatch` which
+  makes up the legend's background.
+
+shadow : bool, default: :rc:`legend.shadow`
+  Whether to draw a shadow behind the legend.
+
+framealpha : float, default: :rc:`legend.framealpha`
+  The alpha transparency of the legend's background.
+  If *shadow* is activated and *framealpha* is ``None``, the default value is
+  ignored.
+
+facecolor : "inherit" or color, default: :rc:`legend.facecolor`
+  The legend's background color.
+  If ``"inherit"``, use :rc:`axes.facecolor`.
+
+edgecolor : "inherit" or color, default: :rc:`legend.edgecolor`
+  The legend's background patch edge color.
+  If ``"inherit"``, use take :rc:`axes.edgecolor`.
+
+mode : {"expand", None}
+  If *mode* is set to ``"expand"`` the legend will be horizontally
+  expanded to fill the axes area (or *bbox_to_anchor* if defines
+  the legend's size).
+
+bbox_transform : None or `matplotlib.transforms.Transform`
+  The transform for the bounding box (*bbox_to_anchor*). For a value
+  of ``None`` (default) the Axes'
+  :data:`~matplotlib.axes.Axes.transAxes` transform will be used.
+
+title : str or None
+  The legend's title. Default is no title (``None``).
+
+title_fontproperties : None or `matplotlib.font_manager.FontProperties` or dict
+  The font properties of the legend's title. If None (default), the
+  *title_fontsize* argument will be used if present; if *title_fontsize* is
+  also None, the current :rc:`legend.title_fontsize` will be used.
+
+title_fontsize : int or {'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large'}, default: :rc:`legend.title_fontsize`
+  The font size of the legend's title.
+  Note: This cannot be combined with *title_fontproperties*. If you want
+  to set the fontsize alongside other font properties, use the *size*
+  parameter in *title_fontproperties*.
+
+alignment : {'center', 'left', 'right'}, default: 'center'
+  The alignment of the legend title and the box of entries. The entries
+  are aligned as a single block, so that markers always lined up.
+
+borderpad : float, default: :rc:`legend.borderpad`
+  The fractional whitespace inside the legend border, in font-size units.
+
+labelspacing : float, default: :rc:`legend.labelspacing`
+  The vertical space between the legend entries, in font-size units.
+
+handlelength : float, default: :rc:`legend.handlelength`
+  The length of the legend handles, in font-size units.
+
+handleheight : float, default: :rc:`legend.handleheight`
+  The height of the legend handles, in font-size units.
+
+handletextpad : float, default: :rc:`legend.handletextpad`
+  The pad between the legend handle and text, in font-size units.
+
+borderaxespad : float, default: :rc:`legend.borderaxespad`
+  The pad between the axes and legend border, in font-size units.
+
+columnspacing : float, default: :rc:`legend.columnspacing`
+  The spacing between columns, in font-size units.
+
+handler_map : dict or None
+  The custom dictionary mapping instances or types to a legend
+  handler. This *handler_map* updates the default handler map
+  found at `matplotlib.legend.Legend.get_legend_handler_map`.
+
+draggable : bool, default: False
+  Whether the legend can be dragged with the mouse.</code></pre>
+</div>
+</div>
+<div id="双轴或者多图" class="section level3" number="7.4.2">
+<h3>
+<span class="header-section-number">7.4.2</span> 双轴或者多图<a class="anchor" aria-label="anchor" href="#%E5%8F%8C%E8%BD%B4%E6%88%96%E8%80%85%E5%A4%9A%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb466"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb466-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb466-1" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> plt.figure()</span>
+<span id="cb466-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb466-2" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig1.add_subplot(<span class="dv">111</span>)</span>
+<span id="cb466-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb466-3" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> ax1.twinx()</span>
+<span id="cb466-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb466-4" aria-hidden="true" tabindex="-1"></a>legend_1 <span class="op">=</span> ax1.bar(<span class="bu">list</span>(<span class="st">"abc"</span>),[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],width<span class="op">=</span><span class="fl">0.6</span>,color<span class="op">=</span><span class="st">"red"</span>)</span>
+<span id="cb466-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb466-5" aria-hidden="true" tabindex="-1"></a>legend_2 <span class="op">=</span> ax2.bar(<span class="bu">list</span>(<span class="st">"abc"</span>),[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>],width<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb466-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb466-6" aria-hidden="true" tabindex="-1"></a>ax1.legend(handles<span class="op">=</span>[legend_1,legend_2],labels<span class="op">=</span>[<span class="st">"a"</span>,<span class="st">"b"</span>])</span>
+<span id="cb466-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb466-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/double-axis-1.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb467"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb467-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb467-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="自定义图例" class="section level3" number="7.4.3">
+<h3>
+<span class="header-section-number">7.4.3</span> 自定义图例<a class="anchor" aria-label="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E4%BE%8B"><i class="fas fa-link"></i></a>
+</h3>
+<p><code>from matplotlib.legend_handler import</code></p>
+<div id="创造" class="section level4" number="7.4.3.1">
+<h4>
+<span class="header-section-number">7.4.3.1</span> 创造<a class="anchor" aria-label="anchor" href="#%E5%88%9B%E9%80%A0"><i class="fas fa-link"></i></a>
+</h4>
+<p>自定义用于图例显示的图形<code>import matplotlib.patches as mpatches</code></p>
+<div class="sourceCode" id="cb468"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb468-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb468-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb468-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb468-2" aria-hidden="true" tabindex="-1"></a>red_patch <span class="op">=</span> mpatches.Patch(color<span class="op">=</span><span class="st">'red'</span>, label<span class="op">=</span><span class="st">'The red data'</span>)</span>
+<span id="cb468-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb468-3" aria-hidden="true" tabindex="-1"></a>blue_line <span class="op">=</span> mlines.Line2D([], [], color<span class="op">=</span><span class="st">'blue'</span>, marker<span class="op">=</span><span class="st">'*'</span>,</span>
+<span id="cb468-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb468-4" aria-hidden="true" tabindex="-1"></a>                          markersize<span class="op">=</span><span class="dv">15</span>, label<span class="op">=</span><span class="st">'Blue stars'</span>)</span>
+<span id="cb468-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb468-5" aria-hidden="true" tabindex="-1"></a>ax.legend(handles<span class="op">=</span>[red_patch,blue_line])</span>
+<span id="cb468-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb468-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb468-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb468-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/create-legend-3.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb469"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb469-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb469-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="分组" class="section level4" number="7.4.3.2">
+<h4>
+<span class="header-section-number">7.4.3.2</span> 分组<a class="anchor" aria-label="anchor" href="#%E5%88%86%E7%BB%84"><i class="fas fa-link"></i></a>
+</h4>
+<p>将某几个图例分为一组,同代表某一类,默认一个tuple内的叠加显示。</p>
+<div class="sourceCode" id="cb470"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb470-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb470-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb470-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb470-2" aria-hidden="true" tabindex="-1"></a>p1, <span class="op">=</span> ax.plot([<span class="dv">1</span>, <span class="fl">2.5</span>, <span class="dv">3</span>], <span class="st">'r-d'</span>)</span>
+<span id="cb470-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb470-3" aria-hidden="true" tabindex="-1"></a>p2, <span class="op">=</span> ax.plot([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>], <span class="st">'k-o'</span>)</span>
+<span id="cb470-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb470-4" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> ax.legend([(p1, p2)], [<span class="st">'Two keys'</span>], numpoints<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb470-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb470-5" aria-hidden="true" tabindex="-1"></a>              handler_map<span class="op">=</span>{<span class="bu">tuple</span>: HandlerTuple(ndivide<span class="op">=</span><span class="va">None</span>)})</span>
+<span id="cb470-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb470-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/groupby-legend-5.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb471"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb471-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb471-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="分离" class="section level4" number="7.4.3.3">
+<h4>
+<span class="header-section-number">7.4.3.3</span> 分离<a class="anchor" aria-label="anchor" href="#%E5%88%86%E7%A6%BB"><i class="fas fa-link"></i></a>
+</h4>
+<p>即在一个axes上显示多个图例,legend可以多次调用</p>
+<div class="sourceCode" id="cb472"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb472-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb472-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-2" aria-hidden="true" tabindex="-1"></a>line1, <span class="op">=</span> ax.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], label<span class="op">=</span><span class="st">"Line 1"</span>, linestyle<span class="op">=</span><span class="st">'--'</span>)</span>
+<span id="cb472-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-3" aria-hidden="true" tabindex="-1"></a>line2, <span class="op">=</span> ax.plot([<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>], label<span class="op">=</span><span class="st">"Line 2"</span>, linewidth<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb472-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb472-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a legend for the first line.</span></span>
+<span id="cb472-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-6" aria-hidden="true" tabindex="-1"></a>first_legend <span class="op">=</span> ax.legend(handles<span class="op">=</span>[line1], loc<span class="op">=</span><span class="st">'upper right'</span>)</span>
+<span id="cb472-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb472-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the legend manually to the Axes.</span></span>
+<span id="cb472-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-9" aria-hidden="true" tabindex="-1"></a>ax.add_artist(first_legend)</span>
+<span id="cb472-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb472-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create another legend for the second line.</span></span>
+<span id="cb472-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-12" aria-hidden="true" tabindex="-1"></a>ax.legend(handles<span class="op">=</span>[line2], loc<span class="op">=</span><span class="st">'lower right'</span>)</span>
+<span id="cb472-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb472-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb472-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/multi-legend-7.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb473"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb473-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb473-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="叠加" class="section level4" number="7.4.3.4">
+<h4>
+<span class="header-section-number">7.4.3.4</span> 叠加<a class="anchor" aria-label="anchor" href="#%E5%8F%A0%E5%8A%A0"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb474"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb474-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb474-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb474-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-3" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> randn(<span class="dv">10</span>)</span>
+<span id="cb474-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb474-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-5" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb474-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-6" aria-hidden="true" tabindex="-1"></a>red_dot, <span class="op">=</span> ax.plot(z, <span class="st">"ro"</span>, markersize<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb474-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Put a white cross over some of the data.</span></span>
+<span id="cb474-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-8" aria-hidden="true" tabindex="-1"></a>white_cross, <span class="op">=</span> ax.plot(z[:<span class="dv">5</span>], <span class="st">"w+"</span>, markeredgewidth<span class="op">=</span><span class="dv">3</span>, markersize<span class="op">=</span><span class="dv">15</span>)</span>
+<span id="cb474-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb474-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-10" aria-hidden="true" tabindex="-1"></a>ax.legend([red_dot, (red_dot, white_cross)], [<span class="st">"Attr A"</span>, <span class="st">"Attr A+B"</span>])</span>
+<span id="cb474-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb474-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb474-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/add-9.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb475"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb475-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb475-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="位置" class="section level4" number="7.4.3.5">
+<h4>
+<span class="header-section-number">7.4.3.5</span> 位置<a class="anchor" aria-label="anchor" href="#%E4%BD%8D%E7%BD%AE"><i class="fas fa-link"></i></a>
+</h4>
+<ul>
+<li>用<code>bbox_to_anchor</code>参数</li>
+</ul>
+<div class="sourceCode" id="cb476"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb476-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb476-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</span>
+<span id="cb476-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb476-2" aria-hidden="true" tabindex="-1"></a>l1<span class="op">=</span>ax.bar(<span class="bu">list</span>(<span class="st">"abc"</span>),[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],label<span class="op">=</span><span class="st">"a"</span>)</span>
+<span id="cb476-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb476-3" aria-hidden="true" tabindex="-1"></a>l2<span class="op">=</span>ax.bar(<span class="bu">list</span>(<span class="st">"abc"</span>),[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>],label<span class="op">=</span><span class="st">"b"</span>)</span>
+<span id="cb476-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb476-4" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> ax.legend(handles<span class="op">=</span>[l1,l2],bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>,<span class="fl">1.1</span>),ncols<span class="op">=</span><span class="dv">2</span>,loc<span class="op">=</span><span class="st">"best"</span>,handleheight<span class="op">=</span><span class="dv">4</span>,handlelength<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb476-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb476-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> z.get_patches():</span>
+<span id="cb476-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb476-6" aria-hidden="true" tabindex="-1"></a>    i.set_height(<span class="dv">30</span>)</span>
+<span id="cb476-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb476-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/set_location-11.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb477"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb477-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb477-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+<ul>
+<li>用loc</li>
+</ul>
+<div class="sourceCode" id="cb478"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb478-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-1" aria-hidden="true" tabindex="-1"></a>ucl <span class="op">=</span> [<span class="st">'upper'</span>, <span class="st">'center'</span>, <span class="st">'lower'</span>]</span>
+<span id="cb478-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-2" aria-hidden="true" tabindex="-1"></a>lcr <span class="op">=</span> [<span class="st">'left'</span>, <span class="st">'center'</span>, <span class="st">'right'</span>]</span>
+<span id="cb478-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>, facecolor<span class="op">=</span><span class="st">'0.7'</span>)</span>
+<span id="cb478-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb478-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-5" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">1</span>, <span class="dv">2</span>], label<span class="op">=</span><span class="st">'TEST'</span>)</span>
+<span id="cb478-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Place a legend to the right of this smaller subplot.</span></span>
+<span id="cb478-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> loc <span class="kw">in</span> [</span>
+<span id="cb478-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside upper left'</span>,</span>
+<span id="cb478-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside upper center'</span>,</span>
+<span id="cb478-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside upper right'</span>,</span>
+<span id="cb478-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside lower left'</span>,</span>
+<span id="cb478-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-12" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside lower center'</span>,</span>
+<span id="cb478-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside lower right'</span>]:</span>
+<span id="cb478-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-14" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> fig.legend(loc<span class="op">=</span>loc, title<span class="op">=</span>loc)</span>
+<span id="cb478-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb478-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">4</span>), layout<span class="op">=</span><span class="st">'constrained'</span>, facecolor<span class="op">=</span><span class="st">'0.7'</span>)</span>
+<span id="cb478-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-17" aria-hidden="true" tabindex="-1"></a>ax.plot([<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">1</span>, <span class="dv">2</span>], label<span class="op">=</span><span class="st">'test'</span>)</span>
+<span id="cb478-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb478-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> loc <span class="kw">in</span> [</span>
+<span id="cb478-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside left upper'</span>,</span>
+<span id="cb478-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside right upper'</span>,</span>
+<span id="cb478-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside left lower'</span>,</span>
+<span id="cb478-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">'outside right lower'</span>]:</span>
+<span id="cb478-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-24" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> fig.legend(loc<span class="op">=</span>loc, title<span class="op">=</span>loc)</span>
+<span id="cb478-25"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb478-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/legend-loc-13.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb479"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb479-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb479-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+</div>
+<div id="颜色" class="section level3 tabset" number="7.4.4">
+<h3>
+<span class="header-section-number">7.4.4</span> 颜色<a class="anchor" aria-label="anchor" href="#%E9%A2%9C%E8%89%B2"><i class="fas fa-link"></i></a>
+</h3>
+<div id="colormap" class="section level4" number="7.4.4.1">
+<h4>
+<span class="header-section-number">7.4.4.1</span> colormap<a class="anchor" aria-label="anchor" href="#colormap"><i class="fas fa-link"></i></a>
+</h4>
+<p>可以指定colormap参数，则默认颜色会从该颜色表中选取</p>
+</div>
+<div id="colorscmap" class="section level4" number="7.4.4.2">
+<h4>
+<span class="header-section-number">7.4.4.2</span> colors+cmap<a class="anchor" aria-label="anchor" href="#colorscmap"><i class="fas fa-link"></i></a>
+</h4>
+<p>colors指定数值序列，cmap指定颜色表建立颜色关系,cmap=mapl.cm.颜色表名</p>
+</div>
+<div id="plt.cm.表名" class="section level4" number="7.4.4.3">
+<h4>
+<span class="header-section-number">7.4.4.3</span> plt.cm.表名<a class="anchor" aria-label="anchor" href="#plt.cm.%E8%A1%A8%E5%90%8D"><i class="fas fa-link"></i></a>
+</h4>
+<p>plt.cm.颜色表名(数值序列),可以直接选定n种颜色</p>
+<p>使用colors</p>
+</div>
+</div>
+</div>
+<div id="柱形图条形图" class="section level2" number="7.5">
+<h2>
+<span class="header-section-number">7.5</span> 柱形图/条形图<a class="anchor" aria-label="anchor" href="#%E6%9F%B1%E5%BD%A2%E5%9B%BE%E6%9D%A1%E5%BD%A2%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h2>
+<div id="基本柱形图" class="section level3 tabset" number="7.5.1">
+<h3>
+<span class="header-section-number">7.5.1</span> 基本柱形图<a class="anchor" aria-label="anchor" href="#%E5%9F%BA%E6%9C%AC%E6%9F%B1%E5%BD%A2%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<div id="简单示例" class="section level4" number="7.5.1.1">
+<h4>
+<span class="header-section-number">7.5.1.1</span> 简单示例<a class="anchor" aria-label="anchor" href="#%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B"><i class="fas fa-link"></i></a>
+</h4>
+<p>可以展示一个种类的各个数值，适用与分类数据</p>
+<div class="sourceCode" id="cb480"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb480-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb480-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 展示某一次考试某位学生的各科成绩柱形图</span></span>
+<span id="cb480-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb480-2" aria-hidden="true" tabindex="-1"></a>sub_score <span class="op">=</span> chengji[(chengji.mes_StudentID <span class="op">==</span> <span class="dv">13539</span>) <span class="op">&amp;</span> (chengji.exam_number <span class="op">==</span> <span class="dv">282</span>)][[<span class="st">"mes_sub_name"</span>,<span class="st">"mes_Score"</span>]].query(<span class="st">"mes_Score&gt;0"</span>)</span>
+<span id="cb480-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb480-3" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> plt.bar(<span class="st">"mes_sub_name"</span>,<span class="st">"mes_Score"</span>,data<span class="op">=</span>sub_score)</span>
+<span id="cb480-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb480-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/basic-chart-15.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb481"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb481-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb481-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="调优" class="section level4" number="7.5.1.2">
+<h4>
+<span class="header-section-number">7.5.1.2</span> 调优<a class="anchor" aria-label="anchor" href="#%E8%B0%83%E4%BC%98"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb482"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb482-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(figsize<span class="op">=</span>(<span class="fl">4.8</span>,<span class="dv">5</span>))</span>
+<span id="cb482-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(<span class="dv">111</span>)</span>
+<span id="cb482-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-3" aria-hidden="true" tabindex="-1"></a><span class="co">#返回barcontainer</span></span>
+<span id="cb482-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-4" aria-hidden="true" tabindex="-1"></a>bc <span class="op">=</span> plt.bar(</span>
+<span id="cb482-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mes_sub_name"</span>,</span>
+<span id="cb482-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mes_Score"</span>,</span>
+<span id="cb482-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-7" aria-hidden="true" tabindex="-1"></a>    width<span class="op">=</span><span class="fl">0.6</span>,</span>
+<span id="cb482-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-8" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>sub_score</span>
+<span id="cb482-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb482-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb482-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 轴和刻度设置</span></span>
+<span id="cb482-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> spine <span class="kw">in</span> ax.spines.values():</span>
+<span id="cb482-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-13" aria-hidden="true" tabindex="-1"></a>    spine.set_visible(<span class="va">False</span>)</span>
+<span id="cb482-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-14" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_ticks_position(<span class="st">"none"</span>)</span>
+<span id="cb482-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-15" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.yaxis.grid(True)</span></span>
+<span id="cb482-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb482-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 在正上方添加数值标签</span></span>
+<span id="cb482-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar <span class="kw">in</span> ax.patches:</span>
+<span id="cb482-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-19" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> ax.text(bar.get_x()<span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="dv">2</span><span class="op">*</span>bar.get_width(),bar.get_height(),bar.get_height(),ha<span class="op">=</span><span class="st">"center"</span>,va<span class="op">=</span><span class="st">"bottom"</span>)</span>
+<span id="cb482-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb482-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置第一个bar为红色</span></span>
+<span id="cb482-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-22" aria-hidden="true" tabindex="-1"></a>bc.patches[<span class="dv">0</span>].set_facecolor(<span class="st">"red"</span>)</span>
+<span id="cb482-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb482-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb482-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/basic-chart-opt-17.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb483"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb483-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb483-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+</div>
+<div id="排列柱形图" class="section level3" number="7.5.2">
+<h3>
+<span class="header-section-number">7.5.2</span> 排列柱形图<a class="anchor" aria-label="anchor" href="#%E6%8E%92%E5%88%97%E6%9F%B1%E5%BD%A2%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<p>比较两位同学同一次考试的各科成绩</p>
+<div class="sourceCode" id="cb484"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb484-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb484-1" aria-hidden="true" tabindex="-1"></a>two_student_score <span class="op">=</span> chengji.query(<span class="st">"mes_StudentID == [13539,13548] &amp; exam_number == 284"</span>)[[<span class="st">"mes_StudentID"</span>,<span class="st">"mes_sub_name"</span>,<span class="st">"mes_Score"</span>]]</span>
+<span id="cb484-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb484-2" aria-hidden="true" tabindex="-1"></a>two_student_score</span></code></pre></div>
+<pre class="scroll-200"><code>       mes_StudentID mes_sub_name  mes_Score
+25373          13539           语文       53.0
+25374          13548           语文       81.0
+26481          13539           数学       50.0
+26482          13548           数学       63.0</code></pre>
+<div class="sourceCode" id="cb486"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb486-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb486-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb486-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb486-2" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> two_student_score.pivot(index<span class="op">=</span><span class="st">"mes_sub_name"</span>,columns<span class="op">=</span><span class="st">"mes_StudentID"</span>,values<span class="op">=</span><span class="st">"mes_Score"</span>).plot(kind<span class="op">=</span><span class="st">"bar"</span>,ax<span class="op">=</span>ax)</span>
+<span id="cb486-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb486-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar <span class="kw">in</span> ax.patches:</span>
+<span id="cb486-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb486-4" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> ax.text(bar.get_x()<span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="dv">2</span><span class="op">*</span>bar.get_width(),bar.get_height(),bar.get_height(),ha<span class="op">=</span><span class="st">"center"</span>,va<span class="op">=</span><span class="st">"bottom"</span>)</span>
+<span id="cb486-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb486-5" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_tick_params(rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb486-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb486-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax.set_xlabel(<span class="st">'学科'</span>)</span>
+<span id="cb486-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb486-7" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax.set_ylabel(<span class="st">'成绩'</span>)</span>
+<span id="cb486-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb486-8" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax.legend(title<span class="op">=</span><span class="st">"学生"</span>)</span>
+<span id="cb486-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb486-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/range-bar-19.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb487"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb487-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb487-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+<div class="sourceCode" id="cb488"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb488-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb488-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb488-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb488-2" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> sns.barplot(data<span class="op">=</span>two_student_score,x<span class="op">=</span><span class="st">"mes_sub_name"</span>,y<span class="op">=</span><span class="st">"mes_Score"</span>,hue<span class="op">=</span><span class="st">"mes_StudentID"</span>,ax<span class="op">=</span>ax)</span>
+<span id="cb488-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb488-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar <span class="kw">in</span> ax.patches:</span>
+<span id="cb488-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb488-4" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> ax.text(bar.get_x()<span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="dv">2</span><span class="op">*</span>bar.get_width(),bar.get_height(),bar.get_height(),ha<span class="op">=</span><span class="st">"center"</span>,va<span class="op">=</span><span class="st">"bottom"</span>)</span>
+<span id="cb488-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb488-5" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_tick_params(rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb488-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb488-6" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax.set_xlabel(<span class="st">'学科'</span>)</span>
+<span id="cb488-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb488-7" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax.set_ylabel(<span class="st">'成绩'</span>)</span>
+<span id="cb488-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb488-8" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax.legend(title<span class="op">=</span><span class="st">"学生"</span>)</span>
+<span id="cb488-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb488-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/sns-bar-21.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb489"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb489-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb489-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="堆叠条形图" class="section level3" number="7.5.3">
+<h3>
+<span class="header-section-number">7.5.3</span> 堆叠条形图<a class="anchor" aria-label="anchor" href="#%E5%A0%86%E5%8F%A0%E6%9D%A1%E5%BD%A2%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb490"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb490-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-1" aria-hidden="true" tabindex="-1"></a><span class="co">#我们要计算各个学生的总成绩</span></span>
+<span id="cb490-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-2" aria-hidden="true" tabindex="-1"></a><span class="co">#横轴将变为学生，列将变成堆叠形式</span></span>
+<span id="cb490-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-3" aria-hidden="true" tabindex="-1"></a>fig,ax<span class="op">=</span>plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb490-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-4" aria-hidden="true" tabindex="-1"></a>student_sum_grade<span class="op">=</span>two_student_score.pivot(index<span class="op">=</span><span class="st">"mes_StudentID"</span>,columns<span class="op">=</span><span class="st">"mes_sub_name"</span>,values<span class="op">=</span><span class="st">"mes_Score"</span>)</span>
+<span id="cb490-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-5" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> student_sum_grade.plot(kind<span class="op">=</span><span class="st">"bar"</span>,ax<span class="op">=</span>ax,stacked<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb490-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-6" aria-hidden="true" tabindex="-1"></a><span class="co">#改成绘制在顶端,这里需要计算cumsum，并且按照列展开，所以需要先转置</span></span>
+<span id="cb490-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-7" aria-hidden="true" tabindex="-1"></a>cums <span class="op">=</span> student_sum_grade.<span class="bu">apply</span>(np.cumsum,axis<span class="op">=</span><span class="dv">1</span>).values.T.flatten()</span>
+<span id="cb490-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar,height <span class="kw">in</span> <span class="bu">zip</span>(ax.patches,cums):</span>
+<span id="cb490-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-9" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> ax.text(bar.get_x()<span class="op">+</span><span class="dv">1</span><span class="op">/</span><span class="dv">2</span><span class="op">*</span>bar.get_width(),height,bar.get_height(),ha<span class="op">=</span><span class="st">"center"</span>,va<span class="op">=</span><span class="st">"top"</span>)</span>
+<span id="cb490-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-10" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_tick_params(rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb490-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb490-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/stack-bar-23.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb491"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb491-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb491-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="双向条形图" class="section level3" number="7.5.4">
+<h3>
+<span class="header-section-number">7.5.4</span> 双向条形图<a class="anchor" aria-label="anchor" href="#%E5%8F%8C%E5%90%91%E6%9D%A1%E5%BD%A2%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<p>主要是bottom和left参数</p>
+<div class="sourceCode" id="cb492"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb492-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-1" aria-hidden="true" tabindex="-1"></a><span class="co">#设计90分为及格线,绘制出一个班级的学生的数学成绩</span></span>
+<span id="cb492-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-2" aria-hidden="true" tabindex="-1"></a>class_student_math <span class="op">=</span> pd.merge(student.query(<span class="st">"cla_id == 901"</span>),chengji.query(<span class="st">"exam_number == 284 &amp; mes_sub_name == '数学'"</span> ),</span>
+<span id="cb492-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-3" aria-hidden="true" tabindex="-1"></a>         how<span class="op">=</span><span class="st">"inner"</span>,left_on<span class="op">=</span><span class="st">"bf_StudentID"</span>,right_on<span class="op">=</span><span class="st">"mes_StudentID"</span>)[[<span class="st">"bf_Name"</span>,<span class="st">"mes_Score"</span>]].set_index(<span class="st">"bf_Name"</span>)</span>
+<span id="cb492-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-4" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">10</span>))</span>
+<span id="cb492-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-5" aria-hidden="true" tabindex="-1"></a><span class="co">#注意这里取序列求平均值</span></span>
+<span id="cb492-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-6" aria-hidden="true" tabindex="-1"></a>grade_mean <span class="op">=</span> <span class="bu">round</span>(class_student_math.mes_Score.mean(),<span class="dv">0</span>)</span>
+<span id="cb492-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-7" aria-hidden="true" tabindex="-1"></a>mean_student_math <span class="op">=</span> class_student_math <span class="op">-</span> grade_mean</span>
+<span id="cb492-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-8" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> mean_student_math.plot(kind<span class="op">=</span><span class="st">"barh"</span>,width<span class="op">=</span><span class="fl">0.5</span>,ax<span class="op">=</span>ax,left<span class="op">=</span>grade_mean)</span>
+<span id="cb492-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-9" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_ticks_position(<span class="st">"top"</span>)</span>
+<span id="cb492-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-10" aria-hidden="true" tabindex="-1"></a>ax.get_legend().set_visible(<span class="va">False</span>)</span>
+<span id="cb492-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-11" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax.set_ylabel(<span class="st">""</span>)</span>
+<span id="cb492-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-12" aria-hidden="true" tabindex="-1"></a>t<span class="op">=</span> ax.set_xlim(<span class="dv">50</span>,<span class="dv">105</span>)</span>
+<span id="cb492-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> bar <span class="kw">in</span> ax.patches:</span>
+<span id="cb492-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-14" aria-hidden="true" tabindex="-1"></a>    tc <span class="op">=</span> ax.text(bar.get_width()<span class="op">+</span>grade_mean,bar.get_y()<span class="op">+</span>bar.get_height()<span class="op">/</span><span class="dv">2</span>,</span>
+<span id="cb492-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-15" aria-hidden="true" tabindex="-1"></a>                 bar.get_width()<span class="op">+</span>grade_mean,ha<span class="op">=</span><span class="st">"right"</span> <span class="cf">if</span> bar.get_width() <span class="op">&lt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">"left"</span>,va<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb492-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb492-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/two-direction-bar-25.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb493"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb493-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb493-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="组合条形图" class="section level3" number="7.5.5">
+<h3>
+<span class="header-section-number">7.5.5</span> 组合条形图<a class="anchor" aria-label="anchor" href="#%E7%BB%84%E5%90%88%E6%9D%A1%E5%BD%A2%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb494"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb494-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 绘制多图</span></span>
+<span id="cb494-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-2" aria-hidden="true" tabindex="-1"></a>class_student_three <span class="op">=</span> pd.merge(student.query(<span class="st">"cla_id == 901"</span>),chengji.query(<span class="st">"exam_number == 284 &amp; mes_sub_name == ['数学','英语','语文']"</span>),</span>
+<span id="cb494-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-3" aria-hidden="true" tabindex="-1"></a>         how<span class="op">=</span><span class="st">"inner"</span>,left_on<span class="op">=</span><span class="st">"bf_StudentID"</span>,right_on<span class="op">=</span><span class="st">"mes_StudentID"</span>).pivot(index<span class="op">=</span><span class="st">"mes_sub_name"</span>,columns<span class="op">=</span><span class="st">"bf_StudentID"</span>,values<span class="op">=</span><span class="st">"mes_Score"</span>)</span>
+<span id="cb494-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-4" aria-hidden="true" tabindex="-1"></a><span class="co">#返回axes的集合</span></span>
+<span id="cb494-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-5" aria-hidden="true" tabindex="-1"></a>axs <span class="op">=</span> class_student_three.plot(</span>
+<span id="cb494-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-6" aria-hidden="true" tabindex="-1"></a>    kind <span class="op">=</span> <span class="st">"bar"</span>,</span>
+<span id="cb494-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-7" aria-hidden="true" tabindex="-1"></a>    subplots <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb494-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-8" aria-hidden="true" tabindex="-1"></a>    layout <span class="op">=</span> (<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>),</span>
+<span id="cb494-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-9" aria-hidden="true" tabindex="-1"></a>    figsize <span class="op">=</span> (<span class="dv">8</span>,<span class="dv">6</span>),</span>
+<span id="cb494-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-10" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="fl">0.9</span>,</span>
+<span id="cb494-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-11" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">""</span>,</span>
+<span id="cb494-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-12" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">""</span>,</span>
+<span id="cb494-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-13" aria-hidden="true" tabindex="-1"></a>    legend <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb494-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb494-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-15" aria-hidden="true" tabindex="-1"></a>plt.subplots_adjust(wspace<span class="op">=</span><span class="fl">0.5</span>,hspace<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb494-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-16" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> class_student_three.<span class="bu">apply</span>(np.mean,axis<span class="op">=</span><span class="dv">1</span>).values.flatten()</span>
+<span id="cb494-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs.flatten():</span>
+<span id="cb494-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-18" aria-hidden="true" tabindex="-1"></a>    ax.set_axis_off()  </span>
+<span id="cb494-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-19" aria-hidden="true" tabindex="-1"></a>    ax.title.set_fontsize(<span class="dv">10</span>)</span>
+<span id="cb494-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-20" aria-hidden="true" tabindex="-1"></a>    <span class="co">#ax.get_legend().set_visible(False)</span></span>
+<span id="cb494-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">#低于平均分为灰色，其他为黑色</span></span>
+<span id="cb494-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m,patch <span class="kw">in</span> <span class="bu">zip</span>(mean,ax.patches):</span>
+<span id="cb494-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-23" aria-hidden="true" tabindex="-1"></a>        patch.set_facecolor(<span class="st">"grey"</span> <span class="cf">if</span> patch.get_height()<span class="op">&lt;</span>m <span class="cf">else</span> <span class="st">"black"</span>)</span>
+<span id="cb494-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-24" aria-hidden="true" tabindex="-1"></a>grey_patch <span class="op">=</span> mpatches.Patch(color<span class="op">=</span><span class="st">"grey"</span>)</span>
+<span id="cb494-25"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-25" aria-hidden="true" tabindex="-1"></a>black_patch <span class="op">=</span> mpatches.Patch(color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb494-26"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-26" aria-hidden="true" tabindex="-1"></a>plt.legend(handles<span class="op">=</span>[grey_patch,black_patch],labels<span class="op">=</span>[<span class="st">"低于均分"</span>,<span class="st">"不低于均分"</span>],ncols<span class="op">=</span><span class="dv">2</span>,bbox_to_anchor<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">8</span>))</span>
+<span id="cb494-27"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb494-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/multi-bar-27.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb495"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb495-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb495-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+<div class="sourceCode" id="cb496"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb496-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 要想在某个可调用的fig下绘制,可以指定ax=某个多图的ax集合，但是layout参数就不能使用了</span></span>
+<span id="cb496-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-2" aria-hidden="true" tabindex="-1"></a>fig,axc<span class="op">=</span> plt.subplots(<span class="dv">5</span>,<span class="dv">9</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">6</span>))</span>
+<span id="cb496-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-3" aria-hidden="true" tabindex="-1"></a>axs <span class="op">=</span> class_student_three.plot(</span>
+<span id="cb496-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-4" aria-hidden="true" tabindex="-1"></a>    kind <span class="op">=</span> <span class="st">"bar"</span>,</span>
+<span id="cb496-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-5" aria-hidden="true" tabindex="-1"></a>    subplots <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb496-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#layout = (5,-1),</span></span>
+<span id="cb496-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">#figsize = (8,6),</span></span>
+<span id="cb496-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-8" aria-hidden="true" tabindex="-1"></a>    width <span class="op">=</span> <span class="fl">0.9</span>,</span>
+<span id="cb496-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-9" aria-hidden="true" tabindex="-1"></a>    xlabel <span class="op">=</span> <span class="st">""</span>,</span>
+<span id="cb496-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-10" aria-hidden="true" tabindex="-1"></a>    ylabel <span class="op">=</span> <span class="st">""</span>,</span>
+<span id="cb496-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-11" aria-hidden="true" tabindex="-1"></a>    legend <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb496-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-12" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> axc</span>
+<span id="cb496-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb496-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-14" aria-hidden="true" tabindex="-1"></a>fig.subplots_adjust(wspace<span class="op">=</span><span class="fl">0.5</span>,hspace<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb496-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-15" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> class_student_three.<span class="bu">apply</span>(np.mean,axis<span class="op">=</span><span class="dv">1</span>).values.flatten()</span>
+<span id="cb496-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs.flatten():</span>
+<span id="cb496-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-17" aria-hidden="true" tabindex="-1"></a>    ax.set_axis_off()  </span>
+<span id="cb496-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-18" aria-hidden="true" tabindex="-1"></a>    ax.title.set_fontsize(<span class="dv">10</span>)</span>
+<span id="cb496-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-19" aria-hidden="true" tabindex="-1"></a>    <span class="co">#低于平均分为灰色，其他为黑色</span></span>
+<span id="cb496-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> m,patch <span class="kw">in</span> <span class="bu">zip</span>(mean,ax.patches):</span>
+<span id="cb496-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-21" aria-hidden="true" tabindex="-1"></a>        patch.set_facecolor(<span class="st">"grey"</span> <span class="cf">if</span> patch.get_height()<span class="op">&lt;</span>m <span class="cf">else</span> <span class="st">"black"</span>)</span>
+<span id="cb496-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-22" aria-hidden="true" tabindex="-1"></a>grey_patch <span class="op">=</span> mpatches.Patch(color<span class="op">=</span><span class="st">"grey"</span>)</span>
+<span id="cb496-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-23" aria-hidden="true" tabindex="-1"></a>black_patch <span class="op">=</span> mpatches.Patch(color<span class="op">=</span><span class="st">"black"</span>)</span>
+<span id="cb496-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-24" aria-hidden="true" tabindex="-1"></a>fig.legend(handles<span class="op">=</span>[grey_patch,black_patch],labels<span class="op">=</span>[<span class="st">"低于均分"</span>,<span class="st">"不低于均分"</span>],ncols<span class="op">=</span><span class="dv">2</span>,bbox_to_anchor<span class="op">=</span>(<span class="fl">0.9</span>,<span class="dv">1</span>))</span>
+<span id="cb496-25"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-25" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> fig.suptitle(<span class="st">"某班学生语数英成绩对比"</span>,x<span class="op">=</span><span class="fl">0.15</span>,y<span class="op">=</span><span class="fl">0.95</span>,va<span class="op">=</span><span class="st">"bottom"</span>,ha<span class="op">=</span><span class="st">"left"</span>)</span>
+<span id="cb496-26"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb496-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/multi-bar-2-29.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb497"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb497-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb497-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+</div>
+<div id="折线图" class="section level2" number="7.6">
+<h2>
+<span class="header-section-number">7.6</span> 折线图<a class="anchor" aria-label="anchor" href="#%E6%8A%98%E7%BA%BF%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h2>
+<p><code>line, = plt.plot()</code> 是为了将返回的列表类型给解包，变成单个对象</p>
+<div id="基础折线图" class="section level3" number="7.6.1">
+<h3>
+<span class="header-section-number">7.6.1</span> 基础折线图<a class="anchor" aria-label="anchor" href="#%E5%9F%BA%E7%A1%80%E6%8A%98%E7%BA%BF%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb498"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb498-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb498-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 一个学生各科历次考试成绩变化,只取期中，期末和五校的三门主课成绩</span></span>
+<span id="cb498-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb498-2" aria-hidden="true" tabindex="-1"></a>a_student_grade <span class="op">=</span> chengji.query(<span class="st">"mes_StudentID  == 14933 &amp; exam_type == [2,3,6]"</span>).query(<span class="st">"mes_sub_name == ['语文','数学','英语']"</span>).sort_values([<span class="st">"exam_number"</span>]).dropna(subset<span class="op">=</span>[<span class="st">"mes_Score"</span>])[[<span class="st">"exam_number"</span>,<span class="st">"exam_sdate"</span>,<span class="st">"mes_sub_name"</span>,<span class="st">"mes_Score"</span>]]</span>
+<span id="cb498-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb498-3" aria-hidden="true" tabindex="-1"></a>a_student_grade[<span class="st">"exam_sdate"</span>] <span class="op">=</span> pd.to_datetime(a_student_grade.exam_sdate).dt.date <span class="co">#如果不加后面的提取日期是时间类型，加了则不是</span></span>
+<span id="cb498-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb498-4" aria-hidden="true" tabindex="-1"></a>exam_subject_score <span class="op">=</span> a_student_grade.pivot(index<span class="op">=</span><span class="st">"exam_number"</span>,columns<span class="op">=</span><span class="st">"mes_sub_name"</span>,values<span class="op">=</span><span class="st">"mes_Score"</span>).applymap(<span class="bu">int</span>)</span>
+<span id="cb498-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb498-5" aria-hidden="true" tabindex="-1"></a>exam_subject_score</span></code></pre></div>
+<pre class="scroll-200"><code>mes_sub_name  数学   英语  语文
+exam_number              
+284           53   77  65
+288           78  124  81
+292           63   75  68
+298           67  106  91
+304           78   79  57</code></pre>
+<div class="sourceCode" id="cb500"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb500-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb500-1" aria-hidden="true" tabindex="-1"></a>et_subject_score <span class="op">=</span> a_student_grade.pivot(index<span class="op">=</span><span class="st">"exam_sdate"</span>,columns<span class="op">=</span><span class="st">"mes_sub_name"</span>,values<span class="op">=</span><span class="st">"mes_Score"</span>).applymap(<span class="bu">int</span>)</span>
+<span id="cb500-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb500-2" aria-hidden="true" tabindex="-1"></a>et_subject_score</span></code></pre></div>
+<pre class="scroll-200"><code>mes_sub_name  数学   英语  语文
+exam_sdate               
+2017-11-15    53   77  65
+2018-01-26    78  124  81
+2018-04-23    63   75  68
+2018-06-24    67  106  91
+2018-11-05    78   79  57</code></pre>
+<div class="sourceCode" id="cb502"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb502-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb502-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-2" aria-hidden="true" tabindex="-1"></a>ls <span class="op">=</span> exam_subject_score.plot(</span>
+<span id="cb502-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fmt: 该关键字不能写，直接写值。"[marker][line][color]" </span></span>
+<span id="cb502-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 如果没有marker，有line，则是一条线，无点，</span></span>
+<span id="cb502-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 比如直接写".-r"，不要写fmt=".-r"</span></span>
+<span id="cb502-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-6" aria-hidden="true" tabindex="-1"></a>    mec <span class="op">=</span> <span class="st">"r"</span>,    <span class="co"># markeredgecolor</span></span>
+<span id="cb502-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-7" aria-hidden="true" tabindex="-1"></a>    mew <span class="op">=</span> <span class="dv">2</span>,      <span class="co"># markeredgewidth</span></span>
+<span id="cb502-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-8" aria-hidden="true" tabindex="-1"></a>    mfc <span class="op">=</span> <span class="st">'black'</span>,<span class="co">#  markerfacecolor='red',#marker填充色</span></span>
+<span id="cb502-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-9" aria-hidden="true" tabindex="-1"></a>    ms <span class="op">=</span> <span class="dv">5</span>,       <span class="co">#  markersize='15',#marker大小</span></span>
+<span id="cb502-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-10" aria-hidden="true" tabindex="-1"></a>    lw <span class="op">=</span> <span class="dv">2</span>,</span>
+<span id="cb502-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-11" aria-hidden="true" tabindex="-1"></a>    ls <span class="op">=</span> <span class="st">'--'</span>,</span>
+<span id="cb502-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-12" aria-hidden="true" tabindex="-1"></a>    marker<span class="op">=</span><span class="st">'^'</span>,<span class="co">#marker形状</span></span>
+<span id="cb502-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-13" aria-hidden="true" tabindex="-1"></a>    fillstyle<span class="op">=</span><span class="st">'top'</span>,<span class="co">#marker填充形式，可选{'full', 'left', 'right', 'bottom', 'top', 'none'}</span></span>
+<span id="cb502-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-14" aria-hidden="true" tabindex="-1"></a>    markerfacecoloralt<span class="op">=</span><span class="st">'blue'</span>,<span class="co">#marker未被填充部分颜色</span></span>
+<span id="cb502-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-15" aria-hidden="true" tabindex="-1"></a>    markevery<span class="op">=</span><span class="dv">2</span>,<span class="co">#每隔一个画一个marker</span></span>
+<span id="cb502-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># label='',#图例</span></span>
+<span id="cb502-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-17" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.8</span>,<span class="co">#线和marker的透明度   </span></span>
+<span id="cb502-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-18" aria-hidden="true" tabindex="-1"></a>    ax <span class="op">=</span> ax</span>
+<span id="cb502-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb502-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-20" aria-hidden="true" tabindex="-1"></a><span class="co">#如果类别以数值表示的话，它的tick的interval会发生根据数值差发生变化</span></span>
+<span id="cb502-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-21" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(ticker.FixedLocator(exam_subject_score.index))</span>
+<span id="cb502-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 添加标签</span></span>
+<span id="cb502-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,ds <span class="kw">in</span> exam_subject_score.iterrows():</span>
+<span id="cb502-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> d <span class="kw">in</span> ds:</span>
+<span id="cb502-25"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-25" aria-hidden="true" tabindex="-1"></a>        t <span class="op">=</span> ax.text(i,d,d,va<span class="op">=</span><span class="st">"bottom"</span>,ha<span class="op">=</span><span class="st">"center"</span>)</span>
+<span id="cb502-26"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb502-26" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/basic-plot-31.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb503"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb503-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb503-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+<div class="sourceCode" id="cb504"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb504-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb504-1" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> et_subject_score.plot(subplots<span class="op">=</span>[(<span class="st">"数学"</span>,<span class="st">"语文"</span>),(<span class="st">"英语"</span>,)],layout<span class="op">=</span>(<span class="dv">1</span>,<span class="dv">2</span>),figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">5</span>))</span>
+<span id="cb504-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb504-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax[<span class="dv">0</span>,<span class="dv">0</span>].set_xlabel(<span class="st">"exam_time"</span>)</span>
+<span id="cb504-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb504-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/basic-plot-2-33.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb505"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb505-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb505-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+</div>
+<div id="直方图" class="section level2" number="7.7">
+<h2>
+<span class="header-section-number">7.7</span> 直方图<a class="anchor" aria-label="anchor" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h2>
+<p><code>n, bins, patches=plt.hist()</code></p>
+<p><code>plt.xticks(bins)</code>#x轴刻度设置为箱子边界</p>
+<div id="基础直方图" class="section level3" number="7.7.1">
+<h3>
+<span class="header-section-number">7.7.1</span> 基础直方图<a class="anchor" aria-label="anchor" href="#%E5%9F%BA%E7%A1%80%E7%9B%B4%E6%96%B9%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb506"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb506-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-1" aria-hidden="true" tabindex="-1"></a>class_student_math.plot(kind<span class="op">=</span><span class="st">"hist"</span>,</span>
+<span id="cb506-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-2" aria-hidden="true" tabindex="-1"></a><span class="co">##箱子数(bins)设置，以下三种不能同时并存</span></span>
+<span id="cb506-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-3" aria-hidden="true" tabindex="-1"></a><span class="co">#bins=20,#default: 10</span></span>
+<span id="cb506-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-4" aria-hidden="true" tabindex="-1"></a><span class="co">#bins=[4,6,8],#分两个箱子，边界分别为[4,6),[6,8]</span></span>
+<span id="cb506-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-5" aria-hidden="true" tabindex="-1"></a><span class="co">#bins='auto',# 可选'auto', 'fd', 'doane', 'scott', 'stone', 'rice', 'sturges', or 'sqrt'.</span></span>
+<span id="cb506-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-6" aria-hidden="true" tabindex="-1"></a><span class="co">#选择最合适的bin宽，绘制一个最能反映数据频率分布的直方图 </span></span>
+<span id="cb506-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb506-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-8" aria-hidden="true" tabindex="-1"></a><span class="co">#range=(5,7),#最左边和最右边箱子边界，不指定时，为(x.min(), x.max())</span></span>
+<span id="cb506-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-9" aria-hidden="true" tabindex="-1"></a><span class="co">#density=True, #默认为False，y轴显示频数；为True y轴显示频率，频率统计结果=该区间频数/(x中总样本数*该区间宽度)</span></span>
+<span id="cb506-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-10" aria-hidden="true" tabindex="-1"></a><span class="co">#weights=np.random.rand(len(x)),#对x中每一个样本设置权重，这里随机设置了权重</span></span>
+<span id="cb506-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-11" aria-hidden="true" tabindex="-1"></a>cumulative<span class="op">=</span><span class="va">False</span>,<span class="co">#默认False，是否累加频数或者频率，及后面一个柱子是前面所有柱子的累加</span></span>
+<span id="cb506-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-12" aria-hidden="true" tabindex="-1"></a>bottom<span class="op">=</span><span class="dv">0</span>,<span class="co">#设置箱子y轴方向基线，默认为0，箱子高度=bottom to bottom + hist(x, bins)</span></span>
+<span id="cb506-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-13" aria-hidden="true" tabindex="-1"></a>histtype<span class="op">=</span><span class="st">'bar'</span>,<span class="co">#直方图的类型默认为bar{'bar', 'barstacked', 'step', 'stepfilled'}</span></span>
+<span id="cb506-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-14" aria-hidden="true" tabindex="-1"></a>align<span class="op">=</span><span class="st">'mid'</span>,<span class="co">#箱子边界值的对齐方式，默认为mid{'left', 'mid', 'right'}</span></span>
+<span id="cb506-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-15" aria-hidden="true" tabindex="-1"></a>orientation<span class="op">=</span><span class="st">'vertical'</span>,<span class="co">#箱子水平还是垂直显示，默认垂直显示('vertical')，可选'horizontal'</span></span>
+<span id="cb506-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-16" aria-hidden="true" tabindex="-1"></a>rwidth<span class="op">=</span><span class="fl">1.0</span>,<span class="co">#每个箱子宽度，默认为1，此时显示50%</span></span>
+<span id="cb506-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-17" aria-hidden="true" tabindex="-1"></a>log<span class="op">=</span><span class="va">False</span>,<span class="co">#y轴数据是否取对数，默认不取对数为False</span></span>
+<span id="cb506-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-18" aria-hidden="true" tabindex="-1"></a>label<span class="op">=</span><span class="st">'sepal length(cm)'</span>,<span class="co">#图例</span></span>
+<span id="cb506-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-19" aria-hidden="true" tabindex="-1"></a><span class="co">#normed=0,#功能和density一样，二者不能同时使用</span></span>
+<span id="cb506-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-20" aria-hidden="true" tabindex="-1"></a>facecolor<span class="op">=</span><span class="st">'blue'</span>,<span class="co">#箱子颜色 </span></span>
+<span id="cb506-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-21" aria-hidden="true" tabindex="-1"></a>edgecolor<span class="op">=</span><span class="st">"black"</span>,<span class="co">#箱子边框颜色</span></span>
+<span id="cb506-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-22" aria-hidden="true" tabindex="-1"></a>stacked<span class="op">=</span><span class="va">False</span>,<span class="co">#多组数据是否堆叠</span></span>
+<span id="cb506-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-23" aria-hidden="true" tabindex="-1"></a>alpha<span class="op">=</span><span class="fl">0.5</span><span class="co">#箱子透明度</span></span>
+<span id="cb506-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-24" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb506-25"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb506-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/basic-hist-35.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb507"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb507-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb507-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="组合直方图" class="section level3" number="7.7.2">
+<h3>
+<span class="header-section-number">7.7.2</span> 组合直方图<a class="anchor" aria-label="anchor" href="#%E7%BB%84%E5%90%88%E7%9B%B4%E6%96%B9%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb508"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb508-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-1" aria-hidden="true" tabindex="-1"></a> <span class="co"># 某班级三次考试中数学成绩的变化</span></span>
+<span id="cb508-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-2" aria-hidden="true" tabindex="-1"></a>class_three_math <span class="op">=</span> pd.merge(student.query(<span class="st">"cla_id == 901"</span>),</span>
+<span id="cb508-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-3" aria-hidden="true" tabindex="-1"></a>         chengji.query(<span class="st">"exam_number == [284,289,292] &amp; mes_sub_name == '数学'"</span> ),</span>
+<span id="cb508-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-4" aria-hidden="true" tabindex="-1"></a>         how<span class="op">=</span><span class="st">"inner"</span>,</span>
+<span id="cb508-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-5" aria-hidden="true" tabindex="-1"></a>         left_on<span class="op">=</span><span class="st">"bf_StudentID"</span>,</span>
+<span id="cb508-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-6" aria-hidden="true" tabindex="-1"></a>         right_on<span class="op">=</span><span class="st">"mes_StudentID"</span>).pivot(index<span class="op">=</span><span class="st">"bf_StudentID"</span>,columns<span class="op">=</span><span class="st">"exam_number"</span>,values<span class="op">=</span><span class="st">"mes_Score"</span>)</span>
+<span id="cb508-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 绘制图片，axs是axes的array</span></span>
+<span id="cb508-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-8" aria-hidden="true" tabindex="-1"></a>axs <span class="op">=</span> class_three_math.plot(</span>
+<span id="cb508-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-9" aria-hidden="true" tabindex="-1"></a>    kind <span class="op">=</span> <span class="st">"hist"</span>,</span>
+<span id="cb508-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-10" aria-hidden="true" tabindex="-1"></a>    bins <span class="op">=</span> <span class="dv">10</span>,</span>
+<span id="cb508-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-11" aria-hidden="true" tabindex="-1"></a>    subplots <span class="op">=</span> <span class="va">True</span>,</span>
+<span id="cb508-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-12" aria-hidden="true" tabindex="-1"></a>    layout <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">3</span>),</span>
+<span id="cb508-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-13" aria-hidden="true" tabindex="-1"></a>    orientation <span class="op">=</span> <span class="st">"horizontal"</span>,</span>
+<span id="cb508-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-14" aria-hidden="true" tabindex="-1"></a>    color <span class="op">=</span> <span class="st">"grey"</span>,</span>
+<span id="cb508-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-15" aria-hidden="true" tabindex="-1"></a>    ylim <span class="op">=</span> (<span class="dv">50</span>,<span class="dv">100</span>),</span>
+<span id="cb508-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-16" aria-hidden="true" tabindex="-1"></a>    figsize <span class="op">=</span> (<span class="dv">10</span>,<span class="dv">6</span>),</span>
+<span id="cb508-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-17" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> <span class="st">"某班级连续三次考试数学成绩对比"</span>,</span>
+<span id="cb508-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-18" aria-hidden="true" tabindex="-1"></a>    sharey <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb508-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-19" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb508-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb508-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-21" aria-hidden="true" tabindex="-1"></a><span class="co">#参数设置</span></span>
+<span id="cb508-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ax <span class="kw">in</span> axs.flatten():</span>
+<span id="cb508-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-23" aria-hidden="true" tabindex="-1"></a>    ax.get_legend().set_visible(<span class="va">False</span>)</span>
+<span id="cb508-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> spine <span class="kw">in</span> ax.spines.values():</span>
+<span id="cb508-25"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-25" aria-hidden="true" tabindex="-1"></a>        spine.set_visible(<span class="va">False</span>)</span>
+<span id="cb508-26"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-26" aria-hidden="true" tabindex="-1"></a>    ax.xaxis.set_ticks_position(<span class="st">"none"</span>)</span>
+<span id="cb508-27"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-27" aria-hidden="true" tabindex="-1"></a>    ax.xaxis.set_major_locator(ticker.FixedLocator([<span class="dv">10</span>,<span class="dv">20</span>]))</span>
+<span id="cb508-28"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-28" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> ax.set_xlabel(<span class="st">""</span>)</span>
+<span id="cb508-29"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> tl <span class="kw">in</span> ax.yaxis.get_ticklines():</span>
+<span id="cb508-30"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-30" aria-hidden="true" tabindex="-1"></a>        tl.set_visible(<span class="va">False</span>)</span>
+<span id="cb508-31"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb508-32"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-32" aria-hidden="true" tabindex="-1"></a>xl <span class="op">=</span> axs[<span class="dv">0</span>,<span class="dv">0</span>].set_xlim(<span class="op">-</span><span class="dv">5</span>,<span class="dv">30</span>)</span>
+<span id="cb508-33"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb508-34"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-34" aria-hidden="true" tabindex="-1"></a><span class="co">#计算均值并标记</span></span>
+<span id="cb508-35"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-35" aria-hidden="true" tabindex="-1"></a>mean  <span class="op">=</span> <span class="bu">round</span>(class_three_math.<span class="bu">apply</span>(np.mean),<span class="dv">1</span>).values.flatten()</span>
+<span id="cb508-36"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-36" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,m <span class="kw">in</span> <span class="bu">enumerate</span>(mean):</span>
+<span id="cb508-37"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-37" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> axs[<span class="dv">0</span>,i].plot([<span class="dv">20</span>],[m],<span class="st">'.k'</span>)</span>
+<span id="cb508-38"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-38" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> axs[<span class="dv">0</span>,i].text(<span class="dv">20</span><span class="op">+</span><span class="dv">2</span>,m,m,va<span class="op">=</span><span class="st">"center"</span>,ha<span class="op">=</span><span class="st">"left"</span>)</span>
+<span id="cb508-39"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb508-40"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb508-40" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/multi-hist-37.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb509"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb509-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb509-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+</div>
+<div id="箱线图-1" class="section level2" number="7.8">
+<h2>
+<span class="header-section-number">7.8</span> 箱线图<a class="anchor" aria-label="anchor" href="#%E7%AE%B1%E7%BA%BF%E5%9B%BE-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>plt.boxplot()返回dict</p>
+<pre><code>dict
+  A dictionary mapping each component of the boxplot to a list
+  of the `.Line2D` instances created. That dictionary has the
+  following keys (assuming vertical boxplots):
+
+  - ``boxes``: the main body of the boxplot showing the
+    quartiles and the median's confidence intervals if
+    enabled.
+
+  - ``medians``: horizontal lines at the median of each box.
+
+  - ``whiskers``: the vertical lines extending to the most
+    extreme, non-outlier data points.
+
+  - ``caps``: the horizontal lines at the ends of the
+    whiskers.
+
+  - ``fliers``: points representing data that extend beyond
+    the whiskers (fliers).
+
+  - ``means``: points or lines representing the means.</code></pre>
+<div id="获取返回数据" class="section level3" number="7.8.1">
+<h3>
+<span class="header-section-number">7.8.1</span> 获取返回数据<a class="anchor" aria-label="anchor" href="#%E8%8E%B7%E5%8F%96%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb511"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb511-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb511-1" aria-hidden="true" tabindex="-1"></a>class_student_grade <span class="op">=</span> pd.merge(student.query(<span class="st">"cla_id == 901"</span>),chengji.query(<span class="st">"exam_number == 284"</span>),</span>
+<span id="cb511-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb511-2" aria-hidden="true" tabindex="-1"></a>         how<span class="op">=</span><span class="st">"inner"</span>,left_on<span class="op">=</span><span class="st">"bf_StudentID"</span>,right_on<span class="op">=</span><span class="st">"mes_StudentID"</span>)[[<span class="st">"bf_StudentID"</span>,<span class="st">"mes_sub_name"</span>,<span class="st">"mes_Score"</span>]].pivot(index<span class="op">=</span><span class="st">"bf_StudentID"</span>,columns<span class="op">=</span><span class="st">"mes_sub_name"</span>,values<span class="op">=</span><span class="st">"mes_Score"</span>)</span>
+<span id="cb511-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb511-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb511-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb511-4" aria-hidden="true" tabindex="-1"></a>point <span class="op">=</span> plt.boxplot(</span>
+<span id="cb511-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb511-5" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"数学"</span>,</span>
+<span id="cb511-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb511-6" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> class_student_grade[[<span class="st">"数学"</span>]]</span>
+<span id="cb511-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb511-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb511-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb511-8" aria-hidden="true" tabindex="-1"></a>point[<span class="st">"fliers"</span>][<span class="dv">0</span>].get_ydata()</span></code></pre></div>
+<pre class="scroll-200"><code>array([ 56.,  63.,  61.,  55., 100.])</code></pre>
+</div>
+<div id="组合箱线图" class="section level3" number="7.8.2">
+<h3>
+<span class="header-section-number">7.8.2</span> 组合箱线图<a class="anchor" aria-label="anchor" href="#%E7%BB%84%E5%90%88%E7%AE%B1%E7%BA%BF%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb513"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb513-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 一个班某一次考试各科成绩的箱线图</span></span>
+<span id="cb513-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-2" aria-hidden="true" tabindex="-1"></a>point <span class="op">=</span> class_student_grade.boxplot(</span>
+<span id="cb513-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-3" aria-hidden="true" tabindex="-1"></a>  whis <span class="op">=</span> <span class="fl">1.5</span>, <span class="co"># 指定1.5倍的四分位差</span></span>
+<span id="cb513-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-4" aria-hidden="true" tabindex="-1"></a>  widths <span class="op">=</span> <span class="fl">0.7</span>, <span class="co"># 指定箱线图的宽度为0.8</span></span>
+<span id="cb513-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-5" aria-hidden="true" tabindex="-1"></a>  patch_artist <span class="op">=</span> <span class="va">True</span>, <span class="co"># 指定需要填充箱体颜色</span></span>
+<span id="cb513-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-6" aria-hidden="true" tabindex="-1"></a>  showmeans <span class="op">=</span> <span class="va">True</span>, <span class="co"># 指定需要显示均值</span></span>
+<span id="cb513-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-7" aria-hidden="true" tabindex="-1"></a>  boxprops <span class="op">=</span> {<span class="st">'facecolor'</span>:<span class="st">'steelblue'</span>}, <span class="co"># 指定箱体的填充色为铁蓝色</span></span>
+<span id="cb513-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-8" aria-hidden="true" tabindex="-1"></a>  flierprops <span class="op">=</span> {<span class="st">'markerfacecolor'</span>:<span class="st">'red'</span>, <span class="st">'markeredgecolor'</span>:<span class="st">'red'</span>, <span class="st">'markersize'</span>:<span class="dv">4</span>},<span class="co">#  指定异常点的填充色、边框色和大小</span></span>
+<span id="cb513-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-9" aria-hidden="true" tabindex="-1"></a>  meanprops <span class="op">=</span> {<span class="st">'marker'</span>:<span class="st">'D'</span>,<span class="st">'markerfacecolor'</span>:<span class="st">'black'</span>, <span class="st">'markersize'</span>:<span class="dv">4</span>},<span class="co"># 指定均值点的标记符号（菱形）、填充色和大小</span></span>
+<span id="cb513-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-10" aria-hidden="true" tabindex="-1"></a>  medianprops <span class="op">=</span> {<span class="st">'linestyle'</span>:<span class="st">'--'</span>,<span class="st">'color'</span>:<span class="st">'orange'</span>},<span class="co">#指定中位数的标记符号（虚线）和颜色</span></span>
+<span id="cb513-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#labels = [''] # 去除箱线图的x轴刻度值</span></span>
+<span id="cb513-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-12" aria-hidden="true" tabindex="-1"></a>  vert <span class="op">=</span> <span class="va">True</span>,<span class="co">#默认绘制垂直箱线图</span></span>
+<span id="cb513-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-13" aria-hidden="true" tabindex="-1"></a>  return_type <span class="op">=</span> <span class="st">"dict"</span>,<span class="co">#确定返回类型，“dict，axes，both（ax,lines）”</span></span>
+<span id="cb513-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb513-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb513-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-16" aria-hidden="true" tabindex="-1"></a>plt.close()</span>
+<span id="cb513-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-17" aria-hidden="true" tabindex="-1"></a><span class="co">#获取异常点值</span></span>
+<span id="cb513-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p <span class="kw">in</span> point[<span class="st">"fliers"</span>]:</span>
+<span id="cb513-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb513-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(p.get_ydata())</span></code></pre></div>
+<div class="inline-figure"><img src="static/image/%E5%8F%AF%E8%A7%86%E5%8C%96/%E7%AE%B1%E7%BA%BF%E5%9B%BE.png" width="95%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+<div id="饼图" class="section level2" number="7.9">
+<h2>
+<span class="header-section-number">7.9</span> 饼图<a class="anchor" aria-label="anchor" href="#%E9%A5%BC%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h2>
+<div id="基础饼图" class="section level3" number="7.9.1">
+<h3>
+<span class="header-section-number">7.9.1</span> 基础饼图<a class="anchor" aria-label="anchor" href="#%E5%9F%BA%E7%A1%80%E9%A5%BC%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<p>返回每个扇，label和autotext（百分比)</p>
+<div class="sourceCode" id="cb514"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb514-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 一个学生各科成绩的占比</span></span>
+<span id="cb514-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-2" aria-hidden="true" tabindex="-1"></a>patches,texts,autotexts <span class="op">=</span> plt.pie(</span>
+<span id="cb514-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-3" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>sub_score,</span>
+<span id="cb514-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-4" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"mes_Score"</span>,<span class="co">#数值</span></span>
+<span id="cb514-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-5" aria-hidden="true" tabindex="-1"></a>    labels <span class="op">=</span> <span class="st">"mes_sub_name"</span>,<span class="co">#标签名</span></span>
+<span id="cb514-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-6" aria-hidden="true" tabindex="-1"></a>    colors<span class="op">=</span>[<span class="st">"#d5695d"</span>,<span class="st">"#5d8ca8"</span>,<span class="st">"#65a479"</span>,<span class="st">"#72384f"</span>],<span class="co">#修改饼图颜色，传入颜色list</span></span>
+<span id="cb514-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-7" aria-hidden="true" tabindex="-1"></a>    explode<span class="op">=</span>(<span class="fl">0.2</span>, <span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>),<span class="co">#某部分突出显示，值越大，距离中心越远，该法可解决饼图字体重叠的问题</span></span>
+<span id="cb514-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-8" aria-hidden="true" tabindex="-1"></a>    autopct<span class="op">=</span><span class="st">'</span><span class="sc">%.1f%%</span><span class="st">'</span>,<span class="co">#格式化输出百分比</span></span>
+<span id="cb514-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-9" aria-hidden="true" tabindex="-1"></a>    pctdistance<span class="op">=</span><span class="fl">0.8</span>,<span class="co">#百分比标签与圆心的距离</span></span>
+<span id="cb514-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-10" aria-hidden="true" tabindex="-1"></a>    labeldistance<span class="op">=</span><span class="fl">1.1</span>,<span class="co">#labels与圈边界的距离，默认为1.1</span></span>
+<span id="cb514-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-11" aria-hidden="true" tabindex="-1"></a>    startangle<span class="op">=</span><span class="dv">45</span>,<span class="co">#饼图的开始角度，默认为0度,为数学意义上的象限的0度，根据旋转方向旋转对应角度</span></span>
+<span id="cb514-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-12" aria-hidden="true" tabindex="-1"></a>    radius<span class="op">=</span><span class="fl">1.3</span>,<span class="co">#饼图半径，默认为1</span></span>
+<span id="cb514-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-13" aria-hidden="true" tabindex="-1"></a>    counterclock<span class="op">=</span><span class="va">False</span>,<span class="co">#关闭逆时针显示</span></span>
+<span id="cb514-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">#设置框属性</span></span>
+<span id="cb514-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-15" aria-hidden="true" tabindex="-1"></a>    wedgeprops<span class="op">=</span>{<span class="st">'edgecolor'</span>:<span class="st">'r'</span>,<span class="co">#内外框颜色</span></span>
+<span id="cb514-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-16" aria-hidden="true" tabindex="-1"></a>                <span class="st">'linestyle'</span>:<span class="st">'--'</span>,<span class="co">#线型</span></span>
+<span id="cb514-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-17" aria-hidden="true" tabindex="-1"></a>                <span class="st">'alpha'</span>:<span class="fl">0.5</span>,<span class="co">#透明度</span></span>
+<span id="cb514-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-18" aria-hidden="true" tabindex="-1"></a>                <span class="co">#更多参考matplotlib.patches.Wedge                   </span></span>
+<span id="cb514-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-19" aria-hidden="true" tabindex="-1"></a>               },</span>
+<span id="cb514-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-20" aria-hidden="true" tabindex="-1"></a>            <span class="co">#饼图中文本的属性</span></span>
+<span id="cb514-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-21" aria-hidden="true" tabindex="-1"></a>    textprops<span class="op">=</span>{<span class="st">'color'</span>:<span class="st">'r'</span>,<span class="co">#文本颜色</span></span>
+<span id="cb514-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-22" aria-hidden="true" tabindex="-1"></a>               <span class="st">'fontsize'</span>:<span class="dv">16</span>,<span class="co">#文本大小</span></span>
+<span id="cb514-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-23" aria-hidden="true" tabindex="-1"></a>               <span class="st">'fontfamily'</span>:<span class="st">'Microsoft JhengHei'</span>,<span class="co">#设置微软雅黑字体</span></span>
+<span id="cb514-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-24" aria-hidden="true" tabindex="-1"></a>               <span class="co">#更多参考matplotlib.pyplot.text                 </span></span>
+<span id="cb514-25"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-25" aria-hidden="true" tabindex="-1"></a>              }</span>
+<span id="cb514-26"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-26" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb514-27"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-27" aria-hidden="true" tabindex="-1"></a>patches[<span class="dv">0</span>].set_facecolor(<span class="st">'red'</span>)<span class="co">#设置第一个弧形块的颜色</span></span>
+<span id="cb514-28"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-28" aria-hidden="true" tabindex="-1"></a>texts[<span class="dv">0</span>].set_size(<span class="dv">40</span>)<span class="co">#设置第一个标签的大小</span></span>
+<span id="cb514-29"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-29" aria-hidden="true" tabindex="-1"></a>autotexts[<span class="dv">0</span>].set_color(<span class="st">'white'</span>)<span class="co">#修改第一个百分比的颜色</span></span>
+<span id="cb514-30"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb514-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/basic-pie-1.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb515"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb515-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb515-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="玫瑰图" class="section level3" number="7.9.2">
+<h3>
+<span class="header-section-number">7.9.2</span> 玫瑰图<a class="anchor" aria-label="anchor" href="#%E7%8E%AB%E7%91%B0%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<p>结合极坐标</p>
+<div class="sourceCode" id="cb516"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb516-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 不同长度rad的极坐标柱形图</span></span>
+<span id="cb516-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-2" aria-hidden="true" tabindex="-1"></a><span class="co">#设置theta，rad，width，colors</span></span>
+<span id="cb516-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-3" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,layout<span class="op">=</span><span class="st">'constrained'</span>,subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>:<span class="st">"polar"</span>})</span>
+<span id="cb516-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-4" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.pi<span class="op">*</span>np.linspace(<span class="dv">0</span>,<span class="dv">2</span>,<span class="bu">len</span>(class_student_math)<span class="op">+</span><span class="dv">1</span>)[:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb516-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-5" aria-hidden="true" tabindex="-1"></a>line,label <span class="op">=</span> ax.set_thetagrids(theta<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,class_student_math.index,ha<span class="op">=</span><span class="st">"center"</span>,va<span class="op">=</span><span class="st">"top"</span>,fontsize<span class="op">=</span><span class="dv">10</span>) </span>
+<span id="cb516-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-6" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.set_rlabel_position()</span></span>
+<span id="cb516-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-7" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.grid(False)</span></span>
+<span id="cb516-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-8" aria-hidden="true" tabindex="-1"></a>rad <span class="op">=</span> class_student_math.sort_values(<span class="st">"mes_Score"</span>,ascending<span class="op">=</span><span class="va">False</span>).mes_Score</span>
+<span id="cb516-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-9" aria-hidden="true" tabindex="-1"></a>width <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi<span class="op">/</span><span class="bu">len</span>(class_student_math)</span>
+<span id="cb516-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-10" aria-hidden="true" tabindex="-1"></a><span class="co">#颜色利用数值归一化后传入</span></span>
+<span id="cb516-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-11" aria-hidden="true" tabindex="-1"></a>ax.bar(theta,rad,width<span class="op">=</span>width, bottom<span class="op">=</span><span class="fl">0.0</span>,alpha<span class="op">=</span><span class="fl">0.8</span>,color<span class="op">=</span>plt.cm.viridis((rad<span class="op">-</span>rad.<span class="bu">min</span>())<span class="op">/</span>(rad.<span class="bu">max</span>()<span class="op">-</span>rad.<span class="bu">min</span>())))</span>
+<span id="cb516-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-12" aria-hidden="true" tabindex="-1"></a><span class="co">#color=plt.cm.viridis((rad-rad.min())/(rad.max()-rad.min())*256)</span></span>
+<span id="cb516-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb516-13" aria-hidden="true" tabindex="-1"></a><span class="co">#,edgecolor="white"</span></span></code></pre></div>
+<pre class="scroll-200"><code>&lt;BarContainer object of 45 artists&gt;</code></pre>
+<div class="sourceCode" id="cb518"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb518-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb518-1" aria-hidden="true" tabindex="-1"></a>ax.set_theta_zero_location(<span class="st">'N'</span>)         <span class="co">#设置极轴方向</span></span>
+<span id="cb518-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb518-2" aria-hidden="true" tabindex="-1"></a><span class="co">#t = ax.set_rticks([])</span></span>
+<span id="cb518-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb518-3" aria-hidden="true" tabindex="-1"></a>ax.set_axis_off()</span>
+<span id="cb518-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb518-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> t,v,l <span class="kw">in</span> <span class="bu">zip</span>(theta,rad,rad.index):</span>
+<span id="cb518-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb518-5" aria-hidden="true" tabindex="-1"></a>    nt <span class="op">=</span> ax.text(t,v,<span class="bu">str</span>(l)<span class="op">+</span><span class="st">"</span><span class="ch">\n</span><span class="st">"</span><span class="op">+</span><span class="bu">str</span>(v),ha<span class="op">=</span><span class="st">"center"</span>,va<span class="op">=</span><span class="st">"center"</span>,fontsize<span class="op">=</span><span class="dv">8</span>,rotation<span class="op">=</span>t<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,color<span class="op">=</span><span class="st">"black"</span>,fontfamily<span class="op">=</span><span class="st">"KaiTi"</span>)</span>
+<span id="cb518-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb518-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/polar-bar-3.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb519"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb519-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb519-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+</div>
+<div id="散点图" class="section level2" number="7.10">
+<h2>
+<span class="header-section-number">7.10</span> 散点图<a class="anchor" aria-label="anchor" href="#%E6%95%A3%E7%82%B9%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h2>
+<div id="基础散点图" class="section level3" number="7.10.1">
+<h3>
+<span class="header-section-number">7.10.1</span> 基础散点图<a class="anchor" aria-label="anchor" href="#%E5%9F%BA%E7%A1%80%E6%95%A3%E7%82%B9%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb520"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb520-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-1" aria-hidden="true" tabindex="-1"></a>scatter_data <span class="op">=</span> pd.DataFrame(</span>
+<span id="cb520-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-2" aria-hidden="true" tabindex="-1"></a>    {</span>
+<span id="cb520-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"x"</span>:np.random.randint(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">36</span>),</span>
+<span id="cb520-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"y"</span>:np.random.randint(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">36</span>),</span>
+<span id="cb520-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"c"</span>:np.random.permutation([<span class="st">'a'</span>,<span class="st">'b'</span>,<span class="st">'c'</span>,<span class="st">'d'</span>]<span class="op">*</span><span class="dv">9</span>),</span>
+<span id="cb520-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"s"</span>:np.random.permutation([<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">15</span>,<span class="dv">20</span>,<span class="dv">25</span>,<span class="dv">30</span>]<span class="op">*</span><span class="dv">6</span>),</span>
+<span id="cb520-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"m"</span>:np.random.permutation([<span class="st">"one"</span>,<span class="st">"two"</span>]<span class="op">*</span><span class="dv">18</span>)</span>
+<span id="cb520-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-8" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb520-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb520-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-10" aria-hidden="true" tabindex="-1"></a>plt.scatter(</span>
+<span id="cb520-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-11" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> scatter_data,</span>
+<span id="cb520-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-12" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"x"</span>,</span>
+<span id="cb520-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-13" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="st">"y"</span>,</span>
+<span id="cb520-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-14" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> <span class="st">"s"</span>,</span>
+<span id="cb520-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-15" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> scatter_data.c.<span class="bu">map</span>({<span class="st">"a"</span>:<span class="st">"red"</span>,<span class="st">"b"</span>:<span class="st">"blue"</span>,<span class="st">"c"</span>:<span class="st">"yellow"</span>,<span class="st">"d"</span>:<span class="st">"green"</span>}),</span>
+<span id="cb520-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">#marker = ,marker形状,如果想要绘制不同的形状，则需要利用循环</span></span>
+<span id="cb520-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">#marker=matplotlib.markers.MarkerStyle(marker = markers[i],fillstyle='full'),#设置marker的填充</span></span>
+<span id="cb520-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-18" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.8</span>,<span class="co">#marker透明度，范围为0-1</span></span>
+<span id="cb520-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-19" aria-hidden="true" tabindex="-1"></a>    facecolors<span class="op">=</span><span class="st">'r'</span>,<span class="co">#marker的填充颜色，当上面c参数设置了颜色，优先c</span></span>
+<span id="cb520-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-20" aria-hidden="true" tabindex="-1"></a>    edgecolors<span class="op">=</span><span class="st">'none'</span>,<span class="co">#marker的边缘线色</span></span>
+<span id="cb520-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-21" aria-hidden="true" tabindex="-1"></a>    linewidths<span class="op">=</span><span class="dv">1</span>,<span class="co">#marker边缘线宽度，edgecolors不设置时，改参数不起作用</span></span>
+<span id="cb520-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-22" aria-hidden="true" tabindex="-1"></a>    <span class="co">#label = 后面图例的名称取自label</span></span>
+<span id="cb520-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb520-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb520-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/basic-scatter-5.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb521"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb521-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb521-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="不同形状的散点" class="section level3" number="7.10.2">
+<h3>
+<span class="header-section-number">7.10.2</span> 不同形状的散点<a class="anchor" aria-label="anchor" href="#%E4%B8%8D%E5%90%8C%E5%BD%A2%E7%8A%B6%E7%9A%84%E6%95%A3%E7%82%B9"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb522"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb522-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-1" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb522-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-2" aria-hidden="true" tabindex="-1"></a>mark <span class="op">=</span> {<span class="st">"one"</span>:<span class="st">"."</span>,<span class="st">"two"</span>:<span class="st">"*"</span>}</span>
+<span id="cb522-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-3" aria-hidden="true" tabindex="-1"></a><span class="co">#不要colorbar</span></span>
+<span id="cb522-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-4" aria-hidden="true" tabindex="-1"></a><span class="co">#markersize的比较合适大小在100左右</span></span>
+<span id="cb522-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-5" aria-hidden="true" tabindex="-1"></a><span class="co">#利用cmap将color中的数值映射到颜色</span></span>
+<span id="cb522-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> m,md <span class="kw">in</span> scatter_data.groupby(<span class="st">"m"</span>):</span>
+<span id="cb522-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-7" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> md.plot(</span>
+<span id="cb522-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-8" aria-hidden="true" tabindex="-1"></a>    kind<span class="op">=</span><span class="st">"scatter"</span>,</span>
+<span id="cb522-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-9" aria-hidden="true" tabindex="-1"></a>    marker <span class="op">=</span> mark[m],</span>
+<span id="cb522-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-10" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"x"</span>,</span>
+<span id="cb522-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-11" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="st">"y"</span>,</span>
+<span id="cb522-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-12" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> <span class="dv">10</span><span class="op">*</span>md.s,</span>
+<span id="cb522-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-13" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> md.s,</span>
+<span id="cb522-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-14" aria-hidden="true" tabindex="-1"></a>    cmap <span class="op">=</span> mpl.cm.viridis,</span>
+<span id="cb522-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-15" aria-hidden="true" tabindex="-1"></a>    <span class="co">#marker = ,marker形状,如果想要绘制不同的形状，则需要利用循环</span></span>
+<span id="cb522-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-16" aria-hidden="true" tabindex="-1"></a>    <span class="co">#marker=matplotlib.markers.MarkerStyle(marker = markers[i],fillstyle='full'),#设置marker的填充</span></span>
+<span id="cb522-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-17" aria-hidden="true" tabindex="-1"></a>    alpha<span class="op">=</span><span class="fl">0.8</span>,<span class="co">#marker透明度，范围为0-1</span></span>
+<span id="cb522-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-18" aria-hidden="true" tabindex="-1"></a>    facecolors<span class="op">=</span><span class="st">'r'</span>,<span class="co">#marker的填充颜色，当上面c参数设置了颜色，优先c</span></span>
+<span id="cb522-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-19" aria-hidden="true" tabindex="-1"></a>    edgecolors<span class="op">=</span><span class="st">'none'</span>,<span class="co">#marker的边缘线色</span></span>
+<span id="cb522-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-20" aria-hidden="true" tabindex="-1"></a>    linewidths<span class="op">=</span><span class="dv">1</span>,<span class="co">#marker边缘线宽度，edgecolors不设置时，改参数不起作用</span></span>
+<span id="cb522-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">#label = 后面图例的名称取自label</span></span>
+<span id="cb522-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-22" aria-hidden="true" tabindex="-1"></a>    colorbar <span class="op">=</span> <span class="va">False</span>,</span>
+<span id="cb522-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-23" aria-hidden="true" tabindex="-1"></a>    ax<span class="op">=</span>ax,</span>
+<span id="cb522-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb522-25"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb522-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/diff-shape-scatter-7.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb523"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb523-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb523-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+</div>
+<div id="极坐标" class="section level2" number="7.11">
+<h2>
+<span class="header-section-number">7.11</span> 极坐标<a class="anchor" aria-label="anchor" href="#%E6%9E%81%E5%9D%90%E6%A0%87"><i class="fas fa-link"></i></a>
+</h2>
+<pre><code>#创建极坐标
+fig = plt.figure()
+ax = fig.add_subplot(polar=True)
+#创建极坐标
+fig,ax = plt.subplots(subplot_kw={'projection':"polar"})</code></pre>
+<div id="基础极坐标" class="section level3" number="7.11.1">
+<h3>
+<span class="header-section-number">7.11.1</span> 基础极坐标<a class="anchor" aria-label="anchor" href="#%E5%9F%BA%E7%A1%80%E6%9E%81%E5%9D%90%E6%A0%87"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb525"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb525-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure()</span>
+<span id="cb525-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> fig.add_subplot(polar<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb525-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-3" aria-hidden="true" tabindex="-1"></a>fig.clear()</span>
+<span id="cb525-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-4" aria-hidden="true" tabindex="-1"></a><span class="co">#创建极坐标图</span></span>
+<span id="cb525-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-5" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>:<span class="st">"polar"</span>})</span>
+<span id="cb525-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-6" aria-hidden="true" tabindex="-1"></a><span class="co">#绘制点图，即雷达图，只需确定几等分，以及label即可</span></span>
+<span id="cb525-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-7" aria-hidden="true" tabindex="-1"></a><span class="co">#获取两位同学的某次考试各科成绩</span></span>
+<span id="cb525-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-8" aria-hidden="true" tabindex="-1"></a>two_student <span class="op">=</span> chengji.query(<span class="st">"mes_StudentID == [13543,13544] &amp; exam_number == 288 &amp; mes_Score &gt;0"</span>).pivot(index<span class="op">=</span><span class="st">"mes_sub_name"</span>,columns<span class="op">=</span><span class="st">"mes_StudentID"</span>,values<span class="op">=</span><span class="st">"mes_Score"</span>)</span>
+<span id="cb525-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-9" aria-hidden="true" tabindex="-1"></a><span class="co">#这里要多生成一个角度，因为0,2pi是一样的位置</span></span>
+<span id="cb525-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-10" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">2</span><span class="op">*</span>np.pi,<span class="bu">len</span>(two_student)<span class="op">+</span><span class="dv">1</span>)[:<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb525-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-11" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> two_student.index</span>
+<span id="cb525-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-12" aria-hidden="true" tabindex="-1"></a>tn <span class="op">=</span> ax.set_thetagrids(theta<span class="op">*</span><span class="dv">180</span><span class="op">/</span>np.pi,name)         <span class="co">#替换轴线和标签</span></span>
+<span id="cb525-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-13" aria-hidden="true" tabindex="-1"></a>s1, <span class="op">=</span> ax.plot(theta,two_student.iloc[:,<span class="dv">0</span>],<span class="st">'.m'</span>)</span>
+<span id="cb525-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-14" aria-hidden="true" tabindex="-1"></a>s2, <span class="op">=</span> ax.plot(theta,two_student.iloc[:,<span class="dv">1</span>],<span class="st">'.g'</span>)</span>
+<span id="cb525-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-15" aria-hidden="true" tabindex="-1"></a>ax.set_rmax(<span class="dv">160</span>)</span>
+<span id="cb525-16"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-16" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax.set_rticks([<span class="dv">20</span>,<span class="dv">40</span>,<span class="dv">60</span>,<span class="dv">80</span>,<span class="dv">100</span>,<span class="dv">120</span>,<span class="dv">140</span>,<span class="dv">160</span>])  <span class="co"># Less radial ticks</span></span>
+<span id="cb525-17"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-17" aria-hidden="true" tabindex="-1"></a>ax.set_rlabel_position(<span class="op">-</span><span class="fl">22.5</span>)  <span class="co"># Move radial labels away from plotted line</span></span>
+<span id="cb525-18"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-18" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb525-19"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-19" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> ax.fill(theta,two_student.iloc[:,<span class="dv">0</span>],<span class="st">'m'</span>,alpha <span class="op">=</span> <span class="fl">0.75</span>)           <span class="co">#填充</span></span>
+<span id="cb525-20"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-20" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> ax.fill(theta,two_student.iloc[:,<span class="dv">1</span>],color<span class="op">=</span><span class="st">'grey'</span>,alpha <span class="op">=</span> <span class="fl">0.75</span>)           <span class="co">#填充</span></span>
+<span id="cb525-21"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-21" aria-hidden="true" tabindex="-1"></a>ax.set_theta_zero_location(<span class="st">'E'</span>)         <span class="co">#设置极轴方向</span></span>
+<span id="cb525-22"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-22" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ax.set_title(<span class="st">"A plot"</span>, va<span class="op">=</span><span class="st">'bottom'</span>)</span>
+<span id="cb525-23"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-23" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> ax.legend(handles<span class="op">=</span>[s1,s2],labels<span class="op">=</span><span class="bu">list</span>(two_student.columns),bbox_to_anchor<span class="op">=</span>(<span class="fl">1.3</span>,<span class="dv">1</span>))</span>
+<span id="cb525-24"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb525-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/basic-polar-9.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb526"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb526-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb526-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+</div>
+<div id="帕累托图" class="section level2" number="7.12">
+<h2>
+<span class="header-section-number">7.12</span> 帕累托图<a class="anchor" aria-label="anchor" href="#%E5%B8%95%E7%B4%AF%E6%89%98%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h2>
+<p>主要用来绘制顺序数据</p>
+<div class="sourceCode" id="cb527"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb527-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb527-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 即要绘制双轴</span></span>
+<span id="cb527-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb527-2" aria-hidden="true" tabindex="-1"></a>pdata <span class="op">=</span> pd.DataFrame({<span class="st">"one"</span>:[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]},index<span class="op">=</span>[<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>]) </span>
+<span id="cb527-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb527-3" aria-hidden="true" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>,figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</span>
+<span id="cb527-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb527-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> pdata.plot(kind<span class="op">=</span><span class="st">"bar"</span>,ax<span class="op">=</span>ax,legend<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb527-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb527-5" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>,<span class="dv">6</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>(0.0, 6.0)</code></pre>
+<div class="sourceCode" id="cb529"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb529-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb529-1" aria-hidden="true" tabindex="-1"></a>ax.yaxis.set_major_locator(ticker.LinearLocator(<span class="dv">3</span>))</span>
+<span id="cb529-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb529-2" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> ax.twinx()</span>
+<span id="cb529-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb529-3" aria-hidden="true" tabindex="-1"></a>pdatacum <span class="op">=</span> pdata.<span class="bu">apply</span>(<span class="kw">lambda</span> x:x.cumsum()<span class="op">/</span><span class="bu">sum</span>(x))</span>
+<span id="cb529-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb529-4" aria-hidden="true" tabindex="-1"></a>l <span class="op">=</span> pdatacum.plot(ax<span class="op">=</span>ax2,legend<span class="op">=</span><span class="va">False</span>,marker<span class="op">=</span><span class="st">"."</span>)</span>
+<span id="cb529-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb529-5" aria-hidden="true" tabindex="-1"></a>ax2.set_ylim(<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>(0.0, 1.0)</code></pre>
+<div class="sourceCode" id="cb531"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb531-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb531-1" aria-hidden="true" tabindex="-1"></a>ax2.yaxis.set_major_locator(ticker.LinearLocator(<span class="dv">6</span>))</span>
+<span id="cb531-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb531-2" aria-hidden="true" tabindex="-1"></a>ax2.yaxis.set_major_formatter(ticker.PercentFormatter(xmax<span class="op">=</span><span class="dv">1</span>))</span>
+<span id="cb531-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb531-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/unnamed-chunk-1-11.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb532"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb532-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb532-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+</div>
+<div id="多图" class="section level2" number="7.13">
+<h2>
+<span class="header-section-number">7.13</span> 多图<a class="anchor" aria-label="anchor" href="#%E5%A4%9A%E5%9B%BE"><i class="fas fa-link"></i></a>
+</h2>
+<p>主要介绍进行任意axes组合的方法</p>
+<p><code>matplotlib.gridspec.GridSpec(nrows, ncols, figure=None, left=None, bottom=None, right=None, top=None, wspace=None, hspace=None, width_ratios=None, height_ratios=None)</code></p>
+<div class="sourceCode" id="cb533"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb533-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 生成任意排列的图形</span></span>
+<span id="cb533-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> plt.figure(dpi<span class="op">=</span><span class="dv">100</span>,</span>
+<span id="cb533-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-3" aria-hidden="true" tabindex="-1"></a>                 constrained_layout<span class="op">=</span><span class="va">True</span>,<span class="co">#类似于tight_layout，使得各子图之间的距离自动调整【类似excel中行宽根据内容自适应】</span></span>
+<span id="cb533-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-4" aria-hidden="true" tabindex="-1"></a>                )</span>
+<span id="cb533-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-5" aria-hidden="true" tabindex="-1"></a>gs <span class="op">=</span> GridSpec(<span class="dv">3</span>, <span class="dv">3</span>, figure<span class="op">=</span>fig)<span class="co">#GridSpec将fiure分为3行3列，每行三个axes，gs为一个matplotlib.gridspec.GridSpec对象，可灵活的切片figure</span></span>
+<span id="cb533-6"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-6" aria-hidden="true" tabindex="-1"></a>ax1 <span class="op">=</span> fig.add_subplot(gs[<span class="dv">0</span>, <span class="dv">0</span>:<span class="dv">1</span>])</span>
+<span id="cb533-7"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-7" aria-hidden="true" tabindex="-1"></a>plt.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>])</span>
+<span id="cb533-8"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-8" aria-hidden="true" tabindex="-1"></a>ax2 <span class="op">=</span> fig.add_subplot(gs[<span class="dv">0</span>, <span class="dv">1</span>:<span class="dv">3</span>])<span class="co">#gs[0, 0:3]中0选取figure的第一行，0:3选取figure第二列和第三列</span></span>
+<span id="cb533-9"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb533-10"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-10" aria-hidden="true" tabindex="-1"></a><span class="co">#ax3 = fig.add_subplot(gs[1, 0:2])</span></span>
+<span id="cb533-11"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-11" aria-hidden="true" tabindex="-1"></a>plt.subplot(gs[<span class="dv">1</span>, <span class="dv">0</span>:<span class="dv">2</span>])<span class="co">#同样可以使用基于pyplot api的方式</span></span>
+<span id="cb533-12"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-12" aria-hidden="true" tabindex="-1"></a>plt.scatter([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>],marker<span class="op">=</span><span class="st">'*'</span>)</span>
+<span id="cb533-13"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb533-14"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-14" aria-hidden="true" tabindex="-1"></a>ax4 <span class="op">=</span> fig.add_subplot(gs[<span class="dv">1</span>:<span class="dv">3</span>, <span class="dv">2</span>:<span class="dv">3</span>])</span>
+<span id="cb533-15"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb533-15" aria-hidden="true" tabindex="-1"></a>plt.bar([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>])</span></code></pre></div>
+<pre class="scroll-200"><code>&lt;BarContainer object of 3 artists&gt;</code></pre>
+<div class="sourceCode" id="cb535"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb535-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb535-1" aria-hidden="true" tabindex="-1"></a>ax5 <span class="op">=</span> fig.add_subplot(gs[<span class="dv">2</span>, <span class="dv">0</span>:<span class="dv">1</span>])</span>
+<span id="cb535-2"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb535-2" aria-hidden="true" tabindex="-1"></a>ax6 <span class="op">=</span> fig.add_subplot(gs[<span class="dv">2</span>, <span class="dv">1</span>:<span class="dv">2</span>])</span>
+<span id="cb535-3"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb535-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb535-4"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb535-4" aria-hidden="true" tabindex="-1"></a>fig.suptitle(<span class="st">"GridSpec"</span>,color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb535-5"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb535-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="inline-figure"><img src="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B_files/figure-html/multi-axes-13.png" width="95%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb536"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb536-1"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html#cb536-1" aria-hidden="true" tabindex="-1"></a>plt.close()</span></code></pre></div>
+
+</div>
+</div>
+
+
+
+<style>
+
+/* Style the tab */
+/* .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+} */
+.tab {
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    /* margin-bottom: 8px; */
+    /* margin-left: -8px; */
+    /* margin-right: 0px; */
+    /* border-bottom:1px solid #e0e0e0; */
+    height: 32px;
+    /*flex-basis: 100px;*/
+    /* background-color: aliceblue; */
+}
+
+/* Style the buttons inside the tab */
+/* .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+} */
+
+.tab button {
+    background-color: inherit;
+    margin:0;
+    text-align: center;
+    font-weight: 500;
+    min-width: 100px;
+    /*width:fit-content;*/
+    height: 100%;
+    /* padding:5px,5px; */
+    border: none;
+    font-size: 1rem;
+    font-weight:400;
+    line-height: 32px;
+    letter-spacing: .5px;
+}
+
+/* Change background color of buttons on hover */
+/* .tab button:hover {
+    background-color: #ddd;
+} */
+.tab button:hover {
+    background-color: aliceblue;
+}
+
+/* Create an active/current tablink class */
+/* .tab button.active {
+    background-color: #ccc;
+} */
+.tab button.active {
+    border-bottom: 2px solid rgb(33,150,243);
+    background-color: aliceblue;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+/* Style the tab content */
+/* .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+} */
+.tabcontent {
+    display: none;
+    /* border: 1px solid aliceblue; */
+    /*background-color: aliceblue;*/
+    /* margin-left: -8px; */
+    /* margin-top: -8px; */
+ }
+
+.tabheader{
+    display: none;
+}
+
+pre {
+  word-break: normal;
+  word-wrap: normal;
+  margin-left: 0px;
+}
+</style>
+<script>
+    var tab = document.getElementsByClassName("tabset");
+    for(i=0;i<tab.length;i++){
+    var hL = tab[i].children[0].nodeName[1];
+    var tabContents = tab[i].getElementsByTagName("h"+String(Number(hL)+1));
+    var tabCon = document.createElement("div");
+    tabCon.className = "tab";
+    tab[i].insertBefore(tabCon,tabContents[0].parentNode);
+     for(j=0;j<tabContents.length;j++){
+         var tabConDiv = tabContents[j].parentNode;
+         var tabId = tabConDiv.getAttribute("id");
+         var tabNumber = tabConDiv.getAttribute("number").replaceAll('.','-');
+         var newID = tabNumber + '-' + tabId;
+         var button = document.createElement("button");
+         button.className = "tablinks";
+         button.setAttribute("onclick","openTab(event,'"+newID+"')");
+         button.innerText = tabId.split('-')[0];
+        //  button.innerText = tabContents[j].innerText;
+         tabCon.appendChild(button);
+         tabConDiv.setAttribute("id",newID);
+         tabConDiv.className = "tabcontent";
+         tabContents[j].innerHTML = "";
+         tabContents[j].className = "tabheader";
+     }
+     tabContents[0].parentNode.style.display = "block";
+     tabCon.children[0].className += " active"
+    }
+
+function openTab(evt,tabName){
+    var i, tabcontent, tablinks;
+//     tabcontent = document.getElementsByClassName("tabcontent");
+//     for (i = 0; i < tabcontent.length; i++) {
+//         tabcontent[i].style.display = "none";
+//   }
+//     tablinks = document.getElementsByClassName("tablinks");
+//     for (i = 0; i < tablinks.length; i++) {
+//     tablinks[i].className = tablinks[i].className.replace(" active", "");
+//   }
+//   document.getElementById(tabName).style.display = "block";
+//   evt.currentTarget.className += " active";
+    var container = evt.currentTarget.parentNode;
+    tabcontent = container.parentNode.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+  }
+    tablinks = container.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script><div class="giscus">
+<script src="https://giscus.app/client.js" data-repo="wangchenglong99/wangchenglong99.github.io" data-repo-id="R_kgDOI6UvHg" data-category="Announcements" data-category-id="DIC_kwDOI6UvHs4CUJAN" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light_high_contrast" data-lang="zh-CN" crossorigin="anonymous" async>
+</script><div></div>
+  
+
+  
+
+</div>
+<div class="chapter-nav">
+<div class="prev"><a href="matplotlib-1.html"><span class="header-section-number">6</span> matplotlib</a></div>
+<div class="next"><a href="introduction-3.html">introduction</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B"><span class="header-section-number">7</span> 图表实例</a></li>
+<li><a class="nav-link" href="#%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B"><span class="header-section-number">7.1</span> 绘制流程</a></li>
+<li><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="header-section-number">7.2</span> 参考</a></li>
+<li>
+<a class="nav-link" href="#axes%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE"><span class="header-section-number">7.3</span> axes参数设置</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#tick_labels"><span class="header-section-number">7.3.1</span> tick_labels</a></li>
+<li><a class="nav-link" href="#ticks"><span class="header-section-number">7.3.2</span> ticks</a></li>
+<li><a class="nav-link" href="#ticks-formator"><span class="header-section-number">7.3.3</span> ticks-formator</a></li>
+<li><a class="nav-link" href="#ticks-locator"><span class="header-section-number">7.3.4</span> ticks-locator</a></li>
+<li><a class="nav-link" href="#pad"><span class="header-section-number">7.3.5</span> pad</a></li>
+<li><a class="nav-link" href="#spines"><span class="header-section-number">7.3.6</span> spines</a></li>
+<li><a class="nav-link" href="#%E8%BD%B4%E8%8C%83%E5%9B%B4"><span class="header-section-number">7.3.7</span> 轴范围</a></li>
+<li><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E5%A4%9A%E5%9B%BE%E9%97%B4%E8%B7%9D"><span class="header-section-number">7.3.8</span> 调整多图间距</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E5%9B%BE%E4%BE%8B"><span class="header-section-number">7.4</span> 图例</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%9B%BE%E4%BE%8B%E6%A0%B7%E5%BC%8F%E8%AE%BE%E7%BD%AE"><span class="header-section-number">7.4.1</span> 图例样式设置</a></li>
+<li><a class="nav-link" href="#%E5%8F%8C%E8%BD%B4%E6%88%96%E8%80%85%E5%A4%9A%E5%9B%BE"><span class="header-section-number">7.4.2</span> 双轴或者多图</a></li>
+<li><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BE%E4%BE%8B"><span class="header-section-number">7.4.3</span> 自定义图例</a></li>
+<li><a class="nav-link" href="#%E9%A2%9C%E8%89%B2"><span class="header-section-number">7.4.4</span> 颜色</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E6%9F%B1%E5%BD%A2%E5%9B%BE%E6%9D%A1%E5%BD%A2%E5%9B%BE"><span class="header-section-number">7.5</span> 柱形图/条形图</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9F%B1%E5%BD%A2%E5%9B%BE"><span class="header-section-number">7.5.1</span> 基本柱形图</a></li>
+<li><a class="nav-link" href="#%E6%8E%92%E5%88%97%E6%9F%B1%E5%BD%A2%E5%9B%BE"><span class="header-section-number">7.5.2</span> 排列柱形图</a></li>
+<li><a class="nav-link" href="#%E5%A0%86%E5%8F%A0%E6%9D%A1%E5%BD%A2%E5%9B%BE"><span class="header-section-number">7.5.3</span> 堆叠条形图</a></li>
+<li><a class="nav-link" href="#%E5%8F%8C%E5%90%91%E6%9D%A1%E5%BD%A2%E5%9B%BE"><span class="header-section-number">7.5.4</span> 双向条形图</a></li>
+<li><a class="nav-link" href="#%E7%BB%84%E5%90%88%E6%9D%A1%E5%BD%A2%E5%9B%BE"><span class="header-section-number">7.5.5</span> 组合条形图</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E6%8A%98%E7%BA%BF%E5%9B%BE"><span class="header-section-number">7.6</span> 折线图</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%8A%98%E7%BA%BF%E5%9B%BE"><span class="header-section-number">7.6.1</span> 基础折线图</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="header-section-number">7.7</span> 直方图</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="header-section-number">7.7.1</span> 基础直方图</a></li>
+<li><a class="nav-link" href="#%E7%BB%84%E5%90%88%E7%9B%B4%E6%96%B9%E5%9B%BE"><span class="header-section-number">7.7.2</span> 组合直方图</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E7%AE%B1%E7%BA%BF%E5%9B%BE-1"><span class="header-section-number">7.8</span> 箱线图</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE"><span class="header-section-number">7.8.1</span> 获取返回数据</a></li>
+<li><a class="nav-link" href="#%E7%BB%84%E5%90%88%E7%AE%B1%E7%BA%BF%E5%9B%BE"><span class="header-section-number">7.8.2</span> 组合箱线图</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E9%A5%BC%E5%9B%BE"><span class="header-section-number">7.9</span> 饼图</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%A5%BC%E5%9B%BE"><span class="header-section-number">7.9.1</span> 基础饼图</a></li>
+<li><a class="nav-link" href="#%E7%8E%AB%E7%91%B0%E5%9B%BE"><span class="header-section-number">7.9.2</span> 玫瑰图</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E6%95%A3%E7%82%B9%E5%9B%BE"><span class="header-section-number">7.10</span> 散点图</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%95%A3%E7%82%B9%E5%9B%BE"><span class="header-section-number">7.10.1</span> 基础散点图</a></li>
+<li><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E5%BD%A2%E7%8A%B6%E7%9A%84%E6%95%A3%E7%82%B9"><span class="header-section-number">7.10.2</span> 不同形状的散点</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#%E6%9E%81%E5%9D%90%E6%A0%87"><span class="header-section-number">7.11</span> 极坐标</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E6%9E%81%E5%9D%90%E6%A0%87"><span class="header-section-number">7.11.1</span> 基础极坐标</a></li></ul>
+</li>
+<li><a class="nav-link" href="#%E5%B8%95%E7%B4%AF%E6%89%98%E5%9B%BE"><span class="header-section-number">7.12</span> 帕累托图</a></li>
+<li><a class="nav-link" href="#%E5%A4%9A%E5%9B%BE"><span class="header-section-number">7.13</span> 多图</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/wangchenglong99/wangchenglong99.github.io/edit/main/%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2023-03-24.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</div>
+</body>
+</html>

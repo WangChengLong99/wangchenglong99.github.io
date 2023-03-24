@@ -1,3 +1,15 @@
+body {
+  font-family: Arial,"kaiTi",kaiTi,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.figure{
+  border:none;
+  margin:0;
+  padding:5px;
+}
+
 p.caption {
   color: #777;
   margin-top: 10px;
@@ -9,7 +21,64 @@ pre {
   word-break: normal;
   word-wrap: normal;
   margin-left: 0px;
+  line-height: 1.2;
 }
 pre code {
   white-space: inherit;
+  font-size: 14px;
+  font-family: Consolas;
 }
+
+table{
+  margin-bottom: 0rem;
+  /* border-collapse: collapse; */
+  word-wrap: normal;
+  word-break: normal;
+  width: fit-content;
+}
+
+td{
+  display: table-cell;
+}
+
+table th{
+
+  border: none;
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  width: fit-content;
+
+  background-color: rgb(240, 248, 255);
+
+  height: 20px;
+
+  font-size: 15px;
+}
+
+table td{
+
+  border: none;
+
+  /* white-space: nowrap; */
+
+  width: fit-content;
+
+  text-align: center;
+
+  height: 15px;
+
+  font-size:12px;
+}
+
+tr:nth-child(odd){
+  background-color: rgb(245, 245, 245);
+}
+
+/*
+pre.numberSource code > span > a:first-child::before {
+  left: -0.3em;
+}
+*/
