@@ -104,10 +104,10 @@
 <h2>
 <span class="header-section-number">5.1</span> datetime<a class="anchor" aria-label="anchor" href="#datetime"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb267"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb267-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
-<span id="cb267-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb267-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> timedelta, timezone</span>
-<span id="cb267-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb267-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb267-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb267-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<div class="sourceCode" id="cb266"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb266-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb266-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
+<span id="cb266-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb266-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> timedelta, timezone</span>
+<span id="cb266-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb266-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb266-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb266-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
 <div id="时间的类型" class="section level3" number="5.1.1">
 <h3>
 <span class="header-section-number">5.1.1</span> 时间的类型<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E7%9A%84%E7%B1%BB%E5%9E%8B"><i class="fas fa-link"></i></a>
@@ -262,22 +262,22 @@
 <span class="header-section-number">5.1.2.2</span> .time()<a class="anchor" aria-label="anchor" href="#time"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>datetime.time(\[hour[, minute[, second[, microsecond[, tzinfo]]]]\])</code></pre>
-<div class="sourceCode" id="cb270"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb270-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> time_atr_and_met(hour,minute,second):</span>
-<span id="cb270-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> datetime</span>
-<span id="cb270-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-3" aria-hidden="true" tabindex="-1"></a>    time1<span class="op">=</span>datetime.time(hour,minute,second)</span>
-<span id="cb270-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-4" aria-hidden="true" tabindex="-1"></a>    atr<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">dir</span>(time1) <span class="cf">if</span> i[<span class="dv">0</span>]<span class="op">!=</span><span class="st">'_'</span>]</span>
-<span id="cb270-5"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-5" aria-hidden="true" tabindex="-1"></a>    l<span class="op">=</span>[]</span>
-<span id="cb270-6"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> atr:</span>
-<span id="cb270-7"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
-<span id="cb270-8"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-8" aria-hidden="true" tabindex="-1"></a>            a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'time1.'</span><span class="op">+</span>i<span class="op">+</span><span class="st">'()'</span>)</span>
-<span id="cb270-9"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
-<span id="cb270-10"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
-<span id="cb270-11"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-11" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'time1.'</span><span class="op">+</span>i)</span>
-<span id="cb270-12"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span>:</span>
-<span id="cb270-13"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-13" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="st">"pass"</span></span>
-<span id="cb270-14"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-14" aria-hidden="true" tabindex="-1"></a>        l.append([<span class="st">'.'</span><span class="op">+</span>i,a])</span>
-<span id="cb270-15"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> l</span>
-<span id="cb270-16"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-16" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(time_atr_and_met(<span class="dv">15</span>,<span class="dv">42</span>,<span class="dv">30</span>),columns<span class="op">=</span>[<span class="st">'方法或属性'</span>,<span class="st">'实例'</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))  </span></code></pre></div>
+<div class="sourceCode" id="cb269"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb269-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> time_atr_and_met(hour,minute,second):</span>
+<span id="cb269-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> datetime</span>
+<span id="cb269-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-3" aria-hidden="true" tabindex="-1"></a>    time1<span class="op">=</span>datetime.time(hour,minute,second)</span>
+<span id="cb269-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-4" aria-hidden="true" tabindex="-1"></a>    atr<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">dir</span>(time1) <span class="cf">if</span> i[<span class="dv">0</span>]<span class="op">!=</span><span class="st">'_'</span>]</span>
+<span id="cb269-5"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-5" aria-hidden="true" tabindex="-1"></a>    l<span class="op">=</span>[]</span>
+<span id="cb269-6"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> atr:</span>
+<span id="cb269-7"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb269-8"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-8" aria-hidden="true" tabindex="-1"></a>            a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'time1.'</span><span class="op">+</span>i<span class="op">+</span><span class="st">'()'</span>)</span>
+<span id="cb269-9"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb269-10"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
+<span id="cb269-11"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-11" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'time1.'</span><span class="op">+</span>i)</span>
+<span id="cb269-12"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span>:</span>
+<span id="cb269-13"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-13" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="st">"pass"</span></span>
+<span id="cb269-14"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-14" aria-hidden="true" tabindex="-1"></a>        l.append([<span class="st">'.'</span><span class="op">+</span>i,a])</span>
+<span id="cb269-15"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> l</span>
+<span id="cb269-16"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb269-16" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(time_atr_and_met(<span class="dv">15</span>,<span class="dv">42</span>,<span class="dv">30</span>),columns<span class="op">=</span>[<span class="st">'方法或属性'</span>,<span class="st">'实例'</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))  </span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
 <col width="4%">
@@ -303,7 +303,7 @@
 <tr class="odd">
 <td>2</td>
 <td>.fromisoformat</td>
-<td>&lt;built-in method fromisoformat of type object at 0x00007FFB96D2D4B0&gt;</td>
+<td>&lt;built-in method fromisoformat of type object at 0x00007FFB53C4D4B0&gt;</td>
 </tr>
 <tr class="even">
 <td>3</td>
@@ -353,7 +353,7 @@
 <tr class="odd">
 <td>12</td>
 <td>.strftime</td>
-<td>&lt;built-in method strftime of datetime.time object at 0x0000019138FA3990&gt;</td>
+<td>&lt;built-in method strftime of datetime.time object at 0x0000022CC82D4990&gt;</td>
 </tr>
 <tr class="even">
 <td>13</td>
@@ -378,24 +378,24 @@
 <span class="header-section-number">5.1.2.3</span> .datetime()<a class="anchor" aria-label="anchor" href="#datetime-1"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>datetime(year, month, day\[, hour[, minute[, second[, microsecond[,tzinfo]]]]\])</code></pre>
-<div class="sourceCode" id="cb272"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb272-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> datetime_atr_and_met(year,month,day,hour,minute,second):</span>
-<span id="cb272-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> datetime</span>
-<span id="cb272-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-3" aria-hidden="true" tabindex="-1"></a>    datetime1<span class="op">=</span>datetime.datetime(year,month,day,hour,minute,second)</span>
-<span id="cb272-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-4" aria-hidden="true" tabindex="-1"></a>    atr<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">dir</span>(datetime1) <span class="cf">if</span> i[<span class="dv">0</span>]<span class="op">!=</span><span class="st">'_'</span>]</span>
-<span id="cb272-5"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-5" aria-hidden="true" tabindex="-1"></a>    l<span class="op">=</span>[]</span>
-<span id="cb272-6"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> atr:</span>
-<span id="cb272-7"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
-<span id="cb272-8"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-8" aria-hidden="true" tabindex="-1"></a>            a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'datetime1.'</span><span class="op">+</span>i<span class="op">+</span><span class="st">'()'</span>)</span>
-<span id="cb272-9"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
-<span id="cb272-10"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
-<span id="cb272-11"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-11" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'datetime1.'</span><span class="op">+</span>i)</span>
-<span id="cb272-12"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span>:</span>
-<span id="cb272-13"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-13" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="st">"pass"</span></span>
-<span id="cb272-14"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-14" aria-hidden="true" tabindex="-1"></a>        l.append([<span class="st">'.'</span><span class="op">+</span>i,a])</span>
-<span id="cb272-15"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> l</span>
-<span id="cb272-16"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-16" aria-hidden="true" tabindex="-1"></a>dt<span class="op">=</span>datetime_atr_and_met(<span class="dv">2021</span>,<span class="dv">11</span>,<span class="dv">26</span>,<span class="dv">16</span>,<span class="dv">0</span>,<span class="dv">0</span>) </span>
-<span id="cb272-17"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-17" aria-hidden="true" tabindex="-1"></a>ndt<span class="op">=</span>[i<span class="op">+</span>j <span class="cf">for</span> i,j <span class="kw">in</span> <span class="bu">zip</span>(dt[<span class="dv">20</span>:<span class="dv">39</span>],dt[:<span class="dv">19</span>])]<span class="op">+</span>[dt[<span class="dv">19</span>]<span class="op">+</span>[<span class="st">''</span>]<span class="op">+</span>[<span class="st">''</span>]]</span>
-<span id="cb272-18"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-18" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(ndt,columns<span class="op">=</span>[<span class="st">'方法或属性'</span>,<span class="st">'实例'</span>,<span class="st">'方法或属性'</span>,<span class="st">'实例'</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb271-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> datetime_atr_and_met(year,month,day,hour,minute,second):</span>
+<span id="cb271-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> datetime</span>
+<span id="cb271-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-3" aria-hidden="true" tabindex="-1"></a>    datetime1<span class="op">=</span>datetime.datetime(year,month,day,hour,minute,second)</span>
+<span id="cb271-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-4" aria-hidden="true" tabindex="-1"></a>    atr<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">dir</span>(datetime1) <span class="cf">if</span> i[<span class="dv">0</span>]<span class="op">!=</span><span class="st">'_'</span>]</span>
+<span id="cb271-5"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-5" aria-hidden="true" tabindex="-1"></a>    l<span class="op">=</span>[]</span>
+<span id="cb271-6"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> atr:</span>
+<span id="cb271-7"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb271-8"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-8" aria-hidden="true" tabindex="-1"></a>            a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'datetime1.'</span><span class="op">+</span>i<span class="op">+</span><span class="st">'()'</span>)</span>
+<span id="cb271-9"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb271-10"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
+<span id="cb271-11"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-11" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'datetime1.'</span><span class="op">+</span>i)</span>
+<span id="cb271-12"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span>:</span>
+<span id="cb271-13"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-13" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="st">"pass"</span></span>
+<span id="cb271-14"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-14" aria-hidden="true" tabindex="-1"></a>        l.append([<span class="st">'.'</span><span class="op">+</span>i,a])</span>
+<span id="cb271-15"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> l</span>
+<span id="cb271-16"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-16" aria-hidden="true" tabindex="-1"></a>dt<span class="op">=</span>datetime_atr_and_met(<span class="dv">2021</span>,<span class="dv">11</span>,<span class="dv">26</span>,<span class="dv">16</span>,<span class="dv">0</span>,<span class="dv">0</span>) </span>
+<span id="cb271-17"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-17" aria-hidden="true" tabindex="-1"></a>ndt<span class="op">=</span>[i<span class="op">+</span>j <span class="cf">for</span> i,j <span class="kw">in</span> <span class="bu">zip</span>(dt[<span class="dv">20</span>:<span class="dv">39</span>],dt[:<span class="dv">19</span>])]<span class="op">+</span>[dt[<span class="dv">19</span>]<span class="op">+</span>[<span class="st">''</span>]<span class="op">+</span>[<span class="st">''</span>]]</span>
+<span id="cb271-18"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb271-18" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(ndt,columns<span class="op">=</span>[<span class="st">'方法或属性'</span>,<span class="st">'实例'</span>,<span class="st">'方法或属性'</span>,<span class="st">'实例'</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
 <col width="1%">
@@ -415,7 +415,7 @@
 <tr class="odd">
 <td>0</td>
 <td>.now</td>
-<td>2023-03-24 16:58:57.992220</td>
+<td>2023-03-24 20:55:03.192638</td>
 <td>.astimezone</td>
 <td>2021-11-26 16:00:00+08:00</td>
 </tr>
@@ -424,7 +424,7 @@
 <td>.replace</td>
 <td>2021-11-26 16:00:00</td>
 <td>.combine</td>
-<td>&lt;built-in method combine of type object at 0x00007FFB96D2D650&gt;</td>
+<td>&lt;built-in method combine of type object at 0x00007FFB53C4D650&gt;</td>
 </tr>
 <tr class="odd">
 <td>2</td>
@@ -443,14 +443,14 @@
 <tr class="odd">
 <td>4</td>
 <td>.strftime</td>
-<td>&lt;built-in method strftime of datetime.datetime object at 0x0000019139334330&gt;</td>
+<td>&lt;built-in method strftime of datetime.datetime object at 0x0000022CC8666330&gt;</td>
 <td>.day</td>
 <td>26</td>
 </tr>
 <tr class="even">
 <td>5</td>
 <td>.strptime</td>
-<td>&lt;built-in method strptime of type object at 0x00007FFB96D2D650&gt;</td>
+<td>&lt;built-in method strptime of type object at 0x00007FFB53C4D650&gt;</td>
 <td>.dst</td>
 <td></td>
 </tr>
@@ -466,28 +466,28 @@
 <td>.timestamp</td>
 <td>1637913600.0</td>
 <td>.fromisocalendar</td>
-<td>&lt;built-in method fromisocalendar of type object at 0x00007FFB96D2D650&gt;</td>
+<td>&lt;built-in method fromisocalendar of type object at 0x00007FFB53C4D650&gt;</td>
 </tr>
 <tr class="odd">
 <td>8</td>
 <td>.timetuple</td>
 <td>time.struct_time(tm_year=2021, tm_mon=11, tm_mday=26, tm_hour=16, tm_min=0, tm_sec=0, tm_wday=4, tm_yday=330, tm_isdst=-1)</td>
 <td>.fromisoformat</td>
-<td>&lt;built-in method fromisoformat of type object at 0x00007FFB96D2D650&gt;</td>
+<td>&lt;built-in method fromisoformat of type object at 0x00007FFB53C4D650&gt;</td>
 </tr>
 <tr class="even">
 <td>9</td>
 <td>.timetz</td>
 <td>16:00:00</td>
 <td>.fromordinal</td>
-<td>&lt;built-in method fromordinal of type object at 0x00007FFB96D2D650&gt;</td>
+<td>&lt;built-in method fromordinal of type object at 0x00007FFB53C4D650&gt;</td>
 </tr>
 <tr class="odd">
 <td>10</td>
 <td>.today</td>
-<td>2023-03-24 16:58:57.992221</td>
+<td>2023-03-24 20:55:03.193708</td>
 <td>.fromtimestamp</td>
-<td>&lt;built-in method fromtimestamp of type object at 0x00007FFB96D2D650&gt;</td>
+<td>&lt;built-in method fromtimestamp of type object at 0x00007FFB53C4D650&gt;</td>
 </tr>
 <tr class="even">
 <td>11</td>
@@ -513,14 +513,14 @@
 <tr class="odd">
 <td>14</td>
 <td>.utcfromtimestamp</td>
-<td>&lt;built-in method utcfromtimestamp of type object at 0x00007FFB96D2D650&gt;</td>
+<td>&lt;built-in method utcfromtimestamp of type object at 0x00007FFB53C4D650&gt;</td>
 <td>.isoweekday</td>
 <td>5</td>
 </tr>
 <tr class="even">
 <td>15</td>
 <td>.utcnow</td>
-<td>2023-03-24 08:58:57.992220</td>
+<td>2023-03-24 12:55:03.193707</td>
 <td>.max</td>
 <td>9999-12-31 23:59:59.999999</td>
 </tr>
@@ -562,22 +562,22 @@
 <p>timedelta类是用来计算二个datetime对象的差值的。</p>
 <p>创建对象:<code>datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)</code></p>
 <p>使用timedelta你可以很容易地算出前几天和后几天的时刻。</p>
-<div class="sourceCode" id="cb273"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb273-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> timedelta_atr_and_met(days,seconds,microseconds):</span>
-<span id="cb273-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> datetime</span>
-<span id="cb273-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-3" aria-hidden="true" tabindex="-1"></a>    timedelta<span class="op">=</span>datetime.timedelta(days,seconds,microseconds)</span>
-<span id="cb273-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-4" aria-hidden="true" tabindex="-1"></a>    atr<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">dir</span>(timedelta) <span class="cf">if</span> i[<span class="dv">0</span>]<span class="op">!=</span><span class="st">'_'</span>]</span>
-<span id="cb273-5"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-5" aria-hidden="true" tabindex="-1"></a>    l<span class="op">=</span>[]</span>
-<span id="cb273-6"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> atr:</span>
-<span id="cb273-7"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
-<span id="cb273-8"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-8" aria-hidden="true" tabindex="-1"></a>            a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'timedelta.'</span><span class="op">+</span>i<span class="op">+</span><span class="st">'()'</span>)</span>
-<span id="cb273-9"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
-<span id="cb273-10"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
-<span id="cb273-11"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-11" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'timedelta.'</span><span class="op">+</span>i)</span>
-<span id="cb273-12"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span>:</span>
-<span id="cb273-13"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-13" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="st">"pass"</span></span>
-<span id="cb273-14"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-14" aria-hidden="true" tabindex="-1"></a>        l.append([<span class="st">'.'</span><span class="op">+</span>i,a])</span>
-<span id="cb273-15"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> l</span>
-<span id="cb273-16"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-16" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(timedelta_atr_and_met(<span class="dv">2</span>,<span class="dv">42</span>,<span class="dv">300</span>),columns<span class="op">=</span>[<span class="st">'方法或属性'</span>,<span class="st">'实例'</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb272-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> timedelta_atr_and_met(days,seconds,microseconds):</span>
+<span id="cb272-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-2" aria-hidden="true" tabindex="-1"></a>    <span class="im">import</span> datetime</span>
+<span id="cb272-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-3" aria-hidden="true" tabindex="-1"></a>    timedelta<span class="op">=</span>datetime.timedelta(days,seconds,microseconds)</span>
+<span id="cb272-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-4" aria-hidden="true" tabindex="-1"></a>    atr<span class="op">=</span>[i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">dir</span>(timedelta) <span class="cf">if</span> i[<span class="dv">0</span>]<span class="op">!=</span><span class="st">'_'</span>]</span>
+<span id="cb272-5"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-5" aria-hidden="true" tabindex="-1"></a>    l<span class="op">=</span>[]</span>
+<span id="cb272-6"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> atr:</span>
+<span id="cb272-7"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">try</span>:</span>
+<span id="cb272-8"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-8" aria-hidden="true" tabindex="-1"></a>            a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'timedelta.'</span><span class="op">+</span>i<span class="op">+</span><span class="st">'()'</span>)</span>
+<span id="cb272-9"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">except</span>:</span>
+<span id="cb272-10"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">try</span>:</span>
+<span id="cb272-11"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-11" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="bu">eval</span>(<span class="st">'timedelta.'</span><span class="op">+</span>i)</span>
+<span id="cb272-12"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-12" aria-hidden="true" tabindex="-1"></a>            <span class="cf">except</span>:</span>
+<span id="cb272-13"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-13" aria-hidden="true" tabindex="-1"></a>                a<span class="op">=</span><span class="st">"pass"</span></span>
+<span id="cb272-14"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-14" aria-hidden="true" tabindex="-1"></a>        l.append([<span class="st">'.'</span><span class="op">+</span>i,a])</span>
+<span id="cb272-15"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> l</span>
+<span id="cb272-16"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb272-16" aria-hidden="true" tabindex="-1"></a>pd.DataFrame(timedelta_atr_and_met(<span class="dv">2</span>,<span class="dv">42</span>,<span class="dv">300</span>),columns<span class="op">=</span>[<span class="st">'方法或属性'</span>,<span class="st">'实例'</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
 <th></th>
@@ -622,10 +622,10 @@
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb274"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb274-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb274-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> datetime.date(<span class="dv">2023</span>,<span class="dv">3</span>,<span class="dv">15</span>)</span>
-<span id="cb274-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb274-2" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> datetime.date(<span class="dv">2023</span>,<span class="dv">3</span>,<span class="dv">16</span>)</span>
-<span id="cb274-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb274-3" aria-hidden="true" tabindex="-1"></a>td <span class="op">=</span> t2<span class="op">-</span>t1</span>
-<span id="cb274-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb274-4" aria-hidden="true" tabindex="-1"></a>t2<span class="op">+</span><span class="dv">3</span><span class="op">*</span>td</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb273-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> datetime.date(<span class="dv">2023</span>,<span class="dv">3</span>,<span class="dv">15</span>)</span>
+<span id="cb273-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-2" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> datetime.date(<span class="dv">2023</span>,<span class="dv">3</span>,<span class="dv">16</span>)</span>
+<span id="cb273-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-3" aria-hidden="true" tabindex="-1"></a>td <span class="op">=</span> t2<span class="op">-</span>t1</span>
+<span id="cb273-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-4" aria-hidden="true" tabindex="-1"></a>t2<span class="op">+</span><span class="dv">3</span><span class="op">*</span>td</span></code></pre></div>
 <pre class="scroll-200"><code>datetime.date(2023, 3, 19)</code></pre>
 </div>
 <div id="timezone" class="section level4" number="5.1.2.5">
@@ -636,15 +636,15 @@
 <pre><code>datetime.timezone(offset, name=None)
 offset必须是一个timedelta对象，代表了与utc时间的偏移，范围为-timedelta(hours=24) 到 timedelta(hours=24)
 name可以不给，给了话必须是datetime.tzname()生成的对象</code></pre>
-<div class="sourceCode" id="cb277"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb277-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb277-1" aria-hidden="true" tabindex="-1"></a>dt<span class="op">=</span>datetime.datetime.now()</span>
-<span id="cb277-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb277-2" aria-hidden="true" tabindex="-1"></a>tz<span class="op">=</span>timezone(timedelta(hours<span class="op">=</span><span class="dv">6</span>))</span>
-<span id="cb277-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb277-3" aria-hidden="true" tabindex="-1"></a>tz</span></code></pre></div>
+<div class="sourceCode" id="cb276"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb276-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb276-1" aria-hidden="true" tabindex="-1"></a>dt<span class="op">=</span>datetime.datetime.now()</span>
+<span id="cb276-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb276-2" aria-hidden="true" tabindex="-1"></a>tz<span class="op">=</span>timezone(timedelta(hours<span class="op">=</span><span class="dv">6</span>))</span>
+<span id="cb276-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb276-3" aria-hidden="true" tabindex="-1"></a>tz</span></code></pre></div>
 <pre class="scroll-200"><code>datetime.timezone(datetime.timedelta(seconds=21600))</code></pre>
-<div class="sourceCode" id="cb279"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb279-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb279-1" aria-hidden="true" tabindex="-1"></a>tz.tzname(dt)</span></code></pre></div>
+<div class="sourceCode" id="cb278"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb278-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb278-1" aria-hidden="true" tabindex="-1"></a>tz.tzname(dt)</span></code></pre></div>
 <pre class="scroll-200"><code>'UTC+06:00'</code></pre>
-<div class="sourceCode" id="cb281"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb281-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb281-1" aria-hidden="true" tabindex="-1"></a>tz.utc</span></code></pre></div>
+<div class="sourceCode" id="cb280"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb280-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb280-1" aria-hidden="true" tabindex="-1"></a>tz.utc</span></code></pre></div>
 <pre class="scroll-200"><code>datetime.timezone.utc</code></pre>
-<div class="sourceCode" id="cb283"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb283-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb283-1" aria-hidden="true" tabindex="-1"></a>tz.utcoffset(dt)</span></code></pre></div>
+<div class="sourceCode" id="cb282"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb282-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb282-1" aria-hidden="true" tabindex="-1"></a>tz.utcoffset(dt)</span></code></pre></div>
 <pre class="scroll-200"><code>datetime.timedelta(seconds=21600)</code></pre>
 </div>
 </div>
@@ -783,30 +783,30 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 <ul>
 <li>本地时间转换为utc时间:一个datetime类型有一个时区属性tzinfo，但是默认为None，所以无法区分这个datetime到底是哪个时区，除非强行给datetime设置一个时区.需要自己创建时区对象，然后赋值给datetime对象</li>
 </ul>
-<div class="sourceCode" id="cb286"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb286-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb286-1" aria-hidden="true" tabindex="-1"></a>tz_utc_8 <span class="op">=</span> timezone(timedelta(hours<span class="op">=</span><span class="dv">8</span>)) <span class="co"># 创建时区UTC+8:00</span></span>
-<span id="cb286-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb286-2" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> datetime.datetime.now()</span>
-<span id="cb286-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb286-3" aria-hidden="true" tabindex="-1"></a>now</span></code></pre></div>
-<pre class="scroll-200"><code>datetime.datetime(2023, 3, 24, 16, 58, 59, 389527)</code></pre>
-<div class="sourceCode" id="cb288"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb288-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb288-1" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> now.replace(tzinfo<span class="op">=</span>tz_utc_8) <span class="co"># 强制设置为UTC+8:00</span></span>
-<span id="cb288-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb288-2" aria-hidden="true" tabindex="-1"></a>dt</span>
-<span id="cb288-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb288-3" aria-hidden="true" tabindex="-1"></a><span class="co">#datetime.datetime(2015, 5, 18, 17, 2, 10, 871012, tzinfo=datetime.timezone(datetime.timedelta(0, 28800)))</span></span>
-<span id="cb288-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb288-4" aria-hidden="true" tabindex="-1"></a><span class="co">#如果系统时区恰好是UTC+8:00，那么上述代码就是正确的，否则，不能强制设置为UTC+8:00时区。</span></span></code></pre></div>
-<pre class="scroll-200"><code>datetime.datetime(2023, 3, 24, 16, 58, 59, 389527, tzinfo=datetime.timezone(datetime.timedelta(seconds=28800)))</code></pre>
+<div class="sourceCode" id="cb285"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb285-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb285-1" aria-hidden="true" tabindex="-1"></a>tz_utc_8 <span class="op">=</span> timezone(timedelta(hours<span class="op">=</span><span class="dv">8</span>)) <span class="co"># 创建时区UTC+8:00</span></span>
+<span id="cb285-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb285-2" aria-hidden="true" tabindex="-1"></a>now <span class="op">=</span> datetime.datetime.now()</span>
+<span id="cb285-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb285-3" aria-hidden="true" tabindex="-1"></a>now</span></code></pre></div>
+<pre class="scroll-200"><code>datetime.datetime(2023, 3, 24, 20, 55, 6, 529891)</code></pre>
+<div class="sourceCode" id="cb287"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb287-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb287-1" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> now.replace(tzinfo<span class="op">=</span>tz_utc_8) <span class="co"># 强制设置为UTC+8:00</span></span>
+<span id="cb287-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb287-2" aria-hidden="true" tabindex="-1"></a>dt</span>
+<span id="cb287-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb287-3" aria-hidden="true" tabindex="-1"></a><span class="co">#datetime.datetime(2015, 5, 18, 17, 2, 10, 871012, tzinfo=datetime.timezone(datetime.timedelta(0, 28800)))</span></span>
+<span id="cb287-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb287-4" aria-hidden="true" tabindex="-1"></a><span class="co">#如果系统时区恰好是UTC+8:00，那么上述代码就是正确的，否则，不能强制设置为UTC+8:00时区。</span></span></code></pre></div>
+<pre class="scroll-200"><code>datetime.datetime(2023, 3, 24, 20, 55, 6, 529891, tzinfo=datetime.timezone(datetime.timedelta(seconds=28800)))</code></pre>
 </div>
 </div>
 <div id="比较" class="section level3" number="5.1.4">
 <h3>
 <span class="header-section-number">5.1.4</span> 比较<a class="anchor" aria-label="anchor" href="#%E6%AF%94%E8%BE%83"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb290"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb290-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="co">##加减</span></span>
-<span id="cb290-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-2" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>datetime.datetime.now()</span>
-<span id="cb290-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-3" aria-hidden="true" tabindex="-1"></a>b<span class="op">=</span>datetime.datetime(<span class="dv">2021</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">15</span>,<span class="dv">43</span>,<span class="dv">20</span>)</span>
-<span id="cb290-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-4" aria-hidden="true" tabindex="-1"></a>a<span class="op">-</span>b</span>
-<span id="cb290-5"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-5" aria-hidden="true" tabindex="-1"></a><span class="co">##比较大小</span></span></code></pre></div>
-<pre class="scroll-200"><code>datetime.timedelta(days=476, seconds=4539, microseconds=796571)</code></pre>
-<div class="sourceCode" id="cb292"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb292-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb292-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">&gt;</span> b</span></code></pre></div>
+<div class="sourceCode" id="cb289"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb289-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb289-1" aria-hidden="true" tabindex="-1"></a><span class="co">##加减</span></span>
+<span id="cb289-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb289-2" aria-hidden="true" tabindex="-1"></a>a<span class="op">=</span>datetime.datetime.now()</span>
+<span id="cb289-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb289-3" aria-hidden="true" tabindex="-1"></a>b<span class="op">=</span>datetime.datetime(<span class="dv">2021</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">15</span>,<span class="dv">43</span>,<span class="dv">20</span>)</span>
+<span id="cb289-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb289-4" aria-hidden="true" tabindex="-1"></a>a<span class="op">-</span>b</span>
+<span id="cb289-5"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb289-5" aria-hidden="true" tabindex="-1"></a><span class="co">##比较大小</span></span></code></pre></div>
+<pre class="scroll-200"><code>datetime.timedelta(days=476, seconds=18707, microseconds=457315)</code></pre>
+<div class="sourceCode" id="cb291"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb291-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb291-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">&gt;</span> b</span></code></pre></div>
 <pre class="scroll-200"><code>True</code></pre>
-<div class="sourceCode" id="cb294"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb294-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb294-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">&lt;</span> b</span></code></pre></div>
+<div class="sourceCode" id="cb293"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb293-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb293-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">&lt;</span> b</span></code></pre></div>
 <pre class="scroll-200"><code>False</code></pre>
 </div>
 </div>
@@ -817,8 +817,8 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 <p>datetime.strptime是在已知格式的情况下转换日期的好方式。然而，每次都必须编写一个格式代码可能有点烦人，特别是对于通用日期格式。在这种情况下，你可以使用第三方dateutil包的parser.parse方法（这个包在安装pandas时已经自动安装）：</p>
 <p>dateutil.parser是一个有用但并不完美的工具。值得注意的是，它会将一些字符串识别为
 你并不想要的日期——例如，’42’将被解析为2042年的当前日期。</p>
-<div class="sourceCode" id="cb296"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb296-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb296-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dateutil.parser <span class="im">import</span> parse</span>
-<span id="cb296-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb296-2" aria-hidden="true" tabindex="-1"></a>parse(<span class="st">'2011-01-03'</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb295"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb295-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb295-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dateutil.parser <span class="im">import</span> parse</span>
+<span id="cb295-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb295-2" aria-hidden="true" tabindex="-1"></a>parse(<span class="st">'2011-01-03'</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>datetime.datetime(2011, 1, 3, 0, 0)</code></pre>
 </div>
 <div id="pandas时间日期操作" class="section level2" number="5.3">
@@ -1255,43 +1255,43 @@ pd.period_range(start_time,end_time,freq)
 <p>可以将它们相加或相减以获得转换后的日期 可以将它们乘以整数（正数或负数），以便多次应用增量 它们具有rollforward和rollback方法，可以将日期向前或向后移动到下一个或上一个“偏移日期”</p>
 <p>可以通过向datetime对象传递代表固定时间段的datetime对象或使用多个关键字参数来创建DateOffset对象。 关键字参数分为两大类。 第一类是代表绝对日期的关键字：年，月，日，小时，分钟，秒和微秒。 第二类代表相对持续时间，可以是负值：年，月，周，日，小时，分钟，秒和微秒。</p>
 <p>特定DateOffset的多个单位可以通过乘法表示，时间加上偏移量可以实现时间的改变，或者使用这些对象的实例方法rollforward等实现时间的改变</p>
-<div class="sourceCode" id="cb301"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb301-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb301-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> datetime.datetime.now()</span>
-<span id="cb301-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb301-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">+</span> pd.offsets.BMonthEnd()</span></code></pre></div>
-<pre class="scroll-200"><code>Timestamp('2023-03-31 16:59:00.644662')</code></pre>
-<div class="sourceCode" id="cb303"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb303-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb303-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">-</span> pd.offsets.BMonthEnd(<span class="dv">2</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>Timestamp('2023-01-31 16:59:00.644662')</code></pre>
+<div class="sourceCode" id="cb300"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb300-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb300-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> datetime.datetime.now()</span>
+<span id="cb300-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb300-2" aria-hidden="true" tabindex="-1"></a>t <span class="op">+</span> pd.offsets.BMonthEnd()</span></code></pre></div>
+<pre class="scroll-200"><code>Timestamp('2023-03-31 20:55:09.717977')</code></pre>
+<div class="sourceCode" id="cb302"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb302-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb302-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">-</span> pd.offsets.BMonthEnd(<span class="dv">2</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>Timestamp('2023-01-31 20:55:09.717977')</code></pre>
 </div>
 </div>
 <div id="indexing" class="section level3" number="5.3.2">
 <h3>
 <span class="header-section-number">5.3.2</span> indexing<a class="anchor" aria-label="anchor" href="#indexing"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb305"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb305-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb305-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb305-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb305-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> pd.date_range(<span class="st">'2011/1/31'</span>, <span class="st">'2011/12/31'</span>, freq<span class="op">=</span><span class="st">"BM"</span>)</span>
-<span id="cb305-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb305-3" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
-<span id="cb305-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb305-4" aria-hidden="true" tabindex="-1"></a>ts[<span class="st">"1/31/2011"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>-1.214073108186336</code></pre>
-<div class="sourceCode" id="cb307"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb307-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb307-1" aria-hidden="true" tabindex="-1"></a>ts[<span class="st">"10/31/2011"</span>:<span class="st">"12/31/2011"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2011-10-31   -0.064361
-2011-11-30   -0.658646
-2011-12-30    0.733119
+<div class="sourceCode" id="cb304"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb304-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb304-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb304-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb304-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> pd.date_range(<span class="st">'2011/1/31'</span>, <span class="st">'2011/12/31'</span>, freq<span class="op">=</span><span class="st">"BM"</span>)</span>
+<span id="cb304-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb304-3" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
+<span id="cb304-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb304-4" aria-hidden="true" tabindex="-1"></a>ts[<span class="st">"1/31/2011"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>0.5408863586713725</code></pre>
+<div class="sourceCode" id="cb306"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb306-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb306-1" aria-hidden="true" tabindex="-1"></a>ts[<span class="st">"10/31/2011"</span>:<span class="st">"12/31/2011"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>2011-10-31    1.176302
+2011-11-30    1.169551
+2011-12-30    0.527191
 Freq: BM, dtype: float64</code></pre>
-<div class="sourceCode" id="cb309"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb309-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb309-1" aria-hidden="true" tabindex="-1"></a>ts[<span class="st">"2011-6"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2011-06-30   -0.258121
+<div class="sourceCode" id="cb308"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb308-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb308-1" aria-hidden="true" tabindex="-1"></a>ts[<span class="st">"2011-6"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>2011-06-30    0.237431
 Freq: BM, dtype: float64</code></pre>
-<div class="sourceCode" id="cb311"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb311-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb311-1" aria-hidden="true" tabindex="-1"></a>ts.loc[<span class="st">"2011"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2011-01-31   -1.214073
-2011-02-28    0.289540
-2011-03-31   -0.058285
-2011-04-29   -0.410546
-2011-05-31    1.685884
-2011-06-30   -0.258121
-2011-07-29   -1.484253
-2011-08-31   -0.317396
-2011-09-30   -0.596327
-2011-10-31   -0.064361
-2011-11-30   -0.658646
-2011-12-30    0.733119
+<div class="sourceCode" id="cb310"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb310-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb310-1" aria-hidden="true" tabindex="-1"></a>ts.loc[<span class="st">"2011"</span>]</span></code></pre></div>
+<pre class="scroll-200"><code>2011-01-31    0.540886
+2011-02-28    0.015987
+2011-03-31    2.321494
+2011-04-29   -0.136594
+2011-05-31    0.164962
+2011-06-30    0.237431
+2011-07-29   -0.794895
+2011-08-31    0.752093
+2011-09-30    0.688829
+2011-10-31    1.176302
+2011-11-30    1.169551
+2011-12-30    0.527191
 Freq: BM, dtype: float64</code></pre>
 </div>
 <div id="时区处理" class="section level3" number="5.3.3">
@@ -1302,17 +1302,17 @@ Freq: BM, dtype: float64</code></pre>
 `rng = pd.date_range('3/9/2012 9:30', periods=6, freq='D',tz="utc")` 设置utc时区
 `.tz_localize()` 方法将utc时区转为本地utc时区,单纯改了时区，没有换时间，所以可能时间不对
 `.tz.convert()` 一旦时间序列被本地化为某个特定的时区，则可以通过tz_convert将其转换为另一个时区：</code></pre>
-<div class="sourceCode" id="cb314"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb314-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb314-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> pd.date_range(<span class="st">'3/9/2012 9:30'</span>, periods<span class="op">=</span><span class="dv">6</span>, freq<span class="op">=</span><span class="st">'D'</span>,tz<span class="op">=</span><span class="st">"utc"</span>)</span>
-<span id="cb314-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb314-2" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
-<span id="cb314-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb314-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ts.index.tz)</span></code></pre></div>
+<div class="sourceCode" id="cb313"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb313-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb313-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> pd.date_range(<span class="st">'3/9/2012 9:30'</span>, periods<span class="op">=</span><span class="dv">6</span>, freq<span class="op">=</span><span class="st">'D'</span>,tz<span class="op">=</span><span class="st">"utc"</span>)</span>
+<span id="cb313-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb313-2" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
+<span id="cb313-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb313-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ts.index.tz)</span></code></pre></div>
 <pre class="scroll-200"><code>UTC</code></pre>
-<div class="sourceCode" id="cb316"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb316-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb316-1" aria-hidden="true" tabindex="-1"></a>ts.tz_convert(<span class="st">'America/New_York'</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>2012-03-09 04:30:00-05:00    0.597419
-2012-03-10 04:30:00-05:00    1.251994
-2012-03-11 05:30:00-04:00   -0.264553
-2012-03-12 05:30:00-04:00   -0.017677
-2012-03-13 05:30:00-04:00   -0.787714
-2012-03-14 05:30:00-04:00   -0.517989
+<div class="sourceCode" id="cb315"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb315-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb315-1" aria-hidden="true" tabindex="-1"></a>ts.tz_convert(<span class="st">'America/New_York'</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>2012-03-09 04:30:00-05:00   -1.552204
+2012-03-10 04:30:00-05:00    1.609156
+2012-03-11 05:30:00-04:00    2.791527
+2012-03-12 05:30:00-04:00   -2.561834
+2012-03-13 05:30:00-04:00   -2.041990
+2012-03-14 05:30:00-04:00    1.541449
 Freq: D, dtype: float64</code></pre>
 </div>
 <div id="类型转换-1" class="section level3" number="5.3.4">
@@ -1342,19 +1342,19 @@ timestamp.to_period(freq)</p>
 <p>一天”1D”的级别比”1W”的级别要高</p>
 <p>pandas对象都配有resample方法，该方法是所有频率转换的工具函数。resample拥有类似于groupby的API；你调用resample对数据分组，之后再调用聚合函数：</p>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/resample.png" width="95%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb318"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb318-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb318-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> pd.date_range(<span class="st">'2000-01-01'</span>, periods<span class="op">=</span><span class="dv">100</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span>
-<span id="cb318-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb318-2" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
-<span id="cb318-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb318-3" aria-hidden="true" tabindex="-1"></a>ts.resample(<span class="st">'M'</span>).mean()</span></code></pre></div>
-<pre class="scroll-200"><code>2000-01-31   -0.011465
-2000-02-29    0.573367
-2000-03-31   -0.128306
-2000-04-30    0.683187
+<div class="sourceCode" id="cb317"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb317-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb317-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> pd.date_range(<span class="st">'2000-01-01'</span>, periods<span class="op">=</span><span class="dv">100</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span>
+<span id="cb317-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb317-2" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
+<span id="cb317-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb317-3" aria-hidden="true" tabindex="-1"></a>ts.resample(<span class="st">'M'</span>).mean()</span></code></pre></div>
+<pre class="scroll-200"><code>2000-01-31    0.069878
+2000-02-29    0.088926
+2000-03-31   -0.108065
+2000-04-30    0.058737
 Freq: M, dtype: float64</code></pre>
-<div class="sourceCode" id="cb320"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb320-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb320-1" aria-hidden="true" tabindex="-1"></a>ts.resample(<span class="st">'M'</span>, kind<span class="op">=</span><span class="st">'period'</span>).mean()</span></code></pre></div>
-<pre class="scroll-200"><code>2000-01   -0.011465
-2000-02    0.573367
-2000-03   -0.128306
-2000-04    0.683187
+<div class="sourceCode" id="cb319"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb319-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb319-1" aria-hidden="true" tabindex="-1"></a>ts.resample(<span class="st">'M'</span>, kind<span class="op">=</span><span class="st">'period'</span>).mean()</span></code></pre></div>
+<pre class="scroll-200"><code>2000-01    0.069878
+2000-02    0.088926
+2000-03   -0.108065
+2000-04    0.058737
 Freq: M, dtype: float64</code></pre>
 <div id="向下采样" class="section level4" number="5.3.6.1">
 <h4>
@@ -1391,46 +1391,46 @@ Freq: M, dtype: float64</code></pre>
 <pre><code>If False, set the window labels as the right edge of the window index.
 
 If True, set the window labels as the center of the window index</code></pre>
-<div class="sourceCode" id="cb323"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb323-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb323-1" aria-hidden="true" tabindex="-1"></a>tind <span class="op">=</span> pd.date_range(<span class="st">"2023-01-01"</span>,<span class="st">"2023-03-31"</span>)</span>
-<span id="cb323-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb323-2" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randint(<span class="dv">1</span>,<span class="dv">101</span>,<span class="bu">len</span>(tind)),index<span class="op">=</span>tind)</span>
-<span id="cb323-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb323-3" aria-hidden="true" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">5</span>).mean()</span></code></pre></div>
+<div class="sourceCode" id="cb322"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb322-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb322-1" aria-hidden="true" tabindex="-1"></a>tind <span class="op">=</span> pd.date_range(<span class="st">"2023-01-01"</span>,<span class="st">"2023-03-31"</span>)</span>
+<span id="cb322-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb322-2" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randint(<span class="dv">1</span>,<span class="dv">101</span>,<span class="bu">len</span>(tind)),index<span class="op">=</span>tind)</span>
+<span id="cb322-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb322-3" aria-hidden="true" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">5</span>).mean()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
 2023-01-02     NaN
 2023-01-03     NaN
 2023-01-04     NaN
-2023-01-05    34.8
+2023-01-05    59.0
               ... 
-2023-03-27    71.4
-2023-03-28    68.2
-2023-03-29    64.8
-2023-03-30    63.1
-2023-03-31    68.9
+2023-03-27    43.7
+2023-03-28    42.8
+2023-03-29    47.6
+2023-03-30    54.3
+2023-03-31    57.9
 Freq: D, Length: 90, dtype: float64</code></pre>
-<div class="sourceCode" id="cb325"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb325-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb325-1" aria-hidden="true" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">3</span>).mean()</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb324-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb324-1" aria-hidden="true" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">3</span>).mean()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01          NaN
 2023-01-02          NaN
-2023-01-03    39.666667
-2023-01-04    41.500000
-2023-01-05    34.800000
+2023-01-03    66.333333
+2023-01-04    69.250000
+2023-01-05    59.000000
                 ...    
-2023-03-27    71.400000
-2023-03-28    68.200000
-2023-03-29    64.800000
-2023-03-30    63.100000
-2023-03-31    68.900000
+2023-03-27    43.700000
+2023-03-28    42.800000
+2023-03-29    47.600000
+2023-03-30    54.300000
+2023-03-31    57.900000
 Freq: D, Length: 90, dtype: float64</code></pre>
-<div class="sourceCode" id="cb327"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb327-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb327-1" aria-hidden="true" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">5</span>,center<span class="op">=</span><span class="va">True</span>).mean()</span></code></pre></div>
-<pre class="scroll-200"><code>2023-01-01    41.666667
-2023-01-02    45.285714
-2023-01-03    42.375000
-2023-01-04    44.111111
-2023-01-05    42.400000
+<div class="sourceCode" id="cb326"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb326-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb326-1" aria-hidden="true" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">5</span>,center<span class="op">=</span><span class="va">True</span>).mean()</span></code></pre></div>
+<pre class="scroll-200"><code>2023-01-01    63.833333
+2023-01-02    68.571429
+2023-01-03    68.375000
+2023-01-04    65.777778
+2023-01-05    61.800000
                 ...    
-2023-03-27    67.333333
-2023-03-28    64.500000
-2023-03-29    62.285714
-2023-03-30    57.833333
-2023-03-31    61.400000
+2023-03-27    60.000000
+2023-03-28    60.125000
+2023-03-29    55.000000
+2023-03-30    54.500000
+2023-03-31    62.200000
 Freq: D, Length: 90, dtype: float64</code></pre>
 </div>
 <div id="shift" class="section level4" number="5.3.7.2">
@@ -1438,62 +1438,62 @@ Freq: D, Length: 90, dtype: float64</code></pre>
 <span class="header-section-number">5.3.7.2</span> .shift()<a class="anchor" aria-label="anchor" href="#shift"><i class="fas fa-link"></i></a>
 </h4>
 <p><code>.shift(n,periods,freq,fill_value)</code>滞后n期，并不会改变原索引</p>
-<div class="sourceCode" id="cb329"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb329-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb329-1" aria-hidden="true" tabindex="-1"></a>ts.shift(<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb328"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb328-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb328-1" aria-hidden="true" tabindex="-1"></a>ts.shift(<span class="dv">1</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
-2023-01-02    35.0
-2023-01-03    69.0
-2023-01-04    15.0
-2023-01-05    47.0
+2023-01-02    76.0
+2023-01-03    74.0
+2023-01-04    49.0
+2023-01-05    78.0
               ... 
-2023-03-27    40.0
-2023-03-28    34.0
-2023-03-29    64.0
-2023-03-30    48.0
-2023-03-31    62.0
+2023-03-27    16.0
+2023-03-28    35.0
+2023-03-29    82.0
+2023-03-30    62.0
+2023-03-31    71.0
 Freq: D, Length: 90, dtype: float64</code></pre>
-<div class="sourceCode" id="cb331"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb331-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb331-1" aria-hidden="true" tabindex="-1"></a>ts.shift(<span class="dv">1</span>).ffill()</span></code></pre></div>
+<div class="sourceCode" id="cb330"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb330-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb330-1" aria-hidden="true" tabindex="-1"></a>ts.shift(<span class="dv">1</span>).ffill()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
-2023-01-02    35.0
-2023-01-03    69.0
-2023-01-04    15.0
-2023-01-05    47.0
+2023-01-02    76.0
+2023-01-03    74.0
+2023-01-04    49.0
+2023-01-05    78.0
               ... 
-2023-03-27    40.0
-2023-03-28    34.0
-2023-03-29    64.0
-2023-03-30    48.0
-2023-03-31    62.0
+2023-03-27    16.0
+2023-03-28    35.0
+2023-03-29    82.0
+2023-03-30    62.0
+2023-03-31    71.0
 Freq: D, Length: 90, dtype: float64</code></pre>
-<div class="sourceCode" id="cb333"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb333-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb333-1" aria-hidden="true" tabindex="-1"></a>ts.shift(<span class="dv">1</span>).bfill()</span></code></pre></div>
-<pre class="scroll-200"><code>2023-01-01    35.0
-2023-01-02    35.0
-2023-01-03    69.0
-2023-01-04    15.0
-2023-01-05    47.0
+<div class="sourceCode" id="cb332"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb332-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb332-1" aria-hidden="true" tabindex="-1"></a>ts.shift(<span class="dv">1</span>).bfill()</span></code></pre></div>
+<pre class="scroll-200"><code>2023-01-01    76.0
+2023-01-02    76.0
+2023-01-03    74.0
+2023-01-04    49.0
+2023-01-05    78.0
               ... 
-2023-03-27    40.0
-2023-03-28    34.0
-2023-03-29    64.0
-2023-03-30    48.0
-2023-03-31    62.0
+2023-03-27    16.0
+2023-03-28    35.0
+2023-03-29    82.0
+2023-03-30    62.0
+2023-03-31    71.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 </div>
 <div id="diff" class="section level4" number="5.3.7.3">
 <h4>
 <span class="header-section-number">5.3.7.3</span> .diff()<a class="anchor" aria-label="anchor" href="#diff"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb335"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb335-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb335-1" aria-hidden="true" tabindex="-1"></a>ts.diff()</span></code></pre></div>
+<div class="sourceCode" id="cb334"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb334-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb334-1" aria-hidden="true" tabindex="-1"></a>ts.diff()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
-2023-01-02    34.0
-2023-01-03   -54.0
-2023-01-04    32.0
-2023-01-05   -39.0
+2023-01-02    -2.0
+2023-01-03   -25.0
+2023-01-04    29.0
+2023-01-05   -60.0
               ... 
-2023-03-27    -6.0
-2023-03-28    30.0
-2023-03-29   -16.0
-2023-03-30    14.0
-2023-03-31    37.0
+2023-03-27    19.0
+2023-03-28    47.0
+2023-03-29   -20.0
+2023-03-30     9.0
+2023-03-31   -10.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 </div>
 <div id="first" class="section level4" number="5.3.7.4">
@@ -1502,62 +1502,62 @@ Freq: D, Length: 90, dtype: float64</code></pre>
 </h4>
 <p>返回时间的索引值之间的极差是offset</p>
 <p>offset:str,dateoffset</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb337-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb337-1" aria-hidden="true" tabindex="-1"></a>ts.first(<span class="st">'10D'</span>)<span class="co">#1-1到1-10</span></span></code></pre></div>
-<pre class="scroll-200"><code>2023-01-01    35
-2023-01-02    69
-2023-01-03    15
-2023-01-04    47
-2023-01-05     8
-2023-01-06    76
-2023-01-07    67
-2023-01-08    22
-2023-01-09    58
-2023-01-10    27
+<div class="sourceCode" id="cb336"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb336-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb336-1" aria-hidden="true" tabindex="-1"></a>ts.first(<span class="st">'10D'</span>)<span class="co">#1-1到1-10</span></span></code></pre></div>
+<pre class="scroll-200"><code>2023-01-01    76
+2023-01-02    74
+2023-01-03    49
+2023-01-04    78
+2023-01-05    18
+2023-01-06    88
+2023-01-07    97
+2023-01-08    67
+2023-01-09    45
+2023-01-10    26
 Freq: D, dtype: int32</code></pre>
 </div>
 <div id="last" class="section level4" number="5.3.7.5">
 <h4>
 <span class="header-section-number">5.3.7.5</span> .last()<a class="anchor" aria-label="anchor" href="#last"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb339"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb339-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb339-1" aria-hidden="true" tabindex="-1"></a>ts.last(<span class="st">"20D"</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>2023-03-12    42
-2023-03-13    60
-2023-03-14    27
-2023-03-15    71
-2023-03-16    68
-2023-03-17    66
-2023-03-18    96
-2023-03-19    82
-2023-03-20    79
-2023-03-21    41
-2023-03-22    83
-2023-03-23    90
-2023-03-24    80
-2023-03-25    89
-2023-03-26    40
-2023-03-27    34
-2023-03-28    64
-2023-03-29    48
-2023-03-30    62
-2023-03-31    99
+<div class="sourceCode" id="cb338"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb338-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb338-1" aria-hidden="true" tabindex="-1"></a>ts.last(<span class="st">"20D"</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>2023-03-12    98
+2023-03-13    35
+2023-03-14    68
+2023-03-15    99
+2023-03-16    43
+2023-03-17    41
+2023-03-18    91
+2023-03-19    14
+2023-03-20     4
+2023-03-21    25
+2023-03-22    39
+2023-03-23    59
+2023-03-24    96
+2023-03-25    58
+2023-03-26    16
+2023-03-27    35
+2023-03-28    82
+2023-03-29    62
+2023-03-30    71
+2023-03-31    61
 Freq: D, dtype: int32</code></pre>
 </div>
 <div id="expandind" class="section level4" number="5.3.7.6">
 <h4>
 <span class="header-section-number">5.3.7.6</span> .expandind()<a class="anchor" aria-label="anchor" href="#expandind"><i class="fas fa-link"></i></a>
 </h4>
-<div class="sourceCode" id="cb341"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb341-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb341-1" aria-hidden="true" tabindex="-1"></a>ts.expanding(<span class="dv">3</span>).<span class="bu">sum</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb340"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb340-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb340-1" aria-hidden="true" tabindex="-1"></a>ts.expanding(<span class="dv">3</span>).<span class="bu">sum</span>()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01       NaN
 2023-01-02       NaN
-2023-01-03     119.0
-2023-01-04     166.0
-2023-01-05     174.0
+2023-01-03     199.0
+2023-01-04     277.0
+2023-01-05     295.0
                ...  
-2023-03-27    4361.0
-2023-03-28    4425.0
-2023-03-29    4473.0
-2023-03-30    4535.0
-2023-03-31    4634.0
+2023-03-27    4862.0
+2023-03-28    4944.0
+2023-03-29    5006.0
+2023-03-30    5077.0
+2023-03-31    5138.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 
 </div>

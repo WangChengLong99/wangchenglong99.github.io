@@ -65,18 +65,18 @@ da = pd.DataFrame({"A":np.random.randn(10),"B":['a','b']*5})
 print(da.to_markdown(tablefmt="github"))
 ```
 
-|    |         A | B   |
-|----|-----------|-----|
-|  0 | -1.27521  | a   |
-|  1 |  0.141712 | b   |
-|  2 |  0.409834 | a   |
-|  3 | -0.561119 | b   |
-|  4 | -1.22392  | a   |
-|  5 |  0.244958 | b   |
-|  6 | -1.15089  | a   |
-|  7 |  0.4962   | b   |
-|  8 |  1.4758   | a   |
-|  9 |  0.589706 | b   |
+|    |          A | B   |
+|----|------------|-----|
+|  0 |  1.87801   | a   |
+|  1 |  0.552498  | b   |
+|  2 |  0.383441  | a   |
+|  3 |  1.91395   | b   |
+|  4 |  1.05545   | a   |
+|  5 | -0.110659  | b   |
+|  6 |  0.625267  | a   |
+|  7 |  0.0253661 | b   |
+|  8 | -0.695442  | a   |
+|  9 |  0.0619099 | b   |
 
 a|b
 -|-
@@ -108,6 +108,6 @@ graph LR
 ```
 
 ```{=html}
-<div id="htmlwidget-f63abb2babfb7000f6e3" style="width:95%;height:415.296px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f63abb2babfb7000f6e3">{"x":{"diagram":"\ngraph LR\n  A-->B\n  A-->C\n  C-->E\n  B-->D\n  C-->D\n  D-->F\n  E-->F\n"},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-45d24cf62e04f59a84a9" style="width:95%;height:415.296px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-45d24cf62e04f59a84a9">{"x":{"diagram":"\ngraph LR\n  A-->B\n  A-->C\n  C-->E\n  B-->D\n  C-->D\n  D-->F\n  E-->F\n"},"evals":[],"jsHooks":[]}</script>
 ```

@@ -417,7 +417,7 @@ plt.hist(x,bins,color='fuchsia',alpha=0.5)#alpha设置透明度，0为完全透�
 ```
 
 ```{.scroll-200}
-(array([12.,  9., 11.,  5.,  4., 11., 12., 15.,  9., 12.]), array([  0.,  10.,  20.,  30.,  40.,  50.,  60.,  70.,  80.,  90., 100.]), <BarContainer object of 10 artists>)
+(array([ 5.,  9.,  8., 15., 12., 15., 11.,  5., 10., 10.]), array([  0.,  10.,  20.,  30.,  40.,  50.,  60.,  70.,  80.,  90., 100.]), <BarContainer object of 10 artists>)
 ```
 
 ```python
@@ -606,7 +606,7 @@ ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True, s
 ```
 
 ```{.scroll-200}
-([<matplotlib.patches.Wedge object at 0x0000026E0FC0CAC0>, <matplotlib.patches.Wedge object at 0x0000026E0FC5D9D0>, <matplotlib.patches.Wedge object at 0x0000026E0FA838E0>, <matplotlib.patches.Wedge object at 0x0000026E0FBE6520>], [Text(-0.4993895680663527, 0.9801071672559598, 'Frogs'), Text(-1.1412677917792124, -0.3708204787324995, 'Hogs'), Text(0.9801072140121813, -0.4993894763020948, 'Dogs'), Text(0.33991864973549485, 1.0461621822461364, 'Logs')], [Text(-0.2723943098543742, 0.5346039094123416, '15.0%'), Text(-0.6657395452045406, -0.2163119459272914, '30.0%'), Text(0.5346039349157352, -0.27239425980114257, '45.0%'), Text(0.1854101725829972, 0.5706339175888016, '10.0%')])
+([<matplotlib.patches.Wedge object at 0x0000024F0BCA75B0>, <matplotlib.patches.Wedge object at 0x0000024F0BCA73A0>, <matplotlib.patches.Wedge object at 0x0000024F0BCC07F0>, <matplotlib.patches.Wedge object at 0x0000024F0BB4CFA0>], [Text(-0.4993895680663527, 0.9801071672559598, 'Frogs'), Text(-1.1412677917792124, -0.3708204787324995, 'Hogs'), Text(0.9801072140121813, -0.4993894763020948, 'Dogs'), Text(0.33991864973549485, 1.0461621822461364, 'Logs')], [Text(-0.2723943098543742, 0.5346039094123416, '15.0%'), Text(-0.6657395452045406, -0.2163119459272914, '30.0%'), Text(0.5346039349157352, -0.27239425980114257, '45.0%'), Text(0.1854101725829972, 0.5706339175888016, '10.0%')])
 ```
 
 ```python
@@ -1316,6 +1316,33 @@ plt.ylabel('y 轴名称参数', fontproperties='Microsoft YaHei', fontsize=14)  
 plt.title('坐标系的标题',  fontproperties='Microsoft YaHei', fontsize=20)         # 设置坐标系标题的字体
 plt.legend(loc='lower right', prop={"family": 'Microsoft YaHei'}, fontsize=10) 
 plt.show()   # 小示例图的字体设置
+```
+
+```{.scroll-200}
+Traceback (most recent call last):
+  File "D:\anaconda\lib\site-packages\matplotlib\backends\backend_qt.py", line 468, in _draw_idle
+    self.draw()
+  File "D:\anaconda\lib\site-packages\matplotlib\backends\backend_agg.py", line 400, in draw
+    self.figure.draw(self.renderer)
+  File "D:\anaconda\lib\site-packages\matplotlib\artist.py", line 95, in draw_wrapper
+    result = draw(artist, renderer, *args, **kwargs)
+  File "D:\anaconda\lib\site-packages\matplotlib\artist.py", line 72, in draw_wrapper
+    return draw(artist, renderer)
+  File "D:\anaconda\lib\site-packages\matplotlib\figure.py", line 3125, in draw
+    mimage._draw_list_compositing_images(
+  File "D:\anaconda\lib\site-packages\matplotlib\image.py", line 131, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "D:\anaconda\lib\site-packages\matplotlib\artist.py", line 72, in draw_wrapper
+    return draw(artist, renderer)
+  File "D:\anaconda\lib\site-packages\matplotlib\axes\_base.py", line 3030, in draw
+    self._update_title_position(renderer)
+  File "D:\anaconda\lib\site-packages\matplotlib\axes\_base.py", line 2963, in _update_title_position
+    if (ax.xaxis.get_ticks_position() in ['top', 'unknown']
+  File "D:\anaconda\lib\site-packages\matplotlib\axis.py", line 2455, in get_ticks_position
+    self._get_ticks_position()]
+  File "D:\anaconda\lib\site-packages\matplotlib\axis.py", line 2159, in _get_ticks_position
+    major = self.majorTicks[0]
+IndexError: list index out of range
 ```
 
 <img src="matplotlib_files/figure-html/font-1-59.png" width="95%" style="display: block; margin: auto;" />
