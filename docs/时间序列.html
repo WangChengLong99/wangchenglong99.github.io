@@ -352,7 +352,7 @@
 <tr class="odd">
 <td>12</td>
 <td>.strftime</td>
-<td>&lt;built-in method strftime of datetime.time object at 0x0000028DB113D290&gt;</td>
+<td>&lt;built-in method strftime of datetime.time object at 0x0000027584199290&gt;</td>
 </tr>
 <tr class="even">
 <td>13</td>
@@ -416,7 +416,7 @@
 <tr class="odd">
 <td>0</td>
 <td>.now</td>
-<td>2024-04-28 23:49:21.044233</td>
+<td>2024-04-29 00:21:22.894848</td>
 <td>.astimezone</td>
 <td>2021-11-26 16:00:00+08:00</td>
 </tr>
@@ -444,7 +444,7 @@
 <tr class="odd">
 <td>4</td>
 <td>.strftime</td>
-<td>&lt;built-in method strftime of datetime.datetime object at 0x0000028DAF3FD740&gt;</td>
+<td>&lt;built-in method strftime of datetime.datetime object at 0x000002758397B4E0&gt;</td>
 <td>.day</td>
 <td>26</td>
 </tr>
@@ -486,7 +486,7 @@
 <tr class="odd">
 <td>10</td>
 <td>.today</td>
-<td>2024-04-28 23:49:21.044233</td>
+<td>2024-04-29 00:21:22.894849</td>
 <td>.fromtimestamp</td>
 <td>&lt;built-in method fromtimestamp of type object at 0x00007FFE0F489330&gt;</td>
 </tr>
@@ -521,7 +521,7 @@
 <tr class="even">
 <td>15</td>
 <td>.utcnow</td>
-<td>2024-04-28 15:49:21.044233</td>
+<td>2024-04-28 16:21:22.894848</td>
 <td>.max</td>
 <td>9999-12-31 23:59:59.999999</td>
 </tr>
@@ -787,10 +787,10 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 <div class="sourceCode" id="cb285"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb285-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb285-1" tabindex="-1"></a>tz_utc_8 <span class="op">=</span> timezone(timedelta(hours<span class="op">=</span><span class="dv">8</span>)) <span class="co"># 创建时区UTC+8:00</span></span>
 <span id="cb285-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb285-2" tabindex="-1"></a>now <span class="op">=</span> datetime.datetime.now()</span>
 <span id="cb285-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb285-3" tabindex="-1"></a>now</span></code></pre></div>
-<pre class="scroll-200"><code>datetime.datetime(2024, 4, 28, 23, 49, 21, 511270)</code></pre>
+<pre class="scroll-200"><code>datetime.datetime(2024, 4, 29, 0, 21, 23, 459686)</code></pre>
 <div class="sourceCode" id="cb287"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb287-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb287-1" tabindex="-1"></a>dt <span class="op">=</span> now.replace(tzinfo<span class="op">=</span>tz_utc_8) <span class="co"># 强制设置为UTC+8:00</span></span>
 <span id="cb287-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb287-2" tabindex="-1"></a>dt</span></code></pre></div>
-<pre class="scroll-200"><code>datetime.datetime(2024, 4, 28, 23, 49, 21, 511270, tzinfo=datetime.timezone(datetime.timedelta(seconds=28800)))</code></pre>
+<pre class="scroll-200"><code>datetime.datetime(2024, 4, 29, 0, 21, 23, 459686, tzinfo=datetime.timezone(datetime.timedelta(seconds=28800)))</code></pre>
 <div class="sourceCode" id="cb289"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb289-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb289-1" tabindex="-1"></a><span class="co">#datetime.datetime(2015, 5, 18, 17, 2, 10, 871012, tzinfo=datetime.timezone(datetime.timedelta(0, 28800)))</span></span>
 <span id="cb289-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb289-2" tabindex="-1"></a><span class="co">#如果系统时区恰好是UTC+8:00，那么上述代码就是正确的，否则，不能强制设置为UTC+8:00时区。</span></span></code></pre></div>
 </div>
@@ -803,7 +803,7 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 <span id="cb290-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-2" tabindex="-1"></a>a<span class="op">=</span>datetime.datetime.now()</span>
 <span id="cb290-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-3" tabindex="-1"></a>b<span class="op">=</span>datetime.datetime(<span class="dv">2021</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">15</span>,<span class="dv">43</span>,<span class="dv">20</span>)</span>
 <span id="cb290-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-4" tabindex="-1"></a>a<span class="op">-</span>b</span></code></pre></div>
-<pre class="scroll-200"><code>datetime.timedelta(days=877, seconds=29161, microseconds=614994)</code></pre>
+<pre class="scroll-200"><code>datetime.timedelta(days=877, seconds=31083, microseconds=582022)</code></pre>
 <div class="sourceCode" id="cb292"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb292-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb292-1" tabindex="-1"></a><span class="co">##比较大小</span></span>
 <span id="cb292-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb292-2" tabindex="-1"></a>a <span class="op">&gt;</span> b</span></code></pre></div>
 <pre class="scroll-200"><code>True</code></pre>
@@ -1258,9 +1258,9 @@ pd.period_range(start_time,end_time,freq)
 <p>特定DateOffset的多个单位可以通过乘法表示，时间加上偏移量可以实现时间的改变，或者使用这些对象的实例方法rollforward等实现时间的改变</p>
 <div class="sourceCode" id="cb301"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb301-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb301-1" tabindex="-1"></a>t <span class="op">=</span> datetime.datetime.now()</span>
 <span id="cb301-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb301-2" tabindex="-1"></a>t <span class="op">+</span> pd.offsets.BMonthEnd()</span></code></pre></div>
-<pre class="scroll-200"><code>Timestamp('2024-04-30 23:49:21.802160')</code></pre>
+<pre class="scroll-200"><code>Timestamp('2024-04-30 00:21:23.773421')</code></pre>
 <div class="sourceCode" id="cb303"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb303-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb303-1" tabindex="-1"></a>t <span class="op">-</span> pd.offsets.BMonthEnd(<span class="dv">2</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>Timestamp('2024-02-29 23:49:21.802160')</code></pre>
+<pre class="scroll-200"><code>Timestamp('2024-02-29 00:21:23.773421')</code></pre>
 </div>
 </div>
 <div id="indexing" class="section level3" number="5.3.2">
@@ -1272,28 +1272,28 @@ pd.period_range(start_time,end_time,freq)
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: 'BM' is deprecated and will be removed in a future version, please use 'BME' instead.</code></pre>
 <div class="sourceCode" id="cb307"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb307-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb307-1" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
 <span id="cb307-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb307-2" tabindex="-1"></a>ts[<span class="st">"1/31/2011"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>-0.02962107177143831</code></pre>
+<pre class="scroll-200"><code>2.0741703414544306</code></pre>
 <div class="sourceCode" id="cb309"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb309-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb309-1" tabindex="-1"></a>ts[<span class="st">"10/31/2011"</span>:<span class="st">"12/31/2011"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2011-10-31    0.648797
-2011-11-30    0.473796
-2011-12-30    0.705829
+<pre class="scroll-200"><code>2011-10-31    1.080528
+2011-11-30   -0.749395
+2011-12-30   -0.876985
 Freq: BME, dtype: float64</code></pre>
 <div class="sourceCode" id="cb311"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb311-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb311-1" tabindex="-1"></a>ts[<span class="st">"2011-6"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2011-06-30    0.326848
+<pre class="scroll-200"><code>2011-06-30   -0.160683
 Freq: BME, dtype: float64</code></pre>
 <div class="sourceCode" id="cb313"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb313-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb313-1" tabindex="-1"></a>ts.loc[<span class="st">"2011"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2011-01-31   -0.029621
-2011-02-28    0.493060
-2011-03-31    0.068804
-2011-04-29    0.283648
-2011-05-31   -1.127805
-2011-06-30    0.326848
-2011-07-29    1.062933
-2011-08-31    0.725827
-2011-09-30   -1.398583
-2011-10-31    0.648797
-2011-11-30    0.473796
-2011-12-30    0.705829
+<pre class="scroll-200"><code>2011-01-31    2.074170
+2011-02-28   -1.291018
+2011-03-31   -0.087798
+2011-04-29   -2.685013
+2011-05-31   -2.095086
+2011-06-30   -0.160683
+2011-07-29   -0.130983
+2011-08-31   -1.068623
+2011-09-30    0.379212
+2011-10-31    1.080528
+2011-11-30   -0.749395
+2011-12-30   -0.876985
 Freq: BME, dtype: float64</code></pre>
 </div>
 <div id="时区处理" class="section level3" number="5.3.3">
@@ -1309,12 +1309,12 @@ Freq: BME, dtype: float64</code></pre>
 <span id="cb316-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb316-3" tabindex="-1"></a><span class="bu">print</span>(ts.index.tz)</span></code></pre></div>
 <pre class="scroll-200"><code>UTC</code></pre>
 <div class="sourceCode" id="cb318"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb318-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb318-1" tabindex="-1"></a>ts.tz_convert(<span class="st">'America/New_York'</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>2012-03-09 04:30:00-05:00   -1.192618
-2012-03-10 04:30:00-05:00    1.576665
-2012-03-11 05:30:00-04:00   -1.252044
-2012-03-12 05:30:00-04:00   -0.130145
-2012-03-13 05:30:00-04:00    0.091672
-2012-03-14 05:30:00-04:00   -1.052478
+<pre class="scroll-200"><code>2012-03-09 04:30:00-05:00    0.683438
+2012-03-10 04:30:00-05:00    0.266101
+2012-03-11 05:30:00-04:00   -0.030704
+2012-03-12 05:30:00-04:00    0.079108
+2012-03-13 05:30:00-04:00    0.279454
+2012-03-14 05:30:00-04:00    1.745889
 Freq: D, dtype: float64</code></pre>
 </div>
 <div id="类型转换-1" class="section level3" number="5.3.4">
@@ -1348,17 +1348,17 @@ timestamp.to_period(freq)</p>
 <span id="cb320-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb320-2" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
 <span id="cb320-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb320-3" tabindex="-1"></a>ts.resample(<span class="st">'M'</span>).mean()</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: 'M' is deprecated and will be removed in a future version, please use 'ME' instead.
-2000-01-31   -0.149506
-2000-02-29    0.026912
-2000-03-31    0.088075
-2000-04-30    0.298271
+2000-01-31    0.676525
+2000-02-29    0.238862
+2000-03-31   -0.122012
+2000-04-30   -0.434877
 Freq: ME, dtype: float64</code></pre>
 <div class="sourceCode" id="cb322"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb322-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb322-1" tabindex="-1"></a>ts.resample(<span class="st">'M'</span>, kind<span class="op">=</span><span class="st">'period'</span>).mean()</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: The 'kind' keyword in Series.resample is deprecated and will be removed in a future version. Explicitly cast the index to the desired type instead
-2000-01   -0.149506
-2000-02    0.026912
-2000-03    0.088075
-2000-04    0.298271
+2000-01    0.676525
+2000-02    0.238862
+2000-03   -0.122012
+2000-04   -0.434877
 Freq: M, dtype: float64</code></pre>
 <div id="向下采样" class="section level4" number="5.3.6.1">
 <h4>
@@ -1402,39 +1402,39 @@ If True, set the window labels as the center of the window index</code></pre>
 2023-01-02     NaN
 2023-01-03     NaN
 2023-01-04     NaN
-2023-01-05    49.2
+2023-01-05    26.8
               ... 
-2023-03-27    52.5
-2023-03-28    49.3
-2023-03-29    45.3
-2023-03-30    46.7
-2023-03-31    46.2
+2023-03-27    46.7
+2023-03-28    50.0
+2023-03-29    51.1
+2023-03-30    54.6
+2023-03-31    51.6
 Freq: D, Length: 90, dtype: float64</code></pre>
 <div class="sourceCode" id="cb327"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb327-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb327-1" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">3</span>).mean()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01          NaN
 2023-01-02          NaN
-2023-01-03    37.666667
-2023-01-04    49.500000
-2023-01-05    49.200000
+2023-01-03    19.333333
+2023-01-04    24.750000
+2023-01-05    26.800000
                 ...    
-2023-03-27    52.500000
-2023-03-28    49.300000
-2023-03-29    45.300000
-2023-03-30    46.700000
-2023-03-31    46.200000
+2023-03-27    46.700000
+2023-03-28    50.000000
+2023-03-29    51.100000
+2023-03-30    54.600000
+2023-03-31    51.600000
 Freq: D, Length: 90, dtype: float64</code></pre>
 <div class="sourceCode" id="cb329"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb329-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb329-1" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">5</span>,center<span class="op">=</span><span class="va">True</span>).mean()</span></code></pre></div>
-<pre class="scroll-200"><code>2023-01-01    48.666667
-2023-01-02    50.571429
-2023-01-03    45.750000
-2023-01-04    42.444444
-2023-01-05    45.000000
+<pre class="scroll-200"><code>2023-01-01    28.833333
+2023-01-02    25.571429
+2023-01-03    29.250000
+2023-01-04    37.111111
+2023-01-05    35.000000
                 ...    
-2023-03-27    41.666667
-2023-03-28    43.000000
-2023-03-29    39.428571
-2023-03-30    36.000000
-2023-03-31    41.600000
+2023-03-27    47.888889
+2023-03-28    46.875000
+2023-03-29    52.285714
+2023-03-30    52.666667
+2023-03-31    51.800000
 Freq: D, Length: 90, dtype: float64</code></pre>
 </div>
 <div id="shift" class="section level4" number="5.3.7.2">
@@ -1444,42 +1444,42 @@ Freq: D, Length: 90, dtype: float64</code></pre>
 <p><code>.shift(n,periods,freq,fill_value)</code>滞后n期，并不会改变原索引</p>
 <div class="sourceCode" id="cb331"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb331-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb331-1" tabindex="-1"></a>ts.shift(<span class="dv">1</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
-2023-01-02    75.0
-2023-01-03     5.0
-2023-01-04    33.0
-2023-01-05    85.0
+2023-01-02    10.0
+2023-01-03     3.0
+2023-01-04    45.0
+2023-01-05    41.0
               ... 
-2023-03-27     8.0
-2023-03-28    40.0
-2023-03-29    60.0
-2023-03-30    47.0
-2023-03-31    44.0
+2023-03-27    57.0
+2023-03-28    22.0
+2023-03-29    53.0
+2023-03-30    51.0
+2023-03-31    71.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 <div class="sourceCode" id="cb333"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb333-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb333-1" tabindex="-1"></a>ts.shift(<span class="dv">1</span>).ffill()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
-2023-01-02    75.0
-2023-01-03     5.0
-2023-01-04    33.0
-2023-01-05    85.0
+2023-01-02    10.0
+2023-01-03     3.0
+2023-01-04    45.0
+2023-01-05    41.0
               ... 
-2023-03-27     8.0
-2023-03-28    40.0
-2023-03-29    60.0
-2023-03-30    47.0
-2023-03-31    44.0
+2023-03-27    57.0
+2023-03-28    22.0
+2023-03-29    53.0
+2023-03-30    51.0
+2023-03-31    71.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 <div class="sourceCode" id="cb335"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb335-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb335-1" tabindex="-1"></a>ts.shift(<span class="dv">1</span>).bfill()</span></code></pre></div>
-<pre class="scroll-200"><code>2023-01-01    75.0
-2023-01-02    75.0
-2023-01-03     5.0
-2023-01-04    33.0
-2023-01-05    85.0
+<pre class="scroll-200"><code>2023-01-01    10.0
+2023-01-02    10.0
+2023-01-03     3.0
+2023-01-04    45.0
+2023-01-05    41.0
               ... 
-2023-03-27     8.0
-2023-03-28    40.0
-2023-03-29    60.0
-2023-03-30    47.0
-2023-03-31    44.0
+2023-03-27    57.0
+2023-03-28    22.0
+2023-03-29    53.0
+2023-03-30    51.0
+2023-03-31    71.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 </div>
 <div id="diff" class="section level4" number="5.3.7.3">
@@ -1488,16 +1488,16 @@ Freq: D, Length: 90, dtype: float64</code></pre>
 </h4>
 <div class="sourceCode" id="cb337"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb337-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb337-1" tabindex="-1"></a>ts.diff()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
-2023-01-02   -70.0
-2023-01-03    28.0
-2023-01-04    52.0
-2023-01-05   -37.0
+2023-01-02    -7.0
+2023-01-03    42.0
+2023-01-04    -4.0
+2023-01-05    -6.0
               ... 
-2023-03-27    32.0
-2023-03-28    20.0
-2023-03-29   -13.0
-2023-03-30    -3.0
-2023-03-31   -27.0
+2023-03-27   -35.0
+2023-03-28    31.0
+2023-03-29    -2.0
+2023-03-30    20.0
+2023-03-31    -9.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 </div>
 <div id="first" class="section level4" number="5.3.7.4">
@@ -1508,16 +1508,16 @@ Freq: D, Length: 90, dtype: float64</code></pre>
 <p>offset:str,dateoffset</p>
 <div class="sourceCode" id="cb339"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb339-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb339-1" tabindex="-1"></a>ts.first(<span class="st">'10D'</span>)<span class="co">#1-1到1-10</span></span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: first is deprecated and will be removed in a future version. Please create a mask and filter using `.loc` instead
-2023-01-01    75
-2023-01-02     5
-2023-01-03    33
-2023-01-04    85
-2023-01-05    48
-2023-01-06    46
-2023-01-07    62
-2023-01-08    12
-2023-01-09    16
-2023-01-10    68
+2023-01-01     10
+2023-01-02      3
+2023-01-03     45
+2023-01-04     41
+2023-01-05     35
+2023-01-06     39
+2023-01-07      6
+2023-01-08     55
+2023-01-09    100
+2023-01-10     16
 Freq: D, dtype: int32</code></pre>
 </div>
 <div id="last" class="section level4" number="5.3.7.5">
@@ -1526,26 +1526,26 @@ Freq: D, dtype: int32</code></pre>
 </h4>
 <div class="sourceCode" id="cb341"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb341-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb341-1" tabindex="-1"></a>ts.last(<span class="st">"20D"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: last is deprecated and will be removed in a future version. Please create a mask and filter using `.loc` instead
-2023-03-12    30
-2023-03-13    92
-2023-03-14    90
-2023-03-15    19
-2023-03-16    34
-2023-03-17    58
-2023-03-18    92
-2023-03-19    87
-2023-03-20    30
-2023-03-21    22
-2023-03-22    87
-2023-03-23    31
-2023-03-24    68
-2023-03-25    60
-2023-03-26     8
-2023-03-27    40
-2023-03-28    60
-2023-03-29    47
-2023-03-30    44
-2023-03-31    17
+2023-03-12     1
+2023-03-13    69
+2023-03-14    11
+2023-03-15    98
+2023-03-16    46
+2023-03-17    81
+2023-03-18    20
+2023-03-19    40
+2023-03-20    36
+2023-03-21    92
+2023-03-22    85
+2023-03-23    56
+2023-03-24     9
+2023-03-25    50
+2023-03-26    57
+2023-03-27    22
+2023-03-28    53
+2023-03-29    51
+2023-03-30    71
+2023-03-31    62
 Freq: D, dtype: int32</code></pre>
 </div>
 <div id="expandind" class="section level4" number="5.3.7.6">
@@ -1555,15 +1555,15 @@ Freq: D, dtype: int32</code></pre>
 <div class="sourceCode" id="cb343"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb343-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb343-1" tabindex="-1"></a>ts.expanding(<span class="dv">3</span>).<span class="bu">sum</span>()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01       NaN
 2023-01-02       NaN
-2023-01-03     113.0
-2023-01-04     198.0
-2023-01-05     246.0
+2023-01-03      58.0
+2023-01-04      99.0
+2023-01-05     134.0
                ...  
-2023-03-27    4392.0
-2023-03-28    4452.0
-2023-03-29    4499.0
-2023-03-30    4543.0
-2023-03-31    4560.0
+2023-03-27    4056.0
+2023-03-28    4109.0
+2023-03-29    4160.0
+2023-03-30    4231.0
+2023-03-31    4293.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 
 </div>
@@ -1771,7 +1771,7 @@ function openTab(evt,tabName){
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2024-04-28.</p>
+    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2024-04-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

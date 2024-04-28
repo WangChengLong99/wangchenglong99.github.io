@@ -312,25 +312,25 @@ dtype: object</code></pre>
 <span id="cb21-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb21-2" tabindex="-1"></a>                      <span class="st">'value'</span>:np.random.choice([<span class="va">None</span>,np.nan]<span class="op">+</span><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>)),<span class="dv">10</span>,)})</span>
 <span id="cb21-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb21-3" tabindex="-1"></a>nadata.head()</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     0
-1   NaN     8
-2           2
-3   nan  None
-4     0     4</code></pre>
+0  None     7
+1   NaN     7
+2           4
+3   nan     0
+4     0  None</code></pre>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb23-1" tabindex="-1"></a>nadata.isnull().head()</span></code></pre></div>
 <pre class="scroll-200"><code>    null  value
 0   True  False
 1   True  False
 2  False  False
-3  False   True
-4  False  False</code></pre>
+3  False  False
+4  False   True</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb25-1" tabindex="-1"></a>nadata[nadata[<span class="st">'null'</span>].notnull()]<span class="co"># 根据某个字段的未缺失值选取行</span></span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-2          2
-3  nan  None
-4    0     4
-7          7
-8  nan     4
+2          4
+3  nan     0
+4    0  None
+7          0
+8  nan     5
 9    0     9</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb27-1" tabindex="-1"></a>nadata.isnull().<span class="bu">sum</span>()<span class="op">/</span><span class="bu">len</span>(nadata)<span class="co">#查看各个字段的缺失比例</span></span></code></pre></div>
 <pre class="scroll-200"><code>null     0.4
@@ -349,35 +349,35 @@ dtype: float64</code></pre>
 <p><code>.dropna(axis,how,subset,thresh)</code></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb31-1" tabindex="-1"></a>nadata.dropna(how<span class="op">=</span><span class="st">"all"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     0
-1   NaN     8
-2           2
-3   nan  None
-4     0     4
-5  None     1
-6   NaN     3
-7           7
-8   nan     4
+0  None     7
+1   NaN     7
+2           4
+3   nan     0
+4     0  None
+5  None     5
+6   NaN     4
+7           0
+8   nan     5
 9     0     9</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb33-1" tabindex="-1"></a>nadata.dropna(subset<span class="op">=</span>[<span class="st">"null"</span>])</span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-2          2
-3  nan  None
-4    0     4
-7          7
-8  nan     4
+2          4
+3  nan     0
+4    0  None
+7          0
+8  nan     5
 9    0     9</code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb35-1" tabindex="-1"></a>nadata.dropna(thresh<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     0
-1   NaN     8
-2           2
-3   nan  None
-4     0     4
-5  None     1
-6   NaN     3
-7           7
-8   nan     4
+0  None     7
+1   NaN     7
+2           4
+3   nan     0
+4     0  None
+5  None     5
+6   NaN     4
+7           0
+8   nan     5
 9     0     9</code></pre>
 </div>
 <div id="填补缺失值" class="section level3" number="3.2.3">
@@ -388,40 +388,40 @@ dtype: float64</code></pre>
 <p>通过给字段传递标量，可以进行均值，最大值，最小值，中值等填补，通过method参数可以进行前向和后向填补。</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb37-1" tabindex="-1"></a>nadata.fillna(<span class="dv">0</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-0    0     0
-1    0     8
-2          2
+0    0     7
+1    0     7
+2          4
 3  nan     0
-4    0     4
-5    0     1
-6    0     3
-7          7
-8  nan     4
+4    0     0
+5    0     5
+6    0     4
+7          0
+8  nan     5
 9    0     9</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb39-1" tabindex="-1"></a>nadata.fillna({<span class="st">"null"</span>:<span class="dv">0</span>,<span class="st">"value"</span>:<span class="bu">int</span>(np.mean(nadata.value))})<span class="co">#不加int会变成浮点型</span></span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-0    0     0
-1    0     8
-2          2
-3  nan     4
+0    0     7
+1    0     7
+2          4
+3  nan     0
 4    0     4
-5    0     1
-6    0     3
-7          7
-8  nan     4
+5    0     5
+6    0     4
+7          0
+8  nan     5
 9    0     9</code></pre>
 <div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb41-1" tabindex="-1"></a>nadata.fillna(method<span class="op">=</span><span class="st">"bfill"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
   null value
-0          0
-1          8
-2          2
-3  nan     4
-4    0     4
-5          1
-6          3
-7          7
-8  nan     4
+0          7
+1          7
+2          4
+3  nan     0
+4    0     5
+5          5
+6          4
+7          0
+8  nan     5
 9    0     9</code></pre>
 </div>
 <div id="插补法" class="section level3" number="3.2.4">
@@ -623,9 +623,13 @@ Index: []</code></pre>
 <p>这样做只能直观呈现，要想得到异常点，可以手动计算选择</p>
 <div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb68-1" tabindex="-1"></a>q1,q3 <span class="op">=</span> abdata.value.quantile(q<span class="op">=</span>[<span class="fl">0.25</span>,<span class="fl">0.75</span>])</span>
 <span id="cb68-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb68-2" tabindex="-1"></a>abdata[(abdata.value <span class="op">&lt;</span> q1<span class="op">-</span><span class="fl">1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1)) <span class="op">|</span> (abdata.value<span class="op">&gt;</span>q3<span class="op">+</span><span class="fl">1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1))]</span></code></pre></div>
-<pre class="scroll-200"><code>     value
-100   50.0
-103   90.0</code></pre>
+<pre class="scroll-200"><code>         value
+35   83.130250
+73   54.657666
+100  50.000000
+101  57.000000
+102  83.000000
+103  90.000000</code></pre>
 </div>
 <div id="正态分布图" class="section level4" number="3.5.1.2">
 <h4>
@@ -727,15 +731,15 @@ Name: null, dtype: object</code></pre>
 <p>可以只对某一列的某一类值进行替换，其他种类不变</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb77-1" tabindex="-1"></a>nadata.replace({<span class="st">"null"</span>:{<span class="dv">0</span>:<span class="st">"00"</span>}})</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     0
-1   NaN     8
-2           2
-3   nan  None
-4    00     4
-5  None     1
-6   NaN     3
-7           7
-8   nan     4
+0  None     7
+1   NaN     7
+2           4
+3   nan     0
+4    00  None
+5  None     5
+6   NaN     4
+7           0
+8   nan     5
 9    00     9</code></pre>
 </div>
 <div id="str" class="section level3" number="3.6.3">
@@ -1656,7 +1660,7 @@ function openTab(evt,tabName){
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2024-04-28.</p>
+    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2024-04-29.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
