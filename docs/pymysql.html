@@ -7,7 +7,7 @@
 <title>第9章 PyMysql | wcl</title>
 <meta name="author" content="第9章 PyMysql | wcl">
 <meta name="description" content='PyMysql是纯python写的用来操作python的包 操作流程如下,原文  9.1 导入包 import pymysql  9.2 连接数据库 conn = pymysql.connect(  host = "localhost", #主机  port = 3306, #端口,int  user = "root",  database = "订单录入", # 选择数据库 ...'>
-<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta name="generator" content="bookdown 0.39 with bs4_book()">
 <meta property="og:title" content="第9章 PyMysql | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/pymysql.html">
@@ -17,10 +17,8 @@
 <meta name="twitter:description" content='PyMysql是纯python写的用来操作python的包 操作流程如下,原文  9.1 导入包 import pymysql  9.2 连接数据库 conn = pymysql.connect(  host = "localhost", #主机  port = 3306, #端口,int  user = "root",  database = "订单录入", # 选择数据库 ...'>
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/d3-3.3.8/d3.min.js"></script><script src="libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
-<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-<script src="libs/chromatography-0.1/chromatography.js"></script><script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script><style>
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><style>
     /* pre {
       max-height: 300px;
       overflow-y: auto;
@@ -63,23 +61,24 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">关于</a></li>
 <li class="book-part">数据</li>
-<li><a class="" href="introduction-1.html">introduction</a></li>
+<li><a class="" href="introduction.html">introduction</a></li>
 <li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
 <li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
 <li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
 <li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
 <li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
-<li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="" href="matplotlib-1.html"><span class="header-section-number">6</span> matplotlib</a></li>
+<li><a class="" href="introduction-1.html">introduction</a></li>
+<li><a class="" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
 <li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
-<li><a class="" href="introduction-3.html">introduction</a></li>
+<li><a class="" href="introduction-2.html">introduction</a></li>
 <li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
 <li><a class="active" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
+<li><a class="" href="introduction-3.html">introduction</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -98,21 +97,21 @@
 <h2>
 <span class="header-section-number">9.1</span> 导入包<a class="anchor" aria-label="anchor" href="#%E5%AF%BC%E5%85%A5%E5%8C%85"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb539"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb539-1"><a href="pymysql.html#cb539-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pymysql</span></code></pre></div>
+<div class="sourceCode" id="cb530"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb530-1"><a href="pymysql.html#cb530-1" tabindex="-1"></a><span class="im">import</span> pymysql</span></code></pre></div>
 </div>
 <div id="连接数据库" class="section level2" number="9.2">
 <h2>
 <span class="header-section-number">9.2</span> 连接数据库<a class="anchor" aria-label="anchor" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb540"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb540-1"><a href="pymysql.html#cb540-1" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> pymysql.<span class="ex">connect</span>(</span>
-<span id="cb540-2"><a href="pymysql.html#cb540-2" aria-hidden="true" tabindex="-1"></a>  host <span class="op">=</span> <span class="st">"localhost"</span>, <span class="co">#主机</span></span>
-<span id="cb540-3"><a href="pymysql.html#cb540-3" aria-hidden="true" tabindex="-1"></a>  port <span class="op">=</span> <span class="dv">3306</span>, <span class="co">#端口,int</span></span>
-<span id="cb540-4"><a href="pymysql.html#cb540-4" aria-hidden="true" tabindex="-1"></a>  user <span class="op">=</span> <span class="st">"root"</span>,</span>
-<span id="cb540-5"><a href="pymysql.html#cb540-5" aria-hidden="true" tabindex="-1"></a>  database <span class="op">=</span> <span class="st">"订单录入"</span>, <span class="co"># 选择数据库</span></span>
-<span id="cb540-6"><a href="pymysql.html#cb540-6" aria-hidden="true" tabindex="-1"></a>  password <span class="op">=</span> <span class="st">"990925wcldsg"</span> <span class="co">#密码</span></span>
-<span id="cb540-7"><a href="pymysql.html#cb540-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># autocommit = True 之后做出的操作会自动提交</span></span>
-<span id="cb540-8"><a href="pymysql.html#cb540-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># cursorclass = pymysql.cursors.DictCursor 让结果以字典形式呈现，默认是嵌套元组</span></span>
-<span id="cb540-9"><a href="pymysql.html#cb540-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb531-1"><a href="pymysql.html#cb531-1" tabindex="-1"></a>conn <span class="op">=</span> pymysql.<span class="ex">connect</span>(</span>
+<span id="cb531-2"><a href="pymysql.html#cb531-2" tabindex="-1"></a>  host <span class="op">=</span> <span class="st">"localhost"</span>, <span class="co">#主机</span></span>
+<span id="cb531-3"><a href="pymysql.html#cb531-3" tabindex="-1"></a>  port <span class="op">=</span> <span class="dv">3306</span>, <span class="co">#端口,int</span></span>
+<span id="cb531-4"><a href="pymysql.html#cb531-4" tabindex="-1"></a>  user <span class="op">=</span> <span class="st">"root"</span>,</span>
+<span id="cb531-5"><a href="pymysql.html#cb531-5" tabindex="-1"></a>  database <span class="op">=</span> <span class="st">"订单录入"</span>, <span class="co"># 选择数据库</span></span>
+<span id="cb531-6"><a href="pymysql.html#cb531-6" tabindex="-1"></a>  password <span class="op">=</span> <span class="st">"990925wcldsg"</span> <span class="co">#密码</span></span>
+<span id="cb531-7"><a href="pymysql.html#cb531-7" tabindex="-1"></a>  <span class="co"># autocommit = True 之后做出的操作会自动提交</span></span>
+<span id="cb531-8"><a href="pymysql.html#cb531-8" tabindex="-1"></a>  <span class="co"># cursorclass = pymysql.cursors.DictCursor 让结果以字典形式呈现，默认是嵌套元组</span></span>
+<span id="cb531-9"><a href="pymysql.html#cb531-9" tabindex="-1"></a>)</span></code></pre></div>
 <div id="连接对象方法" class="section level3" number="9.2.1">
 <h3>
 <span class="header-section-number">9.2.1</span> 连接对象方法<a class="anchor" aria-label="anchor" href="#%E8%BF%9E%E6%8E%A5%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
@@ -149,7 +148,7 @@
 </h2>
 <p>游标是SQL的一种数据访问机制，游标是一种处理数据的方法。</p>
 <p>使用SQL的select查询操作返回的结果是一个包含一行或者是多行的数据集。如果我们要对查询的结果再进行查询，比如（查看结果的第一行、下一行、最后一行、前十行等等操作）简单的通过select语句无法实现，因为此时索要查询的结果不是数据表，而是已经查询出来的结果集。游标就是针对这种情况而出现的.我们可以将”游标“简单的看成是结果集的一个指针，可以根据需要在结果集上面来回滚动，浏览我们需要的数据。</p>
-<div class="sourceCode" id="cb541"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb541-1"><a href="pymysql.html#cb541-1" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span></code></pre></div>
+<div class="sourceCode" id="cb532"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb532-1"><a href="pymysql.html#cb532-1" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span></code></pre></div>
 <div id="游标对象方法" class="section level3" number="9.3.1">
 <h3>
 <span class="header-section-number">9.3.1</span> 游标对象方法<a class="anchor" aria-label="anchor" href="#%E6%B8%B8%E6%A0%87%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
@@ -203,15 +202,15 @@
 <h3>
 <span class="header-section-number">9.3.2</span> 使用游标执行语句<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87%E6%89%A7%E8%A1%8C%E8%AF%AD%E5%8F%A5"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb542"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb542-1"><a href="pymysql.html#cb542-1" aria-hidden="true" tabindex="-1"></a>sql <span class="op">=</span> <span class="st">"SELECT * FROM Customers"</span></span>
-<span id="cb542-2"><a href="pymysql.html#cb542-2" aria-hidden="true" tabindex="-1"></a>cursor.execute(sql)</span></code></pre></div>
+<div class="sourceCode" id="cb533"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb533-1"><a href="pymysql.html#cb533-1" tabindex="-1"></a>sql <span class="op">=</span> <span class="st">"SELECT * FROM Customers"</span></span>
+<span id="cb533-2"><a href="pymysql.html#cb533-2" tabindex="-1"></a>cursor.execute(sql)</span></code></pre></div>
 <pre class="scroll-200"><code>5</code></pre>
 </div>
 <div id="获取结果" class="section level3" number="9.3.3">
 <h3>
 <span class="header-section-number">9.3.3</span> 获取结果<a class="anchor" aria-label="anchor" href="#%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb544"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb544-1"><a href="pymysql.html#cb544-1" aria-hidden="true" tabindex="-1"></a>cursor.fetchone()</span></code></pre></div>
+<div class="sourceCode" id="cb535"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb535-1"><a href="pymysql.html#cb535-1" tabindex="-1"></a>cursor.fetchone()</span></code></pre></div>
 <pre class="scroll-200"><code>('1000000001', 'Village Toys', '200 Maple Lane', 'Detroit', 'MI', '44444', 'USA', 'John Smith', 'sales@villagetoys.com')</code></pre>
 </div>
 <div id="设置游标所在行" class="section level3" number="9.3.4">
@@ -219,13 +218,13 @@
 <span class="header-section-number">9.3.4</span> 设置游标所在行<a class="anchor" aria-label="anchor" href="#%E8%AE%BE%E7%BD%AE%E6%B8%B8%E6%A0%87%E6%89%80%E5%9C%A8%E8%A1%8C"><i class="fas fa-link"></i></a>
 </h3>
 <p>此时再用游标取所有的数，会发现第1行没有被取，因为之前取完第一行后，游标的位置已经到了下一行了，可以通过设置cursor.rownumber=0重新开始取。</p>
-<div class="sourceCode" id="cb546"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb546-1"><a href="pymysql.html#cb546-1" aria-hidden="true" tabindex="-1"></a>cursor.rownumber</span></code></pre></div>
+<div class="sourceCode" id="cb537"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb537-1"><a href="pymysql.html#cb537-1" tabindex="-1"></a>cursor.rownumber</span></code></pre></div>
 <pre class="scroll-200"><code>1</code></pre>
-<div class="sourceCode" id="cb548"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb548-1"><a href="pymysql.html#cb548-1" aria-hidden="true" tabindex="-1"></a>cursor.fetchall()</span></code></pre></div>
+<div class="sourceCode" id="cb539"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb539-1"><a href="pymysql.html#cb539-1" tabindex="-1"></a>cursor.fetchall()</span></code></pre></div>
 <pre class="scroll-200"><code>(('1000000002', 'Kids Place', '333 South Lake Drive', 'Columbus', 'OH', '43333', 'USA', 'Michelle Green', None), ('1000000003', 'Fun4All', '1 Sunny Place', 'Muncie', 'IN', '42222', 'USA', 'Jim Jones', 'jjones@fun4all.com'), ('1000000004', 'Fun4All', '829 Riverside Drive', 'Phoenix', 'AZ', '88888', 'USA', 'Denise L. Stephens', 'dstephens@fun4all.com'), ('1000000005', 'The Toy Store', '4545 53rd Street', 'Chicago', 'IL', '54545', 'USA', 'Kim Howard', None))</code></pre>
-<div class="sourceCode" id="cb550"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb550-1"><a href="pymysql.html#cb550-1" aria-hidden="true" tabindex="-1"></a>cursor.rownumber <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb550-2"><a href="pymysql.html#cb550-2" aria-hidden="true" tabindex="-1"></a><span class="co">#下面会返回第二行的数据</span></span>
-<span id="cb550-3"><a href="pymysql.html#cb550-3" aria-hidden="true" tabindex="-1"></a>cursor.fetchone()</span></code></pre></div>
+<div class="sourceCode" id="cb541"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb541-1"><a href="pymysql.html#cb541-1" tabindex="-1"></a>cursor.rownumber <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb541-2"><a href="pymysql.html#cb541-2" tabindex="-1"></a><span class="co">#下面会返回第二行的数据</span></span>
+<span id="cb541-3"><a href="pymysql.html#cb541-3" tabindex="-1"></a>cursor.fetchone()</span></code></pre></div>
 <pre class="scroll-200"><code>('1000000002', 'Kids Place', '333 South Lake Drive', 'Columbus', 'OH', '43333', 'USA', 'Michelle Green', None)</code></pre>
 </div>
 </div>
@@ -239,13 +238,13 @@
 <h2>
 <span class="header-section-number">9.5</span> 关闭游标<a class="anchor" aria-label="anchor" href="#%E5%85%B3%E9%97%AD%E6%B8%B8%E6%A0%87"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb552"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb552-1"><a href="pymysql.html#cb552-1" aria-hidden="true" tabindex="-1"></a>cursor.close()</span></code></pre></div>
+<div class="sourceCode" id="cb543"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb543-1"><a href="pymysql.html#cb543-1" tabindex="-1"></a>cursor.close()</span></code></pre></div>
 </div>
 <div id="关闭连接" class="section level2" number="9.6">
 <h2>
 <span class="header-section-number">9.6</span> 关闭连接<a class="anchor" aria-label="anchor" href="#%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb553"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb553-1"><a href="pymysql.html#cb553-1" aria-hidden="true" tabindex="-1"></a>conn.close()</span></code></pre></div>
+<div class="sourceCode" id="cb544"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb544-1"><a href="pymysql.html#cb544-1" tabindex="-1"></a>conn.close()</span></code></pre></div>
 </div>
 <div id="使用with自动关闭" class="section level2" number="9.7">
 <h2>
@@ -263,26 +262,26 @@
 <h2>
 <span class="header-section-number">9.8</span> 总结操作<a class="anchor" aria-label="anchor" href="#%E6%80%BB%E7%BB%93%E6%93%8D%E4%BD%9C"><i class="fas fa-link"></i></a>
 </h2>
-<div class="sourceCode" id="cb555"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb555-1"><a href="pymysql.html#cb555-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to the database</span></span>
-<span id="cb555-2"><a href="pymysql.html#cb555-2" aria-hidden="true" tabindex="-1"></a>connection <span class="op">=</span> pymysql.<span class="ex">connect</span>(host<span class="op">=</span><span class="st">'localhost'</span>,</span>
-<span id="cb555-3"><a href="pymysql.html#cb555-3" aria-hidden="true" tabindex="-1"></a>                             user<span class="op">=</span><span class="st">'root'</span>,</span>
-<span id="cb555-4"><a href="pymysql.html#cb555-4" aria-hidden="true" tabindex="-1"></a>                             port<span class="op">=</span><span class="dv">3306</span>,</span>
-<span id="cb555-5"><a href="pymysql.html#cb555-5" aria-hidden="true" tabindex="-1"></a>                             password<span class="op">=</span><span class="st">'990925wcldsg'</span>,</span>
-<span id="cb555-6"><a href="pymysql.html#cb555-6" aria-hidden="true" tabindex="-1"></a>                             database<span class="op">=</span><span class="st">'订单录入'</span></span>
-<span id="cb555-7"><a href="pymysql.html#cb555-7" aria-hidden="true" tabindex="-1"></a>                             <span class="co">#charset='utf8mb4'</span></span>
-<span id="cb555-8"><a href="pymysql.html#cb555-8" aria-hidden="true" tabindex="-1"></a>                             )</span>
-<span id="cb555-9"><a href="pymysql.html#cb555-9" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> connection:</span>
-<span id="cb555-10"><a href="pymysql.html#cb555-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> connection.cursor() <span class="im">as</span> cursor:</span>
-<span id="cb555-11"><a href="pymysql.html#cb555-11" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Read a single record</span></span>
-<span id="cb555-12"><a href="pymysql.html#cb555-12" aria-hidden="true" tabindex="-1"></a>        sql <span class="op">=</span> <span class="st">"select quantity,item_price from orderitems where quantity&gt;</span><span class="sc">%s</span><span class="st">"</span></span>
-<span id="cb555-13"><a href="pymysql.html#cb555-13" aria-hidden="true" tabindex="-1"></a>        cursor.execute(sql, (<span class="dv">5</span>,))</span>
-<span id="cb555-14"><a href="pymysql.html#cb555-14" aria-hidden="true" tabindex="-1"></a>        result <span class="op">=</span> cursor.fetchone()</span>
-<span id="cb555-15"><a href="pymysql.html#cb555-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(result)</span>
-<span id="cb555-16"><a href="pymysql.html#cb555-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> connection.cursor() <span class="im">as</span> cursor:</span>
-<span id="cb555-17"><a href="pymysql.html#cb555-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 似乎参数不能作为列名</span></span>
-<span id="cb555-18"><a href="pymysql.html#cb555-18" aria-hidden="true" tabindex="-1"></a>        sql <span class="op">=</span> <span class="st">"select cust_id,</span><span class="sc">%s</span><span class="st"> from customers"</span></span>
-<span id="cb555-19"><a href="pymysql.html#cb555-19" aria-hidden="true" tabindex="-1"></a>        cursor.execute(sql, (<span class="st">"cust_name"</span>,))</span>
-<span id="cb555-20"><a href="pymysql.html#cb555-20" aria-hidden="true" tabindex="-1"></a>        cursor.fetchone()</span></code></pre></div>
+<div class="sourceCode" id="cb546"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb546-1"><a href="pymysql.html#cb546-1" tabindex="-1"></a><span class="co"># Connect to the database</span></span>
+<span id="cb546-2"><a href="pymysql.html#cb546-2" tabindex="-1"></a>connection <span class="op">=</span> pymysql.<span class="ex">connect</span>(host<span class="op">=</span><span class="st">'localhost'</span>,</span>
+<span id="cb546-3"><a href="pymysql.html#cb546-3" tabindex="-1"></a>                             user<span class="op">=</span><span class="st">'root'</span>,</span>
+<span id="cb546-4"><a href="pymysql.html#cb546-4" tabindex="-1"></a>                             port<span class="op">=</span><span class="dv">3306</span>,</span>
+<span id="cb546-5"><a href="pymysql.html#cb546-5" tabindex="-1"></a>                             password<span class="op">=</span><span class="st">'990925wcldsg'</span>,</span>
+<span id="cb546-6"><a href="pymysql.html#cb546-6" tabindex="-1"></a>                             database<span class="op">=</span><span class="st">'订单录入'</span></span>
+<span id="cb546-7"><a href="pymysql.html#cb546-7" tabindex="-1"></a>                             <span class="co">#charset='utf8mb4'</span></span>
+<span id="cb546-8"><a href="pymysql.html#cb546-8" tabindex="-1"></a>                             )</span>
+<span id="cb546-9"><a href="pymysql.html#cb546-9" tabindex="-1"></a><span class="cf">with</span> connection:</span>
+<span id="cb546-10"><a href="pymysql.html#cb546-10" tabindex="-1"></a>    <span class="cf">with</span> connection.cursor() <span class="im">as</span> cursor:</span>
+<span id="cb546-11"><a href="pymysql.html#cb546-11" tabindex="-1"></a>        <span class="co"># Read a single record</span></span>
+<span id="cb546-12"><a href="pymysql.html#cb546-12" tabindex="-1"></a>        sql <span class="op">=</span> <span class="st">"select quantity,item_price from orderitems where quantity&gt;</span><span class="sc">%s</span><span class="st">"</span></span>
+<span id="cb546-13"><a href="pymysql.html#cb546-13" tabindex="-1"></a>        cursor.execute(sql, (<span class="dv">5</span>,))</span>
+<span id="cb546-14"><a href="pymysql.html#cb546-14" tabindex="-1"></a>        result <span class="op">=</span> cursor.fetchone()</span>
+<span id="cb546-15"><a href="pymysql.html#cb546-15" tabindex="-1"></a>        <span class="bu">print</span>(result)</span>
+<span id="cb546-16"><a href="pymysql.html#cb546-16" tabindex="-1"></a>    <span class="cf">with</span> connection.cursor() <span class="im">as</span> cursor:</span>
+<span id="cb546-17"><a href="pymysql.html#cb546-17" tabindex="-1"></a>        <span class="co"># 似乎参数不能作为列名</span></span>
+<span id="cb546-18"><a href="pymysql.html#cb546-18" tabindex="-1"></a>        sql <span class="op">=</span> <span class="st">"select cust_id,</span><span class="sc">%s</span><span class="st"> from customers"</span></span>
+<span id="cb546-19"><a href="pymysql.html#cb546-19" tabindex="-1"></a>        cursor.execute(sql, (<span class="st">"cust_name"</span>,))</span>
+<span id="cb546-20"><a href="pymysql.html#cb546-20" tabindex="-1"></a>        cursor.fetchone()</span></code></pre></div>
 <pre class="scroll-200"><code>16
 (100, Decimal('5.49'))
 5
@@ -293,41 +292,6 @@
 
 
 
-<div class="chapter-nav">
-<div class="prev"><a href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></div>
-<div class="empty"></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#pymysql"><span class="header-section-number">9</span> PyMysql</a></li>
-<li><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E5%8C%85"><span class="header-section-number">9.1</span> 导入包</a></li>
-<li>
-<a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="header-section-number">9.2</span> 连接数据库</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="header-section-number">9.2.1</span> 连接对象方法</a></li></ul>
-</li>
-<li>
-<a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%A0%87"><span class="header-section-number">9.3</span> 创建游标</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%B8%B8%E6%A0%87%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="header-section-number">9.3.1</span> 游标对象方法</a></li>
-<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87%E6%89%A7%E8%A1%8C%E8%AF%AD%E5%8F%A5"><span class="header-section-number">9.3.2</span> 使用游标执行语句</a></li>
-<li><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C"><span class="header-section-number">9.3.3</span> 获取结果</a></li>
-<li><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%B8%B8%E6%A0%87%E6%89%80%E5%9C%A8%E8%A1%8C"><span class="header-section-number">9.3.4</span> 设置游标所在行</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E5%8F%98%E5%8C%96"><span class="header-section-number">9.4</span> 提交变化</a></li>
-<li><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E6%B8%B8%E6%A0%87"><span class="header-section-number">9.5</span> 关闭游标</a></li>
-<li><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5"><span class="header-section-number">9.6</span> 关闭连接</a></li>
-<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8with%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD"><span class="header-section-number">9.7</span> 使用with自动关闭</a></li>
-<li><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E6%93%8D%E4%BD%9C"><span class="header-section-number">9.8</span> 总结操作</a></li>
-</ul>
-
-      <div class="book-extra">
-        <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/PyMysql.RMd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/wangchenglong99/wangchenglong99.github.io/edit/main/PyMysql.RMd">Edit this page <i class="fab fa-github"></i></a></li>
-        </ul>
-</div>
-    </nav>
-</div>
-</div>
 <style>
 
 /* Style the tab */
@@ -484,12 +448,46 @@ function openTab(evt,tabName){
   
 
 </div>
+<div class="chapter-nav">
+<div class="prev"><a href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></div>
+<div class="next"><a href="introduction-3.html">introduction</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pymysql"><span class="header-section-number">9</span> PyMysql</a></li>
+<li><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E5%8C%85"><span class="header-section-number">9.1</span> 导入包</a></li>
+<li>
+<a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="header-section-number">9.2</span> 连接数据库</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="header-section-number">9.2.1</span> 连接对象方法</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%B8%B8%E6%A0%87"><span class="header-section-number">9.3</span> 创建游标</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%B8%B8%E6%A0%87%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="header-section-number">9.3.1</span> 游标对象方法</a></li>
+<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87%E6%89%A7%E8%A1%8C%E8%AF%AD%E5%8F%A5"><span class="header-section-number">9.3.2</span> 使用游标执行语句</a></li>
+<li><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%BB%93%E6%9E%9C"><span class="header-section-number">9.3.3</span> 获取结果</a></li>
+<li><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E6%B8%B8%E6%A0%87%E6%89%80%E5%9C%A8%E8%A1%8C"><span class="header-section-number">9.3.4</span> 设置游标所在行</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E5%8F%98%E5%8C%96"><span class="header-section-number">9.4</span> 提交变化</a></li>
+<li><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E6%B8%B8%E6%A0%87"><span class="header-section-number">9.5</span> 关闭游标</a></li>
+<li><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E8%BF%9E%E6%8E%A5"><span class="header-section-number">9.6</span> 关闭连接</a></li>
+<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8with%E8%87%AA%E5%8A%A8%E5%85%B3%E9%97%AD"><span class="header-section-number">9.7</span> 使用with自动关闭</a></li>
+<li><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E6%93%8D%E4%BD%9C"><span class="header-section-number">9.8</span> 总结操作</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/wangchenglong99/wangchenglong99.github.io/blob/main/PyMysql.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/wangchenglong99/wangchenglong99.github.io/edit/main/PyMysql.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
 </div> <!-- .container -->
 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2023-03-24.</p>
+    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2024-04-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -502,7 +500,7 @@ function openTab(evt,tabName){
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
@@ -526,5 +524,6 @@ for (let popover of popovers) {
   }
 }
 </script>
+</div>
 </body>
 </html>

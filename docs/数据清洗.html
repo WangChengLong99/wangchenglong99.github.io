@@ -7,7 +7,7 @@
 <title>第3章 数据清洗 | wcl</title>
 <meta name="author" content="第3章 数据清洗 | wcl">
 <meta name="description" content="3.1 查看数据信息 导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值 import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
-<meta name="generator" content="bookdown 0.27 with bs4_book()">
+<meta name="generator" content="bookdown 0.39 with bs4_book()">
 <meta property="og:title" content="第3章 数据清洗 | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/数据清洗.html">
@@ -17,10 +17,8 @@
 <meta name="twitter:description" content="3.1 查看数据信息 导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值 import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script><script src="libs/d3-3.3.8/d3.min.js"></script><script src="libs/dagre-0.4.0/dagre-d3.min.js"></script><link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet">
-<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script><link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
-<script src="libs/chromatography-0.1/chromatography.js"></script><script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script><style>
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><style>
     /* pre {
       max-height: 300px;
       overflow-y: auto;
@@ -63,23 +61,24 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html">关于</a></li>
 <li class="book-part">数据</li>
-<li><a class="" href="introduction-1.html">introduction</a></li>
+<li><a class="" href="introduction.html">introduction</a></li>
 <li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
 <li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
 <li><a class="active" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
 <li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
 <li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
-<li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="" href="matplotlib-1.html"><span class="header-section-number">6</span> matplotlib</a></li>
+<li><a class="" href="introduction-1.html">introduction</a></li>
+<li><a class="" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
 <li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
-<li><a class="" href="introduction-3.html">introduction</a></li>
+<li><a class="" href="introduction-2.html">introduction</a></li>
 <li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
 <li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
+<li><a class="" href="introduction-3.html">introduction</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -96,13 +95,13 @@
 <span class="header-section-number">3.1</span> 查看数据信息<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF"><i class="fas fa-link"></i></a>
 </h2>
 <p>导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb17-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb17-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb17-4"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.sans-serif'</span>]<span class="op">=</span>[<span class="st">'Simhei'</span>]<span class="op">;</span> <span class="co">#SimHei黑体 </span></span>
-<span id="cb17-5"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb17-5" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>]<span class="op">=</span><span class="va">False</span><span class="op">;</span> <span class="co">#正常显示图中负号</span></span>
-<span id="cb17-6"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb17-6" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"data/数据/学生.csv"</span>)</span>
-<span id="cb17-7"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb17-7" aria-hidden="true" tabindex="-1"></a>data.head(<span class="dv">5</span>).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb13-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb13-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb13-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-4"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb13-4" tabindex="-1"></a>plt.rcParams[<span class="st">'font.sans-serif'</span>]<span class="op">=</span>[<span class="st">'Simhei'</span>]<span class="op">;</span> <span class="co">#SimHei黑体 </span></span>
+<span id="cb13-5"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb13-5" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>]<span class="op">=</span><span class="va">False</span><span class="op">;</span> <span class="co">#正常显示图中负号</span></span>
+<span id="cb13-6"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb13-6" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">"data/数据/学生.csv"</span>)</span>
+<span id="cb13-7"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb13-7" tabindex="-1"></a>data.head(<span class="dv">5</span>).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
 <th></th>
@@ -161,12 +160,13 @@
 </tr>
 </tbody>
 </table></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb14-1" tabindex="-1"></a>pd.set_option(<span class="st">'future.no_silent_downcasting'</span>, <span class="va">True</span>)</span></code></pre></div>
 <div id="info" class="section level3" number="3.1.1">
 <h3>
 <span class="header-section-number">3.1.1</span> .info()<a class="anchor" aria-label="anchor" href="#info"><i class="fas fa-link"></i></a>
 </h3>
 <p>查看字段名，缺失值和字段类型</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb18-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb18-1" aria-hidden="true" tabindex="-1"></a>data.info()</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb15-1" tabindex="-1"></a>data.info()</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 1800 entries, 0 to 1799
 Data columns (total 6 columns):
@@ -186,7 +186,7 @@ memory usage: 84.5+ KB</code></pre>
 <span class="header-section-number">3.1.2</span> .dtypes<a class="anchor" aria-label="anchor" href="#dtypes"><i class="fas fa-link"></i></a>
 </h3>
 <p>查看字段类型</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb20-1" aria-hidden="true" tabindex="-1"></a>data.dtypes</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb17-1" tabindex="-1"></a>data.dtypes</span></code></pre></div>
 <pre class="scroll-200"><code>姓名    object
 性别    object
 班级    object
@@ -201,7 +201,7 @@ dtype: object</code></pre>
 </h3>
 <p>`<code>.describe(include/exclude=[])</code></p>
 <p>默认只对数值类型进行各种字段的描述,可以设置include和exclude参数对类型进行选择</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb22-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb22-1" aria-hidden="true" tabindex="-1"></a>data.describe().pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb19-1" tabindex="-1"></a>data.describe().pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
 <th></th>
@@ -260,7 +260,7 @@ dtype: object</code></pre>
 </tr>
 </tbody>
 </table></div>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb23-1" aria-hidden="true" tabindex="-1"></a>data.describe(include<span class="op">=</span>[<span class="st">"object"</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb20-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb20-1" tabindex="-1"></a>data.describe(include<span class="op">=</span>[<span class="st">"object"</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
 <th></th>
@@ -308,37 +308,37 @@ dtype: object</code></pre>
 </h3>
 <p><code>.isnull(axis)</code>,<code>.notnull(axis)</code></p>
 <p>数据缺失,python的None对象，numpy中的np.nan都被视为缺失,空字符串不被视为缺失。</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb24-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb24-1" aria-hidden="true" tabindex="-1"></a>nadata <span class="op">=</span> pd.DataFrame({<span class="st">'null'</span>:[<span class="va">None</span>,np.nan,<span class="st">''</span>,<span class="st">'nan'</span>,<span class="dv">0</span>]<span class="op">*</span><span class="dv">2</span>,</span>
-<span id="cb24-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb24-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">'value'</span>:np.random.choice([<span class="va">None</span>,np.nan]<span class="op">+</span><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>)),<span class="dv">10</span>,)})</span>
-<span id="cb24-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb24-3" aria-hidden="true" tabindex="-1"></a>nadata.head()</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb21-1" tabindex="-1"></a>nadata <span class="op">=</span> pd.DataFrame({<span class="st">'null'</span>:[<span class="va">None</span>,np.nan,<span class="st">''</span>,<span class="st">'nan'</span>,<span class="dv">0</span>]<span class="op">*</span><span class="dv">2</span>,</span>
+<span id="cb21-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb21-2" tabindex="-1"></a>                      <span class="st">'value'</span>:np.random.choice([<span class="va">None</span>,np.nan]<span class="op">+</span><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>)),<span class="dv">10</span>,)})</span>
+<span id="cb21-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb21-3" tabindex="-1"></a>nadata.head()</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     1
+0  None     0
 1   NaN     8
-2           0
-3   nan     8
-4     0     8</code></pre>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb26-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb26-1" aria-hidden="true" tabindex="-1"></a>nadata.isnull().head()</span></code></pre></div>
+2           2
+3   nan  None
+4     0     4</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb23-1" tabindex="-1"></a>nadata.isnull().head()</span></code></pre></div>
 <pre class="scroll-200"><code>    null  value
 0   True  False
 1   True  False
 2  False  False
-3  False  False
+3  False   True
 4  False  False</code></pre>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb28-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb28-1" aria-hidden="true" tabindex="-1"></a>nadata[nadata[<span class="st">'null'</span>].notnull()]<span class="co"># 根据某个字段的未缺失值选取行</span></span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb25-1" tabindex="-1"></a>nadata[nadata[<span class="st">'null'</span>].notnull()]<span class="co"># 根据某个字段的未缺失值选取行</span></span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-2          0
-3  nan     8
-4    0     8
+2          2
+3  nan  None
+4    0     4
 7          7
-8  nan     2
-9    0     7</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb30-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb30-1" aria-hidden="true" tabindex="-1"></a>nadata.isnull().<span class="bu">sum</span>()<span class="op">/</span><span class="bu">len</span>(nadata)<span class="co">#查看各个字段的缺失比例</span></span></code></pre></div>
+8  nan     4
+9    0     9</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb27-1" tabindex="-1"></a>nadata.isnull().<span class="bu">sum</span>()<span class="op">/</span><span class="bu">len</span>(nadata)<span class="co">#查看各个字段的缺失比例</span></span></code></pre></div>
 <pre class="scroll-200"><code>null     0.4
 value    0.1
 dtype: float64</code></pre>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb32-1" aria-hidden="true" tabindex="-1"></a>lack_rate <span class="op">=</span> <span class="fl">0.3</span></span>
-<span id="cb32-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#选取出所有缺失比例大于0.3的字段名</span></span>
-<span id="cb32-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb32-3" aria-hidden="true" tabindex="-1"></a>(nadata.isnull().<span class="bu">sum</span>()<span class="op">/</span><span class="bu">len</span>(nadata)).pipe(<span class="kw">lambda</span> df:df[df<span class="op">&gt;</span>lack_rate].index.values)</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb29-1" tabindex="-1"></a>lack_rate <span class="op">=</span> <span class="fl">0.3</span></span>
+<span id="cb29-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb29-2" tabindex="-1"></a><span class="co">#选取出所有缺失比例大于0.3的字段名</span></span>
+<span id="cb29-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb29-3" tabindex="-1"></a>(nadata.isnull().<span class="bu">sum</span>()<span class="op">/</span><span class="bu">len</span>(nadata)).pipe(<span class="kw">lambda</span> df:df[df<span class="op">&gt;</span>lack_rate].index.values)</span></code></pre></div>
 <pre class="scroll-200"><code>array(['null'], dtype=object)</code></pre>
 <p>通常对于缺失值的处理，最常用的方法无外乎删除法、替换法和插补法。删除法是指将缺失值所在的观测行删除（前提是缺失行的比例非常低，如5%以内），或者删除缺失值所对应的变量（前提是该变量中包含的缺失值比例非常高，如70%左右）；替换法是指直接利用缺失变量的均值、中位数或众数替换该变量中的缺失值，其好处是缺失值的处理速度快，弊端是易产生有偏估计，导致缺失值替换的准确性下降；插补法则是利用有监督的机器学习方法（如回归模型、树模型、网络模型等）对缺失值作预测，其优势在于预测的准确性高，缺点是需要大量的计算，导致缺失值的处理速度大打折扣。</p>
 </div>
@@ -347,36 +347,38 @@ dtype: float64</code></pre>
 <span class="header-section-number">3.2.2</span> 删除缺失值<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E7%BC%BA%E5%A4%B1%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.dropna(axis,how,subset,thresh)</code></p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb34-1" aria-hidden="true" tabindex="-1"></a>nadata.dropna(how<span class="op">=</span><span class="st">"all"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb31-1" tabindex="-1"></a>nadata.dropna(how<span class="op">=</span><span class="st">"all"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     1
+0  None     0
 1   NaN     8
-2           0
-3   nan     8
-4     0     8
-5  None     0
+2           2
+3   nan  None
+4     0     4
+5  None     1
+6   NaN     3
 7           7
-8   nan     2
-9     0     7</code></pre>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb36-1" aria-hidden="true" tabindex="-1"></a>nadata.dropna(subset<span class="op">=</span>[<span class="st">"null"</span>])</span></code></pre></div>
+8   nan     4
+9     0     9</code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb33-1" tabindex="-1"></a>nadata.dropna(subset<span class="op">=</span>[<span class="st">"null"</span>])</span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-2          0
-3  nan     8
-4    0     8
+2          2
+3  nan  None
+4    0     4
 7          7
-8  nan     2
-9    0     7</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb38-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb38-1" aria-hidden="true" tabindex="-1"></a>nadata.dropna(thresh<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
+8  nan     4
+9    0     9</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb35-1" tabindex="-1"></a>nadata.dropna(thresh<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     1
+0  None     0
 1   NaN     8
-2           0
-3   nan     8
-4     0     8
-5  None     0
+2           2
+3   nan  None
+4     0     4
+5  None     1
+6   NaN     3
 7           7
-8   nan     2
-9     0     7</code></pre>
+8   nan     4
+9     0     9</code></pre>
 </div>
 <div id="填补缺失值" class="section level3" number="3.2.3">
 <h3>
@@ -384,42 +386,43 @@ dtype: float64</code></pre>
 </h3>
 <p><code>.fillna(value,method,**kwargs)</code></p>
 <p>通过给字段传递标量，可以进行均值，最大值，最小值，中值等填补，通过method参数可以进行前向和后向填补。</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb40-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb40-1" aria-hidden="true" tabindex="-1"></a>nadata.fillna(<span class="dv">0</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>  null  value
-0    0      1
-1    0      8
-2           0
-3  nan      8
-4    0      8
-5    0      0
-6    0      0
-7           7
-8  nan      2
-9    0      7</code></pre>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb42-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb42-1" aria-hidden="true" tabindex="-1"></a>nadata.fillna({<span class="st">"null"</span>:<span class="dv">0</span>,<span class="st">"value"</span>:<span class="bu">int</span>(np.mean(nadata.value))})<span class="co">#不加int会变成浮点型</span></span></code></pre></div>
-<pre class="scroll-200"><code>  null  value
-0    0      1
-1    0      8
-2           0
-3  nan      8
-4    0      8
-5    0      0
-6    0      4
-7           7
-8  nan      2
-9    0      7</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb44-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb44-1" aria-hidden="true" tabindex="-1"></a>nadata.fillna(method<span class="op">=</span><span class="st">"bfill"</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>  null  value
-0           1
-1           8
-2           0
-3  nan      8
-4    0      8
-5           0
-6           7
-7           7
-8  nan      2
-9    0      7</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb37-1" tabindex="-1"></a>nadata.fillna(<span class="dv">0</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>  null value
+0    0     0
+1    0     8
+2          2
+3  nan     0
+4    0     4
+5    0     1
+6    0     3
+7          7
+8  nan     4
+9    0     9</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb39-1" tabindex="-1"></a>nadata.fillna({<span class="st">"null"</span>:<span class="dv">0</span>,<span class="st">"value"</span>:<span class="bu">int</span>(np.mean(nadata.value))})<span class="co">#不加int会变成浮点型</span></span></code></pre></div>
+<pre class="scroll-200"><code>  null value
+0    0     0
+1    0     8
+2          2
+3  nan     4
+4    0     4
+5    0     1
+6    0     3
+7          7
+8  nan     4
+9    0     9</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb41-1" tabindex="-1"></a>nadata.fillna(method<span class="op">=</span><span class="st">"bfill"</span>)</span></code></pre></div>
+<pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
+  null value
+0          0
+1          8
+2          2
+3  nan     4
+4    0     4
+5          1
+6          3
+7          7
+8  nan     4
+9    0     9</code></pre>
 </div>
 <div id="插补法" class="section level3" number="3.2.4">
 <h3>
@@ -434,7 +437,7 @@ dtype: float64</code></pre>
 </h2>
 <p>读入的数据类型包含object(任何对象都可以用object来存储)，number(数值类型),string(字符串类型),bool(逻辑类型).</p>
 <p>可以用<code>.select_dtypes(include/exclude=[])</code>选取对应类型的列</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb46-1" aria-hidden="true" tabindex="-1"></a>data.select_dtypes(include<span class="op">=</span>[<span class="st">"object"</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb43-1" tabindex="-1"></a>data.select_dtypes(include<span class="op">=</span>[<span class="st">"object"</span>])</span></code></pre></div>
 <pre class="scroll-200"><code>         姓名 性别       班级
 0        a1  男   高一(1)班
 1        a2  女   高一(2)班
@@ -449,7 +452,7 @@ dtype: float64</code></pre>
 1799  a1800  女  高三(20)班
 
 [1800 rows x 3 columns]</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb48-1" aria-hidden="true" tabindex="-1"></a>data.select_dtypes(exclude<span class="op">=</span>[<span class="st">"object"</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb45-1" tabindex="-1"></a>data.select_dtypes(exclude<span class="op">=</span>[<span class="st">"object"</span>])</span></code></pre></div>
 <pre class="scroll-200"><code>      数学  语文  英语
 0     61  59  70
 1     62  77  74
@@ -490,7 +493,7 @@ dtype: float64</code></pre>
 </tbody>
 </table></div>
 <p>字符串类型的浮点数必须先转为浮点数才能转为int</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb50-1" aria-hidden="true" tabindex="-1"></a>data.dtypes</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb47-1" tabindex="-1"></a>data.dtypes</span></code></pre></div>
 <pre class="scroll-200"><code>姓名    object
 性别    object
 班级    object
@@ -498,31 +501,31 @@ dtype: float64</code></pre>
 语文     int64
 英语     int64
 dtype: object</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb52-1" aria-hidden="true" tabindex="-1"></a>ts <span class="op">=</span> pd.read_csv(<span class="st">"data/数据/year-month-day.csv"</span>,index_col<span class="op">=</span>[<span class="dv">0</span>]).reset_index().rename(columns<span class="op">=</span>{<span class="st">"index"</span>:<span class="st">"day"</span>})</span>
-<span id="cb52-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb52-2" aria-hidden="true" tabindex="-1"></a>ts.dtypes</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb49-1" tabindex="-1"></a>ts <span class="op">=</span> pd.read_csv(<span class="st">"data/数据/year-month-day.csv"</span>,index_col<span class="op">=</span>[<span class="dv">0</span>]).reset_index().rename(columns<span class="op">=</span>{<span class="st">"index"</span>:<span class="st">"day"</span>})</span>
+<span id="cb49-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb49-2" tabindex="-1"></a>ts.dtypes</span></code></pre></div>
 <pre class="scroll-200"><code>day       object
 value    float64
 dtype: object</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb54-1" aria-hidden="true" tabindex="-1"></a>data.astype({<span class="st">"姓名"</span>:<span class="st">"string"</span>,<span class="st">"性别"</span>:<span class="st">"string"</span>,<span class="st">"班级"</span>:<span class="st">"string"</span>}).dtypes</span></code></pre></div>
-<pre class="scroll-200"><code>姓名    string
-性别    string
-班级    string
-数学     int64
-语文     int64
-英语     int64
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb51-1" tabindex="-1"></a>data.astype({<span class="st">"姓名"</span>:<span class="st">"string"</span>,<span class="st">"性别"</span>:<span class="st">"string"</span>,<span class="st">"班级"</span>:<span class="st">"string"</span>}).dtypes</span></code></pre></div>
+<pre class="scroll-200"><code>姓名    string[python]
+性别    string[python]
+班级    string[python]
+数学             int64
+语文             int64
+英语             int64
 dtype: object</code></pre>
-<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb56-1" aria-hidden="true" tabindex="-1"></a>ts.astype({<span class="st">"day"</span>:<span class="st">"datetime64"</span>}).dtypes</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb53-1" tabindex="-1"></a>ts.astype({<span class="st">"day"</span>:<span class="st">"datetime64[ns]"</span>}).dtypes</span></code></pre></div>
 <pre class="scroll-200"><code>day      datetime64[ns]
 value           float64
 dtype: object</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb58-1" aria-hidden="true" tabindex="-1"></a>ts[<span class="st">"day"</span>] <span class="op">=</span> pd.to_datetime(ts.day)</span>
-<span id="cb58-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb58-2" aria-hidden="true" tabindex="-1"></a>ts.day.dt.year.head()</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb55-1" tabindex="-1"></a>ts[<span class="st">"day"</span>] <span class="op">=</span> pd.to_datetime(ts.day)</span>
+<span id="cb55-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb55-2" tabindex="-1"></a>ts.day.dt.year.head()</span></code></pre></div>
 <pre class="scroll-200"><code>0    2023
 1    2023
 2    2023
 3    2023
 4    2023
-Name: day, dtype: int64</code></pre>
+Name: day, dtype: int32</code></pre>
 </div>
 <div id="重复值" class="section level2" number="3.4">
 <h2>
@@ -534,14 +537,14 @@ Name: day, dtype: int64</code></pre>
 <span class="header-section-number">3.4.1</span> 查看重复值<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E9%87%8D%E5%A4%8D%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.duplicated(subset)</code>,可以设置subset参数只对某些子集判断</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb60-1" aria-hidden="true" tabindex="-1"></a>data.duplicated().<span class="bu">any</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb57-1" tabindex="-1"></a>data.duplicated().<span class="bu">any</span>()</span></code></pre></div>
 <pre class="scroll-200"><code>False</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb62-1" aria-hidden="true" tabindex="-1"></a>data[data.duplicated()]</span>
-<span id="cb62-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="co">#根据index value来删除重复行</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb59-1" tabindex="-1"></a>data[data.duplicated()]</span></code></pre></div>
 <pre class="scroll-200"><code>Empty DataFrame
 Columns: [姓名, 性别, 班级, 数学, 语文, 英语]
 Index: []</code></pre>
-<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb64-1" aria-hidden="true" tabindex="-1"></a>data.index.duplicated().<span class="bu">sum</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb61-1" tabindex="-1"></a><span class="co">#根据index value来删除重复行</span></span>
+<span id="cb61-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb61-2" tabindex="-1"></a>data.index.duplicated().<span class="bu">sum</span>()</span></code></pre></div>
 <pre class="scroll-200"><code>0</code></pre>
 </div>
 <div id="删除重复值" class="section level3" number="3.4.2">
@@ -549,7 +552,7 @@ Index: []</code></pre>
 <span class="header-section-number">3.4.2</span> 删除重复值<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.drop_duplicates(subset)</code>，同样可以设置subset参数</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb66-1" aria-hidden="true" tabindex="-1"></a>data.drop_duplicates()</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb63-1" tabindex="-1"></a>data.drop_duplicates()</span></code></pre></div>
 <pre class="scroll-200"><code>         姓名 性别       班级  数学  语文  英语
 0        a1  男   高一(1)班  61  59  70
 1        a2  女   高一(2)班  62  77  74
@@ -564,7 +567,7 @@ Index: []</code></pre>
 1799  a1800  女  高三(20)班  60  81  65
 
 [1800 rows x 6 columns]</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb68-1" aria-hidden="true" tabindex="-1"></a>data[<span class="op">~</span>data.index.duplicated()]</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb65-1" tabindex="-1"></a>data[<span class="op">~</span>data.index.duplicated()]</span></code></pre></div>
 <pre class="scroll-200"><code>         姓名 性别       班级  数学  语文  英语
 0        a1  男   高一(1)班  61  59  70
 1        a2  女   高一(2)班  62  77  74
@@ -601,31 +604,28 @@ Index: []</code></pre>
 <p>图中的下四分位数指的是数据的25%分位点所对应的值（Q1）；中位数即为数据的50%分位点所对应的值（Q2）；上四分位数则为数据的75%分位点所对应的值（Q3）；上须的计算公式为Q3+1.5(Q3-Q1)；下须的计算公式为Q1-1.5(Q3-Q1)。其中，Q3-Q1表示四分位差。如果采用箱线图识别异常值，其判断标准是，当变量的数据值大于箱线图的上须或者小于箱线图的下须时，就可以认为这样的数据点为异常点。</p>
 <p>所以，基于上方的箱线图，可以定义某个数值型变量中的异常点和极端异常点，它们的判断表达式如下表所示：</p>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E5%88%A4%E6%96%AD%E5%BC%82%E5%B8%B8.png" width="95%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-1" aria-hidden="true" tabindex="-1"></a>abdata <span class="op">=</span> pd.DataFrame({<span class="st">'value'</span>:<span class="bu">list</span>(np.random.normal(<span class="dv">70</span>,<span class="dv">5</span>,<span class="dv">100</span>))<span class="op">+</span>[<span class="dv">50</span>,<span class="dv">57</span>,<span class="dv">83</span>,<span class="dv">90</span>]})</span>
-<span id="cb70-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-2" aria-hidden="true" tabindex="-1"></a>abdata.boxplot(</span>
-<span id="cb70-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  whis <span class="op">=</span> <span class="fl">1.5</span>, <span class="co"># 指定1.5倍的四分位差</span></span>
-<span id="cb70-4"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-4" aria-hidden="true" tabindex="-1"></a>  widths <span class="op">=</span> <span class="fl">0.7</span>, <span class="co"># 指定箱线图的宽度为0.8</span></span>
-<span id="cb70-5"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-5" aria-hidden="true" tabindex="-1"></a>  patch_artist <span class="op">=</span> <span class="va">True</span>, <span class="co"># 指定需要填充箱体颜色</span></span>
-<span id="cb70-6"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-6" aria-hidden="true" tabindex="-1"></a>  showmeans <span class="op">=</span> <span class="va">True</span>, <span class="co"># 指定需要显示均值</span></span>
-<span id="cb70-7"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-7" aria-hidden="true" tabindex="-1"></a>  <span class="co">#boxprops = {'facecolor':'steelblue'}, # 指定箱体的填充色为铁蓝色</span></span>
-<span id="cb70-8"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 指定异常点的填充色、边框色和大小</span></span>
-<span id="cb70-9"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-9" aria-hidden="true" tabindex="-1"></a>  <span class="co">#flierprops = {'markerfacecolor':'red', 'markeredgecolor':'red', 'markersize':4}, # 指定均值点的标记符号（菱形）、填充色和大小</span></span>
-<span id="cb70-10"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-10" aria-hidden="true" tabindex="-1"></a>  <span class="co">#meanprops = {'marker':'D','markerfacecolor':'black', 'markersize':4}, </span></span>
-<span id="cb70-11"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-11" aria-hidden="true" tabindex="-1"></a>  <span class="co">#medianprops = {'linestyle':'--','color':'orange'},#指定中位数的标记符号（虚线）和颜色</span></span>
-<span id="cb70-12"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-12" aria-hidden="true" tabindex="-1"></a>  <span class="co">#labels = [''] # 去除箱线图的x轴刻度值</span></span>
-<span id="cb70-13"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-13" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb70-14"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-14" aria-hidden="true" tabindex="-1"></a><span class="co">#显示图形</span></span>
-<span id="cb70-15"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-1" tabindex="-1"></a>abdata <span class="op">=</span> pd.DataFrame({<span class="st">'value'</span>:<span class="bu">list</span>(np.random.normal(<span class="dv">70</span>,<span class="dv">5</span>,<span class="dv">100</span>))<span class="op">+</span>[<span class="dv">50</span>,<span class="dv">57</span>,<span class="dv">83</span>,<span class="dv">90</span>]})</span>
+<span id="cb67-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-2" tabindex="-1"></a>abdata.boxplot(</span>
+<span id="cb67-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-3" tabindex="-1"></a>  whis <span class="op">=</span> <span class="fl">1.5</span>, <span class="co"># 指定1.5倍的四分位差</span></span>
+<span id="cb67-4"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-4" tabindex="-1"></a>  widths <span class="op">=</span> <span class="fl">0.7</span>, <span class="co"># 指定箱线图的宽度为0.8</span></span>
+<span id="cb67-5"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-5" tabindex="-1"></a>  patch_artist <span class="op">=</span> <span class="va">True</span>, <span class="co"># 指定需要填充箱体颜色</span></span>
+<span id="cb67-6"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-6" tabindex="-1"></a>  showmeans <span class="op">=</span> <span class="va">True</span>, <span class="co"># 指定需要显示均值</span></span>
+<span id="cb67-7"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-7" tabindex="-1"></a>  <span class="co">#boxprops = {'facecolor':'steelblue'}, # 指定箱体的填充色为铁蓝色</span></span>
+<span id="cb67-8"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-8" tabindex="-1"></a>  <span class="co"># 指定异常点的填充色、边框色和大小</span></span>
+<span id="cb67-9"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-9" tabindex="-1"></a>  <span class="co">#flierprops = {'markerfacecolor':'red', 'markeredgecolor':'red', 'markersize':4}, # 指定均值点的标记符号（菱形）、填充色和大小</span></span>
+<span id="cb67-10"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-10" tabindex="-1"></a>  <span class="co">#meanprops = {'marker':'D','markerfacecolor':'black', 'markersize':4}, </span></span>
+<span id="cb67-11"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-11" tabindex="-1"></a>  <span class="co">#medianprops = {'linestyle':'--','color':'orange'},#指定中位数的标记符号（虚线）和颜色</span></span>
+<span id="cb67-12"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-12" tabindex="-1"></a>  <span class="co">#labels = [''] # 去除箱线图的x轴刻度值</span></span>
+<span id="cb67-13"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-13" tabindex="-1"></a>  )</span>
+<span id="cb67-14"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-14" tabindex="-1"></a><span class="co">#显示图形</span></span>
+<span id="cb67-15"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb67-15" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97_files/figure-html/plot-box-abnormal-1.png" width="95%" style="display: block; margin: auto;"></div>
 <p>这样做只能直观呈现，要想得到异常点，可以手动计算选择</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb71-1" aria-hidden="true" tabindex="-1"></a>q1,q3 <span class="op">=</span> abdata.value.quantile(q<span class="op">=</span>[<span class="fl">0.25</span>,<span class="fl">0.75</span>])</span>
-<span id="cb71-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb71-2" aria-hidden="true" tabindex="-1"></a>abdata[(abdata.value <span class="op">&lt;</span> q1<span class="op">-</span><span class="fl">1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1)) <span class="op">|</span> (abdata.value<span class="op">&gt;</span>q3<span class="op">+</span><span class="fl">1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1))]</span></code></pre></div>
-<pre class="scroll-200"><code>         value
-61   56.623736
-100  50.000000
-101  57.000000
-102  83.000000
-103  90.000000</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb68-1" tabindex="-1"></a>q1,q3 <span class="op">=</span> abdata.value.quantile(q<span class="op">=</span>[<span class="fl">0.25</span>,<span class="fl">0.75</span>])</span>
+<span id="cb68-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb68-2" tabindex="-1"></a>abdata[(abdata.value <span class="op">&lt;</span> q1<span class="op">-</span><span class="fl">1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1)) <span class="op">|</span> (abdata.value<span class="op">&gt;</span>q3<span class="op">+</span><span class="fl">1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1))]</span></code></pre></div>
+<pre class="scroll-200"><code>     value
+100   50.0
+103   90.0</code></pre>
 </div>
 <div id="正态分布图" class="section level4" number="3.5.1.2">
 <h4>
@@ -636,40 +636,39 @@ Index: []</code></pre>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83.png" width="95%" style="display: block; margin: auto;"></div>
 <p>可以按照下表中的判断条件，识别出数值型变量的异常点和极端异常点，如下表所示：</p>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E5%BC%82%E5%B8%B8%E7%82%B9.png" width="95%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 绘制单条折线图，并在折线图的基础上添加点图</span></span>
-<span id="cb73-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-2" aria-hidden="true" tabindex="-1"></a>abdata.index <span class="op">=</span> pd.date_range(<span class="st">"2023-01-01"</span>,periods<span class="op">=</span><span class="bu">len</span>(abdata))</span>
-<span id="cb73-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-3" aria-hidden="true" tabindex="-1"></a>abdata.plot( </span>
-<span id="cb73-4"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-4" aria-hidden="true" tabindex="-1"></a>      linestyle <span class="op">=</span> <span class="st">'-'</span>, <span class="co"># 设置折线类型</span></span>
-<span id="cb73-5"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-5" aria-hidden="true" tabindex="-1"></a>      linewidth <span class="op">=</span> <span class="dv">2</span>, <span class="co"># 设置线条宽度</span></span>
-<span id="cb73-6"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-6" aria-hidden="true" tabindex="-1"></a>      color <span class="op">=</span> <span class="st">'steelblue'</span>, <span class="co"># 设置折线颜色</span></span>
-<span id="cb73-7"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-7" aria-hidden="true" tabindex="-1"></a>      marker <span class="op">=</span> <span class="st">'o'</span>, <span class="co"># 往折线图中添加圆点</span></span>
-<span id="cb73-8"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-8" aria-hidden="true" tabindex="-1"></a>      markersize <span class="op">=</span> <span class="dv">4</span>, <span class="co"># 设置点的大小</span></span>
-<span id="cb73-9"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-9" aria-hidden="true" tabindex="-1"></a>      markeredgecolor<span class="op">=</span><span class="st">'black'</span>, <span class="co"># 设置点的边框色</span></span>
-<span id="cb73-10"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-10" aria-hidden="true" tabindex="-1"></a>      markerfacecolor<span class="op">=</span><span class="st">'black'</span>) <span class="co"># 设置点的填充色</span></span>
-<span id="cb73-11"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-11" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb73-12"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 添加上下界的水平参考线（便于判断异常点，如下判断极端异常点，只需将2改为3）</span></span>
-<span id="cb73-13"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-13" aria-hidden="true" tabindex="-1"></a>plt.axhline(y <span class="op">=</span> abdata.value.mean() <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>abdata.value.std(), linestyle <span class="op">=</span> <span class="st">'--'</span>, color <span class="op">=</span> <span class="st">'gray'</span>)</span>
-<span id="cb73-14"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-14" aria-hidden="true" tabindex="-1"></a>plt.axhline(y <span class="op">=</span> abdata.value.mean() <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>abdata.value.std(), linestyle <span class="op">=</span> <span class="st">'--'</span>, color <span class="op">=</span> <span class="st">'gray'</span>)</span>
-<span id="cb73-15"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-16"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 导入模块，用于日期刻度的修改（因为默认格式下的日期刻度标签并不是很友好）</span></span>
-<span id="cb73-17"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-17" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
-<span id="cb73-18"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 获取图的坐标信息</span></span>
-<span id="cb73-19"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-19" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> plt.gca()</span>
-<span id="cb73-20"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置日期的显示格式  </span></span>
-<span id="cb73-21"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-21" aria-hidden="true" tabindex="-1"></a>date_format <span class="op">=</span> mpl.dates.DateFormatter(<span class="st">"%m-</span><span class="sc">%d</span><span class="st">"</span>)  </span>
-<span id="cb73-22"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-22" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_formatter(date_format) </span>
-<span id="cb73-23"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-24"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 设置x轴每个刻度的间隔天数</span></span>
-<span id="cb73-25"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-25" aria-hidden="true" tabindex="-1"></a>xlocator <span class="op">=</span> mpl.ticker.MultipleLocator(<span class="dv">7</span>)</span>
-<span id="cb73-26"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-26" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(xlocator)</span>
-<span id="cb73-27"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-27" aria-hidden="true" tabindex="-1"></a><span class="co"># 为了避免x轴刻度标签的紧凑，将刻度标签旋转45度</span></span>
-<span id="cb73-28"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-28" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb73-29"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb73-30"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 显示图形</span></span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-1" tabindex="-1"></a><span class="co"># 绘制单条折线图，并在折线图的基础上添加点图</span></span>
+<span id="cb70-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-2" tabindex="-1"></a>abdata.index <span class="op">=</span> pd.date_range(<span class="st">"2023-01-01"</span>,periods<span class="op">=</span><span class="bu">len</span>(abdata))</span>
+<span id="cb70-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-3" tabindex="-1"></a>abdata.plot( </span>
+<span id="cb70-4"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-4" tabindex="-1"></a>      linestyle <span class="op">=</span> <span class="st">'-'</span>, <span class="co"># 设置折线类型</span></span>
+<span id="cb70-5"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-5" tabindex="-1"></a>      linewidth <span class="op">=</span> <span class="dv">2</span>, <span class="co"># 设置线条宽度</span></span>
+<span id="cb70-6"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-6" tabindex="-1"></a>      color <span class="op">=</span> <span class="st">'steelblue'</span>, <span class="co"># 设置折线颜色</span></span>
+<span id="cb70-7"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-7" tabindex="-1"></a>      marker <span class="op">=</span> <span class="st">'o'</span>, <span class="co"># 往折线图中添加圆点</span></span>
+<span id="cb70-8"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-8" tabindex="-1"></a>      markersize <span class="op">=</span> <span class="dv">4</span>, <span class="co"># 设置点的大小</span></span>
+<span id="cb70-9"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-9" tabindex="-1"></a>      markeredgecolor<span class="op">=</span><span class="st">'black'</span>, <span class="co"># 设置点的边框色</span></span>
+<span id="cb70-10"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-10" tabindex="-1"></a>      markerfacecolor<span class="op">=</span><span class="st">'black'</span>) <span class="co"># 设置点的填充色</span></span>
+<span id="cb70-11"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-11" tabindex="-1"></a>      </span>
+<span id="cb70-12"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-12" tabindex="-1"></a><span class="co"># 添加上下界的水平参考线（便于判断异常点，如下判断极端异常点，只需将2改为3）</span></span>
+<span id="cb70-13"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-13" tabindex="-1"></a>plt.axhline(y <span class="op">=</span> abdata.value.mean() <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>abdata.value.std(), linestyle <span class="op">=</span> <span class="st">'--'</span>, color <span class="op">=</span> <span class="st">'gray'</span>)</span>
+<span id="cb70-14"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-14" tabindex="-1"></a>plt.axhline(y <span class="op">=</span> abdata.value.mean() <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>abdata.value.std(), linestyle <span class="op">=</span> <span class="st">'--'</span>, color <span class="op">=</span> <span class="st">'gray'</span>)</span>
+<span id="cb70-15"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-15" tabindex="-1"></a></span>
+<span id="cb70-16"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-16" tabindex="-1"></a><span class="co"># 导入模块，用于日期刻度的修改（因为默认格式下的日期刻度标签并不是很友好）</span></span>
+<span id="cb70-17"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-17" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> mpl</span>
+<span id="cb70-18"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-18" tabindex="-1"></a><span class="co"># 获取图的坐标信息</span></span>
+<span id="cb70-19"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-19" tabindex="-1"></a>ax <span class="op">=</span> plt.gca()</span>
+<span id="cb70-20"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-20" tabindex="-1"></a><span class="co"># 设置日期的显示格式  </span></span>
+<span id="cb70-21"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-21" tabindex="-1"></a>date_format <span class="op">=</span> mpl.dates.DateFormatter(<span class="st">"%m-</span><span class="sc">%d</span><span class="st">"</span>)  </span>
+<span id="cb70-22"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-22" tabindex="-1"></a>ax.xaxis.set_major_formatter(date_format) </span>
+<span id="cb70-23"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-23" tabindex="-1"></a></span>
+<span id="cb70-24"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-24" tabindex="-1"></a><span class="co"># 设置x轴每个刻度的间隔天数</span></span>
+<span id="cb70-25"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-25" tabindex="-1"></a>xlocator <span class="op">=</span> mpl.ticker.MultipleLocator(<span class="dv">7</span>)</span>
+<span id="cb70-26"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-26" tabindex="-1"></a>ax.xaxis.set_major_locator(xlocator)</span>
+<span id="cb70-27"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-27" tabindex="-1"></a><span class="co"># 为了避免x轴刻度标签的紧凑，将刻度标签旋转45度</span></span>
+<span id="cb70-28"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb70-28" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>(array([19355., 19362., 19369., 19376., 19383., 19390., 19397., 19404.,
        19411., 19418., 19425., 19432., 19439., 19446., 19453., 19460.,
        19467.]), [Text(19355.0, 0, '12-29'), Text(19362.0, 0, '01-05'), Text(19369.0, 0, '01-12'), Text(19376.0, 0, '01-19'), Text(19383.0, 0, '01-26'), Text(19390.0, 0, '02-02'), Text(19397.0, 0, '02-09'), Text(19404.0, 0, '02-16'), Text(19411.0, 0, '02-23'), Text(19418.0, 0, '03-02'), Text(19425.0, 0, '03-09'), Text(19432.0, 0, '03-16'), Text(19439.0, 0, '03-23'), Text(19446.0, 0, '03-30'), Text(19453.0, 0, '04-06'), Text(19460.0, 0, '04-13'), Text(19467.0, 0, '04-20')])</code></pre>
-<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb75-1" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb72-1" tabindex="-1"></a><span class="co"># 显示图形</span></span>
+<span id="cb72-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb72-2" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97_files/figure-html/plotab-1.png" alt="异常数据的折线图" width="95%"></div>
 </div>
 </div>
@@ -699,7 +698,7 @@ Index: []</code></pre>
 <p>处理一个字段中每一类元素(如果有类未被指定会被map为np.nan)或每一个元素</p>
 <p>序列带有<code>.map()</code>方法,数据框没有,所以可以对单个字段进行map操作，若想同时对多个字段进行map操作，可以结合agg函数。</p>
 <p>可以传递函数或字典</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb76-1" aria-hidden="true" tabindex="-1"></a>data.性别.<span class="bu">map</span>({<span class="st">"男"</span>:<span class="st">"male"</span>}).head()</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb73-1" tabindex="-1"></a>data.性别.<span class="bu">map</span>({<span class="st">"男"</span>:<span class="st">"male"</span>}).head()</span></code></pre></div>
 <pre class="scroll-200"><code>0    male
 1     NaN
 2     NaN
@@ -713,7 +712,7 @@ Name: 性别, dtype: object</code></pre>
 </h3>
 <p><code>.replace(to_repalce,value,method)</code></p>
 <p>对特定的几个值进行替换</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb78-1" aria-hidden="true" tabindex="-1"></a>nadata.null.replace(np.nan,<span class="st">"replace"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb75-1" tabindex="-1"></a>nadata.null.replace(np.nan,<span class="st">"replace"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>0    replace
 1    replace
 2           
@@ -726,18 +725,18 @@ Name: 性别, dtype: object</code></pre>
 9          0
 Name: null, dtype: object</code></pre>
 <p>可以只对某一列的某一类值进行替换，其他种类不变</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb80-1" aria-hidden="true" tabindex="-1"></a>nadata.replace({<span class="st">"null"</span>:{<span class="dv">0</span>:<span class="st">"00"</span>}})</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb77-1" tabindex="-1"></a>nadata.replace({<span class="st">"null"</span>:{<span class="dv">0</span>:<span class="st">"00"</span>}})</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     1
+0  None     0
 1   NaN     8
-2           0
-3   nan     8
-4    00     8
-5  None     0
-6   NaN   NaN
+2           2
+3   nan  None
+4    00     4
+5  None     1
+6   NaN     3
 7           7
-8   nan     2
-9    00     7</code></pre>
+8   nan     4
+9    00     9</code></pre>
 </div>
 <div id="str" class="section level3" number="3.6.3">
 <h3>
@@ -1657,7 +1656,7 @@ function openTab(evt,tabName){
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2023-03-24.</p>
+    <p>"<strong>wcl</strong>" was written by wcl. It was last built on 2024-04-28.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -1670,7 +1669,7 @@ function openTab(evt,tabName){
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

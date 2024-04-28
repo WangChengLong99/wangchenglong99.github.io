@@ -356,29 +356,29 @@ plt.show() #设置x轴分布范围 plt.show()
 
 ```{python rectangle}
 # Rectangle矩形类绘制直方图
-df = pd.DataFrame(columns = ['data'])
-df.loc[:,'data'] = x
-df['fenzu'] = pd.cut(df['data'], bins=bins, right = False,include_lowest=True)
+#df = pd.DataFrame(columns = ['data'])
+#df.loc[:,'data'] = x
+#df['fenzu'] = pd.cut(df['data'], bins=bins, right = False,include_lowest=True)
 
-df_cnt = df['fenzu'].value_counts().reset_index()
-df_cnt.loc[:,'mini'] = df_cnt['index'].astype(str).map(lambda x:re.findall('\[(.*)\,',x)[0]).astype(int)
-df_cnt.loc[:,'maxi'] = df_cnt['index'].astype(str).map(lambda x:re.findall('\,(.*)\)',x)[0]).astype(int)
-df_cnt.loc[:,'width'] = df_cnt['maxi']- df_cnt['mini']
-df_cnt.sort_values('mini',ascending = True,inplace = True)
-df_cnt.reset_index(inplace = True,drop = True)
+#df_cnt = df['fenzu'].value_counts().reset_index()
+#df_cnt.loc[:,'mini'] = df_cnt['index'].astype(str).map(lambda x:re.findall('\[(.*)\,',x)[0]).astype(int)
+#df_cnt.loc[:,'maxi'] = df_cnt['index'].astype(str).map(lambda x:re.findall('\,(.*)\)',x)[0]).astype(int)
+#df_cnt.loc[:,'width'] = df_cnt['maxi']- df_cnt['mini']
+#df_cnt.sort_values('mini',ascending = True,inplace = True)
+#df_cnt.reset_index(inplace = True,drop = True)
 
 #用Rectangle把hist绘制出来
 
-fig = plt.figure()
-ax1 = fig.add_subplot(111)
+#fig = plt.figure()
+#ax1 = fig.add_subplot(111)
 
-for i in df_cnt.index:
-    rect =  plt.Rectangle((df_cnt.loc[i,'mini'],0),df_cnt.loc[i,'width'],df_cnt.loc[i,'fenzu'])
-    ax1.add_patch(rect)
+#for i in df_cnt.index:
+#    rect =  plt.Rectangle((df_cnt.loc[i,'mini'],0),df_cnt.loc[i,'width'],df_cnt.loc[i,'fenzu'])
+#    ax1.add_patch(rect)
 
-ax1.set_xlim(0, 100)
-ax1.set_ylim(0, 16)
-plt.show()
+#ax1.set_xlim(0, 100)
+#ax1.set_ylim(0, 16)
+#plt.show()
 ```
 
 **2) bar-柱状图**   

@@ -39,6 +39,7 @@ rmd_files:
             "图表实例.Rmd",
          "数据库.Rmd",
             "Mysql.Rmd",
-            "PyMysql.RMd",
+            "PyMysql.Rmd",
          "机器学习.Rmd",
+            "时序模型.Rmd",
             ]

@@ -1,0 +1,234 @@
+# excel函数
+
+## 计数count
+
+### count
+
+count(range): 统计个数
+
+### countif {.tabset}
+
+根据条件来判断是否纳入计数
+
+#### 数值
+
+```{r count-value}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/simple-countif-function.png")
+```
+
+```{r count-value2}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/simple-countif-function.png")
+```
+
+#### 单元格
+
+注意和单元格产生联系时，是绝对引用还是相对引用，相对引用那么填充时，单元格会变化。
+
+```{r count-cell}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/count-cells-equal-to-cell-value.png")
+```
+
+```{r count-cell2}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/countif-function-ampersand-operator.png")
+```
+
+#### 文本
+
+?:匹配一个字符
+
+\*：匹配>=0个字符
+
+```{r count-text}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/countif-function-question-mark.png")
+```
+
+```{r count-text2}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/count-all-occurrences.png")
+```
+
+所有包含文本的单元格
+
+```{r count-text3}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/count-all-occurrences.png")
+```
+
+#### 逻辑
+
+true,false
+
+```{r count-logic}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/count-true.png")
+```
+
+#### 错误
+
+```{r count-error}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/count-errors.png")
+```
+
+#### and
+
+在countif后面加s
+
+countifs(range,条件,range,条件,...),可以是多列需同时满足的条件
+
+```{r count-and}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/countifs-function.png")
+```
+
+#### or
+
+对同一列使用or条件
+
+```{r count-or}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/simple-or-criteria.png")
+```
+
+对不同列使用or条件，即任一列满足条件即可
+
+```{r count-or2}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/count-with-or-criteria.png")
+```
+
+#### 重复值
+
+```{r count-duplicate}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/use-countif-to-find-duplicates.png")
+```
+
+#### 统计次数
+
+```{r count-frequency}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/countif/count-how-many-times-each-value-occurs.png")
+```
+
+### 空值或非空值 {.tabset}
+
+#### countblanks
+
+统计空值
+
+```{r count-blank}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/count-blank-nonblank-cells/countblank-function.png")
+```
+
+#### counta
+
+统计非空值
+
+```{r count-nonblank}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/count-blank-nonblank-cells/counta-function.png")
+```
+
+#### countif
+
+countif(range,"") 空值
+
+countif(range,"<>") 非空值
+
+### count字符 {.tabset}
+
+#### len
+
+len(A1): 返回A1中字符个数
+
+len(A1:A4): 返回每个单元格中的字符个数，返回形式为数组，这是一个数组公式
+
+```{r count-len}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/count-characters/count-characters-in-a-range-of-cells.png")
+```
+
+#### substitute
+
+substitute(A1,"a",""),将a1中的a替换为空格
+
+substitute(A1:A4,"a","") 将a1:a4中的a替换为空格,返回数组
+
+```{r count-substitute}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/count-characters/count-specific-character-in-a-range-of-cells.png")
+```
+
+## 求和sum
+
+### sum {.tabset}
+
+#### range
+
+=sum(A1:b10)
+
+#### 整列
+
+=sum(A:A),sum(5:5)
+
+#### 自动求和
+
+```{r autosum}
+knitr::include_graphics("./static/image/excel/函数/自动求和.gif")
+```
+
+#### 非连续
+
+=sum(A1:A10,2,3,5),计算第2,3,5个数字的和
+
+#### 最大的n个
+
+=sum(large(a1:a10,{1,2,3,4}))
+
+```{r nlarge}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/sum/sum-largest-numbers.png")
+```
+
+#### 每n个
+
+=sum(a1:a9*(mod(row(a1:a9),3)=0))
+
+```{r everyn}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/sum/sum-every-nth-row.png")
+```
+
+#### 包含错误
+
+=sum(iferror(A1:A10,0))
+
+```{r sum-error}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/sum/sum-range-with-errors.png")
+```
+
+### 累加
+
+sum(\$a\$1:a1) 加上自动填充,
+
+```{r accumulate-sum}
+knitr::include_graphics("./static/image/excel/函数/累加.gif")
+```
+
+### sumif
+
+计算a列满足条件的行的和。sumif(range,cond)
+
+对a列满足条件的行，计算b列对应行的和.sumif(range,cond1,sum_range)
+
+```{r sumif}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/sumif/sum-if-date-is-greater-than.png")
+```
+
+同时满足多个条件。sumifs(sum_range,range,cond,range,condition,...)
+
+```{r sumifs}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/sumif/sum-if-date-is-between.png")
+```
+
+### sumproduct
+
+先乘后加，向量相乘，长度必须相同，非数字视为0，
+
+sumproduct(range) = sum(range)
+
+sumproduct(range,range) = sum(range*range)
+
+sumproduct(--(boolean array)) 双负号可以把逻辑数组转为0,1数组。
+
+```{r sumproduct}
+knitr::include_graphics("https://www.excel-easy.com/examples/images/sumproduct/sumproduct-function.png")
+```
+

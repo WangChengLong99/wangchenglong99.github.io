@@ -66,7 +66,7 @@ sql = "SELECT * FROM Customers"
 cursor.execute(sql)
 ```
 
-```{.scroll-200}
+```scroll-200
 5
 ```
 
@@ -77,7 +77,7 @@ cursor.execute(sql)
 cursor.fetchone()
 ```
 
-```{.scroll-200}
+```scroll-200
 ('1000000001', 'Village Toys', '200 Maple Lane', 'Detroit', 'MI', '44444', 'USA', 'John Smith', 'sales@villagetoys.com')
 ```
 
@@ -90,7 +90,7 @@ cursor.fetchone()
 cursor.rownumber
 ```
 
-```{.scroll-200}
+```scroll-200
 1
 ```
 
@@ -98,7 +98,7 @@ cursor.rownumber
 cursor.fetchall()
 ```
 
-```{.scroll-200}
+```scroll-200
 (('1000000002', 'Kids Place', '333 South Lake Drive', 'Columbus', 'OH', '43333', 'USA', 'Michelle Green', None), ('1000000003', 'Fun4All', '1 Sunny Place', 'Muncie', 'IN', '42222', 'USA', 'Jim Jones', 'jjones@fun4all.com'), ('1000000004', 'Fun4All', '829 Riverside Drive', 'Phoenix', 'AZ', '88888', 'USA', 'Denise L. Stephens', 'dstephens@fun4all.com'), ('1000000005', 'The Toy Store', '4545 53rd Street', 'Chicago', 'IL', '54545', 'USA', 'Kim Howard', None))
 ```
 
@@ -108,7 +108,7 @@ cursor.rownumber = 1
 cursor.fetchone()
 ```
 
-```{.scroll-200}
+```scroll-200
 ('1000000002', 'Kids Place', '333 South Lake Drive', 'Columbus', 'OH', '43333', 'USA', 'Michelle Green', None)
 ```
 
@@ -165,10 +165,9 @@ with connection:
         sql = "select cust_id,%s from customers"
         cursor.execute(sql, ("cust_name",))
         cursor.fetchone()
-
 ```
 
-```{.scroll-200}
+```scroll-200
 16
 (100, Decimal('5.49'))
 5

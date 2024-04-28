@@ -1,0 +1,194 @@
+# excel基础
+
+## 自适应
+
+自动调整行高，列宽，在行底部或列右边双击，自动适应内容大小
+
+```{r autofit,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/autofit.gif")
+```
+
+## range
+
+设计到range操作，比如行列的增删，自动填充，快速填充等
+
+
+### 行(列)操作 {.tabset}
+
+#### 移动
+
+选中要移动的列，按住shift键，移动光标出现将d列移动到b列，则d列变成b列，b列变成c列
+
+```{r move,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/移动列.gif")
+```
+
+#### 隐藏(组合)
+
+隐藏一列或多列，将多列组合，取消隐藏
+
+```{r hide,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/隐藏行或列.gif")
+```
+
+### 填充 {.tabset}
+
+填充即根据规律自动生成，提取
+
+#### 自动填充
+
+* 斐波拉契数列
+
+```{r fibco,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/斐波拉契数列.gif")
+```
+
+* 自定义列表
+
+```{r customlist,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/自定义列表.gif")
+```
+
+* 填充方式
+
+```{r fillway,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/填充方式.gif")
+```
+
+#### 快速填充
+
+快速填充根据行首的规律进行计算
+
+```{r flashfill,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/快速填充.gif")
+```
+
+### 粘贴 {.tabset}
+
+复制粘贴是很重要的一个功能，汇总如下
+
+```{r paste,echo=FALSE}
+knitr::include_graphics("./static/image/excel/funcformula/粘贴.gif")
+```
+
+#### 转置粘贴
+
+```{r transpose-paste,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/转置.gif")
+```
+
+#### 特殊粘贴
+
+包括跳过空格，加减乘除等
+
+```{r skip-blank,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/跳过空格.gif")
+```
+
+#### 粘贴公式
+
+会根据相对引用和绝对引用对公式范围进行调整。
+
+```{r paste-formula,echo=FALSE}
+knitr::include_graphics("./static/image/excel/funcformula/粘贴公式.gif")
+```
+
+#### 粘贴值
+
+复制粘贴值
+
+#### 粘贴格式
+
+比如颜色，边框之类的格式
+
+### 分列
+
+就是根据分隔符将一列数据分成多列
+
+```{r split,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/分列.gif")
+```
+
+### row()函数
+
+row(A3)=3 row()=该公式所在单元格所在行 row(A5:n10)=5
+
+```{r row-funciton,echo=FALSE}
+knitr::include_graphics("./static/image/excel/range/row.gif")
+```
+
+## 公式
+
+### array formula
+
+当公式中包含数组公式时，最后需要按ctrl+shift+enter
+
+当公式返回的是一个数组时，需要选中相同范围的单元用单元格
+
+
+### 绝对引用和相对引用
+
+A1与\$A\$1
+
+```{r abrel,echo=FALSE}
+knitr::include_graphics("./static/image/excel/funcformula/公式与函数.gif")
+```
+
+### 连接字符串和单元格
+
+正常的条件比较可以直接写，比如">=10",但是如果这个字符串需要跟某个单元格或者常量进行结合，可以通过"&"符号，比如">="&C1
+
+在if函数中，条件直接写，非字符串，此时单元格和比较符等可以直接写，比如if(a1>10,1,2)
+
+在countif中，则需要以字符串形式写条件，此时countif(a1:a10,">"&a1)
+
+### 加减乘除
+
+```{r algorithm,echo=FALSE}
+knitr::include_graphics("./static/image/excel/funcformula/加减乘除.gif")
+```
+
+数组和数组对应元素加减乘除
+
+逻辑数组与数值数组进行计算时，逻辑数组会自动转为0,1。
+
+### 定义名称(变量)
+
+值和一个范围或者单元格中的值相关联。
+
+```{r variable,echo=FALSE}
+knitr::include_graphics("./static/image/excel/funcformula/变量.gif")
+```
+
+### 常量
+
+值为一个常数
+
+```{r constant,echo=FALSE}
+knitr::include_graphics("./static/image/excel/funcformula/常量.gif")
+```
+
+### 定义动态名称
+
+可以在列数据增加时产生变化
+
+```{r dynamic,echo=FALSE}
+knitr::include_graphics("./static/image/excel/funcformula/定义动态范围.gif")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

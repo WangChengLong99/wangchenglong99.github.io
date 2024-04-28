@@ -156,6 +156,13 @@ frame结构:在分区内进一步细分，比如确定值范围，确定行范�
 
 <img src="static/image/数据库/窗口函数.png" width="95%" style="display: block; margin: auto;" />
 
+lag和lead可以认为是时间点，rows between and 可以认为是时间段。
+
+* rows between 1 preceding and 2 following
+* rows between current row and 2 following
+* rows between unbounded preceding and 2 following
+* rows between 1 following and 2 following
+
 
 ```python
 with open("./static/docs/window-function.txt","r") as f:

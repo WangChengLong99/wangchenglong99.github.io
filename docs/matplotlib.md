@@ -54,6 +54,8 @@ ax.plot([1, 2, 3, 4], [1, 4, 2, 3]);  # 绘制图像
 line =plt.plot([1, 2, 3, 4], [1, 4, 2, 3]) 
 ```
 
+<img src="matplotlib_files/figure-html/simplify-3.png" width="95%" style="display: block; margin: auto;" />
+
 ## Figure的组成
 
 现在我们来深入看一下figure的组成。通过一张figure解剖图，我们可以看到一个完整的matplotlib图像通常会包括以下四个层级，这些层级也被称为容器（container），下一节会详细介绍。在matplotlib的世界中，我们将通过各种命令方法来操纵图像中的每一个部分，从而达到数据可视化的最终效果，一副完整的图像实际上是各类子元素的集合。
@@ -261,7 +263,7 @@ lines = plt.plot(x, y)
 plt.setp(lines, color='r', linewidth=10)
 ```
 
-```{.scroll-200}
+```scroll-200
 [None, None]
 ```
 
@@ -293,7 +295,7 @@ ax.plot(x,y2)
 print(ax.lines)
 ```
 
-```{.scroll-200}
+```scroll-200
 <Axes.ArtistList of 2 lines>
 ```
 
@@ -317,7 +319,7 @@ for line in lines:
 ax.set_xlim(0,4)
 ```
 
-```{.scroll-200}
+```scroll-200
 (0.0, 4.0)
 ```
 
@@ -325,7 +327,7 @@ ax.set_xlim(0,4)
 ax.set_ylim(2, 11)
 ```
 
-```{.scroll-200}
+```scroll-200
 (2.0, 11.0)
 ```
 
@@ -360,13 +362,6 @@ x = np.arange(10)
 y = 2.5 * np.sin(x / 20 * np.pi)
 yerr = np.linspace(0.05, 0.2, 10)
 plt.errorbar(x,y+3,yerr=yerr,fmt='o-',ecolor='r',elinewidth=2)
-```
-
-```{.scroll-200}
-<ErrorbarContainer object of 3 artists>
-```
-
-```python
 plt.show()
 ```
 
@@ -414,19 +409,12 @@ Rectangle本身的主要比较简单，即xy控制锚点，width和height分别�
 x=np.random.randint(0,100,100) #生成[0-100)之间的100个数据,即 数据集 
 bins=np.arange(0,101,10) #设置连续的边界值，即直方图的分布区间[0,10),[10,20)... 
 plt.hist(x,bins,color='fuchsia',alpha=0.5)#alpha设置透明度，0为完全透明 
-```
-
-```{.scroll-200}
-(array([ 5.,  9.,  8., 15., 12., 15., 11.,  5., 10., 10.]), array([  0.,  10.,  20.,  30.,  40.,  50.,  60.,  70.,  80.,  90., 100.]), <BarContainer object of 10 artists>)
-```
-
-```python
 plt.xlabel('scores') 
 plt.ylabel('count') 
 plt.xlim(0,100)
 ```
 
-```{.scroll-200}
+```scroll-200
 (0.0, 100.0)
 ```
 
@@ -439,46 +427,30 @@ plt.show() #设置x轴分布范围 plt.show()
 
 ```python
 # Rectangle矩形类绘制直方图
-df = pd.DataFrame(columns = ['data'])
-df.loc[:,'data'] = x
-df['fenzu'] = pd.cut(df['data'], bins=bins, right = False,include_lowest=True)
+#df = pd.DataFrame(columns = ['data'])
+#df.loc[:,'data'] = x
+#df['fenzu'] = pd.cut(df['data'], bins=bins, right = False,include_lowest=True)
 
-df_cnt = df['fenzu'].value_counts().reset_index()
-df_cnt.loc[:,'mini'] = df_cnt['index'].astype(str).map(lambda x:re.findall('\[(.*)\,',x)[0]).astype(int)
-df_cnt.loc[:,'maxi'] = df_cnt['index'].astype(str).map(lambda x:re.findall('\,(.*)\)',x)[0]).astype(int)
-df_cnt.loc[:,'width'] = df_cnt['maxi']- df_cnt['mini']
-df_cnt.sort_values('mini',ascending = True,inplace = True)
-df_cnt.reset_index(inplace = True,drop = True)
+#df_cnt = df['fenzu'].value_counts().reset_index()
+#df_cnt.loc[:,'mini'] = df_cnt['index'].astype(str).map(lambda x:re.findall('\[(.*)\,',x)[0]).astype(int)
+#df_cnt.loc[:,'maxi'] = df_cnt['index'].astype(str).map(lambda x:re.findall('\,(.*)\)',x)[0]).astype(int)
+#df_cnt.loc[:,'width'] = df_cnt['maxi']- df_cnt['mini']
+#df_cnt.sort_values('mini',ascending = True,inplace = True)
+#df_cnt.reset_index(inplace = True,drop = True)
 
 #用Rectangle把hist绘制出来
 
-fig = plt.figure()
-ax1 = fig.add_subplot(111)
+#fig = plt.figure()
+#ax1 = fig.add_subplot(111)
 
-for i in df_cnt.index:
-    rect =  plt.Rectangle((df_cnt.loc[i,'mini'],0),df_cnt.loc[i,'width'],df_cnt.loc[i,'fenzu'])
-    ax1.add_patch(rect)
+#for i in df_cnt.index:
+#    rect =  plt.Rectangle((df_cnt.loc[i,'mini'],0),df_cnt.loc[i,'width'],df_cnt.loc[i,'fenzu'])
+#    ax1.add_patch(rect)
 
-ax1.set_xlim(0, 100)
+#ax1.set_xlim(0, 100)
+#ax1.set_ylim(0, 16)
+#plt.show()
 ```
-
-```{.scroll-200}
-(0.0, 100.0)
-```
-
-```python
-ax1.set_ylim(0, 16)
-```
-
-```{.scroll-200}
-(0.0, 16.0)
-```
-
-```python
-plt.show()
-```
-
-<img src="matplotlib_files/figure-html/rectangle-21.png" width="95%" style="display: block; margin: auto;" />
 
 **2) bar-柱状图**   
 
@@ -504,17 +476,10 @@ plt.show()
 # bar绘制柱状图
 y = range(1,17)
 plt.bar(np.arange(16), y, alpha=0.5, width=0.5, color='yellow', edgecolor='red', label='The First Bar', lw=3)
-```
-
-```{.scroll-200}
-<BarContainer object of 16 artists>
-```
-
-```python
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/bar-23.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/bar-21.png" width="95%" style="display: block; margin: auto;" />
 
 
 ```python
@@ -528,7 +493,7 @@ for i in range(1,17):
 ax1.set_xlim(0, 16)
 ```
 
-```{.scroll-200}
+```scroll-200
 (0.0, 16.0)
 ```
 
@@ -536,7 +501,7 @@ ax1.set_xlim(0, 16)
 ax1.set_ylim(0, 16)
 ```
 
-```{.scroll-200}
+```scroll-200
 (0.0, 16.0)
 ```
 
@@ -544,7 +509,7 @@ ax1.set_ylim(0, 16)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/rectangle-bar-25.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/rectangle-bar-23.png" width="95%" style="display: block; margin: auto;" />
 
 #### Polygon-多边形
 
@@ -571,7 +536,7 @@ plt.fill(x, y1, color = "g", alpha = 0.3)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/fill-color-27.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/fill-color-25.png" width="95%" style="display: block; margin: auto;" />
 
 #### Wedge-契形
 
@@ -605,23 +570,23 @@ fig1, ax1 = plt.subplots()
 ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90) 
 ```
 
-```{.scroll-200}
-([<matplotlib.patches.Wedge object at 0x0000024F0BCA75B0>, <matplotlib.patches.Wedge object at 0x0000024F0BCA73A0>, <matplotlib.patches.Wedge object at 0x0000024F0BCC07F0>, <matplotlib.patches.Wedge object at 0x0000024F0BB4CFA0>], [Text(-0.4993895680663527, 0.9801071672559598, 'Frogs'), Text(-1.1412677917792124, -0.3708204787324995, 'Hogs'), Text(0.9801072140121813, -0.4993894763020948, 'Dogs'), Text(0.33991864973549485, 1.0461621822461364, 'Logs')], [Text(-0.2723943098543742, 0.5346039094123416, '15.0%'), Text(-0.6657395452045406, -0.2163119459272914, '30.0%'), Text(0.5346039349157352, -0.27239425980114257, '45.0%'), Text(0.1854101725829972, 0.5706339175888016, '10.0%')])
+```scroll-200
+([<matplotlib.patches.Wedge object at 0x000001C8748108C0>, <matplotlib.patches.Wedge object at 0x000001C8747E3E60>, <matplotlib.patches.Wedge object at 0x000001C874813D10>, <matplotlib.patches.Wedge object at 0x000001C874840290>], [Text(-0.4993895680663527, 0.9801071672559598, 'Frogs'), Text(-1.1412677917792124, -0.3708204787324995, 'Hogs'), Text(0.9801072140121813, -0.4993894763020948, 'Dogs'), Text(0.33991864973549485, 1.0461621822461364, 'Logs')], [Text(-0.2723943098543742, 0.5346039094123416, '15.0%'), Text(-0.6657395452045406, -0.2163119459272914, '30.0%'), Text(0.5346039349157352, -0.27239425980114257, '45.0%'), Text(0.1854101725829972, 0.5706339175888016, '10.0%')])
 ```
 
 ```python
 ax1.axis('equal')
 ```
 
-```{.scroll-200}
-(-1.1998593997207163, 1.1047438740833693, -1.0999843660947275, 1.0999992555283205)
+```scroll-200
+(-1.1998593997207165, 1.1047438740833693, -1.0999843660947275, 1.0999992555283205)
 ```
 
 ```python
 plt.show() # Equal aspect ratio ensures that pie is drawn as a circle. 
 ```
 
-<img src="matplotlib_files/figure-html/pie-29.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/pie-27.png" width="95%" style="display: block; margin: auto;" />
 
 
 ```python
@@ -644,7 +609,7 @@ ax1.add_collection(p)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/wedge-pie-31.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/wedge-pie-29.png" width="95%" style="display: block; margin: auto;" />
 
 ### collections
 
@@ -670,7 +635,7 @@ plt.scatter(x,y,s=s)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/scatter-33.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/scatter-31.png" width="95%" style="display: block; margin: auto;" />
 
 ### images
 
@@ -703,7 +668,7 @@ plt.tight_layout()
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/imshow-35.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/imshow-33.png" width="95%" style="display: block; margin: auto;" />
 
 ## 对象容器 - Object container
 
@@ -723,7 +688,7 @@ ax2 = fig.add_axes([0.1, 0.1, 0.7, 0.3]) # 位置参数，四个数分别代表�
 print(ax1) 
 ```
 
-```{.scroll-200}
+```scroll-200
 Axes(0.125,0.53;0.775x0.35)
 ```
 
@@ -731,9 +696,11 @@ Axes(0.125,0.53;0.775x0.35)
 print(fig.axes) # fig.axes 中包含了subplot和axes两个实例, 刚刚添加的
 ```
 
-```{.scroll-200}
+```scroll-200
 [<Axes: >, <Axes: >]
 ```
+
+<img src="matplotlib_files/figure-html/figure.axes-35.png" width="95%" style="display: block; margin: auto;" />
 
 由于`Figure`维持了`current axes`，因此你不应该手动的从`Figure.axes`列表中添加删除元素，而是要通过`Figure.add_subplot()`、`Figure.add_axes()`来添加元素，通过`Figure.delaxes()`来删除元素。但是你可以迭代或者访问`Figure.axes`中的`Axes`，然后修改这个`Axes`的属性。   
 
@@ -747,6 +714,8 @@ ax1 = fig.add_subplot(211)
 for ax in fig.axes:
     ax.grid(True)
 ```
+
+<img src="matplotlib_files/figure-html/for-axes-37.png" width="95%" style="display: block; margin: auto;" />
 
 `Figure`也有它自己的`text、line、patch、image`。你可以直接通过`add primitive`语句直接添加。但是注意`Figure`默认的坐标系是以像素为单位，你可能需要转换成figure坐标系：(0,0)表示左下点，(1,1)表示右上点。
 
@@ -772,6 +741,8 @@ ax = fig.add_subplot(111)
 rect = ax.patch  # axes的patch是一个Rectangle实例
 rect.set_facecolor('green')
 ```
+
+<img src="matplotlib_files/figure-html/axes-container-39.png" width="95%" style="display: block; margin: auto;" />
 
 `Axes`有许多方法用于绘图，如`.plot()、.text()、.hist()、.imshow()`等方法用于创建大多数常见的`primitive`(如`Line2D，Rectangle，Text，Image`等等）。在`primitives`中已经涉及，不再赘述。   
 
@@ -829,7 +800,7 @@ axis = ax.xaxis # axis为X轴对象
 axis.get_ticklocs()     # 获取刻度线位置
 ```
 
-```{.scroll-200}
+```scroll-200
 array([-0.5,  0. ,  0.5,  1. ,  1.5,  2. ,  2.5,  3. ,  3.5,  4. ,  4.5])
 ```
 
@@ -839,7 +810,7 @@ axis.get_ticklines()    # 获取刻度线列表(一个Line2D实例的列表）�
 axis.get_data_interval()# 获取轴刻度间隔
 ```
 
-```{.scroll-200}
+```scroll-200
 array([0., 4.])
 ```
 
@@ -847,9 +818,11 @@ array([0., 4.])
 axis.get_view_interval()# 获取轴视角（位置）的间隔
 ```
 
-```{.scroll-200}
+```scroll-200
 array([-0.2,  4.2])
 ```
+
+<img src="matplotlib_files/figure-html/axis-container-41.png" width="95%" style="display: block; margin: auto;" />
 
 下面的例子展示了如何调整一些轴和刻度的属性(忽略美观度，仅作调整参考)：  
 
@@ -875,6 +848,8 @@ for line in ax1.yaxis.get_ticklines():
     line.set_markersize(25)    # marker大小
     line.set_markeredgewidth(2)# marker粗细
 ```
+
+<img src="matplotlib_files/figure-html/axis-container2-43.png" width="95%" style="display: block; margin: auto;" />
 
 ### Tick容器
 
@@ -908,7 +883,7 @@ ax.yaxis.set_tick_params(which='major', labelcolor='green',
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/tick-1-37.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/tick-1-45.png" width="95%" style="display: block; margin: auto;" />
 
 ## 思考题
 
@@ -956,6 +931,8 @@ for i in range(2):
 fig.tight_layout()
 ```
 
+<img src="matplotlib_files/figure-html/subplots-1-47.png" width="95%" style="display: block; margin: auto;" />
+
 `subplots`是基于OO模式的写法，显式创建一个或多个axes对象，然后在对应的子图对象上进行绘图操作。  
 还有种方式是使用`subplot`这样基于pyplot模式的写法，每次在指定位置新建一个子图，并且之后的绘图操作都会指向当前子图，本质上`subplot`也是`Figure.add_subplot`的一种封装。
 
@@ -976,7 +953,7 @@ plt.plot([1,2], 'g')
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/subplot-39.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/subplot-49.png" width="95%" style="display: block; margin: auto;" />
 
 除了常规的直角坐标系，也可以通过`projection`方法创建极坐标系下的图表
 
@@ -993,7 +970,7 @@ plt.scatter(theta, r, c=colors, s=area, cmap='hsv', alpha=0.75)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/projection-41.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/projection-51.png" width="95%" style="display: block; margin: auto;" />
 
 <p>请思考如何用极坐标系画出类似的玫瑰图</p>
 <img src="http://www.hinews.cn/news/pic/003/205/569/00320556959_f01764d0.jpg" width="300" align="bottom" />
@@ -1020,20 +997,13 @@ fig.tight_layout()
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/add_gridspec-43.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/add_gridspec-53.png" width="95%" style="display: block; margin: auto;" />
 
 在上面的例子中出现了 `spec[i, j]` 的用法，事实上通过切片就可以实现子图的合并而达到跨图的共能
 
 
 ```python
 fig = plt.figure(figsize=(10, 4))
-```
-
-```{.scroll-200}
-<string>:1: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
-```
-
-```python
 spec = fig.add_gridspec(nrows=2, ncols=6, width_ratios=[2,2.5,3,1,1.5,2], height_ratios=[1,2])
 fig.suptitle('样例3', size=20)
 # sub1
@@ -1055,7 +1025,7 @@ fig.tight_layout()
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/add_gridspec2-45.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/add_gridspec2-55.png" width="95%" style="display: block; margin: auto;" />
 
 ## 子图上的方法
 
@@ -1072,7 +1042,7 @@ ax.axline([0.3,0.3],[0.7,0.7])
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/subplot-method-1-47.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/subplot-method-1-57.png" width="95%" style="display: block; margin: auto;" />
 
 使用 `grid` 可以加灰色网格
 
@@ -1081,6 +1051,8 @@ plt.show()
 fig, ax = plt.subplots(figsize=(4,3))
 ax.grid(True)
 ```
+
+<img src="matplotlib_files/figure-html/subplot-method-2-59.png" width="95%" style="display: block; margin: auto;" />
 
 使用 `set_xscale` 可以设置坐标轴的规度（指对数坐标等）
 
@@ -1095,6 +1067,8 @@ for j in range(2):
         pass
 fig.tight_layout()
 ```
+
+<img src="matplotlib_files/figure-html/set-xscale-61.png" width="95%" style="display: block; margin: auto;" />
 
 ## 思考题
 
@@ -1133,7 +1107,6 @@ Matplotlib具有广泛的文本支持，包括对数学表达式的支持、对�
 
 
 ```python
-
 fig = plt.figure()
 ax = fig.add_subplot()
 
@@ -1147,15 +1120,14 @@ ax.set_ylabel('ylabel')
 
 # 设置x和y轴显示范围均为0到10
 ax.axis([0, 10, 0, 10])
-
-# 在子图上添加文本
 ```
 
-```{.scroll-200}
+```scroll-200
 (0.0, 10.0, 0.0, 10.0)
 ```
 
 ```python
+# 在子图上添加文本
 ax.text(3, 8, 'boxed italics text in data coords', style='italic',
         bbox={'facecolor': 'red', 'alpha': 0.5, 'pad': 10})
 
@@ -1168,7 +1140,7 @@ ax.annotate('annotate', xy=(2, 1), xytext=(3, 4),arrowprops=dict(facecolor='blac
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/text-api-49.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/text-api-63.png" width="95%" style="display: block; margin: auto;" />
 
 ### text - 子图上的文本
 
@@ -1195,7 +1167,7 @@ axes[1].text(0.3, 0.8, 'modify by fontdict', fontdict=font)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/subplot-text-51.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/subplot-text-65.png" width="95%" style="display: block; margin: auto;" />
 
 matplotlib中所有支持的样式参数请参考[官网文档说明](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.text.html#matplotlib.axes.Axes.text)，大多数时候需要用到的时候再查询即可。  
 
@@ -1239,7 +1211,7 @@ axes[1].set_xlabel('xlabel', position=(0.2, _), horizontalalignment='left')
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/xylabel-53.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/xylabel-67.png" width="95%" style="display: block; margin: auto;" />
 
 ### title和suptitle - 子图和画布的标题
 
@@ -1262,7 +1234,7 @@ axes[1].set_title('This is title',pad=6)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/title-55.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/title-69.png" width="95%" style="display: block; margin: auto;" />
 
 ### annotate - 子图的注解
 
@@ -1289,7 +1261,7 @@ ax.annotate("",
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/annotate-57.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/annotate-71.png" width="95%" style="display: block; margin: auto;" />
 
 ### 字体的属性设置
 
@@ -1318,34 +1290,7 @@ plt.legend(loc='lower right', prop={"family": 'Microsoft YaHei'}, fontsize=10)
 plt.show()   # 小示例图的字体设置
 ```
 
-```{.scroll-200}
-Traceback (most recent call last):
-  File "D:\anaconda\lib\site-packages\matplotlib\backends\backend_qt.py", line 468, in _draw_idle
-    self.draw()
-  File "D:\anaconda\lib\site-packages\matplotlib\backends\backend_agg.py", line 400, in draw
-    self.figure.draw(self.renderer)
-  File "D:\anaconda\lib\site-packages\matplotlib\artist.py", line 95, in draw_wrapper
-    result = draw(artist, renderer, *args, **kwargs)
-  File "D:\anaconda\lib\site-packages\matplotlib\artist.py", line 72, in draw_wrapper
-    return draw(artist, renderer)
-  File "D:\anaconda\lib\site-packages\matplotlib\figure.py", line 3125, in draw
-    mimage._draw_list_compositing_images(
-  File "D:\anaconda\lib\site-packages\matplotlib\image.py", line 131, in _draw_list_compositing_images
-    a.draw(renderer)
-  File "D:\anaconda\lib\site-packages\matplotlib\artist.py", line 72, in draw_wrapper
-    return draw(artist, renderer)
-  File "D:\anaconda\lib\site-packages\matplotlib\axes\_base.py", line 3030, in draw
-    self._update_title_position(renderer)
-  File "D:\anaconda\lib\site-packages\matplotlib\axes\_base.py", line 2963, in _update_title_position
-    if (ax.xaxis.get_ticks_position() in ['top', 'unknown']
-  File "D:\anaconda\lib\site-packages\matplotlib\axis.py", line 2455, in get_ticks_position
-    self._get_ticks_position()]
-  File "D:\anaconda\lib\site-packages\matplotlib\axis.py", line 2159, in _get_ticks_position
-    major = self.majorTicks[0]
-IndexError: list index out of range
-```
-
-<img src="matplotlib_files/figure-html/font-1-59.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/font-1-73.png" width="95%" style="display: block; margin: auto;" />
 
 ## Tick上的文本
 
@@ -1371,7 +1316,7 @@ axs[1].xaxis.set_ticks(np.arange(0., 10.1, 2.))
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/set_ticks2-61.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/set_ticks2-75.png" width="95%" style="display: block; margin: auto;" />
 
 
 ```python
@@ -1386,7 +1331,7 @@ axs[1].xaxis.set_ticklabels(tickla)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/set_ticklabel-63.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/set_ticklabel-77.png" width="95%" style="display: block; margin: auto;" />
 
 
 ```python
@@ -1408,7 +1353,7 @@ axs[1].xaxis.set_ticks_position('bottom')#set_ticks_position()方法是用来设
 print(axs[1].xaxis.get_ticklines())
 ```
 
-```{.scroll-200}
+```scroll-200
 <a list of 14 Line2D ticklines objects>
 ```
 
@@ -1416,7 +1361,7 @@ print(axs[1].xaxis.get_ticklines())
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/set_xticklabels2-65.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/set_xticklabels2-79.png" width="95%" style="display: block; margin: auto;" />
 
 ### Tick Locators and Formatters
 
@@ -1445,7 +1390,7 @@ axs[1, 1].xaxis.set_major_formatter(formatter)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/tick-formatter-67.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/tick-formatter-81.png" width="95%" style="display: block; margin: auto;" />
 
 
 ```python
@@ -1463,7 +1408,7 @@ ax.xaxis.set_major_formatter(formatoddticks)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/tick-function-69.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/tick-function-83.png" width="95%" style="display: block; margin: auto;" />
 
 ### Tick Locators 
 
@@ -1497,7 +1442,7 @@ axs[1, 1].xaxis.set_major_locator(locator)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/tick-locator-71.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/tick-locator-85.png" width="95%" style="display: block; margin: auto;" />
 
  此外`matplotlib.dates` 模块还提供了特殊的设置日期型刻度格式和位置的方式
 
@@ -1517,7 +1462,7 @@ ax.tick_params(axis='x', rotation=70)
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/tick-date-73.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/tick-date-87.png" width="95%" style="display: block; margin: auto;" />
 
 ## legend（图例）
 
@@ -1548,7 +1493,7 @@ ax.legend(handles = [line_up, line_down], labels = ['Line Up', 'Line Down'])
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/legend-75.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/legend-89.png" width="95%" style="display: block; margin: auto;" />
 
 legend其他常用的几个参数如下：
 
@@ -1579,6 +1524,8 @@ for i in range(4):
 fig.tight_layout()
 ```
 
+<img src="matplotlib_files/figure-html/legend1-91.png" width="95%" style="display: block; margin: auto;" />
+
 **设置图例边框及背景**
 
 
@@ -1593,7 +1540,7 @@ axes[2].legend(facecolor='gray')
 plt.show() #设置图例背景颜色,若无边框,参数无效
 ```
 
-<img src="matplotlib_files/figure-html/legend2-77.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/legend2-93.png" width="95%" style="display: block; margin: auto;" />
 
 ​    
 
@@ -1607,7 +1554,7 @@ ax.legend(title='legend title')
 plt.show()
 ```
 
-<img src="matplotlib_files/figure-html/legend3-79.png" width="95%" style="display: block; margin: auto;" />
+<img src="matplotlib_files/figure-html/legend3-95.png" width="95%" style="display: block; margin: auto;" />
 
 ## 思考题
 
@@ -1655,7 +1602,7 @@ plt.show()
 print(plt.style.available)
 ```
 
-```{.scroll-200}
+```scroll-200
 ['Solarize_Light2', '_classic_test_patch', '_mpl-gallery', '_mpl-gallery-nogrid', 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', 'grayscale', 'seaborn-v0_8', 'seaborn-v0_8-bright', 'seaborn-v0_8-colorblind', 'seaborn-v0_8-dark', 'seaborn-v0_8-dark-palette', 'seaborn-v0_8-darkgrid', 'seaborn-v0_8-deep', 'seaborn-v0_8-muted', 'seaborn-v0_8-notebook', 'seaborn-v0_8-paper', 'seaborn-v0_8-pastel', 'seaborn-v0_8-poster', 'seaborn-v0_8-talk', 'seaborn-v0_8-ticks', 'seaborn-v0_8-white', 'seaborn-v0_8-whitegrid', 'tableau-colorblind10']
 ```
 

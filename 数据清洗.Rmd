@@ -12,6 +12,7 @@ plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体
 plt.rcParams['axes.unicode_minus']=False; #正常显示图中负号
 data = pd.read_csv("data/数据/学生.csv")
 data.head(5).pipe(lambda df:print(df.to_markdown(tablefmt="github")))
+pd.set_option('future.no_silent_downcasting', True)
 ```
 
 ### .info()
@@ -123,7 +124,7 @@ ts.dtypes
 
 ```{python astype}
 data.astype({"姓名":"string","性别":"string","班级":"string"}).dtypes
-ts.astype({"day":"datetime64"}).dtypes
+ts.astype({"day":"datetime64[ns]"}).dtypes
 ts["day"] = pd.to_datetime(ts.day)
 ts.day.dt.year.head()
 ```
