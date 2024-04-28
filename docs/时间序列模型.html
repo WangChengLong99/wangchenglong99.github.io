@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>第10章 时间序列模型 | wcl</title>
-<meta name="author" content="第10章 时间序列模型 | wcl">
-<meta name="description" content="10.1 理论知识 平稳时间序列分析: 平稳的，非随机序列(非白噪声序列)  10.1.1 差分 一阶差分: \(\triangledown{x_t}=x_{t}-x_{t-1}\) 二阶差分: \(\triangledown^2{x_t}=\triangledown{x_t}-\triangledown{x_{t-1}}\) 一阶差分的差分 三阶差分:...">
+<title>第11章 时间序列模型 | wcl</title>
+<meta name="author" content="第11章 时间序列模型 | wcl">
+<meta name="description" content="11.1 理论知识 平稳时间序列分析: 平稳的，非随机序列(非白噪声序列)  11.1.1 差分 一阶差分: \(\triangledown{x_t}=x_{t}-x_{t-1}\) 二阶差分: \(\triangledown^2{x_t}=\triangledown{x_t}-\triangledown{x_{t-1}}\) 一阶差分的差分 三阶差分:...">
 <meta name="generator" content="bookdown 0.39 with bs4_book()">
-<meta property="og:title" content="第10章 时间序列模型 | wcl">
+<meta property="og:title" content="第11章 时间序列模型 | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/时间序列模型.html">
-<meta property="og:description" content="10.1 理论知识 平稳时间序列分析: 平稳的，非随机序列(非白噪声序列)  10.1.1 差分 一阶差分: \(\triangledown{x_t}=x_{t}-x_{t-1}\) 二阶差分: \(\triangledown^2{x_t}=\triangledown{x_t}-\triangledown{x_{t-1}}\) 一阶差分的差分 三阶差分:...">
+<meta property="og:description" content="11.1 理论知识 平稳时间序列分析: 平稳的，非随机序列(非白噪声序列)  11.1.1 差分 一阶差分: \(\triangledown{x_t}=x_{t}-x_{t-1}\) 二阶差分: \(\triangledown^2{x_t}=\triangledown{x_t}-\triangledown{x_{t-1}}\) 一阶差分的差分 三阶差分:...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第10章 时间序列模型 | wcl">
-<meta name="twitter:description" content="10.1 理论知识 平稳时间序列分析: 平稳的，非随机序列(非白噪声序列)  10.1.1 差分 一阶差分: \(\triangledown{x_t}=x_{t}-x_{t-1}\) 二阶差分: \(\triangledown^2{x_t}=\triangledown{x_t}-\triangledown{x_{t-1}}\) 一阶差分的差分 三阶差分:...">
+<meta name="twitter:title" content="第11章 时间序列模型 | wcl">
+<meta name="twitter:description" content="11.1 理论知识 平稳时间序列分析: 平稳的，非随机序列(非白噪声序列)  11.1.1 差分 一阶差分: \(\triangledown{x_t}=x_{t}-x_{t-1}\) 二阶差分: \(\triangledown^2{x_t}=\triangledown{x_t}-\triangledown{x_{t-1}}\) 一阶差分的差分 三阶差分:...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,24 +61,25 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> welcome</a></li>
 <li class="book-part">数据</li>
 <li><a class="" href="introduction.html">introduction</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">2</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">6</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
 <li><a class="" href="introduction-1.html">introduction</a></li>
-<li><a class="" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
-<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li><a class="" href="matplotlib.html"><span class="header-section-number">7</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">8</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
 <li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
-<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">9</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">10</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
 <li><a class="" href="introduction-3.html">introduction</a></li>
-<li><a class="active" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
+<li><a class="active" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">11</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,27 +87,27 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="时间序列模型" class="section level1" number="10">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="时间序列模型" class="section level1" number="11">
 <h1>
-<span class="header-section-number">第10章</span> 时间序列模型<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">第11章</span> 时间序列模型<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h1>
-<div id="理论知识" class="section level2" number="10.1">
+<div id="理论知识" class="section level2" number="11.1">
 <h2>
-<span class="header-section-number">10.1</span> 理论知识<a class="anchor" aria-label="anchor" href="#%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1</span> 理论知识<a class="anchor" aria-label="anchor" href="#%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86"><i class="fas fa-link"></i></a>
 </h2>
 <p>平稳时间序列分析: 平稳的，非随机序列(非白噪声序列)</p>
-<div id="差分" class="section level3" number="10.1.1">
+<div id="差分" class="section level3" number="11.1.1">
 <h3>
-<span class="header-section-number">10.1.1</span> 差分<a class="anchor" aria-label="anchor" href="#%E5%B7%AE%E5%88%86"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.1</span> 差分<a class="anchor" aria-label="anchor" href="#%E5%B7%AE%E5%88%86"><i class="fas fa-link"></i></a>
 </h3>
 <p>一阶差分: <span class="math inline">\(\triangledown{x_t}=x_{t}-x_{t-1}\)</span></p>
 <p>二阶差分: <span class="math inline">\(\triangledown^2{x_t}=\triangledown{x_t}-\triangledown{x_{t-1}}\)</span> 一阶差分的差分</p>
 <p>三阶差分: <span class="math inline">\(\triangledown^p{x_t}=\triangledown^{p-1}{x_t}-\triangledown^{p-1}{x_{t-1}}\)</span>必须先计算前一阶的差分</p>
 <p><strong>k步差分</strong>：<span class="math inline">\(\triangledown_k{x_t}=x_t-x_{t-k}\)</span> 直接相隔k步计算差</p>
 </div>
-<div id="延迟算子" class="section level3" number="10.1.2">
+<div id="延迟算子" class="section level3" number="11.1.2">
 <h3>
-<span class="header-section-number">10.1.2</span> 延迟算子<a class="anchor" aria-label="anchor" href="#%E5%BB%B6%E8%BF%9F%E7%AE%97%E5%AD%90"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.2</span> 延迟算子<a class="anchor" aria-label="anchor" href="#%E5%BB%B6%E8%BF%9F%E7%AE%97%E5%AD%90"><i class="fas fa-link"></i></a>
 </h3>
 <p>当前序列值乘上一个延迟算子，相当于把当前序列值的序列时间向过去拨了一个时刻</p>
 <p>记B为延迟算子</p>
@@ -118,9 +119,9 @@
 <p><span class="math display">\[\triangledown^p{x_t}=(1-B)^px_t=\sum^p_{i=0}(-1)^pC^i_px_{t-i}\]</span></p>
 <p><span class="math display">\[\triangledown_kx_t=x_t-x_{t-k}=(1-B^k)x_t\]</span></p>
 </div>
-<div id="平稳时间序列" class="section level3 tabset" number="10.1.3">
+<div id="平稳时间序列" class="section level3 tabset" number="11.1.3">
 <h3>
-<span class="header-section-number">10.1.3</span> 平稳时间序列<a class="anchor" aria-label="anchor" href="#%E5%B9%B3%E7%A8%B3%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.3</span> 平稳时间序列<a class="anchor" aria-label="anchor" href="#%E5%B9%B3%E7%A8%B3%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
 </h3>
 <p>h(t)=</p>
 <p>AR(p):p阶自回归模型</p>
@@ -164,9 +165,9 @@
 </ul>
 </li>
 </ul>
-<div id="wold分解定理" class="section level4" number="10.1.3.1">
+<div id="wold分解定理" class="section level4" number="11.1.3.1">
 <h4>
-<span class="header-section-number">10.1.3.1</span> Wold分解定理<a class="anchor" aria-label="anchor" href="#wold%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.3.1</span> Wold分解定理<a class="anchor" aria-label="anchor" href="#wold%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86"><i class="fas fa-link"></i></a>
 </h4>
 <ul>
 <li>
@@ -183,9 +184,9 @@
 如果方差极限趋向<span class="math inline">\(var(y_t)\)</span>,则<span class="math inline">\(y_t\)</span>为纯随机性序列</p>
 <p>绝大多数序列结语确定性序列和纯随机性序列中间，即<span class="math inline">\(0和var(y_t)\)</span>之间，序列中既包含部分确定性信息，又包含部分随机信息，这是我们把序列简称为随机序列</p>
 </div>
-<div id="平稳序列的特征根" class="section level4" number="10.1.3.2">
+<div id="平稳序列的特征根" class="section level4" number="11.1.3.2">
 <h4>
-<span class="header-section-number">10.1.3.2</span> 平稳序列的特征根<a class="anchor" aria-label="anchor" href="#%E5%B9%B3%E7%A8%B3%E5%BA%8F%E5%88%97%E7%9A%84%E7%89%B9%E5%BE%81%E6%A0%B9"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.3.2</span> 平稳序列的特征根<a class="anchor" aria-label="anchor" href="#%E5%B9%B3%E7%A8%B3%E5%BA%8F%E5%88%97%E7%9A%84%E7%89%B9%E5%BE%81%E6%A0%B9"><i class="fas fa-link"></i></a>
 </h4>
 <p>p阶线性差分方程：<span class="math inline">\(x_t+a_1x_{t-1}+\dots+a_px_{t-p}=h_t\)</span></p>
 <p>一阶：
@@ -197,9 +198,9 @@
 <span class="math display">\[\lambda^2-0.6\lambda+0.05=0,得\lambda_1=0.5,\lambda_2=0.1\]</span>
 <span class="math display">\[1-0.6B+0.05B^2=0 得B_1=2,B_2=10\]</span></p>
 </div>
-<div id="平稳序列特征根的性质" class="section level4" number="10.1.3.3">
+<div id="平稳序列特征根的性质" class="section level4" number="11.1.3.3">
 <h4>
-<span class="header-section-number">10.1.3.3</span> 平稳序列特征根的性质<a class="anchor" aria-label="anchor" href="#%E5%B9%B3%E7%A8%B3%E5%BA%8F%E5%88%97%E7%89%B9%E5%BE%81%E6%A0%B9%E7%9A%84%E6%80%A7%E8%B4%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.3.3</span> 平稳序列特征根的性质<a class="anchor" aria-label="anchor" href="#%E5%B9%B3%E7%A8%B3%E5%BA%8F%E5%88%97%E7%89%B9%E5%BE%81%E6%A0%B9%E7%9A%84%E6%80%A7%E8%B4%A8"><i class="fas fa-link"></i></a>
 </h4>
 <p>平稳序列必须满足特征根的绝对值都<strong>小于</strong>1</p>
 <p>*平稳性检验</p>
@@ -258,9 +259,9 @@ n为观察期数，m为延迟阶数
 </ul>
 </div>
 </div>
-<div id="ar模型" class="section level3" number="10.1.4">
+<div id="ar模型" class="section level3" number="11.1.4">
 <h3>
-<span class="header-section-number">10.1.4</span> AR模型<a class="anchor" aria-label="anchor" href="#ar%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.4</span> AR模型<a class="anchor" aria-label="anchor" href="#ar%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>函数形式
@@ -308,9 +309,9 @@ n为观察期数，m为延迟阶数
 </li>
 </ul>
 </div>
-<div id="ma模型" class="section level3" number="10.1.5">
+<div id="ma模型" class="section level3" number="11.1.5">
 <h3>
-<span class="header-section-number">10.1.5</span> MA模型<a class="anchor" aria-label="anchor" href="#ma%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.5</span> MA模型<a class="anchor" aria-label="anchor" href="#ma%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>均值：<span class="math inline">\(E(X_t)=\mu\)</span>
@@ -340,9 +341,9 @@ n为观察期数，m为延迟阶数
 </li>
 </ul>
 </div>
-<div id="arma模型" class="section level3" number="10.1.6">
+<div id="arma模型" class="section level3" number="11.1.6">
 <h3>
-<span class="header-section-number">10.1.6</span> ARMA模型<a class="anchor" aria-label="anchor" href="#arma%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.6</span> ARMA模型<a class="anchor" aria-label="anchor" href="#arma%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li><p>均值</p></li>
@@ -382,17 +383,17 @@ n为观察期数，m为延迟阶数
 </li>
 </ul>
 </div>
-<div id="crammer分解定理" class="section level3" number="10.1.7">
+<div id="crammer分解定理" class="section level3" number="11.1.7">
 <h3>
-<span class="header-section-number">10.1.7</span> Crammer分解定理<a class="anchor" aria-label="anchor" href="#crammer%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.7</span> Crammer分解定理<a class="anchor" aria-label="anchor" href="#crammer%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86"><i class="fas fa-link"></i></a>
 </h3>
 <p>任何一个时间序列<span class="math inline">\({x_t}\)</span>都可以视为两部分的叠加，其中，一部分是由时间t的多项式决定的确定性成分，另一部分是由白噪声序列决定的随机性成分，即
 <span class="math inline">\(x_t=\mu_t+\epsilon_t=\sum_{j=0}^d\beta_jt^j+\Psi(B)a_t\)</span></p>
 <p>Crammer分解定理说明任何一个序列的波动都可以视为同时受到确定性影响和随机性影响的作用，平稳序列要求这两方面的影响都是稳定的，而非平稳的产生的激励就在于它所受到的这两方面的影响至少有一方面是不稳定的</p>
 </div>
-<div id="arima模型" class="section level3" number="10.1.8">
+<div id="arima模型" class="section level3" number="11.1.8">
 <h3>
-<span class="header-section-number">10.1.8</span> ARIMA模型<a class="anchor" aria-label="anchor" href="#arima%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.1.8</span> ARIMA模型<a class="anchor" aria-label="anchor" href="#arima%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h3>
 <p><span class="math inline">\(\Phi(B)\triangledown^dx_t=\Theta(B)\epsilon_t\)</span></p>
 <p>广义自回归多项式:<span class="math inline">\(\phi(B)=\Phi(B)\triangledown^d\)</span></p>
@@ -404,9 +405,9 @@ n为观察期数，m为延迟阶数
 <p>疏系数模型: <span class="math inline">\(ARIMA((p_1,p_2),d,q)\)</span></p>
 </div>
 </div>
-<div id="实践操作" class="section level2" number="10.2">
+<div id="实践操作" class="section level2" number="11.2">
 <h2>
-<span class="header-section-number">10.2</span> 实践操作<a class="anchor" aria-label="anchor" href="#%E5%AE%9E%E8%B7%B5%E6%93%8D%E4%BD%9C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2</span> 实践操作<a class="anchor" aria-label="anchor" href="#%E5%AE%9E%E8%B7%B5%E6%93%8D%E4%BD%9C"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb548"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb548-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb548-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb548-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb548-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -426,21 +427,21 @@ n为观察期数，m为延迟阶数
 <span id="cb550-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb550-2" tabindex="-1"></a>data<span class="op">=</span>pd.read_excel(<span class="st">'../习题与案例数据/案例数据/A1_7.xlsx'</span>,index_col<span class="op">=</span><span class="st">'year'</span>)</span>
 <span id="cb550-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb550-3" tabindex="-1"></a>data.index<span class="op">=</span>pd.date_range(<span class="st">'1900'</span>,<span class="st">'1999'</span>,freq<span class="op">=</span><span class="st">'a'</span>)<span class="co">#不要以年份做索引，可能会有问题</span></span>
 <span id="cb550-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb550-4" tabindex="-1"></a>data</span></code></pre></div>
-<div id="绘制时序图" class="section level3" number="10.2.1">
+<div id="绘制时序图" class="section level3" number="11.2.1">
 <h3>
-<span class="header-section-number">10.2.1</span> 绘制时序图<a class="anchor" aria-label="anchor" href="#%E7%BB%98%E5%88%B6%E6%97%B6%E5%BA%8F%E5%9B%BE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.1</span> 绘制时序图<a class="anchor" aria-label="anchor" href="#%E7%BB%98%E5%88%B6%E6%97%B6%E5%BA%8F%E5%9B%BE"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb551"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb551-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb551-1" tabindex="-1"></a>plt.plot(data)</span></code></pre></div>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x168d9804d88&gt;]</code></pre>
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_5_1.png"></div>
 </div>
-<div id="模型识别" class="section level3 tabset" number="10.2.2">
+<div id="模型识别" class="section level3 tabset" number="11.2.2">
 <h3>
-<span class="header-section-number">10.2.2</span> 模型识别<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E8%AF%86%E5%88%AB"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.2</span> 模型识别<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E8%AF%86%E5%88%AB"><i class="fas fa-link"></i></a>
 </h3>
-<div id="序列的描述性统计" class="section level4" number="10.2.2.1">
+<div id="序列的描述性统计" class="section level4" number="11.2.2.1">
 <h4>
-<span class="header-section-number">10.2.2.1</span> 序列的描述性统计<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E7%9A%84%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.2.1</span> 序列的描述性统计<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E7%9A%84%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1"><i class="fas fa-link"></i></a>
 </h4>
 <ul>
 <li>序列的平稳性检验结果</li>
@@ -688,9 +689,9 @@ p值
 -3.183192251191782</code></pre>
 <p>从漂移项加自回归，或者漂移项+趋势项+自回归都可以看出，模型是平稳的</p>
 </div>
-<div id="序列的纯随机性检验结果" class="section level4" number="10.2.2.2">
+<div id="序列的纯随机性检验结果" class="section level4" number="11.2.2.2">
 <h4>
-<span class="header-section-number">10.2.2.2</span> 序列的纯随机性检验结果<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E7%9A%84%E7%BA%AF%E9%9A%8F%E6%9C%BA%E6%80%A7%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.2.2</span> 序列的纯随机性检验结果<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E7%9A%84%E7%BA%AF%E9%9A%8F%E6%9C%BA%E6%80%A7%E6%A3%80%E9%AA%8C%E7%BB%93%E6%9E%9C"><i class="fas fa-link"></i></a>
 </h4>
 <p>纯随机性检验也就是LB检验，利用Q统计量</p>
 <p>因为LB统计量（Q统计量的修正）是利用k阶延迟自相关系数来计算的，所以必须获得前k阶的自相关系数。k一般取6或12</p>
@@ -987,9 +988,9 @@ P
 </table></div>
 </div>
 </div>
-<div id="序列的各种自相关图" class="section level4" number="10.2.2.3">
+<div id="序列的各种自相关图" class="section level4" number="11.2.2.3">
 <h4>
-<span class="header-section-number">10.2.2.3</span> 序列的各种自相关图<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E7%9A%84%E5%90%84%E7%A7%8D%E8%87%AA%E7%9B%B8%E5%85%B3%E5%9B%BE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.2.3</span> 序列的各种自相关图<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E7%9A%84%E5%90%84%E7%A7%8D%E8%87%AA%E7%9B%B8%E5%85%B3%E5%9B%BE"><i class="fas fa-link"></i></a>
 </h4>
 <p>绘制时间序列图形的包在statsmodels中 <code>from statsmodels.graphics.tsaplots import plot_acf, plot_pacf</code></p>
 <div class="sourceCode" id="cb570"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb570-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb570-1" tabindex="-1"></a><span class="im">from</span> statsmodels.graphics.tsaplots <span class="im">import</span> plot_acf, plot_pacf</span></code></pre></div>
@@ -1000,9 +1001,9 @@ P
 <p>从相关图形和q统计量都可以看出，在短期内是存在相关性的，所以这是一个非纯随机时间序列，非白噪声序列。可以进行进一步的分析，也就是建模分析，预测。</p>
 </div>
 </div>
-<div id="模型构建" class="section level3 tabset" number="10.2.3">
+<div id="模型构建" class="section level3 tabset" number="11.2.3">
 <h3>
-<span class="header-section-number">10.2.3</span> 模型构建<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3</span> 模型构建<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA"><i class="fas fa-link"></i></a>
 </h3>
 <p>从自相关图可以看出是拖尾的，从偏相关图可以看出是截尾的。阶数为2.所以应该应用AR(2)模型</p>
 <div class="sourceCode" id="cb572"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb572-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb572-1" tabindex="-1"></a><span class="co">#导入ar和arma模型的一种方式</span></span>
@@ -1020,9 +1021,9 @@ statsmodels.tsa.arima_model.ARMA</code></pre>
 
 statsmodels.tsa.arima_model.ARMA</code></pre>
 <p>我们下面只看ARMA的实现，因为AR模型就相当于与ARMA（p，0）</p>
-<div id="模型定阶" class="section level4" number="10.2.3.1">
+<div id="模型定阶" class="section level4" number="11.2.3.1">
 <h4>
-<span class="header-section-number">10.2.3.1</span> 模型定阶<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E5%AE%9A%E9%98%B6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3.1</span> 模型定阶<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E5%AE%9A%E9%98%B6"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb576"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb576-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb576-1" tabindex="-1"></a><span class="co">#构建arma模型，首先是创建arma模型实例，给与一个时间序列数据</span></span>
 <span id="cb576-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb576-2" tabindex="-1"></a>arma_mod20<span class="op">=</span>sm.tsa.ARMA(data,(<span class="dv">2</span>,<span class="dv">0</span>))<span class="co">#数据是序列或数据框，索引是时间序列数据,并且设置阶数</span></span>
@@ -1251,17 +1252,17 @@ MA5    666.007394
 dtype: float64</code></pre>
 <p>可以看到AR(1,1)模型bic最小，并且模型平稳，我们最终模型定阶为（1，1）</p>
 </div>
-<div id="检验" class="section level4" number="10.2.3.2">
+<div id="检验" class="section level4" number="11.2.3.2">
 <h4>
-<span class="header-section-number">10.2.3.2</span> 检验<a class="anchor" aria-label="anchor" href="#%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3.2</span> 检验<a class="anchor" aria-label="anchor" href="#%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
 </h4>
 <p>包括模型的显著性，也即残差是否是一个白噪声序列</p>
 <p>残差的相关性检验，DW检验</p>
 <p>对于arma模型，我们假定残差服从正态分布，所以需要检验残差的正态性</p>
 </div>
-<div id="相关性检验" class="section level4" number="10.2.3.3">
+<div id="相关性检验" class="section level4" number="11.2.3.3">
 <h4>
-<span class="header-section-number">10.2.3.3</span> 相关性检验<a class="anchor" aria-label="anchor" href="#%E7%9B%B8%E5%85%B3%E6%80%A7%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3.3</span> 相关性检验<a class="anchor" aria-label="anchor" href="#%E7%9B%B8%E5%85%B3%E6%80%A7%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb583"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb583-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb583-1" tabindex="-1"></a>sm.stats.durbin_watson(arma_mod11fit.resid.values)</span></code></pre></div>
 <pre><code>1.959664111340092</code></pre>
@@ -1271,9 +1272,9 @@ dtype: float64</code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x168dc340f88&gt;]</code></pre>
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_49_1.png"></div>
 </div>
-<div id="正态性检验" class="section level4" number="10.2.3.4">
+<div id="正态性检验" class="section level4" number="11.2.3.4">
 <h4>
-<span class="header-section-number">10.2.3.4</span> 正态性检验<a class="anchor" aria-label="anchor" href="#%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3.4</span> 正态性检验<a class="anchor" aria-label="anchor" href="#%E6%AD%A3%E6%80%81%E6%80%A7%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb587"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb587-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb587-1" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb587-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb587-2" tabindex="-1"></a><span class="co">#正态检验</span></span>
@@ -1287,9 +1288,9 @@ dtype: float64</code></pre>
 <pre><code>NormaltestResult(statistic=5.939742977265384, pvalue=0.051309903814136935)</code></pre>
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_51_1.png"></div>
 </div>
-<div id="随机性检验" class="section level4" number="10.2.3.5">
+<div id="随机性检验" class="section level4" number="11.2.3.5">
 <h4>
-<span class="header-section-number">10.2.3.5</span> 随机性检验<a class="anchor" aria-label="anchor" href="#%E9%9A%8F%E6%9C%BA%E6%80%A7%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3.5</span> 随机性检验<a class="anchor" aria-label="anchor" href="#%E9%9A%8F%E6%9C%BA%E6%80%A7%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
 </h4>
 <p>即检验模型的显著性</p>
 <div class="sourceCode" id="cb589"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb589-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb589-1" tabindex="-1"></a><span class="co">#残差的随机性检验</span></span>
@@ -1348,9 +1349,9 @@ lag
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_53_1.png"></div>
 <p>从检验看出残差之间相关性很弱，满足假设</p>
 </div>
-<div id="预测" class="section level4" number="10.2.3.6">
+<div id="预测" class="section level4" number="11.2.3.6">
 <h4>
-<span class="header-section-number">10.2.3.6</span> 预测<a class="anchor" aria-label="anchor" href="#%E9%A2%84%E6%B5%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3.6</span> 预测<a class="anchor" aria-label="anchor" href="#%E9%A2%84%E6%B5%8B"><i class="fas fa-link"></i></a>
 </h4>
 <p>利用模型的predict函数和predict_plot函数，可以预测值，以及绘制预测值的图</p>
 <div class="sourceCode" id="cb591"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb591-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb591-1" tabindex="-1"></a>arma_mod11fit.predict(<span class="st">'1980'</span>,<span class="st">'2005'</span>)</span></code></pre></div>
@@ -1522,9 +1523,9 @@ predict(start=None, end=None, exog=None, dynamic=False) method of statsmodels.ts
     using exact MLE) is index 1. In the differenced series this is index
     0, but we refer to it as 1 from the original series.</code></pre>
 </div>
-<div id="生成相应系数的arma模型以及样本" class="section level4" number="10.2.3.7">
+<div id="生成相应系数的arma模型以及样本" class="section level4" number="11.2.3.7">
 <h4>
-<span class="header-section-number">10.2.3.7</span> 生成相应系数的arma模型以及样本<a class="anchor" aria-label="anchor" href="#%E7%94%9F%E6%88%90%E7%9B%B8%E5%BA%94%E7%B3%BB%E6%95%B0%E7%9A%84arma%E6%A8%A1%E5%9E%8B%E4%BB%A5%E5%8F%8A%E6%A0%B7%E6%9C%AC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3.7</span> 生成相应系数的arma模型以及样本<a class="anchor" aria-label="anchor" href="#%E7%94%9F%E6%88%90%E7%9B%B8%E5%BA%94%E7%B3%BB%E6%95%B0%E7%9A%84arma%E6%A8%A1%E5%9E%8B%E4%BB%A5%E5%8F%8A%E6%A0%B7%E6%9C%AC"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb607"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb607-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb607-1" tabindex="-1"></a><span class="co">## 利用from statsmodels.tsa.arima_process import ArmaProcess</span></span>
 <span id="cb607-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb607-2" tabindex="-1"></a></span>
@@ -1641,9 +1642,9 @@ array([1.        , 0.8       , 0.64      , 0.512     , 0.4096    ,
        0.32768   , 0.262144  , 0.2097152 , 0.16777216, 0.13421773,
        0.10737418, 0.08589935])</code></pre>
 </div>
-<div id="模型定阶的简便方法" class="section level4" number="10.2.3.8">
+<div id="模型定阶的简便方法" class="section level4" number="11.2.3.8">
 <h4>
-<span class="header-section-number">10.2.3.8</span> 模型定阶的简便方法<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E5%AE%9A%E9%98%B6%E7%9A%84%E7%AE%80%E4%BE%BF%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.3.8</span> 模型定阶的简便方法<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E5%AE%9A%E9%98%B6%E7%9A%84%E7%AE%80%E4%BE%BF%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
 </h4>
 <p>设置最大和最小AR、MA阶数，给与data和信息准则，信息准则可以是一个字符串或一个列表，同时可以选择是否中心化。检测后，可以利用.aic_min_order或.bic_min_order等你选择的最小准则选择最佳的模型，并且模型一定是平稳和可逆的。不满足的无值</p>
 <div class="sourceCode" id="cb617"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb617-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb617-1" tabindex="-1"></a><span class="bu">help</span>(sm.tsa.arma_order_select_ic)</span></code></pre></div>
@@ -1771,9 +1772,9 @@ arma_order_select_ic(y, max_ar=4, max_ma=2, ic='bic', trend='c', model_kw=None, 
 <pre><code>dict_keys(['aic', 'bic', 'aic_min_order', 'bic_min_order'])</code></pre>
 </div>
 </div>
-<div id="模型总结" class="section level3" number="10.2.4">
+<div id="模型总结" class="section level3" number="11.2.4">
 <h3>
-<span class="header-section-number">10.2.4</span> 模型总结<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.4</span> 模型总结<a class="anchor" aria-label="anchor" href="#%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93"><i class="fas fa-link"></i></a>
 </h3>
 <p>sm.tsa=tsa</p>
 <div class="inline-table"><table class="table table-sm">
@@ -1826,15 +1827,15 @@ arma_order_select_ic(y, max_ar=4, max_ma=2, ic='bic', trend='c', model_kw=None, 
 </tbody>
 </table></div>
 </div>
-<div id="非平稳时间序列" class="section level3" number="10.2.5">
+<div id="非平稳时间序列" class="section level3" number="11.2.5">
 <h3>
-<span class="header-section-number">10.2.5</span> 非平稳时间序列<a class="anchor" aria-label="anchor" href="#%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.5</span> 非平稳时间序列<a class="anchor" aria-label="anchor" href="#%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
 </h3>
 <p>cramer分解定理证明任何一个序列都可以视为同时受到确定性影响和随机性影响的作用，对于非平稳时间序列，这两方面至少有一个方面是不平稳的。</p>
 </div>
-<div id="arima-非平稳无季节效应时间序列" class="section level3 tabset" number="10.2.6">
+<div id="arima-非平稳无季节效应时间序列" class="section level3 tabset" number="11.2.6">
 <h3>
-<span class="header-section-number">10.2.6</span> ARIMA 非平稳无季节效应时间序列<a class="anchor" aria-label="anchor" href="#arima-%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%97%A0%E5%AD%A3%E8%8A%82%E6%95%88%E5%BA%94%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.6</span> ARIMA 非平稳无季节效应时间序列<a class="anchor" aria-label="anchor" href="#arima-%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%97%A0%E5%AD%A3%E8%8A%82%E6%95%88%E5%BA%94%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
 </h3>
 <p>当时间序列非平稳但是不存在其他诸如季节效应的随机影响时，一般只需要做差分就可以获得平稳序列。可能是一阶，二阶，并且可以证明d阶差分后一定是平稳的，但是差分阶数越高，方差越大，所以我们要选择合适的差分阶数。避免出现过差分现象</p>
 <p>其实差分就是自回归，一个差分可以写成自回归的形式，就是用自回归来提取序列中蕴含的确定性信息</p>
@@ -1842,9 +1843,9 @@ arma_order_select_ic(y, max_ar=4, max_ma=2, ic='bic', trend='c', model_kw=None, 
 <p>ARIMA（p，d，q）p，q和ARMA模型一致，d代表做几阶差分。当p=q=0，d=0时，<span class="math inline">\(x_t=x_{t-1}+\epsilon\)</span>,称为随机游走模型或醉汉模型</p>
 <pre><code>arima_mod=tsa.SARIMAX(data,order=(p,d,q))
 arima_modpdq=arima_modpdq.fit(disp=-1)</code></pre>
-<div id="数据是否平稳" class="section level4" number="10.2.6.1">
+<div id="数据是否平稳" class="section level4" number="11.2.6.1">
 <h4>
-<span class="header-section-number">10.2.6.1</span> 数据是否平稳<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%98%AF%E5%90%A6%E5%B9%B3%E7%A8%B3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.6.1</span> 数据是否平稳<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%98%AF%E5%90%A6%E5%B9%B3%E7%A8%B3"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb626"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb626-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb626-1" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb626-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb626-2" tabindex="-1"></a><span class="im">from</span> io <span class="im">import</span> BytesIO</span>
@@ -2059,9 +2060,9 @@ t
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_82_1.png"></div>
 <p>可以判断大致应该是做一阶差分</p>
 </div>
-<div id="差分并做单位根检验" class="section level4" number="10.2.6.2">
+<div id="差分并做单位根检验" class="section level4" number="11.2.6.2">
 <h4>
-<span class="header-section-number">10.2.6.2</span> 差分并做单位根检验<a class="anchor" aria-label="anchor" href="#%E5%B7%AE%E5%88%86%E5%B9%B6%E5%81%9A%E5%8D%95%E4%BD%8D%E6%A0%B9%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.6.2</span> 差分并做单位根检验<a class="anchor" aria-label="anchor" href="#%E5%B7%AE%E5%88%86%E5%B9%B6%E5%81%9A%E5%8D%95%E4%BD%8D%E6%A0%B9%E6%A3%80%E9%AA%8C"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb630"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb630-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb630-1" tabindex="-1"></a><span class="kw">def</span> select_arima_orderd_adf(data,maxlag):</span>
 <span id="cb630-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb630-2" tabindex="-1"></a>    results<span class="op">=</span>[tsa.adfuller(data.diff(i).dropna())[<span class="dv">1</span>] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,maxlag<span class="op">+</span><span class="dv">1</span>)]</span>
@@ -2146,9 +2147,9 @@ p值
 </div>
 <p>这里其实全部都没有通过0.05的检验，那我们就取0.1为标准，所以一阶差分就可</p>
 </div>
-<div id="构建arima模型" class="section level4" number="10.2.6.3">
+<div id="构建arima模型" class="section level4" number="11.2.6.3">
 <h4>
-<span class="header-section-number">10.2.6.3</span> 构建ARIMA模型<a class="anchor" aria-label="anchor" href="#%E6%9E%84%E5%BB%BAarima%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.6.3</span> 构建ARIMA模型<a class="anchor" aria-label="anchor" href="#%E6%9E%84%E5%BB%BAarima%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb632"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb632-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb632-1" tabindex="-1"></a><span class="co">#首先获取差分数据</span></span>
 <span id="cb632-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb632-2" tabindex="-1"></a>data[<span class="st">'d1wpi'</span>]<span class="op">=</span>data[<span class="st">'wpi'</span>].diff()</span>
@@ -2180,14 +2181,14 @@ p值
 <span id="cb635-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb635-3" tabindex="-1"></a>arima_mod111fit<span class="op">=</span>arima_mod111.fit(disp<span class="op">=-</span><span class="dv">1</span>)</span>
 <span id="cb635-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb635-4" tabindex="-1"></a>arima_mod111fit.summary()</span></code></pre></div>
 </div>
-<div id="检验-1" class="section level4" number="10.2.6.4">
+<div id="检验-1" class="section level4" number="11.2.6.4">
 <h4>
-<span class="header-section-number">10.2.6.4</span> 检验<a class="anchor" aria-label="anchor" href="#%E6%A3%80%E9%AA%8C-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.6.4</span> 检验<a class="anchor" aria-label="anchor" href="#%E6%A3%80%E9%AA%8C-1"><i class="fas fa-link"></i></a>
 </h4>
 </div>
-<div id="预测-1" class="section level4" number="10.2.6.5">
+<div id="预测-1" class="section level4" number="11.2.6.5">
 <h4>
-<span class="header-section-number">10.2.6.5</span> 预测<a class="anchor" aria-label="anchor" href="#%E9%A2%84%E6%B5%8B-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.6.5</span> 预测<a class="anchor" aria-label="anchor" href="#%E9%A2%84%E6%B5%8B-1"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb636"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb636-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb636-1" tabindex="-1"></a>arima_mod111fit.predict(<span class="st">'1960-01-01'</span>,<span class="st">'1991-01-01'</span>)</span></code></pre></div>
 <pre><code>1960-01-01      0.749786
@@ -2376,9 +2377,9 @@ upper wpi
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_97_4.png"></div>
 </div>
 </div>
-<div id="有季节效应的非平稳模型" class="section level3 tabset" number="10.2.7">
+<div id="有季节效应的非平稳模型" class="section level3 tabset" number="11.2.7">
 <h3>
-<span class="header-section-number">10.2.7</span> 有季节效应的非平稳模型<a class="anchor" aria-label="anchor" href="#%E6%9C%89%E5%AD%A3%E8%8A%82%E6%95%88%E5%BA%94%E7%9A%84%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.7</span> 有季节效应的非平稳模型<a class="anchor" aria-label="anchor" href="#%E6%9C%89%E5%AD%A3%E8%8A%82%E6%95%88%E5%BA%94%E7%9A%84%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li>直接差分，先消掉趋势。再按照周期来构建<strong>疏系数模型</strong>，季度数据，月度数据周期是一年</li>
@@ -2398,9 +2399,9 @@ upper wpi
 
 [&lt;matplotlib.lines.Line2D at 0x168dee32c88&gt;]</code></pre>
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_103_2.png"></div>
-<div id="第一种模型构建" class="section level4" number="10.2.7.1">
+<div id="第一种模型构建" class="section level4" number="11.2.7.1">
 <h4>
-<span class="header-section-number">10.2.7.1</span> 第一种模型构建<a class="anchor" aria-label="anchor" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.7.1</span> 第一种模型构建<a class="anchor" aria-label="anchor" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb645"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb645-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb645-1" tabindex="-1"></a>ar <span class="op">=</span> <span class="dv">1</span>          <span class="co"># this is the maximum degree specification</span></span>
 <span id="cb645-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb645-2" tabindex="-1"></a>ma <span class="op">=</span> (<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>)  <span class="co"># this is the lag polynomial specification</span></span>
@@ -2606,9 +2607,9 @@ p值
 <span id="cb650-6"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb650-6" tabindex="-1"></a>modfit<span class="op">=</span>mod.fit(disp<span class="op">=-</span><span class="dv">1</span>)</span>
 <span id="cb650-7"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb650-7" tabindex="-1"></a>modfit.summary()</span></code></pre></div>
 </div>
-<div id="arima加法模型" class="section level4" number="10.2.7.2">
+<div id="arima加法模型" class="section level4" number="11.2.7.2">
 <h4>
-<span class="header-section-number">10.2.7.2</span> ARIMA加法模型<a class="anchor" aria-label="anchor" href="#arima%E5%8A%A0%E6%B3%95%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.7.2</span> ARIMA加法模型<a class="anchor" aria-label="anchor" href="#arima%E5%8A%A0%E6%B3%95%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h4>
 <p>加法模型其实就是先获得平稳的模型，将不稳定因素减去，对剩下的因素构建适当的ARMA模型</p>
 <div class="sourceCode" id="cb651"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb651-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb651-1" tabindex="-1"></a><span class="co">#导入数据</span></span>
@@ -2841,9 +2842,9 @@ Freq: QS-OCT, Length: 121, dtype: float64</code></pre>
 <p>都是通过的</p>
 <p>略</p>
 </div>
-<div id="arima乘法模型" class="section level4" number="10.2.7.3">
+<div id="arima乘法模型" class="section level4" number="11.2.7.3">
 <h4>
-<span class="header-section-number">10.2.7.3</span> ARIMA乘法模型<a class="anchor" aria-label="anchor" href="#arima%E4%B9%98%E6%B3%95%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.7.3</span> ARIMA乘法模型<a class="anchor" aria-label="anchor" href="#arima%E4%B9%98%E6%B3%95%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb664"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb664-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb664-1" tabindex="-1"></a>data<span class="op">=</span>pd.read_excel(<span class="st">'./习题与案例数据/案例数据/A1_21.xlsx'</span>,index_col<span class="op">=</span><span class="st">'time'</span>)</span>
 <span id="cb664-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb664-2" tabindex="-1"></a>plt.plot(data)</span>
@@ -3102,16 +3103,16 @@ array([[ 3.15982571e-01,  4.10370250e+01,  1.49372521e-10],
 &lt;matplotlib.legend.Legend at 0x168db920f88&gt;</code></pre>
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_134_3.png"></div>
 </div>
-<div id="季节调整模型" class="section level4" number="10.2.7.4">
+<div id="季节调整模型" class="section level4" number="11.2.7.4">
 <h4>
-<span class="header-section-number">10.2.7.4</span> 季节调整模型<a class="anchor" aria-label="anchor" href="#%E5%AD%A3%E8%8A%82%E8%B0%83%E6%95%B4%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.7.4</span> 季节调整模型<a class="anchor" aria-label="anchor" href="#%E5%AD%A3%E8%8A%82%E8%B0%83%E6%95%B4%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb679"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb679-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb679-1" tabindex="-1"></a>data<span class="op">=</span>pd.read_excel(<span class="st">'./习题与案例数据/案例数据/A1_17.xlsx'</span>,index_col<span class="op">=</span><span class="st">'time'</span>)</span>
 <span id="cb679-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb679-2" tabindex="-1"></a><span class="co">#tsa.x13_arima_select_order(data,maxorder=(2,2),maxdiff=(2,1))# x12a and x13as not found on path. Give the path, put them on PATH, or set the X12PATH or X13PATH environmental variable.</span></span></code></pre></div>
 </div>
-<div id="指数平滑模型" class="section level4" number="10.2.7.5">
+<div id="指数平滑模型" class="section level4" number="11.2.7.5">
 <h4>
-<span class="header-section-number">10.2.7.5</span> 指数平滑模型<a class="anchor" aria-label="anchor" href="#%E6%8C%87%E6%95%B0%E5%B9%B3%E6%BB%91%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.7.5</span> 指数平滑模型<a class="anchor" aria-label="anchor" href="#%E6%8C%87%E6%95%B0%E5%B9%B3%E6%BB%91%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h4>
 <ol style="list-style-type: decimal">
 <li>Holt线性趋势模型</li>
@@ -3211,9 +3212,9 @@ b^\phi_{t-1}+ \alpha \beta^*\frac{e_{t}}{\ell_{t-1}}.
 <p><span class="math inline">\(\hat{x}_{t+k}=[\hat{a}(t)+\hat{b}(t)k]\hat{c}(t+k),\forall k \geq 1\)</span></p>
 <p>假设t+k期为季节周期的第j期,则<span class="math inline">\(\hat{c}(t+k)=\hat{S}_k(j=1,2,3,\dots,m)\)</span></p>
 </div>
-<div id="简单指数平滑模型" class="section level4" number="10.2.7.6">
+<div id="简单指数平滑模型" class="section level4" number="11.2.7.6">
 <h4>
-<span class="header-section-number">10.2.7.6</span> 简单指数平滑模型<a class="anchor" aria-label="anchor" href="#%E7%AE%80%E5%8D%95%E6%8C%87%E6%95%B0%E5%B9%B3%E6%BB%91%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.7.6</span> 简单指数平滑模型<a class="anchor" aria-label="anchor" href="#%E7%AE%80%E5%8D%95%E6%8C%87%E6%95%B0%E5%B9%B3%E6%BB%91%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h4>
 <p>模型没有长期趋势和季节效应</p>
 <div class="sourceCode" id="cb680"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb680-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb680-1" tabindex="-1"></a><span class="co">#Here we run three variants of simple exponential smoothing:</span></span>
@@ -3692,9 +3693,9 @@ temp
 &lt;matplotlib.legend.Legend at 0x168dbfce808&gt;</code></pre>
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_139_5.png"></div>
 </div>
-<div id="指数平滑-holt两参数" class="section level4" number="10.2.7.7">
+<div id="指数平滑-holt两参数" class="section level4" number="11.2.7.7">
 <h4>
-<span class="header-section-number">10.2.7.7</span> 指数平滑-holt两参数<a class="anchor" aria-label="anchor" href="#%E6%8C%87%E6%95%B0%E5%B9%B3%E6%BB%91-holt%E4%B8%A4%E5%8F%82%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.7.7</span> 指数平滑-holt两参数<a class="anchor" aria-label="anchor" href="#%E6%8C%87%E6%95%B0%E5%B9%B3%E6%BB%91-holt%E4%B8%A4%E5%8F%82%E6%95%B0"><i class="fas fa-link"></i></a>
 </h4>
 <p>对于含有线性趋势的序列进行预测</p>
 <div class="sourceCode" id="cb684"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb684-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb684-1" tabindex="-1"></a>data<span class="op">=</span>pd.read_excel(<span class="st">'./习题与案例数据/案例数据/A1_19.xlsx'</span>)</span>
@@ -4094,9 +4095,9 @@ Text(0, 0.5, 'Livestock, sheep in Asia (millions)')
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_150_9.png"></div>
 <pre><code>Figure 7.5: Forecasting livestock, sheep in Asia: comparing forecasting performance of non-seasonal methods.</code></pre>
 </div>
-<div id="holt-winters三参数季节加法和乘法模型" class="section level4" number="10.2.7.8">
+<div id="holt-winters三参数季节加法和乘法模型" class="section level4" number="11.2.7.8">
 <h4>
-<span class="header-section-number">10.2.7.8</span> holt-winters三参数季节加法和乘法模型<a class="anchor" aria-label="anchor" href="#holt-winters%E4%B8%89%E5%8F%82%E6%95%B0%E5%AD%A3%E8%8A%82%E5%8A%A0%E6%B3%95%E5%92%8C%E4%B9%98%E6%B3%95%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.7.8</span> holt-winters三参数季节加法和乘法模型<a class="anchor" aria-label="anchor" href="#holt-winters%E4%B8%89%E5%8F%82%E6%95%B0%E5%AD%A3%E8%8A%82%E5%8A%A0%E6%B3%95%E5%92%8C%E4%B9%98%E6%B3%95%E6%A8%A1%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h4>
 <p><code>tsa.ExponentialSmoothing(data,seasonal_periods,trend='add'或'mul',seasonal='add'或'mut')</code>#seasonal选项决定了加法还是乘法模型</p>
 <div class="sourceCode" id="cb698"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb698-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html#cb698-1" tabindex="-1"></a>data <span class="op">=</span> [<span class="fl">41.7275</span>,  <span class="fl">24.0418</span>,  <span class="fl">32.3281</span>,  <span class="fl">37.3287</span>,  <span class="fl">46.2132</span>,  <span class="fl">29.3463</span>, <span class="fl">36.4829</span>,  <span class="fl">42.9777</span>,  <span class="fl">48.9015</span>,  <span class="fl">31.1802</span>,  <span class="fl">37.7179</span>,  <span class="fl">40.4202</span>, <span class="fl">51.2069</span>,  <span class="fl">31.8872</span>,  <span class="fl">40.9783</span>,  <span class="fl">43.7725</span>,  <span class="fl">55.5586</span>,  <span class="fl">33.8509</span>, <span class="fl">42.0764</span>,  <span class="fl">45.6423</span>,  <span class="fl">59.7668</span>,  <span class="fl">35.1919</span>,  <span class="fl">44.3197</span>,  <span class="fl">47.9137</span>]</span>
@@ -5708,9 +5709,9 @@ NaN
 <div class="inline-figure"><img src="static/image/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/output_160_12.png"></div>
 </div>
 </div>
-<div id="examples参考" class="section level3" number="10.2.8">
+<div id="examples参考" class="section level3" number="11.2.8">
 <h3>
-<span class="header-section-number">10.2.8</span> examples参考<a class="anchor" aria-label="anchor" href="#examples%E5%8F%82%E8%80%83"><i class="fas fa-link"></i></a>
+<span class="header-section-number">11.2.8</span> examples参考<a class="anchor" aria-label="anchor" href="#examples%E5%8F%82%E8%80%83"><i class="fas fa-link"></i></a>
 </h3>
 <p><a href="https://www.statsmodels.org/v0.10.1/examples/notebooks/generated/tsa_arma_0.html">ARMA模型，讲了平稳性检验，随机性检验，相关图绘制，模型定阶和构建，假设的检验，预测</a></p>
 <p><a href="https://www.statsmodels.org/v0.10.1/examples/notebooks/generated/statespace_sarimax_stata.html">ARIMA模型,讲了只有趋势项的情形，以及疏系数构建，以及ARIMA加法和乘法模型</a></p>
@@ -6091,29 +6092,29 @@ function openTab(evt,tabName){
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B"><span class="header-section-number">10</span> 时间序列模型</a></li>
+<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B"><span class="header-section-number">11</span> 时间序列模型</a></li>
 <li>
-<a class="nav-link" href="#%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86"><span class="header-section-number">10.1</span> 理论知识</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E5%B7%AE%E5%88%86"><span class="header-section-number">10.1.1</span> 差分</a></li>
-<li><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E7%AE%97%E5%AD%90"><span class="header-section-number">10.1.2</span> 延迟算子</a></li>
-<li><a class="nav-link" href="#%E5%B9%B3%E7%A8%B3%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="header-section-number">10.1.3</span> 平稳时间序列</a></li>
-<li><a class="nav-link" href="#ar%E6%A8%A1%E5%9E%8B"><span class="header-section-number">10.1.4</span> AR模型</a></li>
-<li><a class="nav-link" href="#ma%E6%A8%A1%E5%9E%8B"><span class="header-section-number">10.1.5</span> MA模型</a></li>
-<li><a class="nav-link" href="#arma%E6%A8%A1%E5%9E%8B"><span class="header-section-number">10.1.6</span> ARMA模型</a></li>
-<li><a class="nav-link" href="#crammer%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86"><span class="header-section-number">10.1.7</span> Crammer分解定理</a></li>
-<li><a class="nav-link" href="#arima%E6%A8%A1%E5%9E%8B"><span class="header-section-number">10.1.8</span> ARIMA模型</a></li>
+<a class="nav-link" href="#%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86"><span class="header-section-number">11.1</span> 理论知识</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%B7%AE%E5%88%86"><span class="header-section-number">11.1.1</span> 差分</a></li>
+<li><a class="nav-link" href="#%E5%BB%B6%E8%BF%9F%E7%AE%97%E5%AD%90"><span class="header-section-number">11.1.2</span> 延迟算子</a></li>
+<li><a class="nav-link" href="#%E5%B9%B3%E7%A8%B3%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="header-section-number">11.1.3</span> 平稳时间序列</a></li>
+<li><a class="nav-link" href="#ar%E6%A8%A1%E5%9E%8B"><span class="header-section-number">11.1.4</span> AR模型</a></li>
+<li><a class="nav-link" href="#ma%E6%A8%A1%E5%9E%8B"><span class="header-section-number">11.1.5</span> MA模型</a></li>
+<li><a class="nav-link" href="#arma%E6%A8%A1%E5%9E%8B"><span class="header-section-number">11.1.6</span> ARMA模型</a></li>
+<li><a class="nav-link" href="#crammer%E5%88%86%E8%A7%A3%E5%AE%9A%E7%90%86"><span class="header-section-number">11.1.7</span> Crammer分解定理</a></li>
+<li><a class="nav-link" href="#arima%E6%A8%A1%E5%9E%8B"><span class="header-section-number">11.1.8</span> ARIMA模型</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E5%AE%9E%E8%B7%B5%E6%93%8D%E4%BD%9C"><span class="header-section-number">10.2</span> 实践操作</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E7%BB%98%E5%88%B6%E6%97%B6%E5%BA%8F%E5%9B%BE"><span class="header-section-number">10.2.1</span> 绘制时序图</a></li>
-<li><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%86%E5%88%AB"><span class="header-section-number">10.2.2</span> 模型识别</a></li>
-<li><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA"><span class="header-section-number">10.2.3</span> 模型构建</a></li>
-<li><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93"><span class="header-section-number">10.2.4</span> 模型总结</a></li>
-<li><a class="nav-link" href="#%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="header-section-number">10.2.5</span> 非平稳时间序列</a></li>
-<li><a class="nav-link" href="#arima-%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%97%A0%E5%AD%A3%E8%8A%82%E6%95%88%E5%BA%94%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="header-section-number">10.2.6</span> ARIMA 非平稳无季节效应时间序列</a></li>
-<li><a class="nav-link" href="#%E6%9C%89%E5%AD%A3%E8%8A%82%E6%95%88%E5%BA%94%E7%9A%84%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%A8%A1%E5%9E%8B"><span class="header-section-number">10.2.7</span> 有季节效应的非平稳模型</a></li>
-<li><a class="nav-link" href="#examples%E5%8F%82%E8%80%83"><span class="header-section-number">10.2.8</span> examples参考</a></li>
+<a class="nav-link" href="#%E5%AE%9E%E8%B7%B5%E6%93%8D%E4%BD%9C"><span class="header-section-number">11.2</span> 实践操作</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E7%BB%98%E5%88%B6%E6%97%B6%E5%BA%8F%E5%9B%BE"><span class="header-section-number">11.2.1</span> 绘制时序图</a></li>
+<li><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%86%E5%88%AB"><span class="header-section-number">11.2.2</span> 模型识别</a></li>
+<li><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA"><span class="header-section-number">11.2.3</span> 模型构建</a></li>
+<li><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%80%BB%E7%BB%93"><span class="header-section-number">11.2.4</span> 模型总结</a></li>
+<li><a class="nav-link" href="#%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="header-section-number">11.2.5</span> 非平稳时间序列</a></li>
+<li><a class="nav-link" href="#arima-%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%97%A0%E5%AD%A3%E8%8A%82%E6%95%88%E5%BA%94%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="header-section-number">11.2.6</span> ARIMA 非平稳无季节效应时间序列</a></li>
+<li><a class="nav-link" href="#%E6%9C%89%E5%AD%A3%E8%8A%82%E6%95%88%E5%BA%94%E7%9A%84%E9%9D%9E%E5%B9%B3%E7%A8%B3%E6%A8%A1%E5%9E%8B"><span class="header-section-number">11.2.7</span> 有季节效应的非平稳模型</a></li>
+<li><a class="nav-link" href="#examples%E5%8F%82%E8%80%83"><span class="header-section-number">11.2.8</span> examples参考</a></li>
 </ul>
 </li>
 </ul>

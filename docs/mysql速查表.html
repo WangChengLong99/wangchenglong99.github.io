@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>第8章 mysql速查表 | wcl</title>
-<meta name="author" content="第8章 mysql速查表 | wcl">
-<meta name="description" content="8.1 数据类型  8.1.1 数值型  8.1.1.1 整数型   8.1.1.2 浮点数    8.1.2 时间与日期   8.1.3 字符串    8.2 数学运算符   8.3 比较运算符   8.4 逻辑运算符   8.5 函数  8.5.1 数学函数 函数 作用 ABS(X) 绝对值 SQRT(x) 平方 MOD(X) 求余 CEIL(X) 上整数 FLOOR(X) 下整数...">
+<title>第9章 mysql速查表 | wcl</title>
+<meta name="author" content="第9章 mysql速查表 | wcl">
+<meta name="description" content="9.1 数据类型  9.1.1 数值型  9.1.1.1 整数型   9.1.1.2 浮点数    9.1.2 时间与日期   9.1.3 字符串    9.2 数学运算符   9.3 比较运算符   9.4 逻辑运算符   9.5 函数  9.5.1 数学函数 函数 作用 ABS(X) 绝对值 SQRT(x) 平方 MOD(X) 求余 CEIL(X) 上整数 FLOOR(X) 下整数...">
 <meta name="generator" content="bookdown 0.39 with bs4_book()">
-<meta property="og:title" content="第8章 mysql速查表 | wcl">
+<meta property="og:title" content="第9章 mysql速查表 | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/mysql速查表.html">
-<meta property="og:description" content="8.1 数据类型  8.1.1 数值型  8.1.1.1 整数型   8.1.1.2 浮点数    8.1.2 时间与日期   8.1.3 字符串    8.2 数学运算符   8.3 比较运算符   8.4 逻辑运算符   8.5 函数  8.5.1 数学函数 函数 作用 ABS(X) 绝对值 SQRT(x) 平方 MOD(X) 求余 CEIL(X) 上整数 FLOOR(X) 下整数...">
+<meta property="og:description" content="9.1 数据类型  9.1.1 数值型  9.1.1.1 整数型   9.1.1.2 浮点数    9.1.2 时间与日期   9.1.3 字符串    9.2 数学运算符   9.3 比较运算符   9.4 逻辑运算符   9.5 函数  9.5.1 数学函数 函数 作用 ABS(X) 绝对值 SQRT(x) 平方 MOD(X) 求余 CEIL(X) 上整数 FLOOR(X) 下整数...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第8章 mysql速查表 | wcl">
-<meta name="twitter:description" content="8.1 数据类型  8.1.1 数值型  8.1.1.1 整数型   8.1.1.2 浮点数    8.1.2 时间与日期   8.1.3 字符串    8.2 数学运算符   8.3 比较运算符   8.4 逻辑运算符   8.5 函数  8.5.1 数学函数 函数 作用 ABS(X) 绝对值 SQRT(x) 平方 MOD(X) 求余 CEIL(X) 上整数 FLOOR(X) 下整数...">
+<meta name="twitter:title" content="第9章 mysql速查表 | wcl">
+<meta name="twitter:description" content="9.1 数据类型  9.1.1 数值型  9.1.1.1 整数型   9.1.1.2 浮点数    9.1.2 时间与日期   9.1.3 字符串    9.2 数学运算符   9.3 比较运算符   9.4 逻辑运算符   9.5 函数  9.5.1 数学函数 函数 作用 ABS(X) 绝对值 SQRT(x) 平方 MOD(X) 求余 CEIL(X) 上整数 FLOOR(X) 下整数...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,24 +61,25 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> welcome</a></li>
 <li class="book-part">数据</li>
 <li><a class="" href="introduction.html">introduction</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">2</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">6</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
 <li><a class="" href="introduction-1.html">introduction</a></li>
-<li><a class="" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
-<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li><a class="" href="matplotlib.html"><span class="header-section-number">7</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">8</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
 <li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="active" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
-<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li><a class="active" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">9</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">10</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
 <li><a class="" href="introduction-3.html">introduction</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">11</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,69 +87,69 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="mysql速查表" class="section level1" number="8">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="mysql速查表" class="section level1" number="9">
 <h1>
-<span class="header-section-number">第8章</span> mysql速查表<a class="anchor" aria-label="anchor" href="#mysql%E9%80%9F%E6%9F%A5%E8%A1%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">第9章</span> mysql速查表<a class="anchor" aria-label="anchor" href="#mysql%E9%80%9F%E6%9F%A5%E8%A1%A8"><i class="fas fa-link"></i></a>
 </h1>
-<div id="数据类型" class="section level2" number="8.1">
+<div id="数据类型" class="section level2" number="9.1">
 <h2>
-<span class="header-section-number">8.1</span> 数据类型<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1</span> 数据类型<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h2>
-<div id="数值型" class="section level3 tabset" number="8.1.1">
+<div id="数值型" class="section level3 tabset" number="9.1.1">
 <h3>
-<span class="header-section-number">8.1.1</span> 数值型<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%80%BC%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1.1</span> 数值型<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%80%BC%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h3>
-<div id="整数型" class="section level4" number="8.1.1.1">
+<div id="整数型" class="section level4" number="9.1.1.1">
 <h4>
-<span class="header-section-number">8.1.1.1</span> 整数型<a class="anchor" aria-label="anchor" href="#%E6%95%B4%E6%95%B0%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1.1.1</span> 整数型<a class="anchor" aria-label="anchor" href="#%E6%95%B4%E6%95%B0%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%95%B4%E6%95%B0%E5%9E%8B.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="浮点数" class="section level4" number="8.1.1.2">
+<div id="浮点数" class="section level4" number="9.1.1.2">
 <h4>
-<span class="header-section-number">8.1.1.2</span> 浮点数<a class="anchor" aria-label="anchor" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1.1.2</span> 浮点数<a class="anchor" aria-label="anchor" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%B5%AE%E7%82%B9%E6%95%B0.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="时间与日期" class="section level3" number="8.1.2">
+<div id="时间与日期" class="section level3" number="9.1.2">
 <h3>
-<span class="header-section-number">8.1.2</span> 时间与日期<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%A5%E6%9C%9F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1.2</span> 时间与日期<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%A5%E6%9C%9F"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%97%B6%E9%97%B4.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="字符串" class="section level3" number="8.1.3">
+<div id="字符串" class="section level3" number="9.1.3">
 <h3>
-<span class="header-section-number">8.1.3</span> 字符串<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.1.3</span> 字符串<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%96%87%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="数学运算符" class="section level2" number="8.2">
+<div id="数学运算符" class="section level2" number="9.2">
 <h2>
-<span class="header-section-number">8.2</span> 数学运算符<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97%E7%AC%A6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.2</span> 数学运算符<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97%E7%AC%A6"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97%E7%AC%A6.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="比较运算符" class="section level2" number="8.3">
+<div id="比较运算符" class="section level2" number="9.3">
 <h2>
-<span class="header-section-number">8.3</span> 比较运算符<a class="anchor" aria-label="anchor" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.3</span> 比较运算符<a class="anchor" aria-label="anchor" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="逻辑运算符" class="section level2" number="8.4">
+<div id="逻辑运算符" class="section level2" number="9.4">
 <h2>
-<span class="header-section-number">8.4</span> 逻辑运算符<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.4</span> 逻辑运算符<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="函数-1" class="section level2" number="8.5">
+<div id="函数-1" class="section level2" number="9.5">
 <h2>
-<span class="header-section-number">8.5</span> 函数<a class="anchor" aria-label="anchor" href="#%E5%87%BD%E6%95%B0-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5</span> 函数<a class="anchor" aria-label="anchor" href="#%E5%87%BD%E6%95%B0-1"><i class="fas fa-link"></i></a>
 </h2>
-<div id="数学函数" class="section level3" number="8.5.1">
+<div id="数学函数" class="section level3" number="9.5.1">
 <h3>
-<span class="header-section-number">8.5.1</span> 数学函数<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.1</span> 数学函数<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -243,9 +244,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="字符串函数" class="section level3" number="8.5.2">
+<div id="字符串函数" class="section level3" number="9.5.2">
 <h3>
-<span class="header-section-number">8.5.2</span> 字符串函数<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.2</span> 字符串函数<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -317,9 +318,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="聚合函数" class="section level3" number="8.5.3">
+<div id="聚合函数" class="section level3" number="9.5.3">
 <h3>
-<span class="header-section-number">8.5.3</span> 聚合函数<a class="anchor" aria-label="anchor" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.3</span> 聚合函数<a class="anchor" aria-label="anchor" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -356,9 +357,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="时间函数" class="section level3" number="8.5.4">
+<div id="时间函数" class="section level3" number="9.5.4">
 <h3>
-<span class="header-section-number">8.5.4</span> 时间函数<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.4</span> 时间函数<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -485,9 +486,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="条件函数" class="section level3" number="8.5.5">
+<div id="条件函数" class="section level3" number="9.5.5">
 <h3>
-<span class="header-section-number">8.5.5</span> 条件函数<a class="anchor" aria-label="anchor" href="#%E6%9D%A1%E4%BB%B6%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.5.5</span> 条件函数<a class="anchor" aria-label="anchor" href="#%E6%9D%A1%E4%BB%B6%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -515,16 +516,16 @@
 </table></div>
 </div>
 </div>
-<div id="正则表达式" class="section level2" number="8.6">
+<div id="正则表达式" class="section level2" number="9.6">
 <h2>
-<span class="header-section-number">8.6</span> 正则表达式<a class="anchor" aria-label="anchor" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.6</span> 正则表达式<a class="anchor" aria-label="anchor" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE%E5%BA%93/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" width="95%" style="display: block; margin: auto;"></div>
 <p>where expr REGXEP 正则表达式</p>
 </div>
-<div id="窗口函数-1" class="section level2" number="8.7">
+<div id="窗口函数-1" class="section level2" number="9.7">
 <h2>
-<span class="header-section-number">8.7</span> 窗口函数<a class="anchor" aria-label="anchor" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.7</span> 窗口函数<a class="anchor" aria-label="anchor" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0-1"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="https://zhuanlan.zhihu.com/p/165210822">原文</a></p>
 <p>窗口函数是为了干什么，它并不会将多行查询结果合并为一行，而是将结果放回多行当中。也就是说，窗口函数是不需要GROUP BY的。它在形式上利用partition by来进行分区，然后操作，但是结果行数并没有发生变化.</p>
@@ -818,32 +819,32 @@ function openTab(evt,tabName){
 </div>
 <div class="chapter-nav">
 <div class="prev"><a href="introduction-2.html">introduction</a></div>
-<div class="next"><a href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></div>
+<div class="next"><a href="pymysql.html"><span class="header-section-number">10</span> PyMysql</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#mysql%E9%80%9F%E6%9F%A5%E8%A1%A8"><span class="header-section-number">8</span> mysql速查表</a></li>
+<li><a class="nav-link" href="#mysql%E9%80%9F%E6%9F%A5%E8%A1%A8"><span class="header-section-number">9</span> mysql速查表</a></li>
 <li>
-<a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="header-section-number">8.1</span> 数据类型</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B"><span class="header-section-number">8.1.1</span> 数值型</a></li>
-<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%A5%E6%9C%9F"><span class="header-section-number">8.1.2</span> 时间与日期</a></li>
-<li><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="header-section-number">8.1.3</span> 字符串</a></li>
+<a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="header-section-number">9.1</span> 数据类型</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B"><span class="header-section-number">9.1.1</span> 数值型</a></li>
+<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%A5%E6%9C%9F"><span class="header-section-number">9.1.2</span> 时间与日期</a></li>
+<li><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="header-section-number">9.1.3</span> 字符串</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="header-section-number">8.2</span> 数学运算符</a></li>
-<li><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="header-section-number">8.3</span> 比较运算符</a></li>
-<li><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="header-section-number">8.4</span> 逻辑运算符</a></li>
+<li><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="header-section-number">9.2</span> 数学运算符</a></li>
+<li><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="header-section-number">9.3</span> 比较运算符</a></li>
+<li><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="header-section-number">9.4</span> 逻辑运算符</a></li>
 <li>
-<a class="nav-link" href="#%E5%87%BD%E6%95%B0-1"><span class="header-section-number">8.5</span> 函数</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.1</span> 数学函数</a></li>
-<li><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.2</span> 字符串函数</a></li>
-<li><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.3</span> 聚合函数</a></li>
-<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.4</span> 时间函数</a></li>
-<li><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%87%BD%E6%95%B0"><span class="header-section-number">8.5.5</span> 条件函数</a></li>
+<a class="nav-link" href="#%E5%87%BD%E6%95%B0-1"><span class="header-section-number">9.5</span> 函数</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="header-section-number">9.5.1</span> 数学函数</a></li>
+<li><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="header-section-number">9.5.2</span> 字符串函数</a></li>
+<li><a class="nav-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="header-section-number">9.5.3</span> 聚合函数</a></li>
+<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0"><span class="header-section-number">9.5.4</span> 时间函数</a></li>
+<li><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%87%BD%E6%95%B0"><span class="header-section-number">9.5.5</span> 条件函数</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="header-section-number">8.6</span> 正则表达式</a></li>
-<li><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0-1"><span class="header-section-number">8.7</span> 窗口函数</a></li>
+<li><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="header-section-number">9.6</span> 正则表达式</a></li>
+<li><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0-1"><span class="header-section-number">9.7</span> 窗口函数</a></li>
 </ul>
 
       <div class="book-extra">

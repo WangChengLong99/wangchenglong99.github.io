@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>第2章 数据获取与存储 | wcl</title>
-<meta name="author" content="第2章 数据获取与存储 | wcl">
-<meta name="description" content="严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。 爬虫参考  2.1 文本文件  2.1.1 分隔文件  2.1.1.1 读取 ...">
+<title>第3章 数据获取与存储 | wcl</title>
+<meta name="author" content="第3章 数据获取与存储 | wcl">
+<meta name="description" content="严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。 爬虫参考  3.1 文本文件  3.1.1 分隔文件  3.1.1.1 读取 ...">
 <meta name="generator" content="bookdown 0.39 with bs4_book()">
-<meta property="og:title" content="第2章 数据获取与存储 | wcl">
+<meta property="og:title" content="第3章 数据获取与存储 | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/数据获取与存储.html">
-<meta property="og:description" content="严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。 爬虫参考  2.1 文本文件  2.1.1 分隔文件  2.1.1.1 读取 ...">
+<meta property="og:description" content="严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。 爬虫参考  3.1 文本文件  3.1.1 分隔文件  3.1.1.1 读取 ...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第2章 数据获取与存储 | wcl">
-<meta name="twitter:description" content="严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。 爬虫参考  2.1 文本文件  2.1.1 分隔文件  2.1.1.1 读取 ...">
+<meta name="twitter:title" content="第3章 数据获取与存储 | wcl">
+<meta name="twitter:description" content="严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。 爬虫参考  3.1 文本文件  3.1.1 分隔文件  3.1.1.1 读取 ...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,24 +61,25 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> welcome</a></li>
 <li class="book-part">数据</li>
 <li><a class="" href="introduction.html">introduction</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
-<li><a class="active" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">2</span> 数据编码与格式</a></li>
+<li><a class="active" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">6</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
 <li><a class="" href="introduction-1.html">introduction</a></li>
-<li><a class="" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
-<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li><a class="" href="matplotlib.html"><span class="header-section-number">7</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">8</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
 <li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
-<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">9</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">10</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
 <li><a class="" href="introduction-3.html">introduction</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">11</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,23 +87,23 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据获取与存储" class="section level1" number="2">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据获取与存储" class="section level1" number="3">
 <h1>
-<span class="header-section-number">第2章</span> 数据获取与存储<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">第3章</span> 数据获取与存储<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8"><i class="fas fa-link"></i></a>
 </h1>
 <p>严格地说，所有文件都是二进制的。但是，如果文件中的字节都以纯粹的字符形式保存（例如字母、数字，或是换行、回车、制表符这样的控制字符），那么我们就可以说这个文件是文本格式的。相比之下，二进制文件包含的字节则是由大部分非人类可读的字符组成的。</p>
 <p><a href="https://wcl99.netlify.app/python/python%E7%88%AC%E8%99%AB/pc/">爬虫参考</a></p>
-<div id="文本文件" class="section level2" number="2.1">
+<div id="文本文件" class="section level2" number="3.1">
 <h2>
-<span class="header-section-number">2.1</span> 文本文件<a class="anchor" aria-label="anchor" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1</span> 文本文件<a class="anchor" aria-label="anchor" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><i class="fas fa-link"></i></a>
 </h2>
-<div id="分隔文件" class="section level3 tabset" number="2.1.1">
+<div id="分隔文件" class="section level3 tabset" number="3.1.1">
 <h3>
-<span class="header-section-number">2.1.1</span> 分隔文件<a class="anchor" aria-label="anchor" href="#%E5%88%86%E9%9A%94%E6%96%87%E4%BB%B6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.1</span> 分隔文件<a class="anchor" aria-label="anchor" href="#%E5%88%86%E9%9A%94%E6%96%87%E4%BB%B6"><i class="fas fa-link"></i></a>
 </h3>
-<div id="读取" class="section level4" number="2.1.1.1">
+<div id="读取" class="section level4" number="3.1.1.1">
 <h4>
-<span class="header-section-number">2.1.1.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.1.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/python%E8%AF%BB%E5%8F%96csv%E6%96%87%E4%BB%B6.png" width="95%" style="display: block; margin: auto;"></div>
 <p>利用pd.read_csv()方法,主要参数为是否包括表头，是否某些行不读取，缺失值如何表示，是否让某些列作为索引，对某些列传递某些函数做某些处理，编码，是否分块读取，日期处理</p>
@@ -248,9 +249,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="存储csv文件" class="section level4" number="2.1.1.2">
+<div id="存储csv文件" class="section level4" number="3.1.1.2">
 <h4>
-<span class="header-section-number">2.1.1.2</span> 存储csv文件<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8csv%E6%96%87%E4%BB%B6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.1.2</span> 存储csv文件<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8csv%E6%96%87%E4%BB%B6"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -283,13 +284,13 @@
 </table></div>
 </div>
 </div>
-<div id="json" class="section level3 tabset" number="2.1.2">
+<div id="json" class="section level3 tabset" number="3.1.2">
 <h3>
-<span class="header-section-number">2.1.2</span> json<a class="anchor" aria-label="anchor" href="#json"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.2</span> json<a class="anchor" aria-label="anchor" href="#json"><i class="fas fa-link"></i></a>
 </h3>
-<div id="读取-1" class="section level4" number="2.1.2.1">
+<div id="读取-1" class="section level4" number="3.1.2.1">
 <h4>
-<span class="header-section-number">2.1.2.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.2.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96-1"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb5-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb5-1" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb5-2"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb5-2" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data/数据/information.json"</span>,<span class="st">"r"</span>) <span class="im">as</span> fp:</span>
@@ -302,20 +303,20 @@
 <pre class="scroll-200"><code>ValueError: All arrays must be of the same length</code></pre>
 <p>键名必为字符串，值可以为列表，字符串，bool等.</p>
 </div>
-<div id="存储" class="section level4" number="2.1.2.2">
+<div id="存储" class="section level4" number="3.1.2.2">
 <h4>
-<span class="header-section-number">2.1.2.2</span> 存储<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.2.2</span> 存储<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8"><i class="fas fa-link"></i></a>
 </h4>
 <p>序列和数据框都有to_json方法，存储的每一个键值对存储一个字段</p>
 </div>
 </div>
-<div id="html" class="section level3 tabset" number="2.1.3">
+<div id="html" class="section level3 tabset" number="3.1.3">
 <h3>
-<span class="header-section-number">2.1.3</span> html<a class="anchor" aria-label="anchor" href="#html"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.3</span> html<a class="anchor" aria-label="anchor" href="#html"><i class="fas fa-link"></i></a>
 </h3>
-<div id="读取-2" class="section level4" number="2.1.3.1">
+<div id="读取-2" class="section level4" number="3.1.3.1">
 <h4>
-<span class="header-section-number">2.1.3.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.3.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96-2"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb9-1" tabindex="-1"></a>table <span class="op">=</span> pd.read_html(</span>
 <span id="cb9-2"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb9-2" tabindex="-1"></a><span class="st">"""</span></span>
@@ -347,9 +348,9 @@
 </table></div>
 <p>pd.read_html()主要从table标签中读取数据,返回的df对象的list</p>
 </div>
-<div id="存储为html" class="section level4" number="2.1.3.2">
+<div id="存储为html" class="section level4" number="3.1.3.2">
 <h4>
-<span class="header-section-number">2.1.3.2</span> 存储为html<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8%E4%B8%BAhtml"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.1.3.2</span> 存储为html<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8%E4%B8%BAhtml"><i class="fas fa-link"></i></a>
 </h4>
 <p>DataFrame.to_html(buf=None, columns=None,col_space=None, header=True， index=True,na_rep=‘NaN’,formatters=None, float_format=None, sparsify=None, index_names=True,justify=None,bold_rows=True,classes=None, escape=True, max_rows=None, max_cols=None,show_dimensions=False,notebook=False, decimal=‘.’, border=None)</p>
 <div class="inline-table"><table class="table table-sm">
@@ -443,17 +444,17 @@
 </div>
 </div>
 </div>
-<div id="二进制" class="section level2" number="2.2">
+<div id="二进制" class="section level2" number="3.2">
 <h2>
-<span class="header-section-number">2.2</span> 二进制<a class="anchor" aria-label="anchor" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2</span> 二进制<a class="anchor" aria-label="anchor" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6"><i class="fas fa-link"></i></a>
 </h2>
-<div id="excel" class="section level3 tabset" number="2.2.1">
+<div id="excel" class="section level3 tabset" number="3.2.1">
 <h3>
-<span class="header-section-number">2.2.1</span> excel<a class="anchor" aria-label="anchor" href="#excel"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.1</span> excel<a class="anchor" aria-label="anchor" href="#excel"><i class="fas fa-link"></i></a>
 </h3>
-<div id="读取-3" class="section level4" number="2.2.1.1">
+<div id="读取-3" class="section level4" number="3.2.1.1">
 <h4>
-<span class="header-section-number">2.2.1.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.1.1</span> 读取<a class="anchor" aria-label="anchor" href="#%E8%AF%BB%E5%8F%96-3"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb11-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb11-1" tabindex="-1"></a>pd.read_excel(<span class="st">"data/数据/ex2.xlsx"</span>,<span class="st">"Sheet1"</span>,index_col<span class="op">=</span>[<span class="dv">0</span>]).head(<span class="dv">3</span>).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
 <div class="inline-table"><table class="table table-sm">
@@ -494,16 +495,16 @@
 </table></div>
 <p>基本格式和读取csv文件差不多，只不过多了sheet_name参数,存储时也多了一个，可以指定sheet</p>
 </div>
-<div id="存储-1" class="section level4" number="2.2.1.2">
+<div id="存储-1" class="section level4" number="3.2.1.2">
 <h4>
-<span class="header-section-number">2.2.1.2</span> 存储<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.1.2</span> 存储<a class="anchor" aria-label="anchor" href="#%E5%AD%98%E5%82%A8-1"><i class="fas fa-link"></i></a>
 </h4>
 <p><code>.to_excel()</code></p>
 </div>
 </div>
-<div id="hdf5" class="section level3" number="2.2.2">
+<div id="hdf5" class="section level3" number="3.2.2">
 <h3>
-<span class="header-section-number">2.2.2</span> HDF5<a class="anchor" aria-label="anchor" href="#hdf5"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.2.2</span> HDF5<a class="anchor" aria-label="anchor" href="#hdf5"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb12-1" tabindex="-1"></a><span class="co"># frame = pd.DataFrame({"a":np.random.randn(10)})</span></span>
 <span id="cb12-2"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html#cb12-2" tabindex="-1"></a><span class="co"># store = pd.HDFStore("data/数据/mydata.h5")</span></span>
@@ -675,23 +676,23 @@ function openTab(evt,tabName){
 
 </div>
 <div class="chapter-nav">
-<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></div>
-<div class="next"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></div>
+<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">2</span> 数据编码与格式</a></div>
+<div class="next"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8"><span class="header-section-number">2</span> 数据获取与存储</a></li>
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8"><span class="header-section-number">3</span> 数据获取与存储</a></li>
 <li>
-<a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="header-section-number">2.1</span> 文本文件</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E5%88%86%E9%9A%94%E6%96%87%E4%BB%B6"><span class="header-section-number">2.1.1</span> 分隔文件</a></li>
-<li><a class="nav-link" href="#json"><span class="header-section-number">2.1.2</span> json</a></li>
-<li><a class="nav-link" href="#html"><span class="header-section-number">2.1.3</span> html</a></li>
+<a class="nav-link" href="#%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="header-section-number">3.1</span> 文本文件</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%88%86%E9%9A%94%E6%96%87%E4%BB%B6"><span class="header-section-number">3.1.1</span> 分隔文件</a></li>
+<li><a class="nav-link" href="#json"><span class="header-section-number">3.1.2</span> json</a></li>
+<li><a class="nav-link" href="#html"><span class="header-section-number">3.1.3</span> html</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="header-section-number">2.2</span> 二进制</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#excel"><span class="header-section-number">2.2.1</span> excel</a></li>
-<li><a class="nav-link" href="#hdf5"><span class="header-section-number">2.2.2</span> HDF5</a></li>
+<a class="nav-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="header-section-number">3.2</span> 二进制</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#excel"><span class="header-section-number">3.2.1</span> excel</a></li>
+<li><a class="nav-link" href="#hdf5"><span class="header-section-number">3.2.2</span> HDF5</a></li>
 </ul>
 </li>
 </ul>

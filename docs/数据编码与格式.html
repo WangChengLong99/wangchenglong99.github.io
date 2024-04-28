@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>第1章 数据编码与格式 | wcl</title>
-<meta name="author" content="第1章 数据编码与格式 | wcl">
-<meta name="description" content='1.1 编码 即让字符跟计算机的存介绍储建立一个对应关系，首先要给字符设定字符集，确定对应字符的编码和编码规则。再根据编码规则在计算机中存储编码，这样就能根据字符串的编码读取到字符了。把字符存储为字节叫编码，把字节以字符串显示叫解码。 str = "汪" bytes = str.encode("utf-8") decode_bytes = bytes.decode("utf-8")...'>
+<title>第2章 数据编码与格式 | wcl</title>
+<meta name="author" content="第2章 数据编码与格式 | wcl">
+<meta name="description" content='2.1 编码 即让字符跟计算机的存介绍储建立一个对应关系，首先要给字符设定字符集，确定对应字符的编码和编码规则。再根据编码规则在计算机中存储编码，这样就能根据字符串的编码读取到字符了。把字符存储为字节叫编码，把字节以字符串显示叫解码。 str = "汪" bytes = str.encode("utf-8") decode_bytes = bytes.decode("utf-8")...'>
 <meta name="generator" content="bookdown 0.39 with bs4_book()">
-<meta property="og:title" content="第1章 数据编码与格式 | wcl">
+<meta property="og:title" content="第2章 数据编码与格式 | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/数据编码与格式.html">
-<meta property="og:description" content='1.1 编码 即让字符跟计算机的存介绍储建立一个对应关系，首先要给字符设定字符集，确定对应字符的编码和编码规则。再根据编码规则在计算机中存储编码，这样就能根据字符串的编码读取到字符了。把字符存储为字节叫编码，把字节以字符串显示叫解码。 str = "汪" bytes = str.encode("utf-8") decode_bytes = bytes.decode("utf-8")...'>
+<meta property="og:description" content='2.1 编码 即让字符跟计算机的存介绍储建立一个对应关系，首先要给字符设定字符集，确定对应字符的编码和编码规则。再根据编码规则在计算机中存储编码，这样就能根据字符串的编码读取到字符了。把字符存储为字节叫编码，把字节以字符串显示叫解码。 str = "汪" bytes = str.encode("utf-8") decode_bytes = bytes.decode("utf-8")...'>
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第1章 数据编码与格式 | wcl">
-<meta name="twitter:description" content='1.1 编码 即让字符跟计算机的存介绍储建立一个对应关系，首先要给字符设定字符集，确定对应字符的编码和编码规则。再根据编码规则在计算机中存储编码，这样就能根据字符串的编码读取到字符了。把字符存储为字节叫编码，把字节以字符串显示叫解码。 str = "汪" bytes = str.encode("utf-8") decode_bytes = bytes.decode("utf-8")...'>
+<meta name="twitter:title" content="第2章 数据编码与格式 | wcl">
+<meta name="twitter:description" content='2.1 编码 即让字符跟计算机的存介绍储建立一个对应关系，首先要给字符设定字符集，确定对应字符的编码和编码规则。再根据编码规则在计算机中存储编码，这样就能根据字符串的编码读取到字符了。把字符存储为字节叫编码，把字节以字符串显示叫解码。 str = "汪" bytes = str.encode("utf-8") decode_bytes = bytes.decode("utf-8")...'>
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,24 +61,25 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> welcome</a></li>
 <li class="book-part">数据</li>
 <li><a class="" href="introduction.html">introduction</a></li>
-<li><a class="active" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li><a class="active" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">2</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">6</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
 <li><a class="" href="introduction-1.html">introduction</a></li>
-<li><a class="" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
-<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li><a class="" href="matplotlib.html"><span class="header-section-number">7</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">8</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
 <li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
-<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">9</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">10</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
 <li><a class="" href="introduction-3.html">introduction</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">11</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,13 +87,13 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据编码与格式" class="section level1" number="1">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据编码与格式" class="section level1" number="2">
 <h1>
-<span class="header-section-number">第1章</span> 数据编码与格式<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">第2章</span> 数据编码与格式<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F"><i class="fas fa-link"></i></a>
 </h1>
-<div id="编码" class="section level2" number="1.1">
+<div id="编码" class="section level2" number="2.1">
 <h2>
-<span class="header-section-number">1.1</span> 编码<a class="anchor" aria-label="anchor" href="#%E7%BC%96%E7%A0%81"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1</span> 编码<a class="anchor" aria-label="anchor" href="#%E7%BC%96%E7%A0%81"><i class="fas fa-link"></i></a>
 </h2>
 <p>即让字符跟计算机的存介绍储建立一个对应关系，首先要给字符设定字符集，确定对应字符的编码和编码规则。再根据编码规则在计算机中存储编码，这样就能根据字符串的编码读取到字符了。把字符存储为字节叫编码，把字节以字符串显示叫解码。</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html#cb1-1" tabindex="-1"></a><span class="bu">str</span> <span class="op">=</span> <span class="st">"汪"</span></span>
@@ -100,9 +101,9 @@
 <span id="cb1-3"><a href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html#cb1-3" tabindex="-1"></a>decode_bytes <span class="op">=</span> <span class="bu">bytes</span>.decode(<span class="st">"utf-8"</span>)</span>
 <span id="cb1-4"><a href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html#cb1-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{}</span><span class="st">的字节形式为</span><span class="sc">{}</span><span class="st">,字符串形式为</span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="bu">str</span>,<span class="bu">bytes</span>,decode_bytes))</span></code></pre></div>
 <pre class="scroll-200"><code>汪的字节形式为b'\xe6\xb1\xaa',字符串形式为汪</code></pre>
-<div id="表格" class="section level3" number="1.1.1">
+<div id="表格" class="section level3" number="2.1.1">
 <h3>
-<span class="header-section-number">1.1.1</span> 表格<a class="anchor" aria-label="anchor" href="#%E8%A1%A8%E6%A0%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1.1</span> 表格<a class="anchor" aria-label="anchor" href="#%E8%A1%A8%E6%A0%BC"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -147,32 +148,32 @@
 <p>ASCII码 128个字符，用0-127表示, 用一个字节即可存储，可表示2<sup>8</sup>=256个字符，32-126为可见字符，其他到127为控制字符，实际上一个字节只用了七位。其他国家的字符也需要加入进来，一个字节已经不够。</p>
 <p>gb2312, 设置字符集，让编码与字符进行对应，采用分区管理方式，共设计94个区，每个区含94个位，共8836个码位。10行，10列的表示方法 区位+行位+列位 区位为高位，占一个字节，行位列位为低位，占一个字节，实际表示用16进制表示。为了与ascII码区分（gb2312向下兼容ascII码），即字节的第八位必须从1开始，即至少大于等于128（0x80），而控制字符需要占32个，外加一个空格键，已经占到了0xa0，所以真正的字符编码在字节中的表示位置都要加上0xa0，代表了在字节中的存储形式，因为之前的已经表示了其他的字符。</p>
 </div>
-<div id="图片" class="section level3" number="1.1.2">
+<div id="图片" class="section level3" number="2.1.2">
 <h3>
-<span class="header-section-number">1.1.2</span> 图片<a class="anchor" aria-label="anchor" href="#%E5%9B%BE%E7%89%87"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1.2</span> 图片<a class="anchor" aria-label="anchor" href="#%E5%9B%BE%E7%89%87"><i class="fas fa-link"></i></a>
 </h3>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:gb2312分区"></span>
 <img src="static/image/%E6%95%B0%E6%8D%AE/%E5%88%86%E5%8C%BA%E8%AE%BE%E7%BD%AE.png" alt="gb2312分区" width="95%"><p class="caption">
-图 1.1: gb2312分区
+图 2.1: gb2312分区
 </p>
 </div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:gb2312码位"></span>
 <img src="static/image/%E6%95%B0%E6%8D%AE/%E7%A0%81%E4%BD%8D.png" alt="gb2312编码" width="95%"><p class="caption">
-图 1.2: gb2312编码
+图 2.2: gb2312编码
 </p>
 </div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:utf-8"></span>
 <img src="static/image/%E6%95%B0%E6%8D%AE/utf-8.png" alt="utf-8编码" width="95%"><p class="caption">
-图 1.3: utf-8编码
+图 2.3: utf-8编码
 </p>
 </div>
 </div>
-<div id="视频" class="section level3" number="1.1.3">
+<div id="视频" class="section level3" number="2.1.3">
 <h3>
-<span class="header-section-number">1.1.3</span> 视频<a class="anchor" aria-label="anchor" href="#%E8%A7%86%E9%A2%91"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.1.3</span> 视频<a class="anchor" aria-label="anchor" href="#%E8%A7%86%E9%A2%91"><i class="fas fa-link"></i></a>
 </h3>
 <iframe src="https://player.bilibili.com/player.html?aid=370211302&amp;bvid=BV1gZ4y1x7p7&amp;cid=177213470&amp;page=1&amp;high_quality=1&amp;danmaku=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="500">
 </iframe>
@@ -338,16 +339,16 @@ function openTab(evt,tabName){
 </div>
 <div class="chapter-nav">
 <div class="prev"><a href="introduction.html">introduction</a></div>
-<div class="next"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></div>
+<div class="next"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F"><span class="header-section-number">1</span> 数据编码与格式</a></li>
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F"><span class="header-section-number">2</span> 数据编码与格式</a></li>
 <li>
-<a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="header-section-number">1.1</span> 编码</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="header-section-number">1.1.1</span> 表格</a></li>
-<li><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="header-section-number">1.1.2</span> 图片</a></li>
-<li><a class="nav-link" href="#%E8%A7%86%E9%A2%91"><span class="header-section-number">1.1.3</span> 视频</a></li>
+<a class="nav-link" href="#%E7%BC%96%E7%A0%81"><span class="header-section-number">2.1</span> 编码</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="header-section-number">2.1.1</span> 表格</a></li>
+<li><a class="nav-link" href="#%E5%9B%BE%E7%89%87"><span class="header-section-number">2.1.2</span> 图片</a></li>
+<li><a class="nav-link" href="#%E8%A7%86%E9%A2%91"><span class="header-section-number">2.1.3</span> 视频</a></li>
 </ul>
 </li>
 </ul>

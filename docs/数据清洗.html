@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>第3章 数据清洗 | wcl</title>
-<meta name="author" content="第3章 数据清洗 | wcl">
-<meta name="description" content="3.1 查看数据信息 导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值 import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
+<title>第4章 数据清洗 | wcl</title>
+<meta name="author" content="第4章 数据清洗 | wcl">
+<meta name="description" content="4.1 查看数据信息 导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值 import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
 <meta name="generator" content="bookdown 0.39 with bs4_book()">
-<meta property="og:title" content="第3章 数据清洗 | wcl">
+<meta property="og:title" content="第4章 数据清洗 | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/数据清洗.html">
-<meta property="og:description" content="3.1 查看数据信息 导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值 import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
+<meta property="og:description" content="4.1 查看数据信息 导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值 import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第3章 数据清洗 | wcl">
-<meta name="twitter:description" content="3.1 查看数据信息 导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值 import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
+<meta name="twitter:title" content="第4章 数据清洗 | wcl">
+<meta name="twitter:description" content="4.1 查看数据信息 导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值 import pandas as pd import numpy as np import matplotlib.pyplot as plt plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.7.0/transition.js"></script><script src="libs/bs3compat-0.7.0/tabs.js"></script><script src="libs/bs3compat-0.7.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -61,24 +61,25 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> welcome</a></li>
 <li class="book-part">数据</li>
 <li><a class="" href="introduction.html">introduction</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
-<li><a class="active" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">2</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></li>
+<li><a class="active" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">6</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
 <li><a class="" href="introduction-1.html">introduction</a></li>
-<li><a class="" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
-<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li><a class="" href="matplotlib.html"><span class="header-section-number">7</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">8</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
 <li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
-<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">9</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">10</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
 <li><a class="" href="introduction-3.html">introduction</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">11</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,13 +87,13 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据清洗" class="section level1" number="3">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据清洗" class="section level1" number="4">
 <h1>
-<span class="header-section-number">第3章</span> 数据清洗<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">第4章</span> 数据清洗<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><i class="fas fa-link"></i></a>
 </h1>
-<div id="查看数据信息" class="section level2" number="3.1">
+<div id="查看数据信息" class="section level2" number="4.1">
 <h2>
-<span class="header-section-number">3.1</span> 查看数据信息<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1</span> 查看数据信息<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF"><i class="fas fa-link"></i></a>
 </h2>
 <p>导入数据后应该了解字段信息，字段的数据类型，哪些字段有缺失值</p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb13-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -161,9 +162,9 @@
 </tbody>
 </table></div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb14-1" tabindex="-1"></a>pd.set_option(<span class="st">'future.no_silent_downcasting'</span>, <span class="va">True</span>)</span></code></pre></div>
-<div id="info" class="section level3" number="3.1.1">
+<div id="info" class="section level3" number="4.1.1">
 <h3>
-<span class="header-section-number">3.1.1</span> .info()<a class="anchor" aria-label="anchor" href="#info"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.1</span> .info()<a class="anchor" aria-label="anchor" href="#info"><i class="fas fa-link"></i></a>
 </h3>
 <p>查看字段名，缺失值和字段类型</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb15-1" tabindex="-1"></a>data.info()</span></code></pre></div>
@@ -181,9 +182,9 @@ Data columns (total 6 columns):
 dtypes: int64(3), object(3)
 memory usage: 84.5+ KB</code></pre>
 </div>
-<div id="dtypes" class="section level3" number="3.1.2">
+<div id="dtypes" class="section level3" number="4.1.2">
 <h3>
-<span class="header-section-number">3.1.2</span> .dtypes<a class="anchor" aria-label="anchor" href="#dtypes"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.2</span> .dtypes<a class="anchor" aria-label="anchor" href="#dtypes"><i class="fas fa-link"></i></a>
 </h3>
 <p>查看字段类型</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb17-1" tabindex="-1"></a>data.dtypes</span></code></pre></div>
@@ -195,9 +196,9 @@ memory usage: 84.5+ KB</code></pre>
 英语     int64
 dtype: object</code></pre>
 </div>
-<div id="describe" class="section level3" number="3.1.3">
+<div id="describe" class="section level3" number="4.1.3">
 <h3>
-<span class="header-section-number">3.1.3</span> .describe()<a class="anchor" aria-label="anchor" href="#describe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.1.3</span> .describe()<a class="anchor" aria-label="anchor" href="#describe"><i class="fas fa-link"></i></a>
 </h3>
 <p>`<code>.describe(include/exclude=[])</code></p>
 <p>默认只对数值类型进行各种字段的描述,可以设置include和exclude参数对类型进行选择</p>
@@ -297,14 +298,14 @@ dtype: object</code></pre>
 </table></div>
 </div>
 </div>
-<div id="缺失值" class="section level2" number="3.2">
+<div id="缺失值" class="section level2" number="4.2">
 <h2>
-<span class="header-section-number">3.2</span> 缺失值<a class="anchor" aria-label="anchor" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2</span> 缺失值<a class="anchor" aria-label="anchor" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A4%84%E7%90%86.png" width="95%" style="display: block; margin: auto;"></div>
-<div id="查看缺失值" class="section level3" number="3.2.1">
+<div id="查看缺失值" class="section level3" number="4.2.1">
 <h3>
-<span class="header-section-number">3.2.1</span> 查看缺失值<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E7%BC%BA%E5%A4%B1%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.1</span> 查看缺失值<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E7%BC%BA%E5%A4%B1%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.isnull(axis)</code>,<code>.notnull(axis)</code></p>
 <p>数据缺失,python的None对象，numpy中的np.nan都被视为缺失,空字符串不被视为缺失。</p>
@@ -312,26 +313,26 @@ dtype: object</code></pre>
 <span id="cb21-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb21-2" tabindex="-1"></a>                      <span class="st">'value'</span>:np.random.choice([<span class="va">None</span>,np.nan]<span class="op">+</span><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>)),<span class="dv">10</span>,)})</span>
 <span id="cb21-3"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb21-3" tabindex="-1"></a>nadata.head()</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     7
-1   NaN     7
-2           4
+0  None     1
+1   NaN     4
+2           7
 3   nan     0
-4     0  None</code></pre>
+4     0     0</code></pre>
 <div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb23-1" tabindex="-1"></a>nadata.isnull().head()</span></code></pre></div>
 <pre class="scroll-200"><code>    null  value
 0   True  False
 1   True  False
 2  False  False
 3  False  False
-4  False   True</code></pre>
+4  False  False</code></pre>
 <div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb25-1" tabindex="-1"></a>nadata[nadata[<span class="st">'null'</span>].notnull()]<span class="co"># 根据某个字段的未缺失值选取行</span></span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-2          4
+2          7
 3  nan     0
-4    0  None
-7          0
-8  nan     5
-9    0     9</code></pre>
+4    0     0
+7          4
+8  nan  None
+9    0     3</code></pre>
 <div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb27-1" tabindex="-1"></a>nadata.isnull().<span class="bu">sum</span>()<span class="op">/</span><span class="bu">len</span>(nadata)<span class="co">#查看各个字段的缺失比例</span></span></code></pre></div>
 <pre class="scroll-200"><code>null     0.4
 value    0.1
@@ -342,98 +343,98 @@ dtype: float64</code></pre>
 <pre class="scroll-200"><code>array(['null'], dtype=object)</code></pre>
 <p>通常对于缺失值的处理，最常用的方法无外乎删除法、替换法和插补法。删除法是指将缺失值所在的观测行删除（前提是缺失行的比例非常低，如5%以内），或者删除缺失值所对应的变量（前提是该变量中包含的缺失值比例非常高，如70%左右）；替换法是指直接利用缺失变量的均值、中位数或众数替换该变量中的缺失值，其好处是缺失值的处理速度快，弊端是易产生有偏估计，导致缺失值替换的准确性下降；插补法则是利用有监督的机器学习方法（如回归模型、树模型、网络模型等）对缺失值作预测，其优势在于预测的准确性高，缺点是需要大量的计算，导致缺失值的处理速度大打折扣。</p>
 </div>
-<div id="删除缺失值" class="section level3" number="3.2.2">
+<div id="删除缺失值" class="section level3" number="4.2.2">
 <h3>
-<span class="header-section-number">3.2.2</span> 删除缺失值<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E7%BC%BA%E5%A4%B1%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.2</span> 删除缺失值<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E7%BC%BA%E5%A4%B1%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.dropna(axis,how,subset,thresh)</code></p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb31-1" tabindex="-1"></a>nadata.dropna(how<span class="op">=</span><span class="st">"all"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     7
-1   NaN     7
-2           4
+0  None     1
+1   NaN     4
+2           7
 3   nan     0
-4     0  None
-5  None     5
-6   NaN     4
-7           0
-8   nan     5
-9     0     9</code></pre>
+4     0     0
+5  None     8
+6   NaN     9
+7           4
+8   nan  None
+9     0     3</code></pre>
 <div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb33-1" tabindex="-1"></a>nadata.dropna(subset<span class="op">=</span>[<span class="st">"null"</span>])</span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-2          4
+2          7
 3  nan     0
-4    0  None
-7          0
-8  nan     5
-9    0     9</code></pre>
+4    0     0
+7          4
+8  nan  None
+9    0     3</code></pre>
 <div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb35-1" tabindex="-1"></a>nadata.dropna(thresh<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     7
-1   NaN     7
-2           4
+0  None     1
+1   NaN     4
+2           7
 3   nan     0
-4     0  None
-5  None     5
-6   NaN     4
-7           0
-8   nan     5
-9     0     9</code></pre>
+4     0     0
+5  None     8
+6   NaN     9
+7           4
+8   nan  None
+9     0     3</code></pre>
 </div>
-<div id="填补缺失值" class="section level3" number="3.2.3">
+<div id="填补缺失值" class="section level3" number="4.2.3">
 <h3>
-<span class="header-section-number">3.2.3</span> 填补缺失值<a class="anchor" aria-label="anchor" href="#%E5%A1%AB%E8%A1%A5%E7%BC%BA%E5%A4%B1%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.3</span> 填补缺失值<a class="anchor" aria-label="anchor" href="#%E5%A1%AB%E8%A1%A5%E7%BC%BA%E5%A4%B1%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.fillna(value,method,**kwargs)</code></p>
 <p>通过给字段传递标量，可以进行均值，最大值，最小值，中值等填补，通过method参数可以进行前向和后向填补。</p>
 <div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb37-1" tabindex="-1"></a>nadata.fillna(<span class="dv">0</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-0    0     7
-1    0     7
-2          4
+0    0     1
+1    0     4
+2          7
 3  nan     0
 4    0     0
-5    0     5
-6    0     4
-7          0
-8  nan     5
-9    0     9</code></pre>
+5    0     8
+6    0     9
+7          4
+8  nan     0
+9    0     3</code></pre>
 <div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb39-1" tabindex="-1"></a>nadata.fillna({<span class="st">"null"</span>:<span class="dv">0</span>,<span class="st">"value"</span>:<span class="bu">int</span>(np.mean(nadata.value))})<span class="co">#不加int会变成浮点型</span></span></code></pre></div>
 <pre class="scroll-200"><code>  null value
-0    0     7
-1    0     7
-2          4
+0    0     1
+1    0     4
+2          7
 3  nan     0
-4    0     4
-5    0     5
-6    0     4
-7          0
-8  nan     5
-9    0     9</code></pre>
+4    0     0
+5    0     8
+6    0     9
+7          4
+8  nan     4
+9    0     3</code></pre>
 <div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb41-1" tabindex="-1"></a>nadata.fillna(method<span class="op">=</span><span class="st">"bfill"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: DataFrame.fillna with 'method' is deprecated and will raise in a future version. Use obj.ffill() or obj.bfill() instead.
   null value
-0          7
-1          7
-2          4
+0          1
+1          4
+2          7
 3  nan     0
-4    0     5
-5          5
-6          4
-7          0
-8  nan     5
-9    0     9</code></pre>
+4    0     0
+5          8
+6          9
+7          4
+8  nan     3
+9    0     3</code></pre>
 </div>
-<div id="插补法" class="section level3" number="3.2.4">
+<div id="插补法" class="section level3" number="4.2.4">
 <h3>
-<span class="header-section-number">3.2.4</span> 插补法<a class="anchor" aria-label="anchor" href="#%E6%8F%92%E8%A1%A5%E6%B3%95"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.2.4</span> 插补法<a class="anchor" aria-label="anchor" href="#%E6%8F%92%E8%A1%A5%E6%B3%95"><i class="fas fa-link"></i></a>
 </h3>
 <p>利用机器学习的方法构建模型，通过模型根据其他字段的值来对缺失值进行预测。</p>
 </div>
 </div>
-<div id="类型转换" class="section level2" number="3.3">
+<div id="类型转换" class="section level2" number="4.3">
 <h2>
-<span class="header-section-number">3.3</span> 类型转换<a class="anchor" aria-label="anchor" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.3</span> 类型转换<a class="anchor" aria-label="anchor" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><i class="fas fa-link"></i></a>
 </h2>
 <p>读入的数据类型包含object(任何对象都可以用object来存储)，number(数值类型),string(字符串类型),bool(逻辑类型).</p>
 <p>可以用<code>.select_dtypes(include/exclude=[])</code>选取对应类型的列</p>
@@ -527,14 +528,14 @@ dtype: object</code></pre>
 4    2023
 Name: day, dtype: int32</code></pre>
 </div>
-<div id="重复值" class="section level2" number="3.4">
+<div id="重复值" class="section level2" number="4.4">
 <h2>
-<span class="header-section-number">3.4</span> 重复值<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E5%A4%8D%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4</span> 重复值<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E5%A4%8D%E5%80%BC"><i class="fas fa-link"></i></a>
 </h2>
 <p>数据的记录是否存在重复值，重复值有无存在意义</p>
-<div id="查看重复值" class="section level3" number="3.4.1">
+<div id="查看重复值" class="section level3" number="4.4.1">
 <h3>
-<span class="header-section-number">3.4.1</span> 查看重复值<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E9%87%8D%E5%A4%8D%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.1</span> 查看重复值<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E9%87%8D%E5%A4%8D%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.duplicated(subset)</code>,可以设置subset参数只对某些子集判断</p>
 <div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb57-1" tabindex="-1"></a>data.duplicated().<span class="bu">any</span>()</span></code></pre></div>
@@ -547,9 +548,9 @@ Index: []</code></pre>
 <span id="cb61-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb61-2" tabindex="-1"></a>data.index.duplicated().<span class="bu">sum</span>()</span></code></pre></div>
 <pre class="scroll-200"><code>0</code></pre>
 </div>
-<div id="删除重复值" class="section level3" number="3.4.2">
+<div id="删除重复值" class="section level3" number="4.4.2">
 <h3>
-<span class="header-section-number">3.4.2</span> 删除重复值<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.4.2</span> 删除重复值<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.drop_duplicates(subset)</code>，同样可以设置subset参数</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb63-1" tabindex="-1"></a>data.drop_duplicates()</span></code></pre></div>
@@ -584,20 +585,20 @@ Index: []</code></pre>
 [1800 rows x 6 columns]</code></pre>
 </div>
 </div>
-<div id="异常值" class="section level2" number="3.5">
+<div id="异常值" class="section level2" number="4.5">
 <h2>
-<span class="header-section-number">3.5</span> 异常值<a class="anchor" aria-label="anchor" href="#%E5%BC%82%E5%B8%B8%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5</span> 异常值<a class="anchor" aria-label="anchor" href="#%E5%BC%82%E5%B8%B8%E5%80%BC"><i class="fas fa-link"></i></a>
 </h2>
 <p>异常值也称为离群点，就是那些远离绝大多数样本点的特殊群体，通常这样的数据点在数据集中都表现出不合理的特性。如果忽视这些异常值，在某些建模场景下就会导致结论的错误（如线性回归模型、K均值聚类等），所以在数据的探索过程中，有必要识别出这些异常值并处理好它们。</p>
 <p>对于异常的判断和处理要根据实际情况进行相应的判断和处理.</p>
-<div id="查看异常值" class="section level3 tabset" number="3.5.1">
+<div id="查看异常值" class="section level3 tabset" number="4.5.1">
 <h3>
-<span class="header-section-number">3.5.1</span> 查看异常值<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E5%BC%82%E5%B8%B8%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1</span> 查看异常值<a class="anchor" aria-label="anchor" href="#%E6%9F%A5%E7%9C%8B%E5%BC%82%E5%B8%B8%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p>通常，异常值的识别可以借助于图形法（如箱线图、正态分布图）和建模法（如线性回归、聚类算法、K近邻算法）</p>
-<div id="箱线图" class="section level4" number="3.5.1.1">
+<div id="箱线图" class="section level4" number="4.5.1.1">
 <h4>
-<span class="header-section-number">3.5.1.1</span> 箱线图<a class="anchor" aria-label="anchor" href="#%E7%AE%B1%E7%BA%BF%E5%9B%BE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.1</span> 箱线图<a class="anchor" aria-label="anchor" href="#%E7%AE%B1%E7%BA%BF%E5%9B%BE"><i class="fas fa-link"></i></a>
 </h4>
 <p>箱线图技术实际上就是利用数据的分位数识别其中的异常点，该图形属于典型的统计图形，在学术界和工业界都得到广泛的应用。箱线图的形状特征如下图所示：</p>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E7%AE%B1%E7%BA%BF%E5%9B%BE.png" width="95%" style="display: block; margin: auto;"></div>
@@ -624,16 +625,13 @@ Index: []</code></pre>
 <div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb68-1" tabindex="-1"></a>q1,q3 <span class="op">=</span> abdata.value.quantile(q<span class="op">=</span>[<span class="fl">0.25</span>,<span class="fl">0.75</span>])</span>
 <span id="cb68-2"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb68-2" tabindex="-1"></a>abdata[(abdata.value <span class="op">&lt;</span> q1<span class="op">-</span><span class="fl">1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1)) <span class="op">|</span> (abdata.value<span class="op">&gt;</span>q3<span class="op">+</span><span class="fl">1.5</span><span class="op">*</span>(q3<span class="op">-</span>q1))]</span></code></pre></div>
 <pre class="scroll-200"><code>         value
-35   83.130250
-73   54.657666
+99   83.752253
 100  50.000000
-101  57.000000
-102  83.000000
 103  90.000000</code></pre>
 </div>
-<div id="正态分布图" class="section level4" number="3.5.1.2">
+<div id="正态分布图" class="section level4" number="4.5.1.2">
 <h4>
-<span class="header-section-number">3.5.1.2</span> 正态分布图<a class="anchor" aria-label="anchor" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E5%9B%BE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.1.2</span> 正态分布图<a class="anchor" aria-label="anchor" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E5%9B%BE"><i class="fas fa-link"></i></a>
 </h4>
 <p>如果数据满足正态分布，还可以通过3<span class="math inline">\(\sigma\)</span>的准则来进行异常值的判断，根据正态分布的定义可知，数据点落在偏离均值正负1倍标准差（即sigma值）内的概率为68.2%；数据点落在偏离均值正负2倍标准差内的概率为95.4%；数据点落在偏离均值正负3倍标准差内的概率为99.6%。</p>
 <p>所以，换个角度思考上文提到的概率值，如果数据点落在偏离均值正负2倍标准差之外的概率就不足5%，它属于小概率事件，即认为这样的数据点为异常点。同理，如果数据点落在偏离均值正负3倍标准差之外的概率将会更小，可以认为这些数据点为极端异常点。为使读者直观地理解文中提到的概率值，可以查看标准正态分布的概率密度图，如下图所示：</p>
@@ -676,9 +674,9 @@ Index: []</code></pre>
 <div class="inline-figure"><img src="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97_files/figure-html/plotab-1.png" alt="异常数据的折线图" width="95%"></div>
 </div>
 </div>
-<div id="处理异常值" class="section level3" number="3.5.2">
+<div id="处理异常值" class="section level3" number="4.5.2">
 <h3>
-<span class="header-section-number">3.5.2</span> 处理异常值<a class="anchor" aria-label="anchor" href="#%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8%E5%80%BC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.5.2</span> 处理异常值<a class="anchor" aria-label="anchor" href="#%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8%E5%80%BC"><i class="fas fa-link"></i></a>
 </h3>
 <p>检测到了异常值，我们需要对其进行一定的处理。而一般异常值的处理方法可大致分为以下几种</p>
 <ul>
@@ -690,13 +688,13 @@ Index: []</code></pre>
 <p>是否要删除异常值可根据实际情况考虑。因为一些模型对异常值不很敏感，即使有异常值也不影响模型效果，但是一些模型比如逻辑回归LR对异常值很敏感，如果不进行处理，可能会出现过拟合等非常差的效果。</p>
 </div>
 </div>
-<div id="字段值的处理" class="section level2" number="3.6">
+<div id="字段值的处理" class="section level2" number="4.6">
 <h2>
-<span class="header-section-number">3.6</span> 字段值的处理<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E6%AE%B5%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6</span> 字段值的处理<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E6%AE%B5%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86"><i class="fas fa-link"></i></a>
 </h2>
-<div id="map" class="section level3" number="3.6.1">
+<div id="map" class="section level3" number="4.6.1">
 <h3>
-<span class="header-section-number">3.6.1</span> .map()<a class="anchor" aria-label="anchor" href="#map"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.1</span> .map()<a class="anchor" aria-label="anchor" href="#map"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.map(func/**kwargs)</code></p>
 <p>处理一个字段中每一类元素(如果有类未被指定会被map为np.nan)或每一个元素</p>
@@ -710,9 +708,9 @@ Index: []</code></pre>
 4    male
 Name: 性别, dtype: object</code></pre>
 </div>
-<div id="replace" class="section level3" number="3.6.2">
+<div id="replace" class="section level3" number="4.6.2">
 <h3>
-<span class="header-section-number">3.6.2</span> .replace()<a class="anchor" aria-label="anchor" href="#replace"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.2</span> .replace()<a class="anchor" aria-label="anchor" href="#replace"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>.replace(to_repalce,value,method)</code></p>
 <p>对特定的几个值进行替换</p>
@@ -731,20 +729,20 @@ Name: null, dtype: object</code></pre>
 <p>可以只对某一列的某一类值进行替换，其他种类不变</p>
 <div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html#cb77-1" tabindex="-1"></a>nadata.replace({<span class="st">"null"</span>:{<span class="dv">0</span>:<span class="st">"00"</span>}})</span></code></pre></div>
 <pre class="scroll-200"><code>   null value
-0  None     7
-1   NaN     7
-2           4
+0  None     1
+1   NaN     4
+2           7
 3   nan     0
-4    00  None
-5  None     5
-6   NaN     4
-7           0
-8   nan     5
-9    00     9</code></pre>
+4    00     0
+5  None     8
+6   NaN     9
+7           4
+8   nan  None
+9    00     3</code></pre>
 </div>
-<div id="str" class="section level3" number="3.6.3">
+<div id="str" class="section level3" number="4.6.3">
 <h3>
-<span class="header-section-number">3.6.3</span> .str<a class="anchor" aria-label="anchor" href="#str"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.3</span> .str<a class="anchor" aria-label="anchor" href="#str"><i class="fas fa-link"></i></a>
 </h3>
 <p>对string类型的字段中的元素进行string类型的操作</p>
 <ul>
@@ -1429,16 +1427,16 @@ Equivalent to <code class="docutils literal notranslate"><span class="pre">str.i
 </tbody>
 </table></div>
 </div>
-<div id="dt" class="section level3" number="3.6.4">
+<div id="dt" class="section level3" number="4.6.4">
 <h3>
-<span class="header-section-number">3.6.4</span> .dt<a class="anchor" aria-label="anchor" href="#dt"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.6.4</span> .dt<a class="anchor" aria-label="anchor" href="#dt"><i class="fas fa-link"></i></a>
 </h3>
 <p>对日期类型的字段进行操作</p>
 </div>
 </div>
-<div id="参考网址" class="section level2" number="3.7">
+<div id="参考网址" class="section level2" number="4.7">
 <h2>
-<span class="header-section-number">3.7</span> 参考网址<a class="anchor" aria-label="anchor" href="#%E5%8F%82%E8%80%83%E7%BD%91%E5%9D%80"><i class="fas fa-link"></i></a>
+<span class="header-section-number">4.7</span> 参考网址<a class="anchor" aria-label="anchor" href="#%E5%8F%82%E8%80%83%E7%BD%91%E5%9D%80"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="https://zhuanlan.zhihu.com/p/93555997">大数据分析</a></p>
 <p><a href="https://www.php.cn/python-tutorials-489571.html">php</a></p>
@@ -1602,49 +1600,49 @@ function openTab(evt,tabName){
 
 </div>
 <div class="chapter-nav">
-<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></div>
-<div class="next"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></div>
+<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></div>
+<div class="next"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="header-section-number">3</span> 数据清洗</a></li>
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97"><span class="header-section-number">4</span> 数据清洗</a></li>
 <li>
-<a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF"><span class="header-section-number">3.1</span> 查看数据信息</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#info"><span class="header-section-number">3.1.1</span> .info()</a></li>
-<li><a class="nav-link" href="#dtypes"><span class="header-section-number">3.1.2</span> .dtypes</a></li>
-<li><a class="nav-link" href="#describe"><span class="header-section-number">3.1.3</span> .describe()</a></li>
+<a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF"><span class="header-section-number">4.1</span> 查看数据信息</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#info"><span class="header-section-number">4.1.1</span> .info()</a></li>
+<li><a class="nav-link" href="#dtypes"><span class="header-section-number">4.1.2</span> .dtypes</a></li>
+<li><a class="nav-link" href="#describe"><span class="header-section-number">4.1.3</span> .describe()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="header-section-number">3.2</span> 缺失值</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="header-section-number">3.2.1</span> 查看缺失值</a></li>
-<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="header-section-number">3.2.2</span> 删除缺失值</a></li>
-<li><a class="nav-link" href="#%E5%A1%AB%E8%A1%A5%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="header-section-number">3.2.3</span> 填补缺失值</a></li>
-<li><a class="nav-link" href="#%E6%8F%92%E8%A1%A5%E6%B3%95"><span class="header-section-number">3.2.4</span> 插补法</a></li>
+<a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="header-section-number">4.2</span> 缺失值</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="header-section-number">4.2.1</span> 查看缺失值</a></li>
+<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="header-section-number">4.2.2</span> 删除缺失值</a></li>
+<li><a class="nav-link" href="#%E5%A1%AB%E8%A1%A5%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="header-section-number">4.2.3</span> 填补缺失值</a></li>
+<li><a class="nav-link" href="#%E6%8F%92%E8%A1%A5%E6%B3%95"><span class="header-section-number">4.2.4</span> 插补法</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="header-section-number">3.3</span> 类型转换</a></li>
+<li><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="header-section-number">4.3</span> 类型转换</a></li>
 <li>
-<a class="nav-link" href="#%E9%87%8D%E5%A4%8D%E5%80%BC"><span class="header-section-number">3.4</span> 重复值</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%87%8D%E5%A4%8D%E5%80%BC"><span class="header-section-number">3.4.1</span> 查看重复值</a></li>
-<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E5%80%BC"><span class="header-section-number">3.4.2</span> 删除重复值</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%80%BC"><span class="header-section-number">3.5</span> 异常值</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BC%82%E5%B8%B8%E5%80%BC"><span class="header-section-number">3.5.1</span> 查看异常值</a></li>
-<li><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8%E5%80%BC"><span class="header-section-number">3.5.2</span> 处理异常值</a></li>
+<a class="nav-link" href="#%E9%87%8D%E5%A4%8D%E5%80%BC"><span class="header-section-number">4.4</span> 重复值</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%87%8D%E5%A4%8D%E5%80%BC"><span class="header-section-number">4.4.1</span> 查看重复值</a></li>
+<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E5%80%BC"><span class="header-section-number">4.4.2</span> 删除重复值</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86"><span class="header-section-number">3.6</span> 字段值的处理</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#map"><span class="header-section-number">3.6.1</span> .map()</a></li>
-<li><a class="nav-link" href="#replace"><span class="header-section-number">3.6.2</span> .replace()</a></li>
-<li><a class="nav-link" href="#str"><span class="header-section-number">3.6.3</span> .str</a></li>
-<li><a class="nav-link" href="#dt"><span class="header-section-number">3.6.4</span> .dt</a></li>
+<a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%80%BC"><span class="header-section-number">4.5</span> 异常值</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%BC%82%E5%B8%B8%E5%80%BC"><span class="header-section-number">4.5.1</span> 查看异常值</a></li>
+<li><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%BC%82%E5%B8%B8%E5%80%BC"><span class="header-section-number">4.5.2</span> 处理异常值</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#%E5%8F%82%E8%80%83%E7%BD%91%E5%9D%80"><span class="header-section-number">3.7</span> 参考网址</a></li>
+<li>
+<a class="nav-link" href="#%E5%AD%97%E6%AE%B5%E5%80%BC%E7%9A%84%E5%A4%84%E7%90%86"><span class="header-section-number">4.6</span> 字段值的处理</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#map"><span class="header-section-number">4.6.1</span> .map()</a></li>
+<li><a class="nav-link" href="#replace"><span class="header-section-number">4.6.2</span> .replace()</a></li>
+<li><a class="nav-link" href="#str"><span class="header-section-number">4.6.3</span> .str</a></li>
+<li><a class="nav-link" href="#dt"><span class="header-section-number">4.6.4</span> .dt</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#%E5%8F%82%E8%80%83%E7%BD%91%E5%9D%80"><span class="header-section-number">4.7</span> 参考网址</a></li>
 </ul>
 
       <div class="book-extra">

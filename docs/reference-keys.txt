@@ -1,6 +1,7 @@
 fig:gb2312分区
 fig:gb2312码位
 fig:utf-8
+welcome
 数据编码与格式
 编码
 表格

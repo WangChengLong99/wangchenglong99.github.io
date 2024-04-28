@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>第5章 时间序列 | wcl</title>
-<meta name="author" content="第5章 时间序列 | wcl">
+<title>第6章 时间序列 | wcl</title>
+<meta name="author" content="第6章 时间序列 | wcl">
 <meta name="description" content="时间序列数据在很多领域都是重要的结构化数据形式，例如金融、经济、生态学、神经科学和物理学。在多个时间点观测或测量的数据形成了时间序列。 许多时间序列是固定频率的，也就是说数据是根据相同的规则定期出现的，例如每15秒、每5分钟或每月1次。时间序列也可以是不规则的，没有固定的时间单位或单位间的偏移量。如何标记和引用时间序列数据取决于应用程序，并且您可能有以下其中一项：· 时间戳，具体的时刻。...">
 <meta name="generator" content="bookdown 0.39 with bs4_book()">
-<meta property="og:title" content="第5章 时间序列 | wcl">
+<meta property="og:title" content="第6章 时间序列 | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/时间序列.html">
 <meta property="og:description" content="时间序列数据在很多领域都是重要的结构化数据形式，例如金融、经济、生态学、神经科学和物理学。在多个时间点观测或测量的数据形成了时间序列。 许多时间序列是固定频率的，也就是说数据是根据相同的规则定期出现的，例如每15秒、每5分钟或每月1次。时间序列也可以是不规则的，没有固定的时间单位或单位间的偏移量。如何标记和引用时间序列数据取决于应用程序，并且您可能有以下其中一项：· 时间戳，具体的时刻。...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第5章 时间序列 | wcl">
+<meta name="twitter:title" content="第6章 时间序列 | wcl">
 <meta name="twitter:description" content="时间序列数据在很多领域都是重要的结构化数据形式，例如金融、经济、生态学、神经科学和物理学。在多个时间点观测或测量的数据形成了时间序列。 许多时间序列是固定频率的，也就是说数据是根据相同的规则定期出现的，例如每15秒、每5分钟或每月1次。时间序列也可以是不规则的，没有固定的时间单位或单位间的偏移量。如何标记和引用时间序列数据取决于应用程序，并且您可能有以下其中一项：· 时间戳，具体的时刻。...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -61,24 +61,25 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> welcome</a></li>
 <li class="book-part">数据</li>
 <li><a class="" href="introduction.html">introduction</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
-<li><a class="active" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">2</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></li>
+<li><a class="active" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">6</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
 <li><a class="" href="introduction-1.html">introduction</a></li>
-<li><a class="" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
-<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li><a class="" href="matplotlib.html"><span class="header-section-number">7</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">8</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
 <li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
-<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">9</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">10</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
 <li><a class="" href="introduction-3.html">introduction</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">11</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,9 +87,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="时间序列" class="section level1" number="5">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="时间序列" class="section level1" number="6">
 <h1>
-<span class="header-section-number">第5章</span> 时间序列<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">第6章</span> 时间序列<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
 </h1>
 <p>时间序列数据在很多领域都是重要的结构化数据形式，例如金融、经济、生态学、神经科学和物理学。在多个时间点观测或测量的数据形成了时间序列。</p>
 <p>许多时间序列是固定频率的，也就是说数据是根据相同的规则定期出现的，例如每15秒、每5分钟或每月1次。时间序列也可以是不规则的，没有固定的时间单位或单位间的偏移量。如何标记和引用时间序列数据取决于应用程序，并且您可能有以下其中一项：·</p>
@@ -99,17 +100,17 @@
 <li>实验时间或消耗时间。每个时间戳是相对于特定开始时间的时间的量度（例如，自从被放置在烤箱中每秒烘烤的饼干的直径）。</li>
 </ul>
 <p>python有很多和时间相关的模块,如datetime,pandas,<a href="https://wcl99.netlify.app/python/python%E9%87%8D%E8%A6%81%E6%A8%A1%E5%9D%97%E6%80%BB%E7%BB%93/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/#time">time</a>,<a href="https://wcl99.netlify.app/python/python%E9%87%8D%E8%A6%81%E6%A8%A1%E5%9D%97%E6%80%BB%E7%BB%93/%E5%86%85%E7%BD%AE%E6%A8%A1%E5%9D%97/#calendar">calendar</a></p>
-<div id="datetime" class="section level2" number="5.1">
+<div id="datetime" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">5.1</span> datetime<a class="anchor" aria-label="anchor" href="#datetime"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> datetime<a class="anchor" aria-label="anchor" href="#datetime"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb265"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb265-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb265-1" tabindex="-1"></a><span class="im">import</span> datetime</span>
 <span id="cb265-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb265-2" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> timedelta, timezone</span>
 <span id="cb265-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb265-3" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb265-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb265-4" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
-<div id="时间的类型" class="section level3" number="5.1.1">
+<div id="时间的类型" class="section level3" number="6.1.1">
 <h3>
-<span class="header-section-number">5.1.1</span> 时间的类型<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E7%9A%84%E7%B1%BB%E5%9E%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.1</span> 时间的类型<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E7%9A%84%E7%B1%BB%E5%9E%8B"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -146,9 +147,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="datetime主要类" class="section level3 tabset" number="5.1.2">
+<div id="datetime主要类" class="section level3 tabset" number="6.1.2">
 <h3>
-<span class="header-section-number">5.1.2</span> datetime主要类<a class="anchor" aria-label="anchor" href="#datetime%E4%B8%BB%E8%A6%81%E7%B1%BB"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.2</span> datetime主要类<a class="anchor" aria-label="anchor" href="#datetime%E4%B8%BB%E8%A6%81%E7%B1%BB"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -182,9 +183,9 @@
 </tr>
 </tbody>
 </table></div>
-<div id="date" class="section level4" number="5.1.2.1">
+<div id="date" class="section level4" number="6.1.2.1">
 <h4>
-<span class="header-section-number">5.1.2.1</span> .date()<a class="anchor" aria-label="anchor" href="#date"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.2.1</span> .date()<a class="anchor" aria-label="anchor" href="#date"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>datetime.date(year,month,day)</code></pre>
 <div class="inline-table"><table class="table table-sm">
@@ -256,9 +257,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="time" class="section level4" number="5.1.2.2">
+<div id="time" class="section level4" number="6.1.2.2">
 <h4>
-<span class="header-section-number">5.1.2.2</span> .time()<a class="anchor" aria-label="anchor" href="#time"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.2.2</span> .time()<a class="anchor" aria-label="anchor" href="#time"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>datetime.time(\[hour[, minute[, second[, microsecond[, tzinfo]]]]\])</code></pre>
 <div class="sourceCode" id="cb268"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb268-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb268-1" tabindex="-1"></a><span class="kw">def</span> time_atr_and_met(hour,minute,second):</span>
@@ -352,7 +353,7 @@
 <tr class="odd">
 <td>12</td>
 <td>.strftime</td>
-<td>&lt;built-in method strftime of datetime.time object at 0x0000027584199290&gt;</td>
+<td>&lt;built-in method strftime of datetime.time object at 0x00000196E32B9290&gt;</td>
 </tr>
 <tr class="even">
 <td>13</td>
@@ -372,9 +373,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="datetime-1" class="section level4" number="5.1.2.3">
+<div id="datetime-1" class="section level4" number="6.1.2.3">
 <h4>
-<span class="header-section-number">5.1.2.3</span> .datetime()<a class="anchor" aria-label="anchor" href="#datetime-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.2.3</span> .datetime()<a class="anchor" aria-label="anchor" href="#datetime-1"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>datetime(year, month, day\[, hour[, minute[, second[, microsecond[,tzinfo]]]]\])</code></pre>
 <div class="sourceCode" id="cb270"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb270-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb270-1" tabindex="-1"></a><span class="kw">def</span> datetime_atr_and_met(year,month,day,hour,minute,second):</span>
@@ -416,7 +417,7 @@
 <tr class="odd">
 <td>0</td>
 <td>.now</td>
-<td>2024-04-29 00:21:22.894848</td>
+<td>2024-04-29 00:34:45.839126</td>
 <td>.astimezone</td>
 <td>2021-11-26 16:00:00+08:00</td>
 </tr>
@@ -444,7 +445,7 @@
 <tr class="odd">
 <td>4</td>
 <td>.strftime</td>
-<td>&lt;built-in method strftime of datetime.datetime object at 0x000002758397B4E0&gt;</td>
+<td>&lt;built-in method strftime of datetime.datetime object at 0x00000196E2D1C1E0&gt;</td>
 <td>.day</td>
 <td>26</td>
 </tr>
@@ -486,7 +487,7 @@
 <tr class="odd">
 <td>10</td>
 <td>.today</td>
-<td>2024-04-29 00:21:22.894849</td>
+<td>2024-04-29 00:34:45.839127</td>
 <td>.fromtimestamp</td>
 <td>&lt;built-in method fromtimestamp of type object at 0x00007FFE0F489330&gt;</td>
 </tr>
@@ -521,7 +522,7 @@
 <tr class="even">
 <td>15</td>
 <td>.utcnow</td>
-<td>2024-04-28 16:21:22.894848</td>
+<td>2024-04-28 16:34:45.839126</td>
 <td>.max</td>
 <td>9999-12-31 23:59:59.999999</td>
 </tr>
@@ -556,9 +557,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="timedelta" class="section level4" number="5.1.2.4">
+<div id="timedelta" class="section level4" number="6.1.2.4">
 <h4>
-<span class="header-section-number">5.1.2.4</span> .timedelta()<a class="anchor" aria-label="anchor" href="#timedelta"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.2.4</span> .timedelta()<a class="anchor" aria-label="anchor" href="#timedelta"><i class="fas fa-link"></i></a>
 </h4>
 <p>timedelta类是用来计算二个datetime对象的差值的。</p>
 <p>创建对象:<code>datetime.timedelta(days=0, seconds=0, microseconds=0, milliseconds=0, minutes=0, hours=0, weeks=0)</code></p>
@@ -629,9 +630,9 @@
 <span id="cb273-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb273-4" tabindex="-1"></a>t2<span class="op">+</span><span class="dv">3</span><span class="op">*</span>td</span></code></pre></div>
 <pre class="scroll-200"><code>datetime.date(2023, 3, 19)</code></pre>
 </div>
-<div id="timezone" class="section level4" number="5.1.2.5">
+<div id="timezone" class="section level4" number="6.1.2.5">
 <h4>
-<span class="header-section-number">5.1.2.5</span> .timezone()<a class="anchor" aria-label="anchor" href="#timezone"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.2.5</span> .timezone()<a class="anchor" aria-label="anchor" href="#timezone"><i class="fas fa-link"></i></a>
 </h4>
 <p>创建时区</p>
 <pre><code>datetime.timezone(offset, name=None)
@@ -649,13 +650,13 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 <pre class="scroll-200"><code>datetime.timedelta(seconds=21600)</code></pre>
 </div>
 </div>
-<div id="时间类型的转换" class="section level3 tabset" number="5.1.3">
+<div id="时间类型的转换" class="section level3 tabset" number="6.1.3">
 <h3>
-<span class="header-section-number">5.1.3</span> 时间类型的转换<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.3</span> 时间类型的转换<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><i class="fas fa-link"></i></a>
 </h3>
-<div id="str与datetime" class="section level4" number="5.1.3.1">
+<div id="str与datetime" class="section level4" number="6.1.3.1">
 <h4>
-<span class="header-section-number">5.1.3.1</span> str与datetime<a class="anchor" aria-label="anchor" href="#str%E4%B8%8Edatetime"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.3.1</span> str与datetime<a class="anchor" aria-label="anchor" href="#str%E4%B8%8Edatetime"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>* 字符串形式转化为datetime `datetime.datetime.strptime('2015-6-1 18:19:59', '%Y-%m-%d %H:%M:%S')`
     * 只有datetime对象有该方法
@@ -760,9 +761,9 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 </tbody>
 </table></div>
 </div>
-<div id="timestamp与datetime" class="section level4" number="5.1.3.2">
+<div id="timestamp与datetime" class="section level4" number="6.1.3.2">
 <h4>
-<span class="header-section-number">5.1.3.2</span> timestamp与datetime<a class="anchor" aria-label="anchor" href="#timestamp%E4%B8%8Edatetime"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.3.2</span> timestamp与datetime<a class="anchor" aria-label="anchor" href="#timestamp%E4%B8%8Edatetime"><i class="fas fa-link"></i></a>
 </h4>
 <ul>
 <li>datetime 转化为timestamp <code>datetime.datetime.timestamp()</code>
@@ -777,9 +778,9 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 </li>
 </ul>
 </div>
-<div id="本地时间与utc时间" class="section level4" number="5.1.3.3">
+<div id="本地时间与utc时间" class="section level4" number="6.1.3.3">
 <h4>
-<span class="header-section-number">5.1.3.3</span> 本地时间与utc时间<a class="anchor" aria-label="anchor" href="#%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4%E4%B8%8Eutc%E6%97%B6%E9%97%B4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.3.3</span> 本地时间与utc时间<a class="anchor" aria-label="anchor" href="#%E6%9C%AC%E5%9C%B0%E6%97%B6%E9%97%B4%E4%B8%8Eutc%E6%97%B6%E9%97%B4"><i class="fas fa-link"></i></a>
 </h4>
 <ul>
 <li>本地时间转换为utc时间:一个datetime类型有一个时区属性tzinfo，但是默认为None，所以无法区分这个datetime到底是哪个时区，除非强行给datetime设置一个时区.需要自己创建时区对象，然后赋值给datetime对象</li>
@@ -787,23 +788,23 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 <div class="sourceCode" id="cb285"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb285-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb285-1" tabindex="-1"></a>tz_utc_8 <span class="op">=</span> timezone(timedelta(hours<span class="op">=</span><span class="dv">8</span>)) <span class="co"># 创建时区UTC+8:00</span></span>
 <span id="cb285-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb285-2" tabindex="-1"></a>now <span class="op">=</span> datetime.datetime.now()</span>
 <span id="cb285-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb285-3" tabindex="-1"></a>now</span></code></pre></div>
-<pre class="scroll-200"><code>datetime.datetime(2024, 4, 29, 0, 21, 23, 459686)</code></pre>
+<pre class="scroll-200"><code>datetime.datetime(2024, 4, 29, 0, 34, 46, 313544)</code></pre>
 <div class="sourceCode" id="cb287"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb287-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb287-1" tabindex="-1"></a>dt <span class="op">=</span> now.replace(tzinfo<span class="op">=</span>tz_utc_8) <span class="co"># 强制设置为UTC+8:00</span></span>
 <span id="cb287-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb287-2" tabindex="-1"></a>dt</span></code></pre></div>
-<pre class="scroll-200"><code>datetime.datetime(2024, 4, 29, 0, 21, 23, 459686, tzinfo=datetime.timezone(datetime.timedelta(seconds=28800)))</code></pre>
+<pre class="scroll-200"><code>datetime.datetime(2024, 4, 29, 0, 34, 46, 313544, tzinfo=datetime.timezone(datetime.timedelta(seconds=28800)))</code></pre>
 <div class="sourceCode" id="cb289"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb289-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb289-1" tabindex="-1"></a><span class="co">#datetime.datetime(2015, 5, 18, 17, 2, 10, 871012, tzinfo=datetime.timezone(datetime.timedelta(0, 28800)))</span></span>
 <span id="cb289-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb289-2" tabindex="-1"></a><span class="co">#如果系统时区恰好是UTC+8:00，那么上述代码就是正确的，否则，不能强制设置为UTC+8:00时区。</span></span></code></pre></div>
 </div>
 </div>
-<div id="比较" class="section level3" number="5.1.4">
+<div id="比较" class="section level3" number="6.1.4">
 <h3>
-<span class="header-section-number">5.1.4</span> 比较<a class="anchor" aria-label="anchor" href="#%E6%AF%94%E8%BE%83"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1.4</span> 比较<a class="anchor" aria-label="anchor" href="#%E6%AF%94%E8%BE%83"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb290"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb290-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-1" tabindex="-1"></a><span class="co">##加减</span></span>
 <span id="cb290-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-2" tabindex="-1"></a>a<span class="op">=</span>datetime.datetime.now()</span>
 <span id="cb290-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-3" tabindex="-1"></a>b<span class="op">=</span>datetime.datetime(<span class="dv">2021</span>,<span class="dv">12</span>,<span class="dv">3</span>,<span class="dv">15</span>,<span class="dv">43</span>,<span class="dv">20</span>)</span>
 <span id="cb290-4"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb290-4" tabindex="-1"></a>a<span class="op">-</span>b</span></code></pre></div>
-<pre class="scroll-200"><code>datetime.timedelta(days=877, seconds=31083, microseconds=582022)</code></pre>
+<pre class="scroll-200"><code>datetime.timedelta(days=877, seconds=31886, microseconds=436933)</code></pre>
 <div class="sourceCode" id="cb292"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb292-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb292-1" tabindex="-1"></a><span class="co">##比较大小</span></span>
 <span id="cb292-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb292-2" tabindex="-1"></a>a <span class="op">&gt;</span> b</span></code></pre></div>
 <pre class="scroll-200"><code>True</code></pre>
@@ -811,9 +812,9 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 <pre class="scroll-200"><code>False</code></pre>
 </div>
 </div>
-<div id="dateutil" class="section level2" number="5.2">
+<div id="dateutil" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">5.2</span> dateutil<a class="anchor" aria-label="anchor" href="#dateutil"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> dateutil<a class="anchor" aria-label="anchor" href="#dateutil"><i class="fas fa-link"></i></a>
 </h2>
 <p>datetime.strptime是在已知格式的情况下转换日期的好方式。然而，每次都必须编写一个格式代码可能有点烦人，特别是对于通用日期格式。在这种情况下，你可以使用第三方dateutil包的parser.parse方法（这个包在安装pandas时已经自动安装）：</p>
 <p>dateutil.parser是一个有用但并不完美的工具。值得注意的是，它会将一些字符串识别为
@@ -822,14 +823,14 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 <span id="cb296-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb296-2" tabindex="-1"></a>parse(<span class="st">'2011-01-03'</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>datetime.datetime(2011, 1, 3, 0, 0)</code></pre>
 </div>
-<div id="pandas时间日期操作" class="section level2" number="5.3">
+<div id="pandas时间日期操作" class="section level2" number="6.3">
 <h2>
-<span class="header-section-number">5.3</span> pandas时间日期操作<a class="anchor" aria-label="anchor" href="#pandas%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3</span> pandas时间日期操作<a class="anchor" aria-label="anchor" href="#pandas%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C"><i class="fas fa-link"></i></a>
 </h2>
 <p><code>pd.to_datetime()</code>可以将缺失值转为NaT</p>
-<div id="pandas时间类" class="section level3 tabset" number="5.3.1">
+<div id="pandas时间类" class="section level3 tabset" number="6.3.1">
 <h3>
-<span class="header-section-number">5.3.1</span> pandas时间类<a class="anchor" aria-label="anchor" href="#pandas%E6%97%B6%E9%97%B4%E7%B1%BB"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1</span> pandas时间类<a class="anchor" aria-label="anchor" href="#pandas%E6%97%B6%E9%97%B4%E7%B1%BB"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <colgroup>
@@ -877,9 +878,9 @@ name可以不给，给了话必须是datetime.tzname()生成的对象</code></pr
 </tr>
 </tbody>
 </table></div>
-<div id="datetime-2" class="section level4" number="5.3.1.1">
+<div id="datetime-2" class="section level4" number="6.3.1.1">
 <h4>
-<span class="header-section-number">5.3.1.1</span> datetime<a class="anchor" aria-label="anchor" href="#datetime-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1.1</span> datetime<a class="anchor" aria-label="anchor" href="#datetime-2"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>pd.to_datetime(format=)
 pd.date_range(start_time,ends_time,periods=)
@@ -1231,25 +1232,25 @@ Logical indicating if the date belongs to a leap year
 </tbody>
 </table></div>
 </div>
-<div id="timedelta-1" class="section level4" number="5.3.1.2">
+<div id="timedelta-1" class="section level4" number="6.3.1.2">
 <h4>
-<span class="header-section-number">5.3.1.2</span> timedelta<a class="anchor" aria-label="anchor" href="#timedelta-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1.2</span> timedelta<a class="anchor" aria-label="anchor" href="#timedelta-1"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>pd.to_timedelta()
 pd.timedelta_range()</code></pre>
 </div>
-<div id="timespans" class="section level4" number="5.3.1.3">
+<div id="timespans" class="section level4" number="6.3.1.3">
 <h4>
-<span class="header-section-number">5.3.1.3</span> timespans<a class="anchor" aria-label="anchor" href="#timespans"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1.3</span> timespans<a class="anchor" aria-label="anchor" href="#timespans"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>pd.period_range()
 pd.period_range(start_time,end_time,freq)
 生成一个periodIndex对象
 每一个索引值是一个Period对象</code></pre>
 </div>
-<div id="dateoffsets" class="section level4" number="5.3.1.4">
+<div id="dateoffsets" class="section level4" number="6.3.1.4">
 <h4>
-<span class="header-section-number">5.3.1.4</span> dateoffsets<a class="anchor" aria-label="anchor" href="#dateoffsets"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.1.4</span> dateoffsets<a class="anchor" aria-label="anchor" href="#dateoffsets"><i class="fas fa-link"></i></a>
 </h4>
 <p><code>from pandas.tseries.offset import BMonthEnd</code></p>
 <p>DateOffset代表规则的频率增量。 在具有DateOffset各种子类的 Pandas 中，可以表示特定的日期偏移逻辑，例如“月”，“工作日”或“小时”</p>
@@ -1258,47 +1259,47 @@ pd.period_range(start_time,end_time,freq)
 <p>特定DateOffset的多个单位可以通过乘法表示，时间加上偏移量可以实现时间的改变，或者使用这些对象的实例方法rollforward等实现时间的改变</p>
 <div class="sourceCode" id="cb301"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb301-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb301-1" tabindex="-1"></a>t <span class="op">=</span> datetime.datetime.now()</span>
 <span id="cb301-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb301-2" tabindex="-1"></a>t <span class="op">+</span> pd.offsets.BMonthEnd()</span></code></pre></div>
-<pre class="scroll-200"><code>Timestamp('2024-04-30 00:21:23.773421')</code></pre>
+<pre class="scroll-200"><code>Timestamp('2024-04-30 00:34:46.620385')</code></pre>
 <div class="sourceCode" id="cb303"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb303-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb303-1" tabindex="-1"></a>t <span class="op">-</span> pd.offsets.BMonthEnd(<span class="dv">2</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>Timestamp('2024-02-29 00:21:23.773421')</code></pre>
+<pre class="scroll-200"><code>Timestamp('2024-02-29 00:34:46.620385')</code></pre>
 </div>
 </div>
-<div id="indexing" class="section level3" number="5.3.2">
+<div id="indexing" class="section level3" number="6.3.2">
 <h3>
-<span class="header-section-number">5.3.2</span> indexing<a class="anchor" aria-label="anchor" href="#indexing"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.2</span> indexing<a class="anchor" aria-label="anchor" href="#indexing"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb305"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb305-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb305-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb305-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb305-2" tabindex="-1"></a>rng <span class="op">=</span> pd.date_range(<span class="st">'2011/1/31'</span>, <span class="st">'2011/12/31'</span>, freq<span class="op">=</span><span class="st">"BM"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: 'BM' is deprecated and will be removed in a future version, please use 'BME' instead.</code></pre>
 <div class="sourceCode" id="cb307"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb307-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb307-1" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
 <span id="cb307-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb307-2" tabindex="-1"></a>ts[<span class="st">"1/31/2011"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2.0741703414544306</code></pre>
+<pre class="scroll-200"><code>-0.5061677483723529</code></pre>
 <div class="sourceCode" id="cb309"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb309-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb309-1" tabindex="-1"></a>ts[<span class="st">"10/31/2011"</span>:<span class="st">"12/31/2011"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2011-10-31    1.080528
-2011-11-30   -0.749395
-2011-12-30   -0.876985
+<pre class="scroll-200"><code>2011-10-31    0.329107
+2011-11-30    0.733076
+2011-12-30   -1.845578
 Freq: BME, dtype: float64</code></pre>
 <div class="sourceCode" id="cb311"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb311-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb311-1" tabindex="-1"></a>ts[<span class="st">"2011-6"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2011-06-30   -0.160683
+<pre class="scroll-200"><code>2011-06-30   -1.062127
 Freq: BME, dtype: float64</code></pre>
 <div class="sourceCode" id="cb313"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb313-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb313-1" tabindex="-1"></a>ts.loc[<span class="st">"2011"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>2011-01-31    2.074170
-2011-02-28   -1.291018
-2011-03-31   -0.087798
-2011-04-29   -2.685013
-2011-05-31   -2.095086
-2011-06-30   -0.160683
-2011-07-29   -0.130983
-2011-08-31   -1.068623
-2011-09-30    0.379212
-2011-10-31    1.080528
-2011-11-30   -0.749395
-2011-12-30   -0.876985
+<pre class="scroll-200"><code>2011-01-31   -0.506168
+2011-02-28    0.754779
+2011-03-31   -0.273464
+2011-04-29   -0.199650
+2011-05-31   -1.022645
+2011-06-30   -1.062127
+2011-07-29   -0.307864
+2011-08-31    1.877916
+2011-09-30   -3.059956
+2011-10-31    0.329107
+2011-11-30    0.733076
+2011-12-30   -1.845578
 Freq: BME, dtype: float64</code></pre>
 </div>
-<div id="时区处理" class="section level3" number="5.3.3">
+<div id="时区处理" class="section level3" number="6.3.3">
 <h3>
-<span class="header-section-number">5.3.3</span> 时区处理<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E5%8C%BA%E5%A4%84%E7%90%86"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.3</span> 时区处理<a class="anchor" aria-label="anchor" href="#%E6%97%B6%E5%8C%BA%E5%A4%84%E7%90%86"><i class="fas fa-link"></i></a>
 </h3>
 <pre><code>`.tz` 获取时区
 `rng = pd.date_range('3/9/2012 9:30', periods=6, freq='D',tz="utc")` 设置utc时区
@@ -1309,24 +1310,24 @@ Freq: BME, dtype: float64</code></pre>
 <span id="cb316-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb316-3" tabindex="-1"></a><span class="bu">print</span>(ts.index.tz)</span></code></pre></div>
 <pre class="scroll-200"><code>UTC</code></pre>
 <div class="sourceCode" id="cb318"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb318-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb318-1" tabindex="-1"></a>ts.tz_convert(<span class="st">'America/New_York'</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>2012-03-09 04:30:00-05:00    0.683438
-2012-03-10 04:30:00-05:00    0.266101
-2012-03-11 05:30:00-04:00   -0.030704
-2012-03-12 05:30:00-04:00    0.079108
-2012-03-13 05:30:00-04:00    0.279454
-2012-03-14 05:30:00-04:00    1.745889
+<pre class="scroll-200"><code>2012-03-09 04:30:00-05:00    0.559909
+2012-03-10 04:30:00-05:00    0.680295
+2012-03-11 05:30:00-04:00    0.829914
+2012-03-12 05:30:00-04:00   -1.550127
+2012-03-13 05:30:00-04:00    1.315035
+2012-03-14 05:30:00-04:00    1.655262
 Freq: D, dtype: float64</code></pre>
 </div>
-<div id="类型转换-1" class="section level3" number="5.3.4">
+<div id="类型转换-1" class="section level3" number="6.3.4">
 <h3>
-<span class="header-section-number">5.3.4</span> 类型转换<a class="anchor" aria-label="anchor" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.4</span> 类型转换<a class="anchor" aria-label="anchor" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-1"><i class="fas fa-link"></i></a>
 </h3>
 <p>period.to_timestamp(how=“start”)
 timestamp.to_period(freq)</p>
 </div>
-<div id="频率和频率转换" class="section level3" number="5.3.5">
+<div id="频率和频率转换" class="section level3" number="6.3.5">
 <h3>
-<span class="header-section-number">5.3.5</span> 频率和频率转换<a class="anchor" aria-label="anchor" href="#%E9%A2%91%E7%8E%87%E5%92%8C%E9%A2%91%E7%8E%87%E8%BD%AC%E6%8D%A2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.5</span> 频率和频率转换<a class="anchor" aria-label="anchor" href="#%E9%A2%91%E7%8E%87%E5%92%8C%E9%A2%91%E7%8E%87%E8%BD%AC%E6%8D%A2"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/offset.png" width="95%" style="display: block; margin: auto;"></div>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/freq1.png" width="95%" style="display: block; margin: auto;"></div>
@@ -1337,9 +1338,9 @@ timestamp.to_period(freq)</p>
 <p>ffill方法将向前填充最后一个已知值（pad也这样做）</p>
 <p>bfill方法将从下一个已知值回填值：</p>
 </div>
-<div id="resample" class="section level3 tabset" number="5.3.6">
+<div id="resample" class="section level3 tabset" number="6.3.6">
 <h3>
-<span class="header-section-number">5.3.6</span> resample<a class="anchor" aria-label="anchor" href="#resample"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.6</span> resample<a class="anchor" aria-label="anchor" href="#resample"><i class="fas fa-link"></i></a>
 </h3>
 <p>一天”1D”的级别比”1W”的级别要高</p>
 <p>pandas对象都配有resample方法，该方法是所有频率转换的工具函数。resample拥有类似于groupby的API；你调用resample对数据分组，之后再调用聚合函数：</p>
@@ -1348,21 +1349,21 @@ timestamp.to_period(freq)</p>
 <span id="cb320-2"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb320-2" tabindex="-1"></a>ts <span class="op">=</span> pd.Series(np.random.randn(<span class="bu">len</span>(rng)), index<span class="op">=</span>rng)</span>
 <span id="cb320-3"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb320-3" tabindex="-1"></a>ts.resample(<span class="st">'M'</span>).mean()</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: 'M' is deprecated and will be removed in a future version, please use 'ME' instead.
-2000-01-31    0.676525
-2000-02-29    0.238862
-2000-03-31   -0.122012
-2000-04-30   -0.434877
+2000-01-31    0.198931
+2000-02-29    0.151074
+2000-03-31   -0.190714
+2000-04-30   -0.542959
 Freq: ME, dtype: float64</code></pre>
 <div class="sourceCode" id="cb322"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb322-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb322-1" tabindex="-1"></a>ts.resample(<span class="st">'M'</span>, kind<span class="op">=</span><span class="st">'period'</span>).mean()</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: The 'kind' keyword in Series.resample is deprecated and will be removed in a future version. Explicitly cast the index to the desired type instead
-2000-01    0.676525
-2000-02    0.238862
-2000-03   -0.122012
-2000-04   -0.434877
+2000-01    0.198931
+2000-02    0.151074
+2000-03   -0.190714
+2000-04   -0.542959
 Freq: M, dtype: float64</code></pre>
-<div id="向下采样" class="section level4" number="5.3.6.1">
+<div id="向下采样" class="section level4" number="6.3.6.1">
 <h4>
-<span class="header-section-number">5.3.6.1</span> 向下采样<a class="anchor" aria-label="anchor" href="#%E5%90%91%E4%B8%8B%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.6.1</span> 向下采样<a class="anchor" aria-label="anchor" href="#%E5%90%91%E4%B8%8B%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
 </h4>
 <p>将数据聚合到一个规则的低频率上是一个常见的时间序列任务。你要聚合的数据不必是固定频率的。期望的频率定义了用于对时间序列切片以聚合的箱体边界。例如，要将时间转换为每月，‘M’或’BM’，你需要将数据分成一个月的时间间隔。每个间隔是半闭合的，一个数据点只能属于一个时间间隔，时间间隔的并集必须是整个时间帧。在使用resample进行向下采样数据时有些事情需要考虑：</p>
 <ul>
@@ -1371,22 +1372,22 @@ Freq: M, dtype: float64</code></pre>
 </ul>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E9%87%8D%E9%87%87%E6%A0%B7.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="向上采样" class="section level4" number="5.3.6.2">
+<div id="向上采样" class="section level4" number="6.3.6.2">
 <h4>
-<span class="header-section-number">5.3.6.2</span> 向上采样<a class="anchor" aria-label="anchor" href="#%E5%90%91%E4%B8%8A%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.6.2</span> 向上采样<a class="anchor" aria-label="anchor" href="#%E5%90%91%E4%B8%8A%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
 </h4>
 <p>会多出时间，会出现空值，可以采用.ffill()或.reindex()方法填补空值</p>
 <p><code>ts.resample("D").ffill(limit=2)</code></p>
 </div>
 </div>
-<div id="窗口函数" class="section level3 tabset" number="5.3.7">
+<div id="窗口函数" class="section level3 tabset" number="6.3.7">
 <h3>
-<span class="header-section-number">5.3.7</span> 窗口函数<a class="anchor" aria-label="anchor" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.7</span> 窗口函数<a class="anchor" aria-label="anchor" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <p>统计和其他通过移动窗口或指数衰减而运行的函数是用于时间序列操作的数组变换的一个重要类别。这对平滑噪声或粗糙的数据非常有用。我称这些函数为移动窗口函数，尽管它也包含了一些没有固定长度窗口的函数，比如指数加权移动平均。与其他的统计函数类似，这些函数会自动排除缺失数据。</p>
-<div id="rolling" class="section level4" number="5.3.7.1">
+<div id="rolling" class="section level4" number="6.3.7.1">
 <h4>
-<span class="header-section-number">5.3.7.1</span> .rolling()<a class="anchor" aria-label="anchor" href="#rolling"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.7.1</span> .rolling()<a class="anchor" aria-label="anchor" href="#rolling"><i class="fas fa-link"></i></a>
 </h4>
 <p>确定窗口大小,对窗口内所有值进行操作</p>
 <p>`.rolling()</p>
@@ -1402,168 +1403,168 @@ If True, set the window labels as the center of the window index</code></pre>
 2023-01-02     NaN
 2023-01-03     NaN
 2023-01-04     NaN
-2023-01-05    26.8
+2023-01-05    27.8
               ... 
-2023-03-27    46.7
-2023-03-28    50.0
-2023-03-29    51.1
-2023-03-30    54.6
-2023-03-31    51.6
+2023-03-27    43.7
+2023-03-28    48.3
+2023-03-29    40.6
+2023-03-30    37.5
+2023-03-31    38.5
 Freq: D, Length: 90, dtype: float64</code></pre>
 <div class="sourceCode" id="cb327"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb327-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb327-1" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">3</span>).mean()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01          NaN
 2023-01-02          NaN
-2023-01-03    19.333333
-2023-01-04    24.750000
-2023-01-05    26.800000
+2023-01-03    22.666667
+2023-01-04    33.750000
+2023-01-05    27.800000
                 ...    
-2023-03-27    46.700000
-2023-03-28    50.000000
-2023-03-29    51.100000
-2023-03-30    54.600000
-2023-03-31    51.600000
+2023-03-27    43.700000
+2023-03-28    48.300000
+2023-03-29    40.600000
+2023-03-30    37.500000
+2023-03-31    38.500000
 Freq: D, Length: 90, dtype: float64</code></pre>
 <div class="sourceCode" id="cb329"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb329-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb329-1" tabindex="-1"></a>ts.rolling(<span class="st">"10D"</span>,min_periods<span class="op">=</span><span class="dv">5</span>,center<span class="op">=</span><span class="va">True</span>).mean()</span></code></pre></div>
-<pre class="scroll-200"><code>2023-01-01    28.833333
-2023-01-02    25.571429
-2023-01-03    29.250000
-2023-01-04    37.111111
-2023-01-05    35.000000
+<pre class="scroll-200"><code>2023-01-01    34.666667
+2023-01-02    38.285714
+2023-01-03    40.500000
+2023-01-04    42.000000
+2023-01-05    41.900000
                 ...    
-2023-03-27    47.888889
-2023-03-28    46.875000
-2023-03-29    52.285714
-2023-03-30    52.666667
-2023-03-31    51.800000
+2023-03-27    41.111111
+2023-03-28    42.250000
+2023-03-29    46.000000
+2023-03-30    48.000000
+2023-03-31    55.600000
 Freq: D, Length: 90, dtype: float64</code></pre>
 </div>
-<div id="shift" class="section level4" number="5.3.7.2">
+<div id="shift" class="section level4" number="6.3.7.2">
 <h4>
-<span class="header-section-number">5.3.7.2</span> .shift()<a class="anchor" aria-label="anchor" href="#shift"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.7.2</span> .shift()<a class="anchor" aria-label="anchor" href="#shift"><i class="fas fa-link"></i></a>
 </h4>
 <p><code>.shift(n,periods,freq,fill_value)</code>滞后n期，并不会改变原索引</p>
 <div class="sourceCode" id="cb331"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb331-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb331-1" tabindex="-1"></a>ts.shift(<span class="dv">1</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
-2023-01-02    10.0
-2023-01-03     3.0
-2023-01-04    45.0
-2023-01-05    41.0
+2023-01-02    13.0
+2023-01-03    20.0
+2023-01-04    35.0
+2023-01-05    67.0
               ... 
-2023-03-27    57.0
-2023-03-28    22.0
-2023-03-29    53.0
-2023-03-30    51.0
-2023-03-31    71.0
+2023-03-27    10.0
+2023-03-28    55.0
+2023-03-29    57.0
+2023-03-30     5.0
+2023-03-31    66.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 <div class="sourceCode" id="cb333"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb333-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb333-1" tabindex="-1"></a>ts.shift(<span class="dv">1</span>).ffill()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
-2023-01-02    10.0
-2023-01-03     3.0
-2023-01-04    45.0
-2023-01-05    41.0
+2023-01-02    13.0
+2023-01-03    20.0
+2023-01-04    35.0
+2023-01-05    67.0
               ... 
-2023-03-27    57.0
-2023-03-28    22.0
-2023-03-29    53.0
-2023-03-30    51.0
-2023-03-31    71.0
+2023-03-27    10.0
+2023-03-28    55.0
+2023-03-29    57.0
+2023-03-30     5.0
+2023-03-31    66.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 <div class="sourceCode" id="cb335"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb335-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb335-1" tabindex="-1"></a>ts.shift(<span class="dv">1</span>).bfill()</span></code></pre></div>
-<pre class="scroll-200"><code>2023-01-01    10.0
-2023-01-02    10.0
-2023-01-03     3.0
-2023-01-04    45.0
-2023-01-05    41.0
+<pre class="scroll-200"><code>2023-01-01    13.0
+2023-01-02    13.0
+2023-01-03    20.0
+2023-01-04    35.0
+2023-01-05    67.0
               ... 
-2023-03-27    57.0
-2023-03-28    22.0
-2023-03-29    53.0
-2023-03-30    51.0
-2023-03-31    71.0
+2023-03-27    10.0
+2023-03-28    55.0
+2023-03-29    57.0
+2023-03-30     5.0
+2023-03-31    66.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 </div>
-<div id="diff" class="section level4" number="5.3.7.3">
+<div id="diff" class="section level4" number="6.3.7.3">
 <h4>
-<span class="header-section-number">5.3.7.3</span> .diff()<a class="anchor" aria-label="anchor" href="#diff"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.7.3</span> .diff()<a class="anchor" aria-label="anchor" href="#diff"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb337"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb337-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb337-1" tabindex="-1"></a>ts.diff()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01     NaN
-2023-01-02    -7.0
-2023-01-03    42.0
-2023-01-04    -4.0
-2023-01-05    -6.0
+2023-01-02     7.0
+2023-01-03    15.0
+2023-01-04    32.0
+2023-01-05   -63.0
               ... 
-2023-03-27   -35.0
-2023-03-28    31.0
-2023-03-29    -2.0
-2023-03-30    20.0
-2023-03-31    -9.0
+2023-03-27    45.0
+2023-03-28     2.0
+2023-03-29   -52.0
+2023-03-30    61.0
+2023-03-31    29.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 </div>
-<div id="first" class="section level4" number="5.3.7.4">
+<div id="first" class="section level4" number="6.3.7.4">
 <h4>
-<span class="header-section-number">5.3.7.4</span> .first()<a class="anchor" aria-label="anchor" href="#first"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.7.4</span> .first()<a class="anchor" aria-label="anchor" href="#first"><i class="fas fa-link"></i></a>
 </h4>
 <p>返回时间的索引值之间的极差是offset</p>
 <p>offset:str,dateoffset</p>
 <div class="sourceCode" id="cb339"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb339-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb339-1" tabindex="-1"></a>ts.first(<span class="st">'10D'</span>)<span class="co">#1-1到1-10</span></span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: first is deprecated and will be removed in a future version. Please create a mask and filter using `.loc` instead
-2023-01-01     10
-2023-01-02      3
-2023-01-03     45
-2023-01-04     41
-2023-01-05     35
-2023-01-06     39
-2023-01-07      6
-2023-01-08     55
-2023-01-09    100
-2023-01-10     16
+2023-01-01    13
+2023-01-02    20
+2023-01-03    35
+2023-01-04    67
+2023-01-05     4
+2023-01-06    69
+2023-01-07    60
+2023-01-08    56
+2023-01-09    54
+2023-01-10    41
 Freq: D, dtype: int32</code></pre>
 </div>
-<div id="last" class="section level4" number="5.3.7.5">
+<div id="last" class="section level4" number="6.3.7.5">
 <h4>
-<span class="header-section-number">5.3.7.5</span> .last()<a class="anchor" aria-label="anchor" href="#last"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.7.5</span> .last()<a class="anchor" aria-label="anchor" href="#last"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb341"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb341-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb341-1" tabindex="-1"></a>ts.last(<span class="st">"20D"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: last is deprecated and will be removed in a future version. Please create a mask and filter using `.loc` instead
-2023-03-12     1
-2023-03-13    69
-2023-03-14    11
-2023-03-15    98
-2023-03-16    46
-2023-03-17    81
-2023-03-18    20
-2023-03-19    40
-2023-03-20    36
-2023-03-21    92
-2023-03-22    85
-2023-03-23    56
-2023-03-24     9
-2023-03-25    50
-2023-03-26    57
-2023-03-27    22
-2023-03-28    53
-2023-03-29    51
-2023-03-30    71
-2023-03-31    62
+2023-03-12    99
+2023-03-13    12
+2023-03-14    48
+2023-03-15    68
+2023-03-16    94
+2023-03-17    62
+2023-03-18    11
+2023-03-19    82
+2023-03-20    97
+2023-03-21    85
+2023-03-22    15
+2023-03-23    32
+2023-03-24    16
+2023-03-25    34
+2023-03-26    10
+2023-03-27    55
+2023-03-28    57
+2023-03-29     5
+2023-03-30    66
+2023-03-31    95
 Freq: D, dtype: int32</code></pre>
 </div>
-<div id="expandind" class="section level4" number="5.3.7.6">
+<div id="expandind" class="section level4" number="6.3.7.6">
 <h4>
-<span class="header-section-number">5.3.7.6</span> .expandind()<a class="anchor" aria-label="anchor" href="#expandind"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.3.7.6</span> .expandind()<a class="anchor" aria-label="anchor" href="#expandind"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb343"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb343-1"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html#cb343-1" tabindex="-1"></a>ts.expanding(<span class="dv">3</span>).<span class="bu">sum</span>()</span></code></pre></div>
 <pre class="scroll-200"><code>2023-01-01       NaN
 2023-01-02       NaN
-2023-01-03      58.0
-2023-01-04      99.0
-2023-01-05     134.0
+2023-01-03      68.0
+2023-01-04     135.0
+2023-01-05     139.0
                ...  
-2023-03-27    4056.0
-2023-03-28    4109.0
-2023-03-29    4160.0
-2023-03-30    4231.0
-2023-03-31    4293.0
+2023-03-27    4309.0
+2023-03-28    4366.0
+2023-03-29    4371.0
+2023-03-30    4437.0
+2023-03-31    4532.0
 Freq: D, Length: 90, dtype: float64</code></pre>
 
 </div>
@@ -1730,30 +1731,30 @@ function openTab(evt,tabName){
 
 </div>
 <div class="chapter-nav">
-<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></div>
+<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></div>
 <div class="next"><a href="introduction-1.html">introduction</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="header-section-number">5</span> 时间序列</a></li>
+<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="header-section-number">6</span> 时间序列</a></li>
 <li>
-<a class="nav-link" href="#datetime"><span class="header-section-number">5.1</span> datetime</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="header-section-number">5.1.1</span> 时间的类型</a></li>
-<li><a class="nav-link" href="#datetime%E4%B8%BB%E8%A6%81%E7%B1%BB"><span class="header-section-number">5.1.2</span> datetime主要类</a></li>
-<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="header-section-number">5.1.3</span> 时间类型的转换</a></li>
-<li><a class="nav-link" href="#%E6%AF%94%E8%BE%83"><span class="header-section-number">5.1.4</span> 比较</a></li>
+<a class="nav-link" href="#datetime"><span class="header-section-number">6.1</span> datetime</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="header-section-number">6.1.1</span> 时间的类型</a></li>
+<li><a class="nav-link" href="#datetime%E4%B8%BB%E8%A6%81%E7%B1%BB"><span class="header-section-number">6.1.2</span> datetime主要类</a></li>
+<li><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="header-section-number">6.1.3</span> 时间类型的转换</a></li>
+<li><a class="nav-link" href="#%E6%AF%94%E8%BE%83"><span class="header-section-number">6.1.4</span> 比较</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#dateutil"><span class="header-section-number">5.2</span> dateutil</a></li>
+<li><a class="nav-link" href="#dateutil"><span class="header-section-number">6.2</span> dateutil</a></li>
 <li>
-<a class="nav-link" href="#pandas%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C"><span class="header-section-number">5.3</span> pandas时间日期操作</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#pandas%E6%97%B6%E9%97%B4%E7%B1%BB"><span class="header-section-number">5.3.1</span> pandas时间类</a></li>
-<li><a class="nav-link" href="#indexing"><span class="header-section-number">5.3.2</span> indexing</a></li>
-<li><a class="nav-link" href="#%E6%97%B6%E5%8C%BA%E5%A4%84%E7%90%86"><span class="header-section-number">5.3.3</span> 时区处理</a></li>
-<li><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-1"><span class="header-section-number">5.3.4</span> 类型转换</a></li>
-<li><a class="nav-link" href="#%E9%A2%91%E7%8E%87%E5%92%8C%E9%A2%91%E7%8E%87%E8%BD%AC%E6%8D%A2"><span class="header-section-number">5.3.5</span> 频率和频率转换</a></li>
-<li><a class="nav-link" href="#resample"><span class="header-section-number">5.3.6</span> resample</a></li>
-<li><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="header-section-number">5.3.7</span> 窗口函数</a></li>
+<a class="nav-link" href="#pandas%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C"><span class="header-section-number">6.3</span> pandas时间日期操作</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pandas%E6%97%B6%E9%97%B4%E7%B1%BB"><span class="header-section-number">6.3.1</span> pandas时间类</a></li>
+<li><a class="nav-link" href="#indexing"><span class="header-section-number">6.3.2</span> indexing</a></li>
+<li><a class="nav-link" href="#%E6%97%B6%E5%8C%BA%E5%A4%84%E7%90%86"><span class="header-section-number">6.3.3</span> 时区处理</a></li>
+<li><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2-1"><span class="header-section-number">6.3.4</span> 类型转换</a></li>
+<li><a class="nav-link" href="#%E9%A2%91%E7%8E%87%E5%92%8C%E9%A2%91%E7%8E%87%E8%BD%AC%E6%8D%A2"><span class="header-section-number">6.3.5</span> 频率和频率转换</a></li>
+<li><a class="nav-link" href="#resample"><span class="header-section-number">6.3.6</span> resample</a></li>
+<li><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="header-section-number">6.3.7</span> 窗口函数</a></li>
 </ul>
 </li>
 </ul>

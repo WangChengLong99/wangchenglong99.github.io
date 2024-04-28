@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>第4章 数据操作 | wcl</title>
-<meta name="author" content="第4章 数据操作 | wcl">
+<title>第5章 数据操作 | wcl</title>
+<meta name="author" content="第5章 数据操作 | wcl">
 <meta name="description" content="import pandas as pd import numpy as np import matplotlib.pyplot as plt pd.set_option('mode.chained_assignment', None) plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
 <meta name="generator" content="bookdown 0.39 with bs4_book()">
-<meta property="og:title" content="第4章 数据操作 | wcl">
+<meta property="og:title" content="第5章 数据操作 | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/数据操作.html">
 <meta property="og:description" content="import pandas as pd import numpy as np import matplotlib.pyplot as plt pd.set_option('mode.chained_assignment', None) plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第4章 数据操作 | wcl">
+<meta name="twitter:title" content="第5章 数据操作 | wcl">
 <meta name="twitter:description" content="import pandas as pd import numpy as np import matplotlib.pyplot as plt pd.set_option('mode.chained_assignment', None) plt.rcParams['font.sans-serif']=['Simhei']; #SimHei黑体...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -61,24 +61,25 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> welcome</a></li>
 <li class="book-part">数据</li>
 <li><a class="" href="introduction.html">introduction</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
-<li><a class="active" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">2</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></li>
+<li><a class="active" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">6</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
 <li><a class="" href="introduction-1.html">introduction</a></li>
-<li><a class="" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
-<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li><a class="" href="matplotlib.html"><span class="header-section-number">7</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">8</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
 <li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
-<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">9</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">10</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
 <li><a class="" href="introduction-3.html">introduction</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">11</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,9 +87,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据操作" class="section level1" number="4">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="数据操作" class="section level1" number="5">
 <h1>
-<span class="header-section-number">第4章</span> 数据操作<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">第5章</span> 数据操作<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><i class="fas fa-link"></i></a>
 </h1>
 <div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb79-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb79-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb79-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -217,9 +218,9 @@
 </tr>
 </tbody>
 </table></div>
-<div id="列" class="section level2" number="4.1">
+<div id="列" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">4.1</span> 列<a class="anchor" aria-label="anchor" href="#%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> 列<a class="anchor" aria-label="anchor" href="#%E5%88%97"><i class="fas fa-link"></i></a>
 </h2>
 <div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb81-1" tabindex="-1"></a>(</span>
 <span id="cb81-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb81-2" tabindex="-1"></a>pd.DataFrame(</span>
@@ -251,13 +252,13 @@
 </tr>
 </tbody>
 </table></div>
-<div id="选取列" class="section level3 tabset" number="4.1.1">
+<div id="选取列" class="section level3 tabset" number="5.1.1">
 <h3>
-<span class="header-section-number">4.1.1</span> 选取列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1</span> 选取列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%88%97"><i class="fas fa-link"></i></a>
 </h3>
-<div id="选取一列" class="section level4" number="4.1.1.1">
+<div id="选取一列" class="section level4" number="5.1.1.1">
 <h4>
-<span class="header-section-number">4.1.1.1</span> 选取一列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E4%B8%80%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1.1</span> 选取一列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E4%B8%80%E5%88%97"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb82"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb82-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb82-1" tabindex="-1"></a>(</span>
 <span id="cb82-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb82-2" tabindex="-1"></a>pd.DataFrame(</span>
@@ -295,9 +296,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="选取多列" class="section level4" number="4.1.1.2">
+<div id="选取多列" class="section level4" number="5.1.1.2">
 <h4>
-<span class="header-section-number">4.1.1.2</span> 选取多列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%A4%9A%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1.2</span> 选取多列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%A4%9A%E5%88%97"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb83"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb83-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-1" tabindex="-1"></a>(</span>
 <span id="cb83-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb83-2" tabindex="-1"></a>  pd.DataFrame(</span>
@@ -323,9 +324,9 @@
 </tr></tbody>
 </table></div>
 </div>
-<div id="根据类型选取列" class="section level4" number="4.1.1.3">
+<div id="根据类型选取列" class="section level4" number="5.1.1.3">
 <h4>
-<span class="header-section-number">4.1.1.3</span> 根据类型选取列<a class="anchor" aria-label="anchor" href="#%E6%A0%B9%E6%8D%AE%E7%B1%BB%E5%9E%8B%E9%80%89%E5%8F%96%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.1.3</span> 根据类型选取列<a class="anchor" aria-label="anchor" href="#%E6%A0%B9%E6%8D%AE%E7%B1%BB%E5%9E%8B%E9%80%89%E5%8F%96%E5%88%97"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb84"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb84-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb84-1" tabindex="-1"></a>(</span>
 <span id="cb84-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb84-2" tabindex="-1"></a>sd.select_dtypes(include<span class="op">=</span>[<span class="bu">int</span>])</span>
@@ -373,13 +374,13 @@
 </table></div>
 </div>
 </div>
-<div id="增加列" class="section level3 tabset" number="4.1.2">
+<div id="增加列" class="section level3 tabset" number="5.1.2">
 <h3>
-<span class="header-section-number">4.1.2</span> 增加列<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2</span> 增加列<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><i class="fas fa-link"></i></a>
 </h3>
-<div id="增加一列" class="section level4" number="4.1.2.1">
+<div id="增加一列" class="section level4" number="5.1.2.1">
 <h4>
-<span class="header-section-number">4.1.2.1</span> 增加一列<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2.1</span> 增加一列<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E4%B8%80%E5%88%97"><i class="fas fa-link"></i></a>
 </h4>
 <p>本质上是增加相同长度的序列,例外情况是当添加序列时存在<code>对齐</code>的情况</p>
 <p>会存在SettingWithCopyWarning, 关闭命令:<code>pd.set_option('mode.chained_assignment', None)</code></p>
@@ -427,7 +428,7 @@
 <td>59</td>
 <td>70</td>
 <td>190</td>
-<td>1.03998</td>
+<td>-0.754393</td>
 <td>nan</td>
 </tr>
 <tr class="even">
@@ -439,7 +440,7 @@
 <td>77</td>
 <td>74</td>
 <td>213</td>
-<td>-0.808134</td>
+<td>-0.499762</td>
 <td>12</td>
 </tr>
 <tr class="odd">
@@ -451,7 +452,7 @@
 <td>71</td>
 <td>83</td>
 <td>212</td>
-<td>-0.338002</td>
+<td>-0.203498</td>
 <td>nan</td>
 </tr>
 <tr class="even">
@@ -463,7 +464,7 @@
 <td>57</td>
 <td>71</td>
 <td>193</td>
-<td>0.379385</td>
+<td>1.8423</td>
 <td>13</td>
 </tr>
 <tr class="odd">
@@ -475,15 +476,15 @@
 <td>83</td>
 <td>72</td>
 <td>211</td>
-<td>-0.702639</td>
+<td>1.08096</td>
 <td>nan</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div id="增加多列" class="section level4" number="4.1.2.2">
+<div id="增加多列" class="section level4" number="5.1.2.2">
 <h4>
-<span class="header-section-number">4.1.2.2</span> 增加多列<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E5%A4%9A%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2.2</span> 增加多列<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E5%A4%9A%E5%88%97"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb86"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb86-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-1" tabindex="-1"></a><span class="co"># 直接赋值</span></span>
 <span id="cb86-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb86-2" tabindex="-1"></a>sd[[<span class="st">"newcol3"</span>,<span class="st">"newcol4"</span>]] <span class="op">=</span> np.ones((<span class="dv">5</span>,<span class="dv">2</span>))</span>
@@ -501,7 +502,7 @@
 <tr class="odd">
 <td>0</td>
 <td>190</td>
-<td>1.03998</td>
+<td>-0.754393</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
@@ -509,7 +510,7 @@
 <tr class="even">
 <td>1</td>
 <td>213</td>
-<td>-0.808134</td>
+<td>-0.499762</td>
 <td>12</td>
 <td>1</td>
 <td>1</td>
@@ -517,7 +518,7 @@
 <tr class="odd">
 <td>2</td>
 <td>212</td>
-<td>-0.338002</td>
+<td>-0.203498</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
@@ -525,7 +526,7 @@
 <tr class="even">
 <td>3</td>
 <td>193</td>
-<td>0.379385</td>
+<td>1.8423</td>
 <td>13</td>
 <td>1</td>
 <td>1</td>
@@ -533,7 +534,7 @@
 <tr class="odd">
 <td>4</td>
 <td>211</td>
-<td>-0.702639</td>
+<td>1.08096</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
@@ -541,9 +542,9 @@
 </tbody>
 </table></div>
 </div>
-<div id="assign" class="section level4" number="4.1.2.3">
+<div id="assign" class="section level4" number="5.1.2.3">
 <h4>
-<span class="header-section-number">4.1.2.3</span> assign<a class="anchor" aria-label="anchor" href="#assign"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2.3</span> assign<a class="anchor" aria-label="anchor" href="#assign"><i class="fas fa-link"></i></a>
 </h4>
 <p>assign函数的优点在于当我们并没有DataFrame的引用时，我们只需传递一个可调用对象定义一个操作链即可</p>
 <p>返回副本</p>
@@ -563,7 +564,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 <tbody>
 <tr class="odd">
 <td>0</td>
-<td>1.03998</td>
+<td>-0.754393</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
@@ -571,7 +572,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 </tr>
 <tr class="even">
 <td>1</td>
-<td>-0.808134</td>
+<td>-0.499762</td>
 <td>12</td>
 <td>1</td>
 <td>1</td>
@@ -579,7 +580,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 </tr>
 <tr class="odd">
 <td>2</td>
-<td>-0.338002</td>
+<td>-0.203498</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
@@ -587,7 +588,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 </tr>
 <tr class="even">
 <td>3</td>
-<td>0.379385</td>
+<td>1.8423</td>
 <td>13</td>
 <td>1</td>
 <td>1</td>
@@ -595,7 +596,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 </tr>
 <tr class="odd">
 <td>4</td>
-<td>-0.702639</td>
+<td>1.08096</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
@@ -616,50 +617,50 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 <tbody>
 <tr class="odd">
 <td>0</td>
-<td>1.03998</td>
+<td>-0.754393</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
-<td>1.03998</td>
+<td>-0.754393</td>
 </tr>
 <tr class="even">
 <td>1</td>
-<td>-0.808134</td>
+<td>-0.499762</td>
 <td>12</td>
 <td>1</td>
 <td>1</td>
-<td>-0.808134</td>
+<td>-0.499762</td>
 </tr>
 <tr class="odd">
 <td>2</td>
-<td>-0.338002</td>
+<td>-0.203498</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
-<td>-0.338002</td>
+<td>-0.203498</td>
 </tr>
 <tr class="even">
 <td>3</td>
-<td>0.379385</td>
+<td>1.8423</td>
 <td>13</td>
 <td>1</td>
 <td>1</td>
-<td>0.379385</td>
+<td>1.8423</td>
 </tr>
 <tr class="odd">
 <td>4</td>
-<td>-0.702639</td>
+<td>1.08096</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
-<td>-0.702639</td>
+<td>1.08096</td>
 </tr>
 </tbody>
 </table></div>
 </div>
-<div id="insert" class="section level4" number="4.1.2.4">
+<div id="insert" class="section level4" number="5.1.2.4">
 <h4>
-<span class="header-section-number">4.1.2.4</span> insert<a class="anchor" aria-label="anchor" href="#insert"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2.4</span> insert<a class="anchor" aria-label="anchor" href="#insert"><i class="fas fa-link"></i></a>
 </h4>
 <p>可以选择位置添加列，操作原数据</p>
 <div class="sourceCode" id="cb90"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb90-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb90-1" tabindex="-1"></a>sd.insert(<span class="dv">1</span>,<span class="st">"newcol1"</span>,sd.sex)<span class="co">#location,name,data</span></span>
@@ -706,7 +707,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 <td>59</td>
 <td>70</td>
 <td>190</td>
-<td>1.03998</td>
+<td>-0.754393</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
@@ -721,7 +722,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 <td>77</td>
 <td>74</td>
 <td>213</td>
-<td>-0.808134</td>
+<td>-0.499762</td>
 <td>12</td>
 <td>1</td>
 <td>1</td>
@@ -736,7 +737,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 <td>71</td>
 <td>83</td>
 <td>212</td>
-<td>-0.338002</td>
+<td>-0.203498</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
@@ -751,7 +752,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 <td>57</td>
 <td>71</td>
 <td>193</td>
-<td>0.379385</td>
+<td>1.8423</td>
 <td>13</td>
 <td>1</td>
 <td>1</td>
@@ -766,7 +767,7 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 <td>83</td>
 <td>72</td>
 <td>211</td>
-<td>-0.702639</td>
+<td>1.08096</td>
 <td>nan</td>
 <td>1</td>
 <td>1</td>
@@ -774,9 +775,9 @@ dfa.assign(C=lambda x: x["A"] + x["B"], D=lambda x: x["A"] + x["C"])</code></pre
 </tbody>
 </table></div>
 </div>
-<div id="merge" class="section level4" number="4.1.2.5">
+<div id="merge" class="section level4" number="5.1.2.5">
 <h4>
-<span class="header-section-number">4.1.2.5</span> merge<a class="anchor" aria-label="anchor" href="#merge"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2.5</span> merge<a class="anchor" aria-label="anchor" href="#merge"><i class="fas fa-link"></i></a>
 </h4>
 <p>pandas provides a single function, merge(), as the entry point for all standard database join operations between DataFrame or named Series objects:</p>
 <pre><code>pd.merge(
@@ -861,9 +862,9 @@ validate=None,#检查是一对多等等
 2     2      NaN        2.0  right_only
 3     2      NaN        2.0  right_only</code></pre>
 </div>
-<div id="join" class="section level4" number="4.1.2.6">
+<div id="join" class="section level4" number="5.1.2.6">
 <h4>
-<span class="header-section-number">4.1.2.6</span> join<a class="anchor" aria-label="anchor" href="#join"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.2.6</span> join<a class="anchor" aria-label="anchor" href="#join"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>DataFrame.join():
 left.join(right)#按照index，how='left'的方式来join，join后索引依然是索引
@@ -876,9 +877,9 @@ left.join(right,lsuffix="_x",rsuffix="_r")#可以给两个同名列加后缀
 left.join([right1,right2]):可以根据index合并多个DataFrame</code></pre>
 </div>
 </div>
-<div id="替换列" class="section level3" number="4.1.3">
+<div id="替换列" class="section level3" number="5.1.3">
 <h3>
-<span class="header-section-number">4.1.3</span> 替换列<a class="anchor" aria-label="anchor" href="#%E6%9B%BF%E6%8D%A2%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.3</span> 替换列<a class="anchor" aria-label="anchor" href="#%E6%9B%BF%E6%8D%A2%E5%88%97"><i class="fas fa-link"></i></a>
 </h3>
 <p>利用增加同名列替换列</p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb95-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb95-1" tabindex="-1"></a>sd[<span class="st">"sex"</span>] <span class="op">=</span> sd.sex.<span class="bu">map</span>({<span class="st">"男"</span>:<span class="st">"men"</span>,<span class="st">"女"</span>:<span class="st">"women"</span>})</span>
@@ -936,20 +937,20 @@ left.join([right1,right2]):可以根据index合并多个DataFrame</code></pre>
 </tbody>
 </table></div>
 </div>
-<div id="删除列" class="section level3 tabset" number="4.1.4">
+<div id="删除列" class="section level3 tabset" number="5.1.4">
 <h3>
-<span class="header-section-number">4.1.4</span> 删除列<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.4</span> 删除列<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E5%88%97"><i class="fas fa-link"></i></a>
 </h3>
-<div id="del" class="section level4" number="4.1.4.1">
+<div id="del" class="section level4" number="5.1.4.1">
 <h4>
-<span class="header-section-number">4.1.4.1</span> del<a class="anchor" aria-label="anchor" href="#del"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.4.1</span> del<a class="anchor" aria-label="anchor" href="#del"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb96"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb96-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb96-1" tabindex="-1"></a><span class="kw">del</span> sd[<span class="st">"newcol4"</span>]<span class="co">#直接删除</span></span>
 <span id="cb96-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb96-2" tabindex="-1"></a><span class="co"># del sd.newcol3 不支持属性</span></span></code></pre></div>
 </div>
-<div id="dropaxis" class="section level4" number="4.1.4.2">
+<div id="dropaxis" class="section level4" number="5.1.4.2">
 <h4>
-<span class="header-section-number">4.1.4.2</span> .drop(axis)<a class="anchor" aria-label="anchor" href="#dropaxis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.4.2</span> .drop(axis)<a class="anchor" aria-label="anchor" href="#dropaxis"><i class="fas fa-link"></i></a>
 </h4>
 <p>使用drop方法一定要指定axis，返回副本</p>
 <div class="sourceCode" id="cb97"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb97-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb97-1" tabindex="-1"></a>sd.drop([<span class="st">"newcol2"</span>,<span class="st">"newcol3"</span>],axis<span class="op">=</span><span class="dv">1</span>).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))<span class="co">#返回副本</span></span></code></pre></div>
@@ -1042,9 +1043,9 @@ left.join([right1,right2]):可以根据index合并多个DataFrame</code></pre>
 </tbody>
 </table></div>
 </div>
-<div id="pop" class="section level4" number="4.1.4.3">
+<div id="pop" class="section level4" number="5.1.4.3">
 <h4>
-<span class="header-section-number">4.1.4.3</span> .pop()<a class="anchor" aria-label="anchor" href="#pop"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1.4.3</span> .pop()<a class="anchor" aria-label="anchor" href="#pop"><i class="fas fa-link"></i></a>
 </h4>
 <p>删除列，并且返回列，</p>
 <div class="sourceCode" id="cb98"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb98-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb98-1" tabindex="-1"></a>sd.pop(<span class="st">"newcol3"</span>)</span></code></pre></div>
@@ -1093,7 +1094,7 @@ Name: newcol3, dtype: float64</p>
 <td>59</td>
 <td>70</td>
 <td>190</td>
-<td>1.03998</td>
+<td>-0.754393</td>
 <td>nan</td>
 </tr>
 <tr class="even">
@@ -1106,7 +1107,7 @@ Name: newcol3, dtype: float64</p>
 <td>77</td>
 <td>74</td>
 <td>213</td>
-<td>-0.808134</td>
+<td>-0.499762</td>
 <td>12</td>
 </tr>
 <tr class="odd">
@@ -1119,7 +1120,7 @@ Name: newcol3, dtype: float64</p>
 <td>71</td>
 <td>83</td>
 <td>212</td>
-<td>-0.338002</td>
+<td>-0.203498</td>
 <td>nan</td>
 </tr>
 <tr class="even">
@@ -1132,7 +1133,7 @@ Name: newcol3, dtype: float64</p>
 <td>57</td>
 <td>71</td>
 <td>193</td>
-<td>0.379385</td>
+<td>1.8423</td>
 <td>13</td>
 </tr>
 <tr class="odd">
@@ -1145,7 +1146,7 @@ Name: newcol3, dtype: float64</p>
 <td>83</td>
 <td>72</td>
 <td>211</td>
-<td>-0.702639</td>
+<td>1.08096</td>
 <td>nan</td>
 </tr>
 </tbody>
@@ -1155,18 +1156,18 @@ Name: newcol3, dtype: float64</p>
 </div>
 </div>
 </div>
-<div id="行" class="section level2" number="4.2">
+<div id="行" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">4.2</span> 行<a class="anchor" aria-label="anchor" href="#%E8%A1%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> 行<a class="anchor" aria-label="anchor" href="#%E8%A1%8C"><i class="fas fa-link"></i></a>
 </h2>
-<div id="选取行" class="section level3 tabset" number="4.2.1">
+<div id="选取行" class="section level3 tabset" number="5.2.1">
 <h3>
-<span class="header-section-number">4.2.1</span> 选取行<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E8%A1%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1</span> 选取行<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E8%A1%8C"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>选取的行的索引就是原数据的索引，不会重新自然排列.</strong></p>
-<div id="直接选取" class="section level4" number="4.2.1.1">
+<div id="直接选取" class="section level4" number="5.2.1.1">
 <h4>
-<span class="header-section-number">4.2.1.1</span> 直接选取<a class="anchor" aria-label="anchor" href="#%E7%9B%B4%E6%8E%A5%E9%80%89%E5%8F%96"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.1</span> 直接选取<a class="anchor" aria-label="anchor" href="#%E7%9B%B4%E6%8E%A5%E9%80%89%E5%8F%96"><i class="fas fa-link"></i></a>
 </h4>
 <p>可以直接利用切片选择行</p>
 <div class="sourceCode" id="cb101"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb101-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb101-1" tabindex="-1"></a>sd[:<span class="dv">1</span>]<span class="co">#选取第一行</span></span></code></pre></div>
@@ -1198,9 +1199,9 @@ Name: 0, dtype: object</code></pre>
 1   a2  women  高一(2)班    62       77       74    213  12.0
 2   a3  women  高一(3)班    58       71       83    212   NaN</code></pre>
 </div>
-<div id="take" class="section level4" number="4.2.1.2">
+<div id="take" class="section level4" number="5.2.1.2">
 <h4>
-<span class="header-section-number">4.2.1.2</span> .take()<a class="anchor" aria-label="anchor" href="#take"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.2</span> .take()<a class="anchor" aria-label="anchor" href="#take"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>s.take([[0,1,3]])
 df.take([1,4,3])
@@ -1256,9 +1257,9 @@ frm.take([0,2],axis=1)
 </tbody>
 </table></div>
 </div>
-<div id="逻辑选取" class="section level4" number="4.2.1.3">
+<div id="逻辑选取" class="section level4" number="5.2.1.3">
 <h4>
-<span class="header-section-number">4.2.1.3</span> 逻辑选取<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E9%80%89%E5%8F%96"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.3</span> 逻辑选取<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E9%80%89%E5%8F%96"><i class="fas fa-link"></i></a>
 </h4>
 <p>注意逻辑选取后的索引不会编程自然索引，依然保持原索引</p>
 <div class="sourceCode" id="cb111"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb111-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb111-1" tabindex="-1"></a>sd[sd.math <span class="op">&gt;</span> <span class="dv">80</span>]</span></code></pre></div>
@@ -1271,9 +1272,9 @@ Index: []</code></pre>
 2   a3  women  高一(3)班    58       71       83    212  NaN
 4   a5    men  高一(5)班    56       83       72    211  NaN</code></pre>
 </div>
-<div id="query" class="section level4" number="4.2.1.4">
+<div id="query" class="section level4" number="5.2.1.4">
 <h4>
-<span class="header-section-number">4.2.1.4</span> .query()<a class="anchor" aria-label="anchor" href="#query"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.1.4</span> .query()<a class="anchor" aria-label="anchor" href="#query"><i class="fas fa-link"></i></a>
 </h4>
 <p>query也是逻辑选取，但是可以用简便的语言操作比较复杂的逻辑，以字符串的形式设置条件</p>
 <pre><code>df.query('a&lt;b and b&lt;c')
@@ -1286,14 +1287,14 @@ df.query('~bools')</code></pre>
 <p>使用query()的情况:当有很多个表格有着相同的列名，需要进行相同的操作，则可以map(lambda frame: frame.query(expr), [df, df2])</p>
 </div>
 </div>
-<div id="增加行" class="section level3 tabset" number="4.2.2">
+<div id="增加行" class="section level3 tabset" number="5.2.2">
 <h3>
-<span class="header-section-number">4.2.2</span> 增加行<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E8%A1%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.2</span> 增加行<a class="anchor" aria-label="anchor" href="#%E5%A2%9E%E5%8A%A0%E8%A1%8C"><i class="fas fa-link"></i></a>
 </h3>
 <p>append方法不能用了，主要就是为了增加数据集。</p>
-<div id="concat" class="section level4" number="4.2.2.1">
+<div id="concat" class="section level4" number="5.2.2.1">
 <h4>
-<span class="header-section-number">4.2.2.1</span> .concat()<a class="anchor" aria-label="anchor" href="#concat"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.2.1</span> .concat()<a class="anchor" aria-label="anchor" href="#concat"><i class="fas fa-link"></i></a>
 </h4>
 <p>根据列名或行名触发对齐机制,返回副本</p>
 <div class="sourceCode" id="cb116"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb116-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb116-1" tabindex="-1"></a>pd.concat(</span>
@@ -1415,9 +1416,9 @@ df.query('~bools')</code></pre>
 </ul>
 </div>
 </div>
-<div id="替换行" class="section level3" number="4.2.3">
+<div id="替换行" class="section level3" number="5.2.3">
 <h3>
-<span class="header-section-number">4.2.3</span> 替换行<a class="anchor" aria-label="anchor" href="#%E6%9B%BF%E6%8D%A2%E8%A1%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.3</span> 替换行<a class="anchor" aria-label="anchor" href="#%E6%9B%BF%E6%8D%A2%E8%A1%8C"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb117"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb117-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb117-1" tabindex="-1"></a>sd[<span class="dv">4</span>:<span class="dv">5</span>] <span class="op">=</span> sd[<span class="dv">3</span>:<span class="dv">4</span>]</span>
 <span id="cb117-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb117-2" tabindex="-1"></a>sd.pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
@@ -1503,9 +1504,9 @@ df.query('~bools')</code></pre>
 </tbody>
 </table></div>
 </div>
-<div id="删除行" class="section level3" number="4.2.4">
+<div id="删除行" class="section level3" number="5.2.4">
 <h3>
-<span class="header-section-number">4.2.4</span> 删除行<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E8%A1%8C"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2.4</span> 删除行<a class="anchor" aria-label="anchor" href="#%E5%88%A0%E9%99%A4%E8%A1%8C"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb118"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb118-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb118-1" tabindex="-1"></a>sd.drop(<span class="dv">4</span>,axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>  name    sex   class  math  chinese  english  total   age
@@ -1515,9 +1516,9 @@ df.query('~bools')</code></pre>
 3   a4    men  高一(4)班    65       57       71    193  13.0</code></pre>
 </div>
 </div>
-<div id="任意值scalar" class="section level2" number="4.3">
+<div id="任意值scalar" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">4.3</span> 任意值/scalar<a class="anchor" aria-label="anchor" href="#%E4%BB%BB%E6%84%8F%E5%80%BCscalar"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> 任意值/scalar<a class="anchor" aria-label="anchor" href="#%E4%BB%BB%E6%84%8F%E5%80%BCscalar"><i class="fas fa-link"></i></a>
 </h2>
 <p>也就是行索引和列索引的组合</p>
 <div class="inline-table"><table class="table table-sm">
@@ -1555,9 +1556,9 @@ df.query('~bools')</code></pre>
 </tr>
 </tbody>
 </table></div>
-<div id="ilocloc" class="section level3" number="4.3.1">
+<div id="ilocloc" class="section level3" number="5.3.1">
 <h3>
-<span class="header-section-number">4.3.1</span> .iloc/loc<a class="anchor" aria-label="anchor" href="#ilocloc"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.1</span> .iloc/loc<a class="anchor" aria-label="anchor" href="#ilocloc"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>.loc<a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a>
@@ -1601,9 +1602,9 @@ df.query('~bools')</code></pre>
 </li>
 </ul>
 </div>
-<div id="iatat" class="section level3" number="4.3.2">
+<div id="iatat" class="section level3" number="5.3.2">
 <h3>
-<span class="header-section-number">4.3.2</span> .iat/at<a class="anchor" aria-label="anchor" href="#iatat"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.2</span> .iat/at<a class="anchor" aria-label="anchor" href="#iatat"><i class="fas fa-link"></i></a>
 </h3>
 <p>快速取标量值</p>
 <pre><code>s = pd.Series([0, 1, 2, 3, 4, 5])
@@ -1611,9 +1612,9 @@ s.iat[5]
 df.at[2,'b']
 df.iat[2,1]</code></pre>
 </div>
-<div id="wheremask" class="section level3" number="4.3.3">
+<div id="wheremask" class="section level3" number="5.3.3">
 <h3>
-<span class="header-section-number">4.3.3</span> where/mask<a class="anchor" aria-label="anchor" href="#wheremask"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3.3</span> where/mask<a class="anchor" aria-label="anchor" href="#wheremask"><i class="fas fa-link"></i></a>
 </h3>
 <p>.where()方法与boolean array方法不同点在于where返回的对象形状与 原对象相同，条件不满足的地方用NaN填补
 .mask()方法是.where()的逆方法，满足条件的被mask</p>
@@ -1629,9 +1630,9 @@ df.iat[2,1]</code></pre>
 </ul>
 </div>
 </div>
-<div id="索引" class="section level2" number="4.4">
+<div id="索引" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">4.4</span> 索引<a class="anchor" aria-label="anchor" href="#%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> 索引<a class="anchor" aria-label="anchor" href="#%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
 </h2>
 <p>pandas对象的轴标签有着很多作用</p>
 <ul>
@@ -1639,13 +1640,13 @@ df.iat[2,1]</code></pre>
 <li>自动和明确的数据对齐</li>
 <li>可以直观的获取和设置数据集的子集</li>
 </ul>
-<div id="索引name" class="section level3 tabset" number="4.4.1">
+<div id="索引name" class="section level3 tabset" number="5.4.1">
 <h3>
-<span class="header-section-number">4.4.1</span> 索引name<a class="anchor" aria-label="anchor" href="#%E7%B4%A2%E5%BC%95name"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.1</span> 索引name<a class="anchor" aria-label="anchor" href="#%E7%B4%A2%E5%BC%95name"><i class="fas fa-link"></i></a>
 </h3>
-<div id="通过indexcolumns属性" class="section level4" number="4.4.1.1">
+<div id="通过indexcolumns属性" class="section level4" number="5.4.1.1">
 <h4>
-<span class="header-section-number">4.4.1.1</span> 通过index/columns属性<a class="anchor" aria-label="anchor" href="#%E9%80%9A%E8%BF%87indexcolumns%E5%B1%9E%E6%80%A7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.1.1</span> 通过index/columns属性<a class="anchor" aria-label="anchor" href="#%E9%80%9A%E8%BF%87indexcolumns%E5%B1%9E%E6%80%A7"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb122"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb122-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb122-1" tabindex="-1"></a>sd.index</span></code></pre></div>
 <pre class="scroll-200"><code>RangeIndex(start=0, stop=5, step=1)</code></pre>
@@ -1653,9 +1654,9 @@ df.iat[2,1]</code></pre>
 <span id="cb124-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb124-2" tabindex="-1"></a>sd.index</span></code></pre></div>
 <pre class="scroll-200"><code>RangeIndex(start=0, stop=5, step=1, name='ind')</code></pre>
 </div>
-<div id="rename_axis" class="section level4" number="4.4.1.2">
+<div id="rename_axis" class="section level4" number="5.4.1.2">
 <h4>
-<span class="header-section-number">4.4.1.2</span> .rename_axis()<a class="anchor" aria-label="anchor" href="#rename_axis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.1.2</span> .rename_axis()<a class="anchor" aria-label="anchor" href="#rename_axis"><i class="fas fa-link"></i></a>
 </h4>
 <p>返回副本</p>
 <div class="sourceCode" id="cb126"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb126-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb126-1" tabindex="-1"></a>sd.rename_axis(index<span class="op">=</span>{<span class="st">"ind"</span>:<span class="st">"newind"</span>})</span></code></pre></div>
@@ -1668,9 +1669,9 @@ newind
 4        a4    men  高一(4)班    65       57       71    193  13.0</code></pre>
 </div>
 </div>
-<div id="重排序" class="section level3" number="4.4.2">
+<div id="重排序" class="section level3" number="5.4.2">
 <h3>
-<span class="header-section-number">4.4.2</span> 重排序<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.2</span> 重排序<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
 </h3>
 <p>.reindex(),可同时对index和columns进行重排序</p>
 <div class="sourceCode" id="cb128"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb128-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb128-1" tabindex="-1"></a>sd.reindex([<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">1</span>]).pipe(<span class="kw">lambda</span> df:<span class="bu">print</span>(df.to_markdown(tablefmt<span class="op">=</span><span class="st">"github"</span>)))</span></code></pre></div>
@@ -1774,13 +1775,13 @@ newind
 </li>
 </ul>
 </div>
-<div id="重命名" class="section level3 tabset" number="4.4.3">
+<div id="重命名" class="section level3 tabset" number="5.4.3">
 <h3>
-<span class="header-section-number">4.4.3</span> 重命名<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E5%91%BD%E5%90%8D"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.3</span> 重命名<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E5%91%BD%E5%90%8D"><i class="fas fa-link"></i></a>
 </h3>
-<div id="index.columns" class="section level4" number="4.4.3.1">
+<div id="index.columns" class="section level4" number="5.4.3.1">
 <h4>
-<span class="header-section-number">4.4.3.1</span> .index/.columns<a class="anchor" aria-label="anchor" href="#index.columns"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.3.1</span> .index/.columns<a class="anchor" aria-label="anchor" href="#index.columns"><i class="fas fa-link"></i></a>
 </h4>
 <p>必须全体重新命名，直接对原函数操作，传递同等长度的序列</p>
 <div class="sourceCode" id="cb129"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb129-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb129-1" tabindex="-1"></a>source_col <span class="op">=</span> sd.columns</span>
@@ -1858,9 +1859,9 @@ newind
 </tbody>
 </table></div>
 </div>
-<div id="rename" class="section level4" number="4.4.3.2">
+<div id="rename" class="section level4" number="5.4.3.2">
 <h4>
-<span class="header-section-number">4.4.3.2</span> .rename()<a class="anchor" aria-label="anchor" href="#rename"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.3.2</span> .rename()<a class="anchor" aria-label="anchor" href="#rename"><i class="fas fa-link"></i></a>
 </h4>
 <p>返回副本，可以设置inplace=True修改原数据，可以对单个索引名称更改，要指定对应关系</p>
 <ul>
@@ -1946,18 +1947,18 @@ newind
 </tbody>
 </table></div>
 </div>
-<div id="map-1" class="section level4" number="4.4.3.3">
+<div id="map-1" class="section level4" number="5.4.3.3">
 <h4>
-<span class="header-section-number">4.4.3.3</span> .map()<a class="anchor" aria-label="anchor" href="#map-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.3.3</span> .map()<a class="anchor" aria-label="anchor" href="#map-1"><i class="fas fa-link"></i></a>
 </h4>
 <p><code>sd.index = sd.index.map()</code></p>
 <div class="sourceCode" id="cb131"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb131-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb131-1" tabindex="-1"></a>sd.index <span class="op">=</span> <span class="bu">range</span>(<span class="dv">5</span>)</span>
 <span id="cb131-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb131-2" tabindex="-1"></a>sd.columns <span class="op">=</span> source_col</span></code></pre></div>
 </div>
 </div>
-<div id="设置列为索引" class="section level3" number="4.4.4">
+<div id="设置列为索引" class="section level3" number="5.4.4">
 <h3>
-<span class="header-section-number">4.4.4</span> 设置列为索引<a class="anchor" aria-label="anchor" href="#%E8%AE%BE%E7%BD%AE%E5%88%97%E4%B8%BA%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.4</span> 设置列为索引<a class="anchor" aria-label="anchor" href="#%E8%AE%BE%E7%BD%AE%E5%88%97%E4%B8%BA%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
 </h3>
 <p>.set_index(),默认返回副本,默认替代原索引，默认删除原列</p>
 <div class="sourceCode" id="cb132"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb132-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb132-1" tabindex="-1"></a>sd.set_index(<span class="st">"sex"</span>)</span></code></pre></div>
@@ -1969,9 +1970,9 @@ women   a3  高一(3)班    58       71       83    212   NaN
 men     a4  高一(4)班    65       57       71    193  13.0
 men     a4  高一(4)班    65       57       71    193  13.0</code></pre>
 </div>
-<div id="重置索引" class="section level3" number="4.4.5">
+<div id="重置索引" class="section level3" number="5.4.5">
 <h3>
-<span class="header-section-number">4.4.5</span> 重置索引<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E7%BD%AE%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.5</span> 重置索引<a class="anchor" aria-label="anchor" href="#%E9%87%8D%E7%BD%AE%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
 </h3>
 <p>默认将原索引变为列，设置drop=True不变成列</p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb134-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb134-1" tabindex="-1"></a>sd.set_index(<span class="st">"sex"</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
@@ -1982,9 +1983,9 @@ men     a4  高一(4)班    65       57       71    193  13.0</code></pre>
 3   a4  高一(4)班    65       57       71    193  13.0
 4   a4  高一(4)班    65       57       71    193  13.0</code></pre>
 </div>
-<div id="多层索引" class="section level3 tabset" number="4.4.6">
+<div id="多层索引" class="section level3 tabset" number="5.4.6">
 <h3>
-<span class="header-section-number">4.4.6</span> 多层索引<a class="anchor" aria-label="anchor" href="#%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.6</span> 多层索引<a class="anchor" aria-label="anchor" href="#%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb136"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb136-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb136-1" tabindex="-1"></a><span class="im">import</span> itertools</span>
 <span id="cb136-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb136-2" tabindex="-1"></a>hindex <span class="op">=</span> pd.MultiIndex.from_tuples(itertools.product([<span class="st">"one"</span>,<span class="st">"two"</span>],[<span class="dv">1</span>,<span class="dv">2</span>]))</span>
@@ -1996,14 +1997,14 @@ men     a4  高一(4)班    65       57       71    193  13.0</code></pre>
 <span id="cb136-8"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb136-8" tabindex="-1"></a>multi_index</span></code></pre></div>
 <pre class="scroll-200"><code>              A                   B          
               a         b         a         b
-one 1 -0.726838  1.128970 -0.476083  1.273944
-    2  0.146525 -0.665135  1.703753 -0.090585
-two 1  0.386717  1.870424  0.254604 -0.859144
-    2 -0.594142  0.353613 -0.953914  0.722078</code></pre>
+one 1  0.590097 -0.354386  1.005761 -0.231100
+    2  0.601155  0.971925  0.333989 -0.070636
+two 1  0.832014 -1.078967 -1.278030  0.014034
+    2  0.673027 -0.324423  1.158443  0.568625</code></pre>
 <p>rename,reset_index,reindex都可以根据level参数指定对那层的索引操作。</p>
-<div id="轴name" class="section level4" number="4.4.6.1">
+<div id="轴name" class="section level4" number="5.4.6.1">
 <h4>
-<span class="header-section-number">4.4.6.1</span> 轴name<a class="anchor" aria-label="anchor" href="#%E8%BD%B4name"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.6.1</span> 轴name<a class="anchor" aria-label="anchor" href="#%E8%BD%B4name"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb138"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb138-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb138-1" tabindex="-1"></a>multi_index.index.names <span class="op">=</span> [<span class="st">"font"</span>,<span class="st">"number"</span>]</span>
 <span id="cb138-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb138-2" tabindex="-1"></a>multi_index.columns.names <span class="op">=</span> [<span class="st">"upper"</span>,<span class="st">"lower"</span>]</span>
@@ -2011,22 +2012,22 @@ two 1  0.386717  1.870424  0.254604 -0.859144
 <pre class="scroll-200"><code>upper               A                   B          
 lower               a         b         a         b
 font number                                        
-one  1      -0.726838  1.128970 -0.476083  1.273944
-     2       0.146525 -0.665135  1.703753 -0.090585
-two  1       0.386717  1.870424  0.254604 -0.859144
-     2      -0.594142  0.353613 -0.953914  0.722078</code></pre>
+one  1       0.590097 -0.354386  1.005761 -0.231100
+     2       0.601155  0.971925  0.333989 -0.070636
+two  1       0.832014 -1.078967 -1.278030  0.014034
+     2       0.673027 -0.324423  1.158443  0.568625</code></pre>
 <div class="sourceCode" id="cb140"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb140-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb140-1" tabindex="-1"></a>multi_index.rename_axis(columns <span class="op">=</span> {<span class="st">"upper"</span>:<span class="st">"UPPER"</span>})</span></code></pre></div>
 <pre class="scroll-200"><code>UPPER               A                   B          
 lower               a         b         a         b
 font number                                        
-one  1      -0.726838  1.128970 -0.476083  1.273944
-     2       0.146525 -0.665135  1.703753 -0.090585
-two  1       0.386717  1.870424  0.254604 -0.859144
-     2      -0.594142  0.353613 -0.953914  0.722078</code></pre>
+one  1       0.590097 -0.354386  1.005761 -0.231100
+     2       0.601155  0.971925  0.333989 -0.070636
+two  1       0.832014 -1.078967 -1.278030  0.014034
+     2       0.673027 -0.324423  1.158443  0.568625</code></pre>
 </div>
-<div id="获取轴" class="section level4" number="4.4.6.2">
+<div id="获取轴" class="section level4" number="5.4.6.2">
 <h4>
-<span class="header-section-number">4.4.6.2</span> 获取轴<a class="anchor" aria-label="anchor" href="#%E8%8E%B7%E5%8F%96%E8%BD%B4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.6.2</span> 获取轴<a class="anchor" aria-label="anchor" href="#%E8%8E%B7%E5%8F%96%E8%BD%B4"><i class="fas fa-link"></i></a>
 </h4>
 <p>MultiIndex.get_level_values</p>
 <div class="sourceCode" id="cb142"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb142-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb142-1" tabindex="-1"></a>multi_index.index</span></code></pre></div>
@@ -2045,13 +2046,13 @@ two  1       0.386717  1.870424  0.254604 -0.859144
 <pre class="scroll-200"><code>Index(['one', 'one', 'two', 'two'], dtype='object', name='font')</code></pre>
 </div>
 </div>
-<div id="选取多层索引" class="section level3 tabset" number="4.4.7">
+<div id="选取多层索引" class="section level3 tabset" number="5.4.7">
 <h3>
-<span class="header-section-number">4.4.7</span> 选取多层索引<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.7</span> 选取多层索引<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><i class="fas fa-link"></i></a>
 </h3>
-<div id="xs" class="section level4" number="4.4.7.1">
+<div id="xs" class="section level4" number="5.4.7.1">
 <h4>
-<span class="header-section-number">4.4.7.1</span> .xs<a class="anchor" aria-label="anchor" href="#xs"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.7.1</span> .xs<a class="anchor" aria-label="anchor" href="#xs"><i class="fas fa-link"></i></a>
 </h4>
 <p>选取行或列</p>
 <pre><code>.xs(
@@ -2063,187 +2064,187 @@ two  1       0.386717  1.870424  0.254604 -0.859144
 <pre class="scroll-200"><code>upper          A                   B          
 lower          a         b         a         b
 number                                        
-1      -0.726838  1.128970 -0.476083  1.273944
-2       0.146525 -0.665135  1.703753 -0.090585</code></pre>
+1       0.590097 -0.354386  1.005761 -0.231100
+2       0.601155  0.971925  0.333989 -0.070636</code></pre>
 <div class="sourceCode" id="cb151"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb151-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb151-1" tabindex="-1"></a>multi_index.xs((<span class="st">"one"</span>,<span class="dv">1</span>))<span class="co">#用tuple，不要用list</span></span></code></pre></div>
 <pre class="scroll-200"><code>upper  lower
-A      a       -0.726838
-       b        1.128970
-B      a       -0.476083
-       b        1.273944
+A      a        0.590097
+       b       -0.354386
+B      a        1.005761
+       b       -0.231100
 Name: (one, 1), dtype: float64</code></pre>
 <div class="sourceCode" id="cb153"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb153-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb153-1" tabindex="-1"></a>multi_index.xs(<span class="dv">1</span>,level<span class="op">=</span><span class="dv">1</span>)<span class="co">#直接选取内层的需要指定level</span></span></code></pre></div>
 <pre class="scroll-200"><code>upper         A                   B          
 lower         a         b         a         b
 font                                         
-one   -0.726838  1.128970 -0.476083  1.273944
-two    0.386717  1.870424  0.254604 -0.859144</code></pre>
+one    0.590097 -0.354386  1.005761 -0.231100
+two    0.832014 -1.078967 -1.278030  0.014034</code></pre>
 </div>
-<div id="loc" class="section level4" number="4.4.7.2">
+<div id="loc" class="section level4" number="5.4.7.2">
 <h4>
-<span class="header-section-number">4.4.7.2</span> .loc<a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a><a class="anchor" aria-label="anchor" href="#loc"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.7.2</span> .loc<a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a><a class="anchor" aria-label="anchor" href="#loc"><i class="fas fa-link"></i></a>
 </h4>
 <p>任意选取行列</p>
 <div class="sourceCode" id="cb155"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb155-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb155-1" tabindex="-1"></a>multi_index.loc[<span class="st">"one"</span>]</span></code></pre></div>
 <pre class="scroll-200"><code>upper          A                   B          
 lower          a         b         a         b
 number                                        
-1      -0.726838  1.128970 -0.476083  1.273944
-2       0.146525 -0.665135  1.703753 -0.090585</code></pre>
+1       0.590097 -0.354386  1.005761 -0.231100
+2       0.601155  0.971925  0.333989 -0.070636</code></pre>
 <div class="sourceCode" id="cb157"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb157-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb157-1" tabindex="-1"></a>multi_index.loc[<span class="st">"one"</span>,<span class="dv">1</span>]</span></code></pre></div>
 <pre class="scroll-200"><code>upper  lower
-A      a       -0.726838
-       b        1.128970
-B      a       -0.476083
-       b        1.273944
+A      a        0.590097
+       b       -0.354386
+B      a        1.005761
+       b       -0.231100
 Name: (one, 1), dtype: float64</code></pre>
 <div class="sourceCode" id="cb159"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb159-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb159-1" tabindex="-1"></a>multi_index.loc[[<span class="st">"one"</span>]]</span></code></pre></div>
 <pre class="scroll-200"><code>upper               A                   B          
 lower               a         b         a         b
 font number                                        
-one  1      -0.726838  1.128970 -0.476083  1.273944
-     2       0.146525 -0.665135  1.703753 -0.090585</code></pre>
+one  1       0.590097 -0.354386  1.005761 -0.231100
+     2       0.601155  0.971925  0.333989 -0.070636</code></pre>
 <div class="sourceCode" id="cb161"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb161-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb161-1" tabindex="-1"></a>multi_index.loc[(<span class="st">"one"</span>,<span class="dv">1</span>),<span class="st">"A"</span>]</span></code></pre></div>
 <pre class="scroll-200"><code>lower
-a   -0.726838
-b    1.128970
+a    0.590097
+b   -0.354386
 Name: (one, 1), dtype: float64</code></pre>
 </div>
-<div id="section" class="section level4" number="4.4.7.3">
+<div id="section" class="section level4" number="5.4.7.3">
 <h4>
-<span class="header-section-number">4.4.7.3</span> <a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a><a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.7.3</span> <a href="%E4%B8%80%E4%B8%AA%E6%9C%89%E7%9D%80%E7%9B%B8%E5%90%8C%E9%95%BF%E5%BA%A6%E7%9A%84%E5%88%97%E8%A1%A8%EF%BC%8C%E5%88%99%E5%AF%B9%E5%BA%94%E5%85%83%E7%B4%A0concatenate,%E4%BB%BB%E6%84%8F%E4%B8%80%E8%BE%B9%E6%9C%89%E7%A9%BA%E5%80%BC%EF%BC%8C%E5%88%99%E4%B8%BA%E7%A9%BA%E5%80%BC,%E9%99%A4%E9%9D%9Ena_rep%E8%A2%AB%E6%8C%87%E5%AE%9A"></a><a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
 </h4>
 <p>只能选取列</p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb163-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb163-1" tabindex="-1"></a>multi_index[<span class="st">"A"</span>]</span></code></pre></div>
 <pre class="scroll-200"><code>lower               a         b
 font number                    
-one  1      -0.726838  1.128970
-     2       0.146525 -0.665135
-two  1       0.386717  1.870424
-     2      -0.594142  0.353613</code></pre>
+one  1       0.590097 -0.354386
+     2       0.601155  0.971925
+two  1       0.832014 -1.078967
+     2       0.673027 -0.324423</code></pre>
 <div class="sourceCode" id="cb165"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb165-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb165-1" tabindex="-1"></a>multi_index[<span class="st">"A"</span>,<span class="st">"a"</span>]</span></code></pre></div>
 <pre class="scroll-200"><code>font  number
-one   1        -0.726838
-      2         0.146525
-two   1         0.386717
-      2        -0.594142
+one   1         0.590097
+      2         0.601155
+two   1         0.832014
+      2         0.673027
 Name: (A, a), dtype: float64</code></pre>
 <div class="sourceCode" id="cb167"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb167-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb167-1" tabindex="-1"></a>multi_index[[<span class="st">"A"</span>]]</span></code></pre></div>
 <pre class="scroll-200"><code>upper               A          
 lower               a         b
 font number                    
-one  1      -0.726838  1.128970
-     2       0.146525 -0.665135
-two  1       0.386717  1.870424
-     2      -0.594142  0.353613</code></pre>
+one  1       0.590097 -0.354386
+     2       0.601155  0.971925
+two  1       0.832014 -1.078967
+     2       0.673027 -0.324423</code></pre>
 </div>
-<div id="同时选取行和列" class="section level4" number="4.4.7.4">
+<div id="同时选取行和列" class="section level4" number="5.4.7.4">
 <h4>
-<span class="header-section-number">4.4.7.4</span> 同时选取行和列<a class="anchor" aria-label="anchor" href="#%E5%90%8C%E6%97%B6%E9%80%89%E5%8F%96%E8%A1%8C%E5%92%8C%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.7.4</span> 同时选取行和列<a class="anchor" aria-label="anchor" href="#%E5%90%8C%E6%97%B6%E9%80%89%E5%8F%96%E8%A1%8C%E5%92%8C%E5%88%97"><i class="fas fa-link"></i></a>
 </h4>
 <p>除了.loc方法,可以进行组合</p>
 <div class="sourceCode" id="cb169"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb169-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb169-1" tabindex="-1"></a>multi_index.loc[<span class="st">"one"</span>][<span class="st">"A"</span>]</span></code></pre></div>
 <pre class="scroll-200"><code>lower          a         b
 number                    
-1      -0.726838  1.128970
-2       0.146525 -0.665135</code></pre>
+1       0.590097 -0.354386
+2       0.601155  0.971925</code></pre>
 </div>
 </div>
-<div id="调换多个index的顺序" class="section level3" number="4.4.8">
+<div id="调换多个index的顺序" class="section level3" number="5.4.8">
 <h3>
-<span class="header-section-number">4.4.8</span> 调换多个index的顺序<a class="anchor" aria-label="anchor" href="#%E8%B0%83%E6%8D%A2%E5%A4%9A%E4%B8%AAindex%E7%9A%84%E9%A1%BA%E5%BA%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.8</span> 调换多个index的顺序<a class="anchor" aria-label="anchor" href="#%E8%B0%83%E6%8D%A2%E5%A4%9A%E4%B8%AAindex%E7%9A%84%E9%A1%BA%E5%BA%8F"><i class="fas fa-link"></i></a>
 </h3>
 <p>返回副本，可以指定axis</p>
 <div class="sourceCode" id="cb171"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb171-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb171-1" tabindex="-1"></a>multi_index.swaplevel()<span class="co">#调换最内层的两个index</span></span></code></pre></div>
 <pre class="scroll-200"><code>upper               A                   B          
 lower               a         b         a         b
 number font                                        
-1      one  -0.726838  1.128970 -0.476083  1.273944
-2      one   0.146525 -0.665135  1.703753 -0.090585
-1      two   0.386717  1.870424  0.254604 -0.859144
-2      two  -0.594142  0.353613 -0.953914  0.722078</code></pre>
+1      one   0.590097 -0.354386  1.005761 -0.231100
+2      one   0.601155  0.971925  0.333989 -0.070636
+1      two   0.832014 -1.078967 -1.278030  0.014034
+2      two   0.673027 -0.324423  1.158443  0.568625</code></pre>
 <div class="sourceCode" id="cb173"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb173-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb173-1" tabindex="-1"></a>multi_index.swaplevel(<span class="dv">0</span>)<span class="co">#直接调换到最内层</span></span></code></pre></div>
 <pre class="scroll-200"><code>upper               A                   B          
 lower               a         b         a         b
 number font                                        
-1      one  -0.726838  1.128970 -0.476083  1.273944
-2      one   0.146525 -0.665135  1.703753 -0.090585
-1      two   0.386717  1.870424  0.254604 -0.859144
-2      two  -0.594142  0.353613 -0.953914  0.722078</code></pre>
+1      one   0.590097 -0.354386  1.005761 -0.231100
+2      one   0.601155  0.971925  0.333989 -0.070636
+1      two   0.832014 -1.078967 -1.278030  0.014034
+2      two   0.673027 -0.324423  1.158443  0.568625</code></pre>
 <div class="sourceCode" id="cb175"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb175-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb175-1" tabindex="-1"></a>multi_index.swaplevel(<span class="st">"upper"</span>,axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>lower               a         b         a         b
 upper               A         A         B         B
 font number                                        
-one  1      -0.726838  1.128970 -0.476083  1.273944
-     2       0.146525 -0.665135  1.703753 -0.090585
-two  1       0.386717  1.870424  0.254604 -0.859144
-     2      -0.594142  0.353613 -0.953914  0.722078</code></pre>
+one  1       0.590097 -0.354386  1.005761 -0.231100
+     2       0.601155  0.971925  0.333989 -0.070636
+two  1       0.832014 -1.078967 -1.278030  0.014034
+     2       0.673027 -0.324423  1.158443  0.568625</code></pre>
 <div class="sourceCode" id="cb177"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb177-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb177-1" tabindex="-1"></a>multi_index.swaplevel(<span class="dv">0</span>,<span class="dv">1</span>)<span class="co">#调换这两个level的index</span></span></code></pre></div>
 <pre class="scroll-200"><code>upper               A                   B          
 lower               a         b         a         b
 number font                                        
-1      one  -0.726838  1.128970 -0.476083  1.273944
-2      one   0.146525 -0.665135  1.703753 -0.090585
-1      two   0.386717  1.870424  0.254604 -0.859144
-2      two  -0.594142  0.353613 -0.953914  0.722078</code></pre>
+1      one   0.590097 -0.354386  1.005761 -0.231100
+2      one   0.601155  0.971925  0.333989 -0.070636
+1      two   0.832014 -1.078967 -1.278030  0.014034
+2      two   0.673027 -0.324423  1.158443  0.568625</code></pre>
 </div>
-<div id="index和column的互换" class="section level3 tabset" number="4.4.9">
+<div id="index和column的互换" class="section level3 tabset" number="5.4.9">
 <h3>
-<span class="header-section-number">4.4.9</span> index和column的互换<a class="anchor" aria-label="anchor" href="#index%E5%92%8Ccolumn%E7%9A%84%E4%BA%92%E6%8D%A2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.9</span> index和column的互换<a class="anchor" aria-label="anchor" href="#index%E5%92%8Ccolumn%E7%9A%84%E4%BA%92%E6%8D%A2"><i class="fas fa-link"></i></a>
 </h3>
-<div id="stack" class="section level4" number="4.4.9.1">
+<div id="stack" class="section level4" number="5.4.9.1">
 <h4>
-<span class="header-section-number">4.4.9.1</span> .stack()<a class="anchor" aria-label="anchor" href="#stack"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.9.1</span> .stack()<a class="anchor" aria-label="anchor" href="#stack"><i class="fas fa-link"></i></a>
 </h4>
 <p>堆叠，堆叠以常识理解肯定指的上下结构，但是这里指的是左右的堆叠,或者我们可以理解为该index自己变成了列形式，所以较stack</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb179-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb179-1" tabindex="-1"></a>multi_index.stack(<span class="dv">0</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
 lower                     a         b
 font number upper                    
-one  1      A     -0.726838  1.128970
-            B     -0.476083  1.273944
-     2      A      0.146525 -0.665135
-            B      1.703753 -0.090585
-two  1      A      0.386717  1.870424
-            B      0.254604 -0.859144
-     2      A     -0.594142  0.353613
-            B     -0.953914  0.722078</code></pre>
+one  1      A      0.590097 -0.354386
+            B      1.005761 -0.231100
+     2      A      0.601155  0.971925
+            B      0.333989 -0.070636
+two  1      A      0.832014 -1.078967
+            B     -1.278030  0.014034
+     2      A      0.673027 -0.324423
+            B      1.158443  0.568625</code></pre>
 <div class="sourceCode" id="cb181"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb181-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb181-1" tabindex="-1"></a>multi_index.stack(<span class="st">"upper"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
 lower                     a         b
 font number upper                    
-one  1      A     -0.726838  1.128970
-            B     -0.476083  1.273944
-     2      A      0.146525 -0.665135
-            B      1.703753 -0.090585
-two  1      A      0.386717  1.870424
-            B      0.254604 -0.859144
-     2      A     -0.594142  0.353613
-            B     -0.953914  0.722078</code></pre>
+one  1      A      0.590097 -0.354386
+            B      1.005761 -0.231100
+     2      A      0.601155  0.971925
+            B      0.333989 -0.070636
+two  1      A      0.832014 -1.078967
+            B     -1.278030  0.014034
+     2      A      0.673027 -0.324423
+            B      1.158443  0.568625</code></pre>
 <div class="sourceCode" id="cb183"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb183-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb183-1" tabindex="-1"></a>multi_index.stack([<span class="st">"upper"</span>,<span class="st">"lower"</span>])</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: The previous implementation of stack is deprecated and will be removed in a future version of pandas. See the What's New notes for pandas 2.1.0 for details. Specify future_stack=True to adopt the new implementation and silence this warning.
 font  number  upper  lower
-one   1       A      a       -0.726838
-                     b        1.128970
-              B      a       -0.476083
-                     b        1.273944
-      2       A      a        0.146525
-                     b       -0.665135
-              B      a        1.703753
-                     b       -0.090585
-two   1       A      a        0.386717
-                     b        1.870424
-              B      a        0.254604
-                     b       -0.859144
-      2       A      a       -0.594142
-                     b        0.353613
-              B      a       -0.953914
-                     b        0.722078
+one   1       A      a        0.590097
+                     b       -0.354386
+              B      a        1.005761
+                     b       -0.231100
+      2       A      a        0.601155
+                     b        0.971925
+              B      a        0.333989
+                     b       -0.070636
+two   1       A      a        0.832014
+                     b       -1.078967
+              B      a       -1.278030
+                     b        0.014034
+      2       A      a        0.673027
+                     b       -0.324423
+              B      a        1.158443
+                     b        0.568625
 dtype: float64</code></pre>
 </div>
-<div id="unstack" class="section level4" number="4.4.9.2">
+<div id="unstack" class="section level4" number="5.4.9.2">
 <h4>
-<span class="header-section-number">4.4.9.2</span> .unstack()<a class="anchor" aria-label="anchor" href="#unstack"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4.9.2</span> .unstack()<a class="anchor" aria-label="anchor" href="#unstack"><i class="fas fa-link"></i></a>
 </h4>
 <p>取消堆叠，即将行索引变成列索引</p>
 <div class="sourceCode" id="cb185"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb185-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb185-1" tabindex="-1"></a>multi_index.unstack(<span class="op">-</span><span class="dv">1</span>)</span></code></pre></div>
@@ -2251,20 +2252,20 @@ dtype: float64</code></pre>
 lower          a                   b  ...         a         b          
 number         1         2         1  ...         2         1         2
 font                                  ...                              
-one    -0.726838  0.146525  1.128970  ...  1.703753  1.273944 -0.090585
-two     0.386717 -0.594142  1.870424  ... -0.953914 -0.859144  0.722078
+one     0.590097  0.601155 -0.354386  ...  0.333989 -0.231100 -0.070636
+two     0.832014  0.673027 -1.078967  ...  1.158443  0.014034  0.568625
 
 [2 rows x 8 columns]</code></pre>
 </div>
 </div>
 </div>
-<div id="排序" class="section level2" number="4.5">
+<div id="排序" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">4.5</span> 排序<a class="anchor" aria-label="anchor" href="#%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> 排序<a class="anchor" aria-label="anchor" href="#%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
 </h2>
-<div id="sort_index根据标签排序" class="section level3" number="4.5.1">
+<div id="sort_index根据标签排序" class="section level3" number="5.5.1">
 <h3>
-<span class="header-section-number">4.5.1</span> .sort_index():根据标签排序<a class="anchor" aria-label="anchor" href="#sort_index%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5.1</span> .sort_index():根据标签排序<a class="anchor" aria-label="anchor" href="#sort_index%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>axis:对于df来说,默认为0</li>
@@ -2273,9 +2274,9 @@ two     0.386717 -0.594142  1.870424  ... -0.953914 -0.859144  0.722078
 <li>level:对于MultiIndex objects，可以设置level属性,level=“a”:索引名</li>
 </ul>
 </div>
-<div id="sort_values根据值排序" class="section level3" number="4.5.2">
+<div id="sort_values根据值排序" class="section level3" number="5.5.2">
 <h3>
-<span class="header-section-number">4.5.2</span> .sort_values():根据值排序<a class="anchor" aria-label="anchor" href="#sort_values%E6%A0%B9%E6%8D%AE%E5%80%BC%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5.2</span> .sort_values():根据值排序<a class="anchor" aria-label="anchor" href="#sort_values%E6%A0%B9%E6%8D%AE%E5%80%BC%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>Series:
@@ -2301,20 +2302,20 @@ two     0.386717 -0.594142  1.870424  ... -0.953914 -0.859144  0.722078
 </li>
 </ul>
 </div>
-<div id="nlargest.nsmallest" class="section level3" number="4.5.3">
+<div id="nlargest.nsmallest" class="section level3" number="5.5.3">
 <h3>
-<span class="header-section-number">4.5.3</span> .nlargest(),.nsmallest()<a class="anchor" aria-label="anchor" href="#nlargest.nsmallest"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5.3</span> .nlargest(),.nsmallest()<a class="anchor" aria-label="anchor" href="#nlargest.nsmallest"><i class="fas fa-link"></i></a>
 </h3>
 <pre><code>* df.nlargest(5,["a","c"])#先按照a排序，在按照c排序</code></pre>
 </div>
 </div>
-<div id="数学运算" class="section level2" number="4.6">
+<div id="数学运算" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">4.6</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><i class="fas fa-link"></i></a>
 </h2>
-<div id="序列或数据框" class="section level3" number="4.6.1">
+<div id="序列或数据框" class="section level3" number="5.6.1">
 <h3>
-<span class="header-section-number">4.6.1</span> 序列或数据框<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E6%88%96%E6%95%B0%E6%8D%AE%E6%A1%86"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.1</span> 序列或数据框<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E6%88%96%E6%95%B0%E6%8D%AE%E6%A1%86"><i class="fas fa-link"></i></a>
 </h3>
 <p>直接使用numpy函数对整体进行操作</p>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E7%AE%97%E6%95%B0%E8%BF%90%E7%AE%97.png" width="95%" style="display: block; margin: auto;"></div>
@@ -2334,14 +2335,14 @@ Name: math, dtype: float64</code></pre>
 3    65
 4    65</code></pre>
 </div>
-<div id="同维度的序列" class="section level3 tabset" number="4.6.2">
+<div id="同维度的序列" class="section level3 tabset" number="5.6.2">
 <h3>
-<span class="header-section-number">4.6.2</span> 同维度的序列<a class="anchor" aria-label="anchor" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.2</span> 同维度的序列<a class="anchor" aria-label="anchor" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
 </h3>
 <p>依照对齐机制进行算数运算和比较</p>
-<div id="数学运算-1" class="section level4" number="4.6.2.1">
+<div id="数学运算-1" class="section level4" number="5.6.2.1">
 <h4>
-<span class="header-section-number">4.6.2.1</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.2.1</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>加减乘除,取负值</p>
 <div class="sourceCode" id="cb192"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb192-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb192-1" tabindex="-1"></a>sd.math <span class="op">+</span> sd.english</span></code></pre></div>
@@ -2359,9 +2360,9 @@ dtype: int64</code></pre>
 4   -65
 Name: math, dtype: int64</code></pre>
 </div>
-<div id="逻辑运算" class="section level4" number="4.6.2.2">
+<div id="逻辑运算" class="section level4" number="5.6.2.2">
 <h4>
-<span class="header-section-number">4.6.2.2</span> 逻辑运算<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.2.2</span> 逻辑运算<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb196"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb196-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb196-1" tabindex="-1"></a>sd.math <span class="op">&gt;</span> sd.english</span></code></pre></div>
 <pre class="scroll-200"><code>0    False
@@ -2379,13 +2380,13 @@ dtype: bool</code></pre>
 dtype: bool</code></pre>
 </div>
 </div>
-<div id="序列和标量" class="section level3 tabset" number="4.6.3">
+<div id="序列和标量" class="section level3 tabset" number="5.6.3">
 <h3>
-<span class="header-section-number">4.6.3</span> 序列和标量<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E5%92%8C%E6%A0%87%E9%87%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.3</span> 序列和标量<a class="anchor" aria-label="anchor" href="#%E5%BA%8F%E5%88%97%E5%92%8C%E6%A0%87%E9%87%8F"><i class="fas fa-link"></i></a>
 </h3>
-<div id="数学运算-2" class="section level4" number="4.6.3.1">
+<div id="数学运算-2" class="section level4" number="5.6.3.1">
 <h4>
-<span class="header-section-number">4.6.3.1</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.3.1</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97-2"><i class="fas fa-link"></i></a>
 </h4>
 <p>加减乘除</p>
 <div class="sourceCode" id="cb200"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb200-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb200-1" tabindex="-1"></a>sd.math <span class="op">+</span> <span class="dv">3</span></span></code></pre></div>
@@ -2396,9 +2397,9 @@ dtype: bool</code></pre>
 4    68
 Name: math, dtype: int64</code></pre>
 </div>
-<div id="逻辑运算-1" class="section level4" number="4.6.3.2">
+<div id="逻辑运算-1" class="section level4" number="5.6.3.2">
 <h4>
-<span class="header-section-number">4.6.3.2</span> 逻辑运算<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.3.2</span> 逻辑运算<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97-1"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb202"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb202-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb202-1" tabindex="-1"></a>sd.math <span class="op">&gt;</span> <span class="dv">80</span></span></code></pre></div>
 <pre class="scroll-200"><code>0    False
@@ -2416,14 +2417,14 @@ Name: math, dtype: bool</code></pre>
 Name: math, dtype: bool</code></pre>
 </div>
 </div>
-<div id="同维度的数据框" class="section level3 tabset" number="4.6.4">
+<div id="同维度的数据框" class="section level3 tabset" number="5.6.4">
 <h3>
-<span class="header-section-number">4.6.4</span> 同维度的数据框<a class="anchor" aria-label="anchor" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A1%86"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.4</span> 同维度的数据框<a class="anchor" aria-label="anchor" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A1%86"><i class="fas fa-link"></i></a>
 </h3>
 <p>数学运算和逻辑运算都按照列名对齐</p>
-<div id="数学运算-3" class="section level4" number="4.6.4.1">
+<div id="数学运算-3" class="section level4" number="5.6.4.1">
 <h4>
-<span class="header-section-number">4.6.4.1</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.4.1</span> 数学运算<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97-3"><i class="fas fa-link"></i></a>
 </h4>
 <p>加减乘除,取负值</p>
 <div class="sourceCode" id="cb206"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb206-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb206-1" tabindex="-1"></a>sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]] <span class="op">+</span> sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]]</span></code></pre></div>
@@ -2434,9 +2435,9 @@ Name: math, dtype: bool</code></pre>
 3   130      142
 4   130      142</code></pre>
 </div>
-<div id="逻辑运算-2" class="section level4" number="4.6.4.2">
+<div id="逻辑运算-2" class="section level4" number="5.6.4.2">
 <h4>
-<span class="header-section-number">4.6.4.2</span> 逻辑运算<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.4.2</span> 逻辑运算<a class="anchor" aria-label="anchor" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97-2"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb208"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb208-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb208-1" tabindex="-1"></a>sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]] <span class="op">&gt;</span> <span class="dv">80</span></span></code></pre></div>
 <pre class="scroll-200"><code>    math  english
@@ -2453,29 +2454,29 @@ Name: math, dtype: bool</code></pre>
 3      NaN      NaN  False
 4      NaN      NaN  False</code></pre>
 </div>
-<div id="使用numpy" class="section level4" number="4.6.4.3">
+<div id="使用numpy" class="section level4" number="5.6.4.3">
 <h4>
-<span class="header-section-number">4.6.4.3</span> 使用numpy<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8numpy"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.4.3</span> 使用numpy<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8numpy"><i class="fas fa-link"></i></a>
 </h4>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E4%BA%8C%E5%85%83%E9%80%9A%E7%94%A8%E5%87%BD%E6%95%B0.png" width="95%" style="display: block; margin: auto;"></div>
 <div class="sourceCode" id="cb212"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb212-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb212-1" tabindex="-1"></a>np.power(sd[[<span class="st">"english"</span>,<span class="st">"math"</span>,<span class="st">"chinese"</span>]],np.random.randint(<span class="dv">5</span>,size<span class="op">=</span>(sd.shape[<span class="dv">0</span>],<span class="dv">3</span>)))</span></code></pre></div>
-<pre class="scroll-200"><code>    english  math   chinese
-0        70    61  12117361
-1         1     1  35153041
-2    571787     1    357911
-3  25411681  4225    185193
-4      5041     1         1</code></pre>
+<pre class="scroll-200"><code>   english      math   chinese
+0       70  13845841  12117361
+1       74         1    456533
+2        1    195112        71
+3   357911        65  10556001
+4        1  17850625        57</code></pre>
 </div>
 </div>
-<div id="数据框和标量" class="section level3" number="4.6.5">
+<div id="数据框和标量" class="section level3" number="5.6.5">
 <h3>
-<span class="header-section-number">4.6.5</span> 数据框和标量<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E6%A0%87%E9%87%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.5</span> 数据框和标量<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E6%A0%87%E9%87%8F"><i class="fas fa-link"></i></a>
 </h3>
 <p>和序列同样</p>
 </div>
-<div id="数据框和序列" class="section level3" number="4.6.6">
+<div id="数据框和序列" class="section level3" number="5.6.6">
 <h3>
-<span class="header-section-number">4.6.6</span> 数据框和序列<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6.6</span> 数据框和序列<a class="anchor" aria-label="anchor" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E5%BA%8F%E5%88%97"><i class="fas fa-link"></i></a>
 </h3>
 <p>默认按照列名对齐，可以进行算数操作和逻辑操作</p>
 <div class="sourceCode" id="cb214"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb214-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb214-1" tabindex="-1"></a>sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]] <span class="op">-</span> sd[[<span class="st">"math"</span>,<span class="st">"english"</span>]].iloc[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div>
@@ -2494,24 +2495,24 @@ Name: math, dtype: bool</code></pre>
 4  False    False</code></pre>
 </div>
 </div>
-<div id="统计方法" class="section level2" number="4.7">
+<div id="统计方法" class="section level2" number="5.7">
 <h2>
-<span class="header-section-number">4.7</span> 统计方法<a class="anchor" aria-label="anchor" href="#%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7</span> 统计方法<a class="anchor" aria-label="anchor" href="#%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
 </h2>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E6%8F%8F%E8%BF%B0%E6%80%A7%E7%BB%9F%E8%AE%A1.png" width="95%" style="display: block; margin: auto;"></div>
 <p>对于数据框来说，它的sum，min等聚合函数可以选择axis，甚至可以选择index来聚合,但是不能再指定level了。</p>
 <div class="sourceCode" id="cb218"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb218-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb218-1" tabindex="-1"></a>multi_index.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>upper  lower
-A      a       -0.787738
-       b        2.687871
-B      a        0.528360
-       b        1.046293
+A      a        2.696292
+       b       -0.785851
+B      a        1.220162
+       b        0.280924
 dtype: float64</code></pre>
 <div class="inline-figure"><img src="static/image/%E6%95%B0%E6%8D%AE/%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95.png" width="95%" style="display: block; margin: auto;"></div>
 <p>value_counts如果传递多列，则返回多列的组合值的value_counts(),多列以multi_index展示.</p>
-<div id="相关和协方差" class="section level3" number="4.7.1">
+<div id="相关和协方差" class="section level3" number="5.7.1">
 <h3>
-<span class="header-section-number">4.7.1</span> 相关和协方差<a class="anchor" aria-label="anchor" href="#%E7%9B%B8%E5%85%B3%E5%92%8C%E5%8D%8F%E6%96%B9%E5%B7%AE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7.1</span> 相关和协方差<a class="anchor" aria-label="anchor" href="#%E7%9B%B8%E5%85%B3%E5%92%8C%E5%8D%8F%E6%96%B9%E5%B7%AE"><i class="fas fa-link"></i></a>
 </h3>
 <div class="inline-table"><table class="table table-sm">
 <thead><tr class="header">
@@ -2535,14 +2536,14 @@ dtype: float64</code></pre>
 </table></div>
 </div>
 </div>
-<div id="函数" class="section level2" number="4.8">
+<div id="函数" class="section level2" number="5.8">
 <h2>
-<span class="header-section-number">4.8</span> 函数<a class="anchor" aria-label="anchor" href="#%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8</span> 函数<a class="anchor" aria-label="anchor" href="#%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h2>
 <p>对行或者列或者整体或者每个元素进行函数应用。</p>
-<div id="apply" class="section level3" number="4.8.1">
+<div id="apply" class="section level3" number="5.8.1">
 <h3>
-<span class="header-section-number">4.8.1</span> .apply()<a class="anchor" aria-label="anchor" href="#apply"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.1</span> .apply()<a class="anchor" aria-label="anchor" href="#apply"><i class="fas fa-link"></i></a>
 </h3>
 <p>对行或列操作，操作对象默认为序列,但是不能应用多个函数,不能指定对象，长度变不变都可以。</p>
 <ul>
@@ -2567,9 +2568,9 @@ dtype: float64</code></pre>
 </li>
 </ul>
 </div>
-<div id="agg" class="section level3" number="4.8.2">
+<div id="agg" class="section level3" number="5.8.2">
 <h3>
-<span class="header-section-number">4.8.2</span> .agg()<a class="anchor" aria-label="anchor" href="#agg"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.2</span> .agg()<a class="anchor" aria-label="anchor" href="#agg"><i class="fas fa-link"></i></a>
 </h3>
 <p>只对列起作用,可以指定对象，可以指定多个函数,只能执行聚合操作，操作对象为序列，长度会发生变化</p>
 <ul>
@@ -2584,9 +2585,9 @@ dtype: float64</code></pre>
 </li>
 </ul>
 </div>
-<div id="transform" class="section level3" number="4.8.3">
+<div id="transform" class="section level3" number="5.8.3">
 <h3>
-<span class="header-section-number">4.8.3</span> .transform()<a class="anchor" aria-label="anchor" href="#transform"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.3</span> .transform()<a class="anchor" aria-label="anchor" href="#transform"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>应用于所有元素，也可以传递字典对不同的列的每个元素应用不同的函数,操作对象为数据框。长度必须保持不变。
@@ -2598,15 +2599,15 @@ dtype: float64</code></pre>
 </li>
 </ul>
 </div>
-<div id="applymap" class="section level3" number="4.8.4">
+<div id="applymap" class="section level3" number="5.8.4">
 <h3>
-<span class="header-section-number">4.8.4</span> .applymap()<a class="anchor" aria-label="anchor" href="#applymap"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.4</span> .applymap()<a class="anchor" aria-label="anchor" href="#applymap"><i class="fas fa-link"></i></a>
 </h3>
 <p>应用于每个单元格,只能定义一个函数</p>
 </div>
-<div id="pipe" class="section level3" number="4.8.5">
+<div id="pipe" class="section level3" number="5.8.5">
 <h3>
-<span class="header-section-number">4.8.5</span> .pipe()<a class="anchor" aria-label="anchor" href="#pipe"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8.5</span> .pipe()<a class="anchor" aria-label="anchor" href="#pipe"><i class="fas fa-link"></i></a>
 </h3>
 <p>对整个数据框进行任意操作</p>
 <p>DataFrames和Series是可以传递给函数的，但是如果函数是在一个链式中，考虑使用<code><a href="https://rdrr.io/r/base/connections.html">pipe()</a></code>方法</p>
@@ -2616,14 +2617,14 @@ dtype: float64</code></pre>
 </ul>
 </div>
 </div>
-<div id="透视表" class="section level2" number="4.9">
+<div id="透视表" class="section level2" number="5.9">
 <h2>
-<span class="header-section-number">4.9</span> 透视表<a class="anchor" aria-label="anchor" href="#%E9%80%8F%E8%A7%86%E8%A1%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9</span> 透视表<a class="anchor" aria-label="anchor" href="#%E9%80%8F%E8%A7%86%E8%A1%A8"><i class="fas fa-link"></i></a>
 </h2>
 <p>透视表</p>
-<div id="pivot" class="section level3" number="4.9.1">
+<div id="pivot" class="section level3" number="5.9.1">
 <h3>
-<span class="header-section-number">4.9.1</span> .pivot()<a class="anchor" aria-label="anchor" href="#pivot"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9.1</span> .pivot()<a class="anchor" aria-label="anchor" href="#pivot"><i class="fas fa-link"></i></a>
 </h3>
 <p>index.columns,value 都可以是列名或列名的列表，当value为列表时，会形成column的stack，相当于分别计算每个列的pivot，然后再左右concat。</p>
 <div class="sourceCode" id="cb220"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb220-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb220-1" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'foo'</span>: [<span class="st">'one'</span>, <span class="st">'one'</span>, <span class="st">'one'</span>, <span class="st">'two'</span>, <span class="st">'two'</span>,</span>
@@ -2639,9 +2640,9 @@ foo
 one   1  2  3   x  y  z
 two   4  5  6   q  w  t</code></pre>
 </div>
-<div id="pivot_table" class="section level3" number="4.9.2">
+<div id="pivot_table" class="section level3" number="5.9.2">
 <h3>
-<span class="header-section-number">4.9.2</span> .pivot_table()<a class="anchor" aria-label="anchor" href="#pivot_table"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9.2</span> .pivot_table()<a class="anchor" aria-label="anchor" href="#pivot_table"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>.pivot_table()/DataFrame().pivot_table():唯一的特点是可以应用函数
@@ -2658,15 +2659,15 @@ two   4  5  6   q  w  t</code></pre>
 </li>
 </ul>
 </div>
-<div id="pd.crosstab" class="section level3" number="4.9.3">
+<div id="pd.crosstab" class="section level3" number="5.9.3">
 <h3>
-<span class="header-section-number">4.9.3</span> pd.crosstab()<a class="anchor" aria-label="anchor" href="#pd.crosstab"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9.3</span> pd.crosstab()<a class="anchor" aria-label="anchor" href="#pd.crosstab"><i class="fas fa-link"></i></a>
 </h3>
 <p>和pivot_table()没有太大区别,但是传递的是序列,并不是dataframe方法.默认返回频次.</p>
 </div>
-<div id="melt" class="section level3" number="4.9.4">
+<div id="melt" class="section level3" number="5.9.4">
 <h3>
-<span class="header-section-number">4.9.4</span> melt<a class="anchor" aria-label="anchor" href="#melt"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9.4</span> melt<a class="anchor" aria-label="anchor" href="#melt"><i class="fas fa-link"></i></a>
 </h3>
 <p>pivot的逆操作,相当于把一列的各个种类再次归为一列，对于有多层column的，要把column的组合值作为一类，有几层就还原为几列。</p>
 <p>但是对于unpivot，stack和unstack明显更方便，只能说这个函数的意义不是unpivot，而是把几个列组合成一个列，其他几个id列保持不变，剩下的舍弃。</p>
@@ -2705,9 +2706,9 @@ two   4  5  6   q  w  t</code></pre>
 5  two   C   6   t</code></pre>
 </div>
 </div>
-<div id="分组.groupby" class="section level2" number="4.10">
+<div id="分组.groupby" class="section level2" number="5.10">
 <h2>
-<span class="header-section-number">4.10</span> 分组.groupby()<a class="anchor" aria-label="anchor" href="#%E5%88%86%E7%BB%84.groupby"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10</span> 分组.groupby()<a class="anchor" aria-label="anchor" href="#%E5%88%86%E7%BB%84.groupby"><i class="fas fa-link"></i></a>
 </h2>
 <p>split-apply-combine</p>
 <ul>
@@ -2745,23 +2746,23 @@ two   4  5  6   q  w  t</code></pre>
 <span id="cb224-8"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb224-8" tabindex="-1"></a>)</span>
 <span id="cb224-9"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb224-9" tabindex="-1"></a>gd</span></code></pre></div>
 <pre class="scroll-200"><code>  number   font    score1    score2
-0      A    one -0.730390 -1.056884
-1      B    two -0.207263 -0.576389
-2      A  three  1.482962  0.092695
-3      B    one -0.121146 -0.930031
-4      A    two  0.594102 -0.510108
-5      B  three -0.850682 -0.213639</code></pre>
+0      A    one -1.774007 -1.164342
+1      B    two  2.339670 -0.208385
+2      A  three  1.157775  0.309045
+3      B    one  0.296689  1.236961
+4      A    two  0.158378  1.227828
+5      B  three -1.123796  0.776552</code></pre>
 <div class="sourceCode" id="cb226"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb226-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb226-1" tabindex="-1"></a>gd.groupby([<span class="st">"number"</span>])</span></code></pre></div>
-<pre class="scroll-200"><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000013578BADFD0&gt;</code></pre>
+<pre class="scroll-200"><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000022DBA39A150&gt;</code></pre>
 <div class="sourceCode" id="cb228"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb228-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-1" tabindex="-1"></a>gdn <span class="op">=</span> gd.groupby([<span class="st">"number"</span>])</span>
 <span id="cb228-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb228-2" tabindex="-1"></a>gdn.groups <span class="co">#{index,row_label}</span></span></code></pre></div>
 <pre class="scroll-200"><code>{'A': [0, 2, 4], 'B': [1, 3, 5]}</code></pre>
 <div class="sourceCode" id="cb230"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb230-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb230-1" tabindex="-1"></a>gdn.get_group(<span class="st">"A"</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: When grouping with a length-1 list-like, you will need to pass a length-1 tuple to get_group in a future version of pandas. Pass `(name,)` instead of `name` to silence this warning.
   number   font    score1    score2
-0      A    one -0.730390 -1.056884
-2      A  three  1.482962  0.092695
-4      A    two  0.594102 -0.510108</code></pre>
+0      A    one -1.774007 -1.164342
+2      A  three  1.157775  0.309045
+4      A    two  0.158378  1.227828</code></pre>
 <div class="sourceCode" id="cb232"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb232-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb232-1" tabindex="-1"></a>gdn.ngroup() <span class="co">#以数字代表种类，反映每行属于哪一类</span></span></code></pre></div>
 <pre class="scroll-200"><code>0    0
 1    1
@@ -2772,23 +2773,23 @@ two   4  5  6   q  w  t</code></pre>
 dtype: int64</code></pre>
 <div class="sourceCode" id="cb234"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb234-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb234-1" tabindex="-1"></a>gdn.ngroups  <span class="co">#返回种类的个数</span></span></code></pre></div>
 <pre class="scroll-200"><code>2</code></pre>
-<div id="选取" class="section level3 tabset" number="4.10.1">
+<div id="选取" class="section level3 tabset" number="5.10.1">
 <h3>
-<span class="header-section-number">4.10.1</span> 选取<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1</span> 选取<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96"><i class="fas fa-link"></i></a>
 </h3>
 <p>从split的角度，我们无法选择行，可以选择列。</p>
-<div id="选取列-1" class="section level4" number="4.10.1.1">
+<div id="选取列-1" class="section level4" number="5.10.1.1">
 <h4>
-<span class="header-section-number">4.10.1.1</span> 选取列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%88%97-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.1</span> 选取列<a class="anchor" aria-label="anchor" href="#%E9%80%89%E5%8F%96%E5%88%97-1"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb236"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb236-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb236-1" tabindex="-1"></a>gdn[<span class="st">"font"</span>]</span></code></pre></div>
-<pre class="scroll-200"><code>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x0000013578B67E60&gt;</code></pre>
+<pre class="scroll-200"><code>&lt;pandas.core.groupby.generic.SeriesGroupBy object at 0x0000022DB9EDE8D0&gt;</code></pre>
 <div class="sourceCode" id="cb238"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb238-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb238-1" tabindex="-1"></a>gdn[[<span class="st">"font"</span>]]</span></code></pre></div>
-<pre class="scroll-200"><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000013578B654F0&gt;</code></pre>
+<pre class="scroll-200"><code>&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x0000022DBA47B020&gt;</code></pre>
 </div>
-<div id="filter" class="section level4" number="4.10.1.2">
+<div id="filter" class="section level4" number="5.10.1.2">
 <h4>
-<span class="header-section-number">4.10.1.2</span> .filter()<a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.2</span> .filter()<a class="anchor" aria-label="anchor" href="#filter"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>&gt;&gt;&gt; df = pd.DataFrame(np.array(([1, 2, 3], [4, 5, 6])),
 ...                   index=['mouse', 'rabbit'],
@@ -2815,37 +2816,37 @@ rabbit    4      6
          one  two  three
 rabbit    4    5      6</code></pre>
 </div>
-<div id="head.tail" class="section level4" number="4.10.1.3">
+<div id="head.tail" class="section level4" number="5.10.1.3">
 <h4>
-<span class="header-section-number">4.10.1.3</span> .head()/.tail()<a class="anchor" aria-label="anchor" href="#head.tail"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.3</span> .head()/.tail()<a class="anchor" aria-label="anchor" href="#head.tail"><i class="fas fa-link"></i></a>
 </h4>
 <p>没啥意义，相当于没有groupby，返回原数据框样式.</p>
 <div class="sourceCode" id="cb241"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb241-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb241-1" tabindex="-1"></a>gdn.head()</span></code></pre></div>
 <pre class="scroll-200"><code>  number   font    score1    score2
-0      A    one -0.730390 -1.056884
-1      B    two -0.207263 -0.576389
-2      A  three  1.482962  0.092695
-3      B    one -0.121146 -0.930031
-4      A    two  0.594102 -0.510108
-5      B  three -0.850682 -0.213639</code></pre>
+0      A    one -1.774007 -1.164342
+1      B    two  2.339670 -0.208385
+2      A  three  1.157775  0.309045
+3      B    one  0.296689  1.236961
+4      A    two  0.158378  1.227828
+5      B  three -1.123796  0.776552</code></pre>
 </div>
-<div id="take-1" class="section level4" number="4.10.1.4">
+<div id="take-1" class="section level4" number="5.10.1.4">
 <h4>
-<span class="header-section-number">4.10.1.4</span> .take()<a class="anchor" aria-label="anchor" href="#take-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.1.4</span> .take()<a class="anchor" aria-label="anchor" href="#take-1"><i class="fas fa-link"></i></a>
 </h4>
 <p>给与行号，返回每个组相应位置的行。行索引保留。不可超过</p>
 <div class="sourceCode" id="cb243"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb243-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb243-1" tabindex="-1"></a>gdn.take([<span class="dv">0</span>,<span class="dv">1</span>])</span></code></pre></div>
 <pre class="scroll-200"><code>           font    score1    score2
 number                             
-A      0    one -0.730390 -1.056884
-       2  three  1.482962  0.092695
-B      1    two -0.207263 -0.576389
-       3    one -0.121146 -0.930031</code></pre>
+A      0    one -1.774007 -1.164342
+       2  three  1.157775  0.309045
+B      1    two  2.339670 -0.208385
+       3    one  0.296689  1.236961</code></pre>
 </div>
 </div>
-<div id="应用聚合函数" class="section level3" number="4.10.2">
+<div id="应用聚合函数" class="section level3" number="5.10.2">
 <h3>
-<span class="header-section-number">4.10.2</span> 应用聚合函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.2</span> 应用聚合函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <p>如果是对数值列操作的聚合函数，要选出相应的聚合函数</p>
 <ul>
@@ -2866,9 +2867,9 @@ B      1    two -0.207263 -0.576389
 <li>.prod()</li>
 </ul>
 </div>
-<div id="应用统计函数" class="section level3" number="4.10.3">
+<div id="应用统计函数" class="section level3" number="5.10.3">
 <h3>
-<span class="header-section-number">4.10.3</span> 应用统计函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.3</span> 应用统计函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>.cov()</li>
@@ -2879,9 +2880,9 @@ B      1    two -0.207263 -0.576389
 <li>.sample()</li>
 </ul>
 </div>
-<div id="应用窗口函数" class="section level3" number="4.10.4">
+<div id="应用窗口函数" class="section level3" number="5.10.4">
 <h3>
-<span class="header-section-number">4.10.4</span> 应用窗口函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.4</span> 应用窗口函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <ul>
 <li>.bfill()</li>
@@ -2902,9 +2903,9 @@ B      1    two -0.207263 -0.576389
 <li>.resample()重新定义频率</li>
 </ul>
 </div>
-<div id="应用自定义函数" class="section level3" number="4.10.5">
+<div id="应用自定义函数" class="section level3" number="5.10.5">
 <h3>
-<span class="header-section-number">4.10.5</span> 应用自定义函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.5</span> 应用自定义函数<a class="anchor" aria-label="anchor" href="#%E5%BA%94%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><i class="fas fa-link"></i></a>
 </h3>
 <p>将每个组视为一个dataframe,然后对每个组应用函数。如果想对整个组进行聚合操作，可以利用dataframe的values属性获取array数组，通过numpy函数对数组进行整体聚合操作.比如<code>lambda x:np.sum(x.values)</code></p>
 <ul>
@@ -2914,18 +2915,18 @@ B      1    two -0.207263 -0.576389
 <li>.transform()</li>
 </ul>
 </div>
-<div id="迭代每个组" class="section level3" number="4.10.6">
+<div id="迭代每个组" class="section level3" number="5.10.6">
 <h3>
-<span class="header-section-number">4.10.6</span> 迭代每个组<a class="anchor" aria-label="anchor" href="#%E8%BF%AD%E4%BB%A3%E6%AF%8F%E4%B8%AA%E7%BB%84"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10.6</span> 迭代每个组<a class="anchor" aria-label="anchor" href="#%E8%BF%AD%E4%BB%A3%E6%AF%8F%E4%B8%AA%E7%BB%84"><i class="fas fa-link"></i></a>
 </h3>
 <pre><code>for name,group in grouped:
     print(name)
     print(group)</code></pre>
 </div>
 </div>
-<div id="方法链" class="section level2" number="4.11">
+<div id="方法链" class="section level2" number="5.11">
 <h2>
-<span class="header-section-number">4.11</span> 方法链<a class="anchor" aria-label="anchor" href="#%E6%96%B9%E6%B3%95%E9%93%BE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.11</span> 方法链<a class="anchor" aria-label="anchor" href="#%E6%96%B9%E6%B3%95%E9%93%BE"><i class="fas fa-link"></i></a>
 </h2>
 <p>以括号包裹，多行书写,避免中间变量的定义</p>
 <pre><code>df = (pd.melt(df)
@@ -2933,67 +2934,67 @@ B      1    two -0.207263 -0.576389
 .query('val &gt;= 200')
 )</code></pre>
 </div>
-<div id="采样" class="section level2" number="4.12">
+<div id="采样" class="section level2" number="5.12">
 <h2>
-<span class="header-section-number">4.12</span> 采样<a class="anchor" aria-label="anchor" href="#%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.12</span> 采样<a class="anchor" aria-label="anchor" href="#%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
 </h2>
-<div id="随机重排序" class="section level3" number="4.12.1">
+<div id="随机重排序" class="section level3" number="5.12.1">
 <h3>
-<span class="header-section-number">4.12.1</span> 随机重排序<a class="anchor" aria-label="anchor" href="#%E9%9A%8F%E6%9C%BA%E9%87%8D%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.12.1</span> 随机重排序<a class="anchor" aria-label="anchor" href="#%E9%9A%8F%E6%9C%BA%E9%87%8D%E6%8E%92%E5%BA%8F"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb247"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb247-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb247-1" tabindex="-1"></a><span class="co">#生成新序列</span></span>
 <span id="cb247-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb247-2" tabindex="-1"></a>np.random.permutation(<span class="bu">range</span>(<span class="dv">5</span>))</span></code></pre></div>
-<pre class="scroll-200"><code>array([2, 0, 4, 3, 1])</code></pre>
+<pre class="scroll-200"><code>array([4, 2, 0, 3, 1])</code></pre>
 <div class="sourceCode" id="cb249"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb249-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb249-1" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb249-2"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb249-2" tabindex="-1"></a><span class="co">#打乱原序列，不生成新序列</span></span>
 <span id="cb249-3"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb249-3" tabindex="-1"></a>random.shuffle(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">6</span>)))</span></code></pre></div>
 </div>
-<div id="随机采样" class="section level3 tabset" number="4.12.2">
+<div id="随机采样" class="section level3 tabset" number="5.12.2">
 <h3>
-<span class="header-section-number">4.12.2</span> 随机采样<a class="anchor" aria-label="anchor" href="#%E9%9A%8F%E6%9C%BA%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.12.2</span> 随机采样<a class="anchor" aria-label="anchor" href="#%E9%9A%8F%E6%9C%BA%E9%87%87%E6%A0%B7"><i class="fas fa-link"></i></a>
 </h3>
-<div id="random.sample" class="section level4" number="4.12.2.1">
+<div id="random.sample" class="section level4" number="5.12.2.1">
 <h4>
-<span class="header-section-number">4.12.2.1</span> random.sample()<a class="anchor" aria-label="anchor" href="#random.sample"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.12.2.1</span> random.sample()<a class="anchor" aria-label="anchor" href="#random.sample"><i class="fas fa-link"></i></a>
 </h4>
 <p>不能超过序列个数</p>
 <p><code>sample(population,k,*,counts)</code></p>
 <div class="sourceCode" id="cb250"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb250-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb250-1" tabindex="-1"></a>random.sample(<span class="bu">range</span>(<span class="dv">5</span>),<span class="dv">3</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>[4, 0, 1]</code></pre>
+<pre class="scroll-200"><code>[0, 3, 2]</code></pre>
 <div class="sourceCode" id="cb252"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb252-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb252-1" tabindex="-1"></a>random.sample([<span class="st">'a'</span>,<span class="st">'b'</span>],counts<span class="op">=</span>[<span class="dv">4</span>,<span class="dv">2</span>],k<span class="op">=</span><span class="dv">5</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>['a', 'a', 'b', 'a', 'a']</code></pre>
 </div>
-<div id="random.choices" class="section level4" number="4.12.2.2">
+<div id="random.choices" class="section level4" number="5.12.2.2">
 <h4>
-<span class="header-section-number">4.12.2.2</span> random.choice(s)()<a class="anchor" aria-label="anchor" href="#random.choices"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.12.2.2</span> random.choice(s)()<a class="anchor" aria-label="anchor" href="#random.choices"><i class="fas fa-link"></i></a>
 </h4>
 <pre><code>random.choices(population,weights=None,*,cum_weights=None,k=1)
 给定weights或cum_weights,不能同时给，最终都会转为cum_weight来进行计算，长度必须和population的长度相同，对应的各个值的概率。
 k决定了生成样本的个数
 大样本下各个值的概率应该与给定的weights相符</code></pre>
 <div class="sourceCode" id="cb255"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb255-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb255-1" tabindex="-1"></a>random.choice(<span class="bu">range</span>(<span class="dv">5</span>))</span></code></pre></div>
-<pre class="scroll-200"><code>2</code></pre>
+<pre class="scroll-200"><code>1</code></pre>
 <div class="sourceCode" id="cb257"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb257-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb257-1" tabindex="-1"></a>random.choices([<span class="st">'a'</span>,<span class="st">'b'</span>],weights<span class="op">=</span>[<span class="dv">2</span>,<span class="dv">1</span>],k<span class="op">=</span><span class="dv">12</span>)</span></code></pre></div>
-<pre class="scroll-200"><code>['a', 'a', 'b', 'b', 'b', 'b', 'a', 'a', 'b', 'a', 'b', 'a']</code></pre>
+<pre class="scroll-200"><code>['a', 'b', 'b', 'a', 'a', 'a', 'a', 'a', 'b', 'b', 'b', 'a']</code></pre>
 </div>
-<div id="df.sample" class="section level4" number="4.12.2.3">
+<div id="df.sample" class="section level4" number="5.12.2.3">
 <h4>
-<span class="header-section-number">4.12.2.3</span> df.sample()<a class="anchor" aria-label="anchor" href="#df.sample"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.12.2.3</span> df.sample()<a class="anchor" aria-label="anchor" href="#df.sample"><i class="fas fa-link"></i></a>
 </h4>
 <div class="sourceCode" id="cb259"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb259-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb259-1" tabindex="-1"></a>ts <span class="op">=</span> pd.DataFrame(np.random.randn(<span class="dv">8</span>),index<span class="op">=</span>pd.date_range(<span class="st">"2022"</span>,<span class="st">"2030"</span>,freq<span class="op">=</span><span class="st">"Y"</span>))</span></code></pre></div>
 <pre class="scroll-200"><code>&lt;string&gt;:1: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.</code></pre>
 <div class="sourceCode" id="cb261"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb261-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb261-1" tabindex="-1"></a>ts.sample(<span class="dv">3</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>                   0
-2023-12-31 -0.020883
-2027-12-31  1.024671
-2028-12-31 -2.333882</code></pre>
+2023-12-31  1.259061
+2028-12-31  0.325197
+2026-12-31 -0.661192</code></pre>
 <div class="sourceCode" id="cb263"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb263-1"><a href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html#cb263-1" tabindex="-1"></a>ts.sample(<span class="dv">5</span>,replace<span class="op">=</span><span class="va">True</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>                   0
-2024-12-31  0.184889
-2025-12-31 -0.646686
-2025-12-31 -0.646686
-2025-12-31 -0.646686
-2026-12-31  1.141514</code></pre>
+2027-12-31 -0.604302
+2022-12-31  0.131528
+2023-12-31  1.259061
+2028-12-31  0.325197
+2025-12-31 -0.577860</code></pre>
 
 </div>
 </div>
@@ -3156,100 +3157,100 @@ function openTab(evt,tabName){
 
 </div>
 <div class="chapter-nav">
-<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></div>
-<div class="next"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></div>
+<div class="prev"><a href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></div>
+<div class="next"><a href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">6</span> 时间序列</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="header-section-number">4</span> 数据操作</a></li>
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="header-section-number">5</span> 数据操作</a></li>
 <li>
-<a class="nav-link" href="#%E5%88%97"><span class="header-section-number">4.1</span> 列</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E9%80%89%E5%8F%96%E5%88%97"><span class="header-section-number">4.1.1</span> 选取列</a></li>
-<li><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><span class="header-section-number">4.1.2</span> 增加列</a></li>
-<li><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%88%97"><span class="header-section-number">4.1.3</span> 替换列</a></li>
-<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%88%97"><span class="header-section-number">4.1.4</span> 删除列</a></li>
+<a class="nav-link" href="#%E5%88%97"><span class="header-section-number">5.1</span> 列</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E9%80%89%E5%8F%96%E5%88%97"><span class="header-section-number">5.1.1</span> 选取列</a></li>
+<li><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><span class="header-section-number">5.1.2</span> 增加列</a></li>
+<li><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%88%97"><span class="header-section-number">5.1.3</span> 替换列</a></li>
+<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%88%97"><span class="header-section-number">5.1.4</span> 删除列</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E8%A1%8C"><span class="header-section-number">4.2</span> 行</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E9%80%89%E5%8F%96%E8%A1%8C"><span class="header-section-number">4.2.1</span> 选取行</a></li>
-<li><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E8%A1%8C"><span class="header-section-number">4.2.2</span> 增加行</a></li>
-<li><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E8%A1%8C"><span class="header-section-number">4.2.3</span> 替换行</a></li>
-<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%8C"><span class="header-section-number">4.2.4</span> 删除行</a></li>
+<a class="nav-link" href="#%E8%A1%8C"><span class="header-section-number">5.2</span> 行</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E9%80%89%E5%8F%96%E8%A1%8C"><span class="header-section-number">5.2.1</span> 选取行</a></li>
+<li><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E8%A1%8C"><span class="header-section-number">5.2.2</span> 增加行</a></li>
+<li><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E8%A1%8C"><span class="header-section-number">5.2.3</span> 替换行</a></li>
+<li><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%8C"><span class="header-section-number">5.2.4</span> 删除行</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E5%80%BCscalar"><span class="header-section-number">4.3</span> 任意值/scalar</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#ilocloc"><span class="header-section-number">4.3.1</span> .iloc/loc</a></li>
-<li><a class="nav-link" href="#iatat"><span class="header-section-number">4.3.2</span> .iat/at</a></li>
-<li><a class="nav-link" href="#wheremask"><span class="header-section-number">4.3.3</span> where/mask</a></li>
+<a class="nav-link" href="#%E4%BB%BB%E6%84%8F%E5%80%BCscalar"><span class="header-section-number">5.3</span> 任意值/scalar</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#ilocloc"><span class="header-section-number">5.3.1</span> .iloc/loc</a></li>
+<li><a class="nav-link" href="#iatat"><span class="header-section-number">5.3.2</span> .iat/at</a></li>
+<li><a class="nav-link" href="#wheremask"><span class="header-section-number">5.3.3</span> where/mask</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4</span> 索引</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E7%B4%A2%E5%BC%95name"><span class="header-section-number">4.4.1</span> 索引name</a></li>
-<li><a class="nav-link" href="#%E9%87%8D%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.4.2</span> 重排序</a></li>
-<li><a class="nav-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D"><span class="header-section-number">4.4.3</span> 重命名</a></li>
-<li><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%88%97%E4%B8%BA%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4.4</span> 设置列为索引</a></li>
-<li><a class="nav-link" href="#%E9%87%8D%E7%BD%AE%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4.5</span> 重置索引</a></li>
-<li><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4.6</span> 多层索引</a></li>
-<li><a class="nav-link" href="#%E9%80%89%E5%8F%96%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="header-section-number">4.4.7</span> 选取多层索引</a></li>
-<li><a class="nav-link" href="#%E8%B0%83%E6%8D%A2%E5%A4%9A%E4%B8%AAindex%E7%9A%84%E9%A1%BA%E5%BA%8F"><span class="header-section-number">4.4.8</span> 调换多个index的顺序</a></li>
-<li><a class="nav-link" href="#index%E5%92%8Ccolumn%E7%9A%84%E4%BA%92%E6%8D%A2"><span class="header-section-number">4.4.9</span> index和column的互换</a></li>
+<a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="header-section-number">5.4</span> 索引</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E7%B4%A2%E5%BC%95name"><span class="header-section-number">5.4.1</span> 索引name</a></li>
+<li><a class="nav-link" href="#%E9%87%8D%E6%8E%92%E5%BA%8F"><span class="header-section-number">5.4.2</span> 重排序</a></li>
+<li><a class="nav-link" href="#%E9%87%8D%E5%91%BD%E5%90%8D"><span class="header-section-number">5.4.3</span> 重命名</a></li>
+<li><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%88%97%E4%B8%BA%E7%B4%A2%E5%BC%95"><span class="header-section-number">5.4.4</span> 设置列为索引</a></li>
+<li><a class="nav-link" href="#%E9%87%8D%E7%BD%AE%E7%B4%A2%E5%BC%95"><span class="header-section-number">5.4.5</span> 重置索引</a></li>
+<li><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="header-section-number">5.4.6</span> 多层索引</a></li>
+<li><a class="nav-link" href="#%E9%80%89%E5%8F%96%E5%A4%9A%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="header-section-number">5.4.7</span> 选取多层索引</a></li>
+<li><a class="nav-link" href="#%E8%B0%83%E6%8D%A2%E5%A4%9A%E4%B8%AAindex%E7%9A%84%E9%A1%BA%E5%BA%8F"><span class="header-section-number">5.4.8</span> 调换多个index的顺序</a></li>
+<li><a class="nav-link" href="#index%E5%92%8Ccolumn%E7%9A%84%E4%BA%92%E6%8D%A2"><span class="header-section-number">5.4.9</span> index和column的互换</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.5</span> 排序</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#sort_index%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.5.1</span> .sort_index():根据标签排序</a></li>
-<li><a class="nav-link" href="#sort_values%E6%A0%B9%E6%8D%AE%E5%80%BC%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.5.2</span> .sort_values():根据值排序</a></li>
-<li><a class="nav-link" href="#nlargest.nsmallest"><span class="header-section-number">4.5.3</span> .nlargest(),.nsmallest()</a></li>
+<a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="header-section-number">5.5</span> 排序</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sort_index%E6%A0%B9%E6%8D%AE%E6%A0%87%E7%AD%BE%E6%8E%92%E5%BA%8F"><span class="header-section-number">5.5.1</span> .sort_index():根据标签排序</a></li>
+<li><a class="nav-link" href="#sort_values%E6%A0%B9%E6%8D%AE%E5%80%BC%E6%8E%92%E5%BA%8F"><span class="header-section-number">5.5.2</span> .sort_values():根据值排序</a></li>
+<li><a class="nav-link" href="#nlargest.nsmallest"><span class="header-section-number">5.5.3</span> .nlargest(),.nsmallest()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="header-section-number">4.6</span> 数学运算</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E6%88%96%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="header-section-number">4.6.1</span> 序列或数据框</a></li>
-<li><a class="nav-link" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E5%BA%8F%E5%88%97"><span class="header-section-number">4.6.2</span> 同维度的序列</a></li>
-<li><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%92%8C%E6%A0%87%E9%87%8F"><span class="header-section-number">4.6.3</span> 序列和标量</a></li>
-<li><a class="nav-link" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="header-section-number">4.6.4</span> 同维度的数据框</a></li>
-<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E6%A0%87%E9%87%8F"><span class="header-section-number">4.6.5</span> 数据框和标量</a></li>
-<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E5%BA%8F%E5%88%97"><span class="header-section-number">4.6.6</span> 数据框和序列</a></li>
+<a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="header-section-number">5.6</span> 数学运算</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E6%88%96%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="header-section-number">5.6.1</span> 序列或数据框</a></li>
+<li><a class="nav-link" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E5%BA%8F%E5%88%97"><span class="header-section-number">5.6.2</span> 同维度的序列</a></li>
+<li><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E5%92%8C%E6%A0%87%E9%87%8F"><span class="header-section-number">5.6.3</span> 序列和标量</a></li>
+<li><a class="nav-link" href="#%E5%90%8C%E7%BB%B4%E5%BA%A6%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A1%86"><span class="header-section-number">5.6.4</span> 同维度的数据框</a></li>
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E6%A0%87%E9%87%8F"><span class="header-section-number">5.6.5</span> 数据框和标量</a></li>
+<li><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A1%86%E5%92%8C%E5%BA%8F%E5%88%97"><span class="header-section-number">5.6.6</span> 数据框和序列</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="header-section-number">4.7</span> 统计方法</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%92%8C%E5%8D%8F%E6%96%B9%E5%B7%AE"><span class="header-section-number">4.7.1</span> 相关和协方差</a></li></ul>
+<a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="header-section-number">5.7</span> 统计方法</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%92%8C%E5%8D%8F%E6%96%B9%E5%B7%AE"><span class="header-section-number">5.7.1</span> 相关和协方差</a></li></ul>
 </li>
 <li>
-<a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="header-section-number">4.8</span> 函数</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#apply"><span class="header-section-number">4.8.1</span> .apply()</a></li>
-<li><a class="nav-link" href="#agg"><span class="header-section-number">4.8.2</span> .agg()</a></li>
-<li><a class="nav-link" href="#transform"><span class="header-section-number">4.8.3</span> .transform()</a></li>
-<li><a class="nav-link" href="#applymap"><span class="header-section-number">4.8.4</span> .applymap()</a></li>
-<li><a class="nav-link" href="#pipe"><span class="header-section-number">4.8.5</span> .pipe()</a></li>
+<a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="header-section-number">5.8</span> 函数</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#apply"><span class="header-section-number">5.8.1</span> .apply()</a></li>
+<li><a class="nav-link" href="#agg"><span class="header-section-number">5.8.2</span> .agg()</a></li>
+<li><a class="nav-link" href="#transform"><span class="header-section-number">5.8.3</span> .transform()</a></li>
+<li><a class="nav-link" href="#applymap"><span class="header-section-number">5.8.4</span> .applymap()</a></li>
+<li><a class="nav-link" href="#pipe"><span class="header-section-number">5.8.5</span> .pipe()</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E9%80%8F%E8%A7%86%E8%A1%A8"><span class="header-section-number">4.9</span> 透视表</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#pivot"><span class="header-section-number">4.9.1</span> .pivot()</a></li>
-<li><a class="nav-link" href="#pivot_table"><span class="header-section-number">4.9.2</span> .pivot_table()</a></li>
-<li><a class="nav-link" href="#pd.crosstab"><span class="header-section-number">4.9.3</span> pd.crosstab()</a></li>
-<li><a class="nav-link" href="#melt"><span class="header-section-number">4.9.4</span> melt</a></li>
+<a class="nav-link" href="#%E9%80%8F%E8%A7%86%E8%A1%A8"><span class="header-section-number">5.9</span> 透视表</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pivot"><span class="header-section-number">5.9.1</span> .pivot()</a></li>
+<li><a class="nav-link" href="#pivot_table"><span class="header-section-number">5.9.2</span> .pivot_table()</a></li>
+<li><a class="nav-link" href="#pd.crosstab"><span class="header-section-number">5.9.3</span> pd.crosstab()</a></li>
+<li><a class="nav-link" href="#melt"><span class="header-section-number">5.9.4</span> melt</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E5%88%86%E7%BB%84.groupby"><span class="header-section-number">4.10</span> 分组.groupby()</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E9%80%89%E5%8F%96"><span class="header-section-number">4.10.1</span> 选取</a></li>
-<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="header-section-number">4.10.2</span> 应用聚合函数</a></li>
-<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><span class="header-section-number">4.10.3</span> 应用统计函数</a></li>
-<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="header-section-number">4.10.4</span> 应用窗口函数</a></li>
-<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="header-section-number">4.10.5</span> 应用自定义函数</a></li>
-<li><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%AF%8F%E4%B8%AA%E7%BB%84"><span class="header-section-number">4.10.6</span> 迭代每个组</a></li>
+<a class="nav-link" href="#%E5%88%86%E7%BB%84.groupby"><span class="header-section-number">5.10</span> 分组.groupby()</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E9%80%89%E5%8F%96"><span class="header-section-number">5.10.1</span> 选取</a></li>
+<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="header-section-number">5.10.2</span> 应用聚合函数</a></li>
+<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%BB%9F%E8%AE%A1%E5%87%BD%E6%95%B0"><span class="header-section-number">5.10.3</span> 应用统计函数</a></li>
+<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="header-section-number">5.10.4</span> 应用窗口函数</a></li>
+<li><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="header-section-number">5.10.5</span> 应用自定义函数</a></li>
+<li><a class="nav-link" href="#%E8%BF%AD%E4%BB%A3%E6%AF%8F%E4%B8%AA%E7%BB%84"><span class="header-section-number">5.10.6</span> 迭代每个组</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%93%BE"><span class="header-section-number">4.11</span> 方法链</a></li>
+<li><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%93%BE"><span class="header-section-number">5.11</span> 方法链</a></li>
 <li>
-<a class="nav-link" href="#%E9%87%87%E6%A0%B7"><span class="header-section-number">4.12</span> 采样</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E9%87%8D%E6%8E%92%E5%BA%8F"><span class="header-section-number">4.12.1</span> 随机重排序</a></li>
-<li><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E9%87%87%E6%A0%B7"><span class="header-section-number">4.12.2</span> 随机采样</a></li>
+<a class="nav-link" href="#%E9%87%87%E6%A0%B7"><span class="header-section-number">5.12</span> 采样</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E9%87%8D%E6%8E%92%E5%BA%8F"><span class="header-section-number">5.12.1</span> 随机重排序</a></li>
+<li><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E9%87%87%E6%A0%B7"><span class="header-section-number">5.12.2</span> 随机采样</a></li>
 </ul>
 </li>
 </ul>

@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>第6章 matplotlib | wcl</title>
-<meta name="author" content="第6章 matplotlib | wcl">
+<title>第7章 matplotlib | wcl</title>
+<meta name="author" content="第7章 matplotlib | wcl">
 <meta name="description" content="import pandas as pd import numpy as np import re import datetime import matplotlib.pyplot as plt import matplotlib as mpl from matplotlib.lines import Line2D  from matplotlib.patches import...">
 <meta name="generator" content="bookdown 0.39 with bs4_book()">
-<meta property="og:title" content="第6章 matplotlib | wcl">
+<meta property="og:title" content="第7章 matplotlib | wcl">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://github.com/wangchenglong99/wangchenglong99.github.io/matplotlib.html">
 <meta property="og:description" content="import pandas as pd import numpy as np import re import datetime import matplotlib.pyplot as plt import matplotlib as mpl from matplotlib.lines import Line2D  from matplotlib.patches import...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第6章 matplotlib | wcl">
+<meta name="twitter:title" content="第7章 matplotlib | wcl">
 <meta name="twitter:description" content="import pandas as pd import numpy as np import re import datetime import matplotlib.pyplot as plt import matplotlib as mpl from matplotlib.lines import Line2D  from matplotlib.patches import...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -61,24 +61,25 @@
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> welcome</a></li>
 <li class="book-part">数据</li>
 <li><a class="" href="introduction.html">introduction</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">1</span> 数据编码与格式</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">2</span> 数据获取与存储</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">3</span> 数据清洗</a></li>
-<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">4</span> 数据操作</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">5</span> 时间序列</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81%E4%B8%8E%E6%A0%BC%E5%BC%8F.html"><span class="header-section-number">2</span> 数据编码与格式</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E8%8E%B7%E5%8F%96%E4%B8%8E%E5%AD%98%E5%82%A8.html"><span class="header-section-number">3</span> 数据获取与存储</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%B8%85%E6%B4%97.html"><span class="header-section-number">4</span> 数据清洗</a></li>
+<li><a class="" href="%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C.html"><span class="header-section-number">5</span> 数据操作</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97.html"><span class="header-section-number">6</span> 时间序列</a></li>
 <li class="book-part">可视化</li>
 <li><a class="" href="introduction-1.html">introduction</a></li>
-<li><a class="active" href="matplotlib.html"><span class="header-section-number">6</span> matplotlib</a></li>
-<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></li>
+<li><a class="active" href="matplotlib.html"><span class="header-section-number">7</span> matplotlib</a></li>
+<li><a class="" href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">8</span> 图表实例</a></li>
 <li class="book-part">数据库</li>
 <li><a class="" href="introduction-2.html">introduction</a></li>
-<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">8</span> mysql速查表</a></li>
-<li><a class="" href="pymysql.html"><span class="header-section-number">9</span> PyMysql</a></li>
+<li><a class="" href="mysql%E9%80%9F%E6%9F%A5%E8%A1%A8.html"><span class="header-section-number">9</span> mysql速查表</a></li>
+<li><a class="" href="pymysql.html"><span class="header-section-number">10</span> PyMysql</a></li>
 <li class="book-part">机器学习</li>
 <li><a class="" href="introduction-3.html">introduction</a></li>
-<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">10</span> 时间序列模型</a></li>
+<li><a class="" href="%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B.html"><span class="header-section-number">11</span> 时间序列模型</a></li>
 </ul>
 
         <div class="book-extra">
@@ -86,9 +87,9 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="matplotlib" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="matplotlib" class="section level1" number="7">
 <h1>
-<span class="header-section-number">第6章</span> matplotlib<a class="anchor" aria-label="anchor" href="#matplotlib"><i class="fas fa-link"></i></a>
+<span class="header-section-number">第7章</span> matplotlib<a class="anchor" aria-label="anchor" href="#matplotlib"><i class="fas fa-link"></i></a>
 </h1>
 <div class="sourceCode" id="cb345"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb345-1"><a href="matplotlib.html#cb345-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb345-2"><a href="matplotlib.html#cb345-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -103,18 +104,18 @@
 <span id="cb345-11"><a href="matplotlib.html#cb345-11" tabindex="-1"></a>plt.rcParams[<span class="st">'font.sans-serif'</span>]<span class="op">=</span>[<span class="st">'Simhei'</span>]<span class="op">;</span> <span class="co">#SimHei黑体 </span></span>
 <span id="cb345-12"><a href="matplotlib.html#cb345-12" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>]<span class="op">=</span><span class="va">False</span><span class="op">;</span> <span class="co">#正常显示图中负号</span></span></code></pre></div>
 <p><a href="https://datawhalechina.github.io/fantastic-matplotlib/"><strong>原文</strong></a></p>
-<div id="认识matplotlib" class="section level2" number="6.1">
+<div id="认识matplotlib" class="section level2" number="7.1">
 <h2>
-<span class="header-section-number">6.1</span> 认识matplotlib<a class="anchor" aria-label="anchor" href="#%E8%AE%A4%E8%AF%86matplotlib"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.1</span> 认识matplotlib<a class="anchor" aria-label="anchor" href="#%E8%AE%A4%E8%AF%86matplotlib"><i class="fas fa-link"></i></a>
 </h2>
 <p>Matplotlib是一个Python 2D绘图库，能够以多种硬拷贝格式和跨平台的交互式环境生成出版物质量的图形，用来绘制各种静态，动态，交互式的图表。</p>
 <p>Matplotlib可用于Python脚本，Python和IPython Shell、Jupyter notebook，Web应用程序服务器和各种图形用户界面工具包等。</p>
 <p>Matplotlib是Python数据可视化库中的泰斗，它已经成为python中公认的数据可视化工具，我们所熟知的pandas和seaborn的绘图接口其实也是基于matplotlib所作的高级封装。</p>
 <p>为了对matplotlib有更好的理解，让我们从一些最基本的概念开始认识它，再逐渐过渡到一些高级技巧中。</p>
 </div>
-<div id="一个最简单的绘图例子" class="section level2" number="6.2">
+<div id="一个最简单的绘图例子" class="section level2" number="7.2">
 <h2>
-<span class="header-section-number">6.2</span> 一个最简单的绘图例子<a class="anchor" aria-label="anchor" href="#%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%BB%98%E5%9B%BE%E4%BE%8B%E5%AD%90"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.2</span> 一个最简单的绘图例子<a class="anchor" aria-label="anchor" href="#%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%BB%98%E5%9B%BE%E4%BE%8B%E5%AD%90"><i class="fas fa-link"></i></a>
 </h2>
 <p>Matplotlib的图像是画在figure（如windows，jupyter窗体）上的，每一个figure又包含了一个或多个axes（一个可以指定坐标系的子区域）。最简单的创建figure以及axes的方式是通过<code>pyplot.subplots</code>命令，创建axes以后，可以使用<code>Axes.plot</code>绘制最简易的折线图。</p>
 <div class="sourceCode" id="cb346"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb346-1"><a href="matplotlib.html#cb346-1" tabindex="-1"></a>fig,ax <span class="op">=</span> plt.subplots()  <span class="co"># 创建一个包含一个axes的figure</span></span>
@@ -132,9 +133,9 @@
 <div class="sourceCode" id="cb347"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb347-1"><a href="matplotlib.html#cb347-1" tabindex="-1"></a>line <span class="op">=</span>plt.plot([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">3</span>]) </span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/simplify-3.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="figure的组成" class="section level2" number="6.3">
+<div id="figure的组成" class="section level2" number="7.3">
 <h2>
-<span class="header-section-number">6.3</span> Figure的组成<a class="anchor" aria-label="anchor" href="#figure%E7%9A%84%E7%BB%84%E6%88%90"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.3</span> Figure的组成<a class="anchor" aria-label="anchor" href="#figure%E7%9A%84%E7%BB%84%E6%88%90"><i class="fas fa-link"></i></a>
 </h2>
 <p>现在我们来深入看一下figure的组成。通过一张figure解剖图，我们可以看到一个完整的matplotlib图像通常会包括以下四个层级，这些层级也被称为容器（container），下一节会详细介绍。在matplotlib的世界中，我们将通过各种命令方法来操纵图像中的每一个部分，从而达到数据可视化的最终效果，一副完整的图像实际上是各类子元素的集合。</p>
 <ul>
@@ -145,9 +146,9 @@
 </ul>
 <div class="inline-figure"><img src="https://matplotlib.org/_images/anatomy.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="两种绘图接口" class="section level2" number="6.4">
+<div id="两种绘图接口" class="section level2" number="7.4">
 <h2>
-<span class="header-section-number">6.4</span> 两种绘图接口<a class="anchor" aria-label="anchor" href="#%E4%B8%A4%E7%A7%8D%E7%BB%98%E5%9B%BE%E6%8E%A5%E5%8F%A3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.4</span> 两种绘图接口<a class="anchor" aria-label="anchor" href="#%E4%B8%A4%E7%A7%8D%E7%BB%98%E5%9B%BE%E6%8E%A5%E5%8F%A3"><i class="fas fa-link"></i></a>
 </h2>
 <p>matplotlib提供了两种最常用的绘图接口</p>
 <ol style="list-style-type: decimal">
@@ -180,9 +181,9 @@
 <span id="cb349-10"><a href="matplotlib.html#cb349-10" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/second-access-3.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="通用绘图模板" class="section level2" number="6.5">
+<div id="通用绘图模板" class="section level2" number="7.5">
 <h2>
-<span class="header-section-number">6.5</span> 通用绘图模板<a class="anchor" aria-label="anchor" href="#%E9%80%9A%E7%94%A8%E7%BB%98%E5%9B%BE%E6%A8%A1%E6%9D%BF"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.5</span> 通用绘图模板<a class="anchor" aria-label="anchor" href="#%E9%80%9A%E7%94%A8%E7%BB%98%E5%9B%BE%E6%A8%A1%E6%9D%BF"><i class="fas fa-link"></i></a>
 </h2>
 <p>由于matplotlib的知识点非常繁杂，在实际使用过程中也不可能将全部API都记住，很多时候都是边用边查。因此这里提供一个通用的绘图基础模板，任何复杂的图表几乎都可以基于这个模板骨架填充内容而成。初学者刚开始学习时只需要牢记这一模板就足以应对大部分简单图表的绘制，在学习过程中可以将这个模板模块化，了解每个模块在做什么，在绘制复杂图表时如何修改，填充对应的模块。</p>
 <div class="sourceCode" id="cb350"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb350-1"><a href="matplotlib.html#cb350-1" tabindex="-1"></a><span class="co"># step1 准备数据</span></span>
@@ -206,22 +207,22 @@
 <span id="cb350-19"><a href="matplotlib.html#cb350-19" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/template-5.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="思考题" class="section level2" number="6.6">
+<div id="思考题" class="section level2" number="7.6">
 <h2>
-<span class="header-section-number">6.6</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.6</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>请思考两种绘图模式的优缺点和各自适合的使用场景</li>
 <li>在第五节绘图模板中我们是以OO模式作为例子展示的，请思考并写一个pyplot绘图模式的简单模板</li>
 </ul>
 </div>
-<div id="概述" class="section level2" number="6.7">
+<div id="概述" class="section level2" number="7.7">
 <h2>
-<span class="header-section-number">6.7</span> 概述<a class="anchor" aria-label="anchor" href="#%E6%A6%82%E8%BF%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.7</span> 概述<a class="anchor" aria-label="anchor" href="#%E6%A6%82%E8%BF%B0"><i class="fas fa-link"></i></a>
 </h2>
-<div id="matplotlib的三层api" class="section level3" number="6.7.1">
+<div id="matplotlib的三层api" class="section level3" number="7.7.1">
 <h3>
-<span class="header-section-number">6.7.1</span> matplotlib的三层api<a class="anchor" aria-label="anchor" href="#matplotlib%E7%9A%84%E4%B8%89%E5%B1%82api"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.7.1</span> matplotlib的三层api<a class="anchor" aria-label="anchor" href="#matplotlib%E7%9A%84%E4%B8%89%E5%B1%82api"><i class="fas fa-link"></i></a>
 </h3>
 <p>matplotlib的原理或者说基础逻辑是，用Artist对象在画布(canvas)上绘制(Render)图形。<br>
 就和人作画的步骤类似：</p>
@@ -234,9 +235,9 @@
 <p><code>matplotlib.backend_bases.FigureCanvas</code> 代表了绘图区，所有的图像都是在绘图区完成的<br><code>matplotlib.backend_bases.Renderer</code> 代表了渲染器，可以近似理解为画笔，控制如何在 FigureCanvas 上画图。<br><code>matplotlib.artist.Artist</code> 代表了具体的图表组件，即调用了Renderer的接口在Canvas上作图。<br>
 前两者处理程序和计算机的底层交互的事项，第三项Artist就是具体的调用接口来做出我们想要的图，比如图形、文本、线条的设定。所以通常来说，我们95%的时间，都是用来和matplotlib.artist.Artist类打交道的。</p>
 </div>
-<div id="artist的分类" class="section level3" number="6.7.2">
+<div id="artist的分类" class="section level3" number="7.7.2">
 <h3>
-<span class="header-section-number">6.7.2</span> Artist的分类<a class="anchor" aria-label="anchor" href="#artist%E7%9A%84%E5%88%86%E7%B1%BB"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.7.2</span> Artist的分类<a class="anchor" aria-label="anchor" href="#artist%E7%9A%84%E5%88%86%E7%B1%BB"><i class="fas fa-link"></i></a>
 </h3>
 <p>Artist有两种类型：<code>primitives</code> 和<code>containers</code>。</p>
 <p><code>primitive</code>是基本要素，它包含一些我们要在绘图区作图用到的标准图形对象，如<strong>曲线Line2D，文字text，矩形Rectangle，图像image</strong>等。</p>
@@ -306,15 +307,15 @@
 </table></div>
 </div>
 </div>
-<div id="基本元素---primitives" class="section level2" number="6.8">
+<div id="基本元素---primitives" class="section level2" number="7.8">
 <h2>
-<span class="header-section-number">6.8</span> 基本元素 - primitives<a class="anchor" aria-label="anchor" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0---primitives"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8</span> 基本元素 - primitives<a class="anchor" aria-label="anchor" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0---primitives"><i class="fas fa-link"></i></a>
 </h2>
 <p>各容器中可能会包含多种<code>基本要素-primitives</code>, 所以先介绍下primitives，再介绍容器。</p>
 <p>本章重点介绍下 <code>primitives</code> 的几种类型：<strong>曲线-Line2D，矩形-Rectangle，多边形-Polygon，图像-image</strong></p>
-<div id="dlines" class="section level3" number="6.8.1">
+<div id="dlines" class="section level3" number="7.8.1">
 <h3>
-<span class="header-section-number">6.8.1</span> 2DLines<a class="anchor" aria-label="anchor" href="#dlines"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.1</span> 2DLines<a class="anchor" aria-label="anchor" href="#dlines"><i class="fas fa-link"></i></a>
 </h3>
 <p>在matplotlib中曲线的绘制，主要是通过类 <code>matplotlib.lines.Line2D</code> 来完成的。</p>
 <p>matplotlib中<code>线-line</code>的含义：它表示的可以是连接所有顶点的实线样式，也可以是每个顶点的标记。此外，这条线也会受到绘画风格的影响，比如，我们可以创建虚线种类的线。</p>
@@ -342,9 +343,9 @@
 </ul>
 <p>其他详细参数可参考<a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html">Line2D官方文档</a></p>
 </div>
-<div id="如何设置line2d的属性" class="section level3" number="6.8.2">
+<div id="如何设置line2d的属性" class="section level3" number="7.8.2">
 <h3>
-<span class="header-section-number">6.8.2</span> 如何设置Line2D的属性<a class="anchor" aria-label="anchor" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AEline2d%E7%9A%84%E5%B1%9E%E6%80%A7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.2</span> 如何设置Line2D的属性<a class="anchor" aria-label="anchor" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AEline2d%E7%9A%84%E5%B1%9E%E6%80%A7"><i class="fas fa-link"></i></a>
 </h3>
 <p>有三种方法可以用设置线的属性。</p>
 <ol style="list-style-type: decimal">
@@ -376,9 +377,9 @@
 <div class="sourceCode" id="cb355"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb355-1"><a href="matplotlib.html#cb355-1" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/line2d-3-11.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="如何绘制lines" class="section level3" number="6.8.3">
+<div id="如何绘制lines" class="section level3" number="7.8.3">
 <h3>
-<span class="header-section-number">6.8.3</span> 如何绘制lines<a class="anchor" aria-label="anchor" href="#%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6lines"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.3</span> 如何绘制lines<a class="anchor" aria-label="anchor" href="#%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6lines"><i class="fas fa-link"></i></a>
 </h3>
 <ol style="list-style-type: decimal">
 <li>绘制直线line<br>
@@ -452,9 +453,9 @@
 <span id="cb364-6"><a href="matplotlib.html#cb364-6" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/errorbar-17.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="patches" class="section level3 tabset" number="6.8.4">
+<div id="patches" class="section level3 tabset" number="7.8.4">
 <h3>
-<span class="header-section-number">6.8.4</span> patches<a class="anchor" aria-label="anchor" href="#patches"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.4</span> patches<a class="anchor" aria-label="anchor" href="#patches"><i class="fas fa-link"></i></a>
 </h3>
 <p>matplotlib.patches.Patch类是二维图形类，并且它是众多二维图形的父类，它的所有子类见<a href="https://matplotlib.org/stable/api/patches_api.html">matplotlib.patches API</a> ，<br>
 Patch类的构造函数：</p>
@@ -465,9 +466,9 @@ hatch=None, fill=True, capstyle=None, joinstyle=None,
 **kwargs)</p>
 </blockquote>
 <p>本小节重点讲述三种最常见的子类，矩形，多边形和楔形。</p>
-<div id="rectangle-矩形" class="section level4" number="6.8.4.1">
+<div id="rectangle-矩形" class="section level4" number="7.8.4.1">
 <h4>
-<span class="header-section-number">6.8.4.1</span> Rectangle-矩形<a class="anchor" aria-label="anchor" href="#rectangle-%E7%9F%A9%E5%BD%A2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.4.1</span> Rectangle-矩形<a class="anchor" aria-label="anchor" href="#rectangle-%E7%9F%A9%E5%BD%A2"><i class="fas fa-link"></i></a>
 </h4>
 <p><code>Rectangle</code>矩形类在官网中的定义是： 通过锚点xy及其宽度和高度生成。
 Rectangle本身的主要比较简单，即xy控制锚点，width和height分别控制宽和高。它的构造函数：</p>
@@ -585,9 +586,9 @@ Rectangle本身的主要比较简单，即xy控制锚点，width和height分别�
 <div class="sourceCode" id="cb374"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb374-1"><a href="matplotlib.html#cb374-1" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/rectangle-bar-23.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="polygon-多边形" class="section level4" number="6.8.4.2">
+<div id="polygon-多边形" class="section level4" number="7.8.4.2">
 <h4>
-<span class="header-section-number">6.8.4.2</span> Polygon-多边形<a class="anchor" aria-label="anchor" href="#polygon-%E5%A4%9A%E8%BE%B9%E5%BD%A2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.4.2</span> Polygon-多边形<a class="anchor" aria-label="anchor" href="#polygon-%E5%A4%9A%E8%BE%B9%E5%BD%A2"><i class="fas fa-link"></i></a>
 </h4>
 <p>matplotlib.patches.Polygon类是多边形类。它的构造函数：</p>
 <blockquote>
@@ -608,9 +609,9 @@ closed为True则指定多边形将起点和终点重合从而显式关闭多边�
 <span id="cb375-6"><a href="matplotlib.html#cb375-6" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/fill-color-25.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="wedge-契形" class="section level4" number="6.8.4.3">
+<div id="wedge-契形" class="section level4" number="7.8.4.3">
 <h4>
-<span class="header-section-number">6.8.4.3</span> Wedge-契形<a class="anchor" aria-label="anchor" href="#wedge-%E5%A5%91%E5%BD%A2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.4.3</span> Wedge-契形<a class="anchor" aria-label="anchor" href="#wedge-%E5%A5%91%E5%BD%A2"><i class="fas fa-link"></i></a>
 </h4>
 <p>matplotlib.patches.Wedge类是楔型类。其基类是matplotlib.patches.Patch，它的构造函数：</p>
 <blockquote>
@@ -645,7 +646,7 @@ closed为True则指定多边形将起点和终点重合从而显式关闭多边�
 <span id="cb376-4"><a href="matplotlib.html#cb376-4" tabindex="-1"></a>explode <span class="op">=</span> (<span class="dv">0</span>, <span class="fl">0.1</span>, <span class="dv">0</span>, <span class="dv">0</span>) </span>
 <span id="cb376-5"><a href="matplotlib.html#cb376-5" tabindex="-1"></a>fig1, ax1 <span class="op">=</span> plt.subplots() </span>
 <span id="cb376-6"><a href="matplotlib.html#cb376-6" tabindex="-1"></a>ax1.pie(sizes, explode<span class="op">=</span>explode, labels<span class="op">=</span>labels, autopct<span class="op">=</span><span class="st">'</span><span class="sc">%1.1f%%</span><span class="st">'</span>, shadow<span class="op">=</span><span class="va">True</span>, startangle<span class="op">=</span><span class="dv">90</span>) </span></code></pre></div>
-<pre class="scroll-200"><code>([&lt;matplotlib.patches.Wedge object at 0x000002076D7EEF60&gt;, &lt;matplotlib.patches.Wedge object at 0x000002076B2B0D10&gt;, &lt;matplotlib.patches.Wedge object at 0x0000020770C93CB0&gt;, &lt;matplotlib.patches.Wedge object at 0x0000020770CC00E0&gt;], [Text(-0.4993895680663527, 0.9801071672559598, 'Frogs'), Text(-1.1412677917792124, -0.3708204787324995, 'Hogs'), Text(0.9801072140121813, -0.4993894763020948, 'Dogs'), Text(0.33991864973549485, 1.0461621822461364, 'Logs')], [Text(-0.2723943098543742, 0.5346039094123416, '15.0%'), Text(-0.6657395452045406, -0.2163119459272914, '30.0%'), Text(0.5346039349157352, -0.27239425980114257, '45.0%'), Text(0.1854101725829972, 0.5706339175888016, '10.0%')])</code></pre>
+<pre class="scroll-200"><code>([&lt;matplotlib.patches.Wedge object at 0x000001D086F5D3D0&gt;, &lt;matplotlib.patches.Wedge object at 0x000001D0832055E0&gt;, &lt;matplotlib.patches.Wedge object at 0x000001D086729970&gt;, &lt;matplotlib.patches.Wedge object at 0x000001D086729490&gt;], [Text(-0.4993895680663527, 0.9801071672559598, 'Frogs'), Text(-1.1412677917792124, -0.3708204787324995, 'Hogs'), Text(0.9801072140121813, -0.4993894763020948, 'Dogs'), Text(0.33991864973549485, 1.0461621822461364, 'Logs')], [Text(-0.2723943098543742, 0.5346039094123416, '15.0%'), Text(-0.6657395452045406, -0.2163119459272914, '30.0%'), Text(0.5346039349157352, -0.27239425980114257, '45.0%'), Text(0.1854101725829972, 0.5706339175888016, '10.0%')])</code></pre>
 <div class="sourceCode" id="cb378"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb378-1"><a href="matplotlib.html#cb378-1" tabindex="-1"></a>ax1.axis(<span class="st">'equal'</span>)</span></code></pre></div>
 <pre class="scroll-200"><code>(-1.1998593997207165, 1.1047438740833693, -1.0999843660947275, 1.0999992555283205)</code></pre>
 <div class="sourceCode" id="cb380"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb380-1"><a href="matplotlib.html#cb380-1" tabindex="-1"></a>plt.show() <span class="co"># Equal aspect ratio ensures that pie is drawn as a circle. </span></span></code></pre></div>
@@ -670,9 +671,9 @@ closed为True则指定多边形将起点和终点重合从而显式关闭多边�
 <div class="inline-figure"><img src="matplotlib_files/figure-html/wedge-pie-29.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="collections" class="section level3" number="6.8.5">
+<div id="collections" class="section level3" number="7.8.5">
 <h3>
-<span class="header-section-number">6.8.5</span> collections<a class="anchor" aria-label="anchor" href="#collections"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.5</span> collections<a class="anchor" aria-label="anchor" href="#collections"><i class="fas fa-link"></i></a>
 </h3>
 <p>collections类是用来绘制一组对象的集合，collections有许多不同的子类，如RegularPolyCollection, CircleCollection, Pathcollection, 分别对应不同的集合子类型。其中比较常用的就是散点图，它是属于PathCollection子类，scatter方法提供了该类的封装，根据x与y绘制不同大小或颜色标记的散点图。 它的构造方法：</p>
 <blockquote>
@@ -703,9 +704,9 @@ closed为True则指定多边形将起点和终点重合从而显式关闭多边�
 <span id="cb382-6"><a href="matplotlib.html#cb382-6" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/scatter-31.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="images" class="section level3" number="6.8.6">
+<div id="images" class="section level3" number="7.8.6">
 <h3>
-<span class="header-section-number">6.8.6</span> images<a class="anchor" aria-label="anchor" href="#images"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.8.6</span> images<a class="anchor" aria-label="anchor" href="#images"><i class="fas fa-link"></i></a>
 </h3>
 <p>images是matplotlib中绘制image图像的类，其中最常用的imshow可以根据数组绘制成图像，它的构造函数：</p>
 <blockquote>
@@ -734,15 +735,15 @@ closed为True则指定多边形将起点和终点重合从而显式关闭多边�
 <div class="inline-figure"><img src="matplotlib_files/figure-html/imshow-33.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="对象容器---object-container" class="section level2" number="6.9">
+<div id="对象容器---object-container" class="section level2" number="7.9">
 <h2>
-<span class="header-section-number">6.9</span> 对象容器 - Object container<a class="anchor" aria-label="anchor" href="#%E5%AF%B9%E8%B1%A1%E5%AE%B9%E5%99%A8---object-container"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9</span> 对象容器 - Object container<a class="anchor" aria-label="anchor" href="#%E5%AF%B9%E8%B1%A1%E5%AE%B9%E5%99%A8---object-container"><i class="fas fa-link"></i></a>
 </h2>
 <p>容器会包含一些<code>primitives</code>，并且容器还有它自身的属性。<br>
 比如<code>Axes Artist</code>，它是一种容器，它包含了很多<code>primitives</code>，比如<code>Line2D</code>，<code>Text</code>；同时，它也有自身的属性，比如<code>xscal</code>，用来控制X轴是<code>linear</code>还是<code>log</code>的。</p>
-<div id="figure容器" class="section level3" number="6.9.1">
+<div id="figure容器" class="section level3" number="7.9.1">
 <h3>
-<span class="header-section-number">6.9.1</span> Figure容器<a class="anchor" aria-label="anchor" href="#figure%E5%AE%B9%E5%99%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9.1</span> Figure容器<a class="anchor" aria-label="anchor" href="#figure%E5%AE%B9%E5%99%A8"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>matplotlib.figure.Figure</code>是<code>Artist</code>最顶层的<code>container</code>对象容器，它包含了图表中的所有元素。一张图表的背景就是在<code>Figure.patch</code>的一个矩形<code>Rectangle</code>。<br>
 当我们向图表添加<code>Figure.add_subplot()</code>或者<code>Figure.add_axes()</code>元素时，这些都会被添加到<code>Figure.axes</code>列表中。</p>
@@ -766,9 +767,9 @@ closed为True则指定多边形将起点和终点重合从而显式关闭多边�
 <p><strong>Figure容器的常见属性：</strong></p>
 <p><code>Figure.patch</code>属性：Figure的背景矩形<br><code>Figure.axes</code>属性：一个Axes实例的列表（包括Subplot)<br><code>Figure.images</code>属性：一个FigureImages patch列表<br><code>Figure.lines</code>属性：一个Line2D实例的列表（很少使用）<br><code>Figure.legends</code>属性：一个Figure Legend实例列表（不同于Axes.legends)<br><code>Figure.texts</code>属性：一个Figure Text实例列表</p>
 </div>
-<div id="axes容器" class="section level3" number="6.9.2">
+<div id="axes容器" class="section level3" number="7.9.2">
 <h3>
-<span class="header-section-number">6.9.2</span> Axes容器<a class="anchor" aria-label="anchor" href="#axes%E5%AE%B9%E5%99%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9.2</span> Axes容器<a class="anchor" aria-label="anchor" href="#axes%E5%AE%B9%E5%99%A8"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>matplotlib.axes.Axes</code>是matplotlib的核心。大量的用于绘图的<code>Artist</code>存放在它内部，并且它有许多辅助方法来创建和添加<code>Artist</code>给它自己，而且它也有许多赋值方法来访问和修改这些<code>Artist</code>。</p>
 <p>和<code>Figure</code>容器类似，<code>Axes</code>包含了一个patch属性，对于笛卡尔坐标系而言，它是一个<code>Rectangle</code>；对于极坐标而言，它是一个<code>Circle</code>。这个patch属性决定了绘图区域的形状、背景和边框。</p>
@@ -788,9 +789,9 @@ closed为True则指定多边形将起点和终点重合从而显式关闭多边�
 <p><strong>Axes容器</strong>的常见属性有：</p>
 <p><code>artists</code>: Artist实例列表<br><code>patch</code>: Axes所在的矩形实例<br><code>collections</code>: Collection实例<br><code>images</code>: Axes图像<br><code>legends</code>: Legend 实例<br><code>lines</code>: Line2D 实例<br><code>patches</code>: Patch 实例<br><code>texts</code>: Text 实例<br><code>xaxis</code>: matplotlib.axis.XAxis 实例<br><code>yaxis</code>: matplotlib.axis.YAxis 实例</p>
 </div>
-<div id="axis容器" class="section level3" number="6.9.3">
+<div id="axis容器" class="section level3" number="7.9.3">
 <h3>
-<span class="header-section-number">6.9.3</span> Axis容器<a class="anchor" aria-label="anchor" href="#axis%E5%AE%B9%E5%99%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9.3</span> Axis容器<a class="anchor" aria-label="anchor" href="#axis%E5%AE%B9%E5%99%A8"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>matplotlib.axis.Axis</code>实例处理<code>tick line</code>、<code>grid line</code>、<code>tick label</code>以及<code>axis label</code>的绘制，它包括坐标轴上的刻度线、刻度<code>label</code>、坐标网格、坐标轴标题。通常你可以独立的配置y轴的左边刻度以及右边的刻度，也可以独立地配置x轴的上边刻度以及下边的刻度。</p>
 <p>刻度包括主刻度和次刻度，它们都是Tick刻度对象。</p>
@@ -839,9 +840,9 @@ closed为True则指定多边形将起点和终点重合从而显式关闭多边�
 <span id="cb396-19"><a href="matplotlib.html#cb396-19" tabindex="-1"></a>    line.set_markeredgewidth(<span class="dv">2</span>)<span class="co"># marker粗细</span></span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/axis-container2-43.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="tick容器" class="section level3" number="6.9.4">
+<div id="tick容器" class="section level3" number="7.9.4">
 <h3>
-<span class="header-section-number">6.9.4</span> Tick容器<a class="anchor" aria-label="anchor" href="#tick%E5%AE%B9%E5%99%A8"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.9.4</span> Tick容器<a class="anchor" aria-label="anchor" href="#tick%E5%AE%B9%E5%99%A8"><i class="fas fa-link"></i></a>
 </h3>
 <p><code>matplotlib.axis.Tick</code>是从<code>Figure</code>到<code>Axes</code>到<code>Axis</code>到<code>Tick</code>中最末端的容器对象。<br><code>Tick</code>包含了<code>tick</code>、<code>grid line</code>实例以及对应的<code>label</code>。</p>
 <p>所有的这些都可以通过<code>Tick</code>的属性获取，常见的<code>tick</code>属性有<br><code>Tick.tick1line</code>：Line2D实例<br><code>Tick.tick2line</code>：Line2D实例<br><code>Tick.gridline</code>：Line2D实例<br><code>Tick.label1</code>：Text实例<br><code>Tick.label2</code>：Text实例</p>
@@ -862,9 +863,9 @@ x轴分为上下两个，因此tick1对应下侧的轴；tick2对应上侧的轴
 <div class="inline-figure"><img src="matplotlib_files/figure-html/tick-1-45.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="思考题-1" class="section level2" number="6.10">
+<div id="思考题-1" class="section level2" number="7.10">
 <h2>
-<span class="header-section-number">6.10</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.10</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98-1"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li><p>primitives 和 container的区别和联系是什么，分别用于控制可视化图表中的哪些要素</p></li>
@@ -877,19 +878,19 @@ x轴分为上下两个，因此tick1对应下侧的轴；tick2对应上侧的轴
 </li>
 </ul>
 </div>
-<div id="参考资料" class="section level2" number="6.11">
+<div id="参考资料" class="section level2" number="7.11">
 <h2>
-<span class="header-section-number">6.11</span> 参考资料<a class="anchor" aria-label="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.11</span> 参考资料<a class="anchor" aria-label="anchor" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><i class="fas fa-link"></i></a>
 </h2>
 <p><a href="https://zhuanlan.zhihu.com/p/32693665">1. matplotlib设计的基本逻辑</a><br><a href="https://www.bookstack.cn/read/huaxiaozhuan-ai/spilt.2.333f5abdbabf383d.md">2. AI算法工程师手册</a></p>
 </div>
-<div id="子图" class="section level2" number="6.12">
+<div id="子图" class="section level2" number="7.12">
 <h2>
-<span class="header-section-number">6.12</span> 子图<a class="anchor" aria-label="anchor" href="#%E5%AD%90%E5%9B%BE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.12</span> 子图<a class="anchor" aria-label="anchor" href="#%E5%AD%90%E5%9B%BE"><i class="fas fa-link"></i></a>
 </h2>
-<div id="使用-plt.subplots-绘制均匀状态下的子图" class="section level3" number="6.12.1">
+<div id="使用-plt.subplots-绘制均匀状态下的子图" class="section level3" number="7.12.1">
 <h3>
-<span class="header-section-number">6.12.1</span> 使用 <code>plt.subplots</code> 绘制均匀状态下的子图<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8-plt.subplots-%E7%BB%98%E5%88%B6%E5%9D%87%E5%8C%80%E7%8A%B6%E6%80%81%E4%B8%8B%E7%9A%84%E5%AD%90%E5%9B%BE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.12.1</span> 使用 <code>plt.subplots</code> 绘制均匀状态下的子图<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8-plt.subplots-%E7%BB%98%E5%88%B6%E5%9D%87%E5%8C%80%E7%8A%B6%E6%80%81%E4%B8%8B%E7%9A%84%E5%AD%90%E5%9B%BE"><i class="fas fa-link"></i></a>
 </h3>
 <p>返回元素分别是画布和子图构成的列表，第一个数字为行，第二个为列，不传入时默认值都为1</p>
 <p><code>figsize</code> 参数可以指定整个画布的大小</p>
@@ -938,9 +939,9 @@ x轴分为上下两个，因此tick1对应下侧的轴；tick2对应上侧的轴
 </p>
 <div class="inline-figure"><img src="http://www.hinews.cn/news/pic/003/205/569/00320556959_f01764d0.jpg" width="300" align="bottom"></div>
 </div>
-<div id="使用-gridspec-绘制非均匀子图" class="section level3" number="6.12.2">
+<div id="使用-gridspec-绘制非均匀子图" class="section level3" number="7.12.2">
 <h3>
-<span class="header-section-number">6.12.2</span> 使用 <code>GridSpec</code> 绘制非均匀子图<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8-gridspec-%E7%BB%98%E5%88%B6%E9%9D%9E%E5%9D%87%E5%8C%80%E5%AD%90%E5%9B%BE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.12.2</span> 使用 <code>GridSpec</code> 绘制非均匀子图<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8-gridspec-%E7%BB%98%E5%88%B6%E9%9D%9E%E5%9D%87%E5%8C%80%E5%AD%90%E5%9B%BE"><i class="fas fa-link"></i></a>
 </h3>
 <p>所谓非均匀包含两层含义，第一是指图的比例大小不同但没有跨行或跨列，第二是指图为跨列或跨行状态</p>
 <p>利用 <code>add_gridspec</code> 可以指定相对宽度比例 <code>width_ratios</code> 和相对高度比例参数 <code>height_ratios</code></p>
@@ -981,9 +982,9 @@ x轴分为上下两个，因此tick1对应下侧的轴；tick2对应上侧的轴
 <div class="inline-figure"><img src="matplotlib_files/figure-html/add_gridspec2-55.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="子图上的方法" class="section level2" number="6.13">
+<div id="子图上的方法" class="section level2" number="7.13">
 <h2>
-<span class="header-section-number">6.13</span> 子图上的方法<a class="anchor" aria-label="anchor" href="#%E5%AD%90%E5%9B%BE%E4%B8%8A%E7%9A%84%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.13</span> 子图上的方法<a class="anchor" aria-label="anchor" href="#%E5%AD%90%E5%9B%BE%E4%B8%8A%E7%9A%84%E6%96%B9%E6%B3%95"><i class="fas fa-link"></i></a>
 </h2>
 <p>补充介绍一些子图上的方法</p>
 <p>常用直线的画法为： <code>axhline, axvline, axline</code> （水平、垂直、任意方向）</p>
@@ -1008,9 +1009,9 @@ x轴分为上下两个，因此tick1对应下侧的轴；tick2对应上侧的轴
 <span id="cb405-8"><a href="matplotlib.html#cb405-8" tabindex="-1"></a>fig.tight_layout()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/set-xscale-61.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="思考题-2" class="section level2" number="6.14">
+<div id="思考题-2" class="section level2" number="7.14">
 <h2>
-<span class="header-section-number">6.14</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.14</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>墨尔本1981年至1990年的每月温度情况</li>
@@ -1024,14 +1025,14 @@ x轴分为上下两个，因此tick1对应下侧的轴；tick2对应上侧的轴
 <p>用 <code>np.random.randn(2, 150)</code> 生成一组二维数据，使用两种非均匀子图的分割方法，做出该数据对应的散点图和边际分布图</p>
 <div class="inline-figure"><img src="https://s1.ax1x.com/2020/11/01/B0pEnS.png" width="400" height="400" align="bottom"></div>
 </div>
-<div id="figure和axes上的文本" class="section level2" number="6.15">
+<div id="figure和axes上的文本" class="section level2" number="7.15">
 <h2>
-<span class="header-section-number">6.15</span> Figure和Axes上的文本<a class="anchor" aria-label="anchor" href="#figure%E5%92%8Caxes%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.15</span> Figure和Axes上的文本<a class="anchor" aria-label="anchor" href="#figure%E5%92%8Caxes%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><i class="fas fa-link"></i></a>
 </h2>
 <p>Matplotlib具有广泛的文本支持，包括对数学表达式的支持、对栅格和矢量输出的TrueType支持、具有任意旋转的换行分隔文本以及Unicode支持。</p>
-<div id="文本api示例" class="section level3" number="6.15.1">
+<div id="文本api示例" class="section level3" number="7.15.1">
 <h3>
-<span class="header-section-number">6.15.1</span> 文本API示例<a class="anchor" aria-label="anchor" href="#%E6%96%87%E6%9C%ACapi%E7%A4%BA%E4%BE%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.15.1</span> 文本API示例<a class="anchor" aria-label="anchor" href="#%E6%96%87%E6%9C%ACapi%E7%A4%BA%E4%BE%8B"><i class="fas fa-link"></i></a>
 </h3>
 <p>下面的命令是介绍了通过pyplot API和objected-oriented API分别创建文本的方式。</p>
 <div class="inline-table"><table class="table table-sm">
@@ -1111,9 +1112,9 @@ x轴分为上下两个，因此tick1对应下侧的轴；tick2对应上侧的轴
 <span id="cb408-11"><a href="matplotlib.html#cb408-11" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/text-api-63.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="text---子图上的文本" class="section level3" number="6.15.2">
+<div id="text---子图上的文本" class="section level3" number="7.15.2">
 <h3>
-<span class="header-section-number">6.15.2</span> text - 子图上的文本<a class="anchor" aria-label="anchor" href="#text---%E5%AD%90%E5%9B%BE%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.15.2</span> text - 子图上的文本<a class="anchor" aria-label="anchor" href="#text---%E5%AD%90%E5%9B%BE%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><i class="fas fa-link"></i></a>
 </h3>
 <p>text的调用方式为<code>Axes.text(x, y, s, fontdict=None, **kwargs)</code><br>
 其中<code>x</code>,<code>y</code>为文本出现的位置，默认状态下即为当前坐标系下的坐标值，<br><code>s</code>为文本的内容，<br><code>fontdict</code>是可选参数，用于覆盖默认的文本属性，<br><code>**kwargs</code>为关键字参数，也可以用于传入文本样式参数</p>
@@ -1200,9 +1201,9 @@ x轴分为上下两个，因此tick1对应下侧的轴；tick2对应上侧的轴
 </tbody>
 </table></div>
 </div>
-<div id="xlabel和ylabel---子图的xy轴标签" class="section level3" number="6.15.3">
+<div id="xlabel和ylabel---子图的xy轴标签" class="section level3" number="7.15.3">
 <h3>
-<span class="header-section-number">6.15.3</span> xlabel和ylabel - 子图的x，y轴标签<a class="anchor" aria-label="anchor" href="#xlabel%E5%92%8Cylabel---%E5%AD%90%E5%9B%BE%E7%9A%84xy%E8%BD%B4%E6%A0%87%E7%AD%BE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.15.3</span> xlabel和ylabel - 子图的x，y轴标签<a class="anchor" aria-label="anchor" href="#xlabel%E5%92%8Cylabel---%E5%AD%90%E5%9B%BE%E7%9A%84xy%E8%BD%B4%E6%A0%87%E7%AD%BE"><i class="fas fa-link"></i></a>
 </h3>
 <p>xlabel的调用方式为<code>Axes.set_xlabel(xlabel, fontdict=None, labelpad=None, *, loc=None, **kwargs)</code><br>
 ylabel方式类似，这里不重复写出。<br>
@@ -1219,9 +1220,9 @@ ylabel方式类似，这里不重复写出。<br>
 <span id="cb410-10"><a href="matplotlib.html#cb410-10" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/xylabel-67.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="title和suptitle---子图和画布的标题" class="section level3" number="6.15.4">
+<div id="title和suptitle---子图和画布的标题" class="section level3" number="7.15.4">
 <h3>
-<span class="header-section-number">6.15.4</span> title和suptitle - 子图和画布的标题<a class="anchor" aria-label="anchor" href="#title%E5%92%8Csuptitle---%E5%AD%90%E5%9B%BE%E5%92%8C%E7%94%BB%E5%B8%83%E7%9A%84%E6%A0%87%E9%A2%98"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.15.4</span> title和suptitle - 子图和画布的标题<a class="anchor" aria-label="anchor" href="#title%E5%92%8Csuptitle---%E5%AD%90%E5%9B%BE%E5%92%8C%E7%94%BB%E5%B8%83%E7%9A%84%E6%A0%87%E9%A2%98"><i class="fas fa-link"></i></a>
 </h3>
 <p>title的调用方式为<code>Axes.set_title(label, fontdict=None, loc=None, pad=None, *, y=None, **kwargs)</code><br>
 其中label为子图标签的内容，<code>fontdict</code>,<code>loc</code>,<code>**kwargs</code>和之前小节相同不重复介绍<br><code>pad</code>是指标题偏离图表顶部的距离，默认为6<br><code>y</code>是title所在子图垂向的位置。默认值为1，即title位于子图的顶部。</p>
@@ -1236,9 +1237,9 @@ ylabel方式类似，这里不重复写出。<br>
 <span id="cb411-7"><a href="matplotlib.html#cb411-7" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/title-69.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="annotate---子图的注解" class="section level3" number="6.15.5">
+<div id="annotate---子图的注解" class="section level3" number="7.15.5">
 <h3>
-<span class="header-section-number">6.15.5</span> annotate - 子图的注解<a class="anchor" aria-label="anchor" href="#annotate---%E5%AD%90%E5%9B%BE%E7%9A%84%E6%B3%A8%E8%A7%A3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.15.5</span> annotate - 子图的注解<a class="anchor" aria-label="anchor" href="#annotate---%E5%AD%90%E5%9B%BE%E7%9A%84%E6%B3%A8%E8%A7%A3"><i class="fas fa-link"></i></a>
 </h3>
 <p>annotate的调用方式为<code>Axes.annotate(text, xy, *args, **kwargs)</code><br>
 其中<code>text</code>为注解的内容，<br><code>xy</code>为注解箭头指向的坐标，<br>
@@ -1254,9 +1255,9 @@ ylabel方式类似，这里不重复写出。<br>
 <span id="cb412-8"><a href="matplotlib.html#cb412-8" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/annotate-71.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="字体的属性设置" class="section level3" number="6.15.6">
+<div id="字体的属性设置" class="section level3" number="7.15.6">
 <h3>
-<span class="header-section-number">6.15.6</span> 字体的属性设置<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E4%BD%93%E7%9A%84%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.15.6</span> 字体的属性设置<a class="anchor" aria-label="anchor" href="#%E5%AD%97%E4%BD%93%E7%9A%84%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE"><i class="fas fa-link"></i></a>
 </h3>
 <p>字体设置一般有全局字体设置和自定义局部字体设置两种方法。</p>
 <p><a href="https://www.cnblogs.com/chendc/p/9298832.html">为方便在图中加入合适的字体，可以尝试了解中文字体的英文名称,该链接告诉了常用中文的英文名称</a></p>
@@ -1276,14 +1277,14 @@ ylabel方式类似，这里不重复写出。<br>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/font-1-73.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="tick上的文本" class="section level2" number="6.16">
+<div id="tick上的文本" class="section level2" number="7.16">
 <h2>
-<span class="header-section-number">6.16</span> Tick上的文本<a class="anchor" aria-label="anchor" href="#tick%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.16</span> Tick上的文本<a class="anchor" aria-label="anchor" href="#tick%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><i class="fas fa-link"></i></a>
 </h2>
 <p>设置tick（刻度）和ticklabel（刻度标签）也是可视化中经常需要操作的步骤，matplotlib既提供了自动生成刻度和刻度标签的模式（默认状态），同时也提供了许多让使用者灵活设置的方式。</p>
-<div id="简单模式" class="section level3" number="6.16.1">
+<div id="简单模式" class="section level3" number="7.16.1">
 <h3>
-<span class="header-section-number">6.16.1</span> 简单模式<a class="anchor" aria-label="anchor" href="#%E7%AE%80%E5%8D%95%E6%A8%A1%E5%BC%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.16.1</span> 简单模式<a class="anchor" aria-label="anchor" href="#%E7%AE%80%E5%8D%95%E6%A8%A1%E5%BC%8F"><i class="fas fa-link"></i></a>
 </h3>
 <p>可以使用axis的<code>set_ticks</code>方法手动设置标签位置，使用axis的<code>set_ticklabels</code>方法手动设置标签格式</p>
 <div class="sourceCode" id="cb415"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb415-1"><a href="matplotlib.html#cb415-1" tabindex="-1"></a>x1 <span class="op">=</span> np.linspace(<span class="fl">0.0</span>, <span class="fl">5.0</span>, <span class="dv">100</span>)</span>
@@ -1325,17 +1326,17 @@ ylabel方式类似，这里不重复写出。<br>
 <div class="sourceCode" id="cb420"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb420-1"><a href="matplotlib.html#cb420-1" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/set_xticklabels2-79.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="tick-locators-and-formatters" class="section level3" number="6.16.2">
+<div id="tick-locators-and-formatters" class="section level3" number="7.16.2">
 <h3>
-<span class="header-section-number">6.16.2</span> Tick Locators and Formatters<a class="anchor" aria-label="anchor" href="#tick-locators-and-formatters"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.16.2</span> Tick Locators and Formatters<a class="anchor" aria-label="anchor" href="#tick-locators-and-formatters"><i class="fas fa-link"></i></a>
 </h3>
 <p>除了上述的简单模式，还可以使用<code>Tick Locators and Formatters</code>完成对于刻度位置和刻度标签的设置。
 其中<a href="https://matplotlib.org/api/_as_gen/matplotlib.axis.Axis.set_major_locator.html#matplotlib.axis.Axis.set_major_locator">Axis.set_major_locator</a>和<a href="https://matplotlib.org/api/_as_gen/matplotlib.axis.Axis.set_minor_locator.html#matplotlib.axis.Axis.set_minor_locator">Axis.set_minor_locator</a>方法用来设置标签的位置，<a href="https://matplotlib.org/api/_as_gen/matplotlib.axis.Axis.set_major_formatter.html#matplotlib.axis.Axis.set_major_formatter">Axis.set_major_formatter</a>和<a href="https://matplotlib.org/api/_as_gen/matplotlib.axis.Axis.set_minor_formatter.html#matplotlib.axis.Axis.set_minor_formatter">Axis.set_minor_formatter</a>方法用来设置标签的格式。这种方式的好处是不用显式地列举出刻度值列表。</p>
 <p>set_major_formatter和set_minor_formatter这两个formatter格式命令可以接收字符串格式（matplotlib.ticker.StrMethodFormatter）或函数参数（matplotlib.ticker.FuncFormatter）来设置刻度值的格式 。</p>
 </div>
-<div id="tick-formatters" class="section level3" number="6.16.3">
+<div id="tick-formatters" class="section level3" number="7.16.3">
 <h3>
-<span class="header-section-number">6.16.3</span> Tick Formatters<a class="anchor" aria-label="anchor" href="#tick-formatters"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.16.3</span> Tick Formatters<a class="anchor" aria-label="anchor" href="#tick-formatters"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb421"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb421-1"><a href="matplotlib.html#cb421-1" tabindex="-1"></a><span class="co"># 接收字符串格式的例子</span></span>
 <span id="cb421-2"><a href="matplotlib.html#cb421-2" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>), tight_layout<span class="op">=</span><span class="va">True</span>)</span>
@@ -1366,9 +1367,9 @@ ylabel方式类似，这里不重复写出。<br>
 <span id="cb422-12"><a href="matplotlib.html#cb422-12" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/tick-function-83.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="tick-locators" class="section level3" number="6.16.4">
+<div id="tick-locators" class="section level3" number="7.16.4">
 <h3>
-<span class="header-section-number">6.16.4</span> Tick Locators<a class="anchor" aria-label="anchor" href="#tick-locators"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.16.4</span> Tick Locators<a class="anchor" aria-label="anchor" href="#tick-locators"><i class="fas fa-link"></i></a>
 </h3>
 <p>在普通的绘图中，我们可以直接通过上图的set_ticks进行设置刻度的位置，缺点是需要自己指定或者接受matplotlib默认给定的刻度。当需要更改刻度的位置时，matplotlib给了常用的几种locator的类型。如果要绘制更复杂的图，可以先设置locator的类型，然后通过axs.xaxis.set_major_locator(locator)绘制即可</p>
 <pre><code>locator=plt.MaxNLocator(nbins=7)#自动选择合适的位置，并且刻度之间最多不超过7（nbins）个间隔
@@ -1411,9 +1412,9 @@ locator=plt.LinearLocator(numticks=5)#线性划分5等分，4个刻度  </code><
 <div class="inline-figure"><img src="matplotlib_files/figure-html/tick-date-87.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="legend图例" class="section level2" number="6.17">
+<div id="legend图例" class="section level2" number="7.17">
 <h2>
-<span class="header-section-number">6.17</span> legend（图例）<a class="anchor" aria-label="anchor" href="#legend%E5%9B%BE%E4%BE%8B"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.17</span> legend（图例）<a class="anchor" aria-label="anchor" href="#legend%E5%9B%BE%E4%BE%8B"><i class="fas fa-link"></i></a>
 </h2>
 <p>在具体学习图例之前，首先解释几个术语：<br><strong>legend entry（图例条目)</strong><br>
 每个图例由一个或多个legend entries组成。一个entry包含一个key和其对应的label。<br><strong>legend key（图例键)</strong><br>
@@ -1511,9 +1512,9 @@ ax.legend(loc=‘upper center’) 等同于ax.legend(loc=9)</p>
 <span id="cb429-4"><a href="matplotlib.html#cb429-4" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/legend3-95.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="思考题-3" class="section level2" number="6.18">
+<div id="思考题-3" class="section level2" number="7.18">
 <h2>
-<span class="header-section-number">6.18</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.18</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98-3"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>请尝试使用两种方式模仿画出下面的图表(重点是柱状图上的标签)，本文学习的text方法和matplotlib自带的柱状图标签方法bar_label</li>
@@ -1524,15 +1525,15 @@ ax.legend(loc=‘upper center’) 等同于ax.legend(loc=9)</p>
 关于绘图样式，常见的有3种方法，分别是修改预定义样式，自定义样式和rcparams。<br>
 关于颜色使用，本章介绍了常见的5种表示单色颜色的基本方法，以及colormap多色显示的方法。</p>
 </div>
-<div id="matplotlib的绘图样式style" class="section level2" number="6.19">
+<div id="matplotlib的绘图样式style" class="section level2" number="7.19">
 <h2>
-<span class="header-section-number">6.19</span> matplotlib的绘图样式（style）<a class="anchor" aria-label="anchor" href="#matplotlib%E7%9A%84%E7%BB%98%E5%9B%BE%E6%A0%B7%E5%BC%8Fstyle"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.19</span> matplotlib的绘图样式（style）<a class="anchor" aria-label="anchor" href="#matplotlib%E7%9A%84%E7%BB%98%E5%9B%BE%E6%A0%B7%E5%BC%8Fstyle"><i class="fas fa-link"></i></a>
 </h2>
 <p>在matplotlib中，要想设置绘制样式，最简单的方法是在绘制元素时单独设置样式。
 但是有时候，当用户在做专题报告时，往往会希望保持整体风格的统一而不用对每张图一张张修改，因此matplotlib库还提供了四种批量修改全局样式的方式</p>
-<div id="matplotlib预先定义样式" class="section level3" number="6.19.1">
+<div id="matplotlib预先定义样式" class="section level3" number="7.19.1">
 <h3>
-<span class="header-section-number">6.19.1</span> matplotlib预先定义样式<a class="anchor" aria-label="anchor" href="#matplotlib%E9%A2%84%E5%85%88%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.19.1</span> matplotlib预先定义样式<a class="anchor" aria-label="anchor" href="#matplotlib%E9%A2%84%E5%85%88%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F"><i class="fas fa-link"></i></a>
 </h3>
 <p>matplotlib贴心地提供了许多内置的样式供用户使用，使用方法很简单，只需在python脚本的最开始输入想使用style的名称即可调用，尝试调用不同内置样式，比较区别</p>
 <div class="sourceCode" id="cb430"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb430-1"><a href="matplotlib.html#cb430-1" tabindex="-1"></a>plt.style.use(<span class="st">'default'</span>)</span>
@@ -1547,9 +1548,9 @@ ax.legend(loc=‘upper center’) 等同于ax.legend(loc=9)</p>
 <div class="sourceCode" id="cb432"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb432-1"><a href="matplotlib.html#cb432-1" tabindex="-1"></a><span class="bu">print</span>(plt.style.available)</span></code></pre></div>
 <pre class="scroll-200"><code>['Solarize_Light2', '_classic_test_patch', '_mpl-gallery', '_mpl-gallery-nogrid', 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight', 'ggplot', 'grayscale', 'seaborn-v0_8', 'seaborn-v0_8-bright', 'seaborn-v0_8-colorblind', 'seaborn-v0_8-dark', 'seaborn-v0_8-dark-palette', 'seaborn-v0_8-darkgrid', 'seaborn-v0_8-deep', 'seaborn-v0_8-muted', 'seaborn-v0_8-notebook', 'seaborn-v0_8-paper', 'seaborn-v0_8-pastel', 'seaborn-v0_8-poster', 'seaborn-v0_8-talk', 'seaborn-v0_8-ticks', 'seaborn-v0_8-white', 'seaborn-v0_8-whitegrid', 'tableau-colorblind10']</code></pre>
 </div>
-<div id="用户自定义stylesheet" class="section level3" number="6.19.2">
+<div id="用户自定义stylesheet" class="section level3" number="7.19.2">
 <h3>
-<span class="header-section-number">6.19.2</span> 用户自定义stylesheet<a class="anchor" aria-label="anchor" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89stylesheet"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.19.2</span> 用户自定义stylesheet<a class="anchor" aria-label="anchor" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89stylesheet"><i class="fas fa-link"></i></a>
 </h3>
 <p>在任意路径下创建一个后缀名为mplstyle的样式清单，编辑文件添加以下样式内容</p>
 <blockquote>
@@ -1569,9 +1570,9 @@ ytick.labelsize : 16</p>
 <span id="cb435-2"><a href="matplotlib.html#cb435-2" tabindex="-1"></a>plt.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>],[<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>])</span>
 <span id="cb435-3"><a href="matplotlib.html#cb435-3" tabindex="-1"></a>plt.show()</span></code></pre></div>
 </div>
-<div id="设置rcparams" class="section level3" number="6.19.3">
+<div id="设置rcparams" class="section level3" number="7.19.3">
 <h3>
-<span class="header-section-number">6.19.3</span> 设置rcparams<a class="anchor" aria-label="anchor" href="#%E8%AE%BE%E7%BD%AErcparams"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.19.3</span> 设置rcparams<a class="anchor" aria-label="anchor" href="#%E8%AE%BE%E7%BD%AErcparams"><i class="fas fa-link"></i></a>
 </h3>
 <p>我们还可以通过修改默认rc设置的方式改变样式，所有rc设置都保存在一个叫做 matplotlib.rcParams的变量中。<br>
 修改过后再绘图，可以看到绘图样式发生了变化。</p>
@@ -1591,17 +1592,17 @@ ytick.labelsize : 16</p>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/rc-9.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="matplotlib的色彩设置color" class="section level2" number="6.20">
+<div id="matplotlib的色彩设置color" class="section level2" number="7.20">
 <h2>
-<span class="header-section-number">6.20</span> matplotlib的色彩设置（color）<a class="anchor" aria-label="anchor" href="#matplotlib%E7%9A%84%E8%89%B2%E5%BD%A9%E8%AE%BE%E7%BD%AEcolor"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.20</span> matplotlib的色彩设置（color）<a class="anchor" aria-label="anchor" href="#matplotlib%E7%9A%84%E8%89%B2%E5%BD%A9%E8%AE%BE%E7%BD%AEcolor"><i class="fas fa-link"></i></a>
 </h2>
 <p>在可视化中，如何选择合适的颜色和搭配组合也是需要仔细考虑的，色彩选择要能够反映出可视化图像的主旨。<br>
 从可视化编码的角度对颜色进行分析，可以将颜色分为<code>色相、亮度和饱和度</code>三个视觉通道。通常来说：<br><code>色相</code>： 没有明显的顺序性、一般不用来表达数据量的高低，而是用来表达数据列的类别。<br><code>明度和饱和度</code>： 在视觉上很容易区分出优先级的高低、被用作表达顺序或者表达数据量视觉通道。<br>
 具体关于色彩理论部分的知识，不属于本教程的重点，请参阅有关拓展材料学习。<br><a href="https://zhuanlan.zhihu.com/p/88892542">学会这6个可视化配色基本技巧，还原数据本身的意义</a></p>
 <p>在matplotlib中，设置颜色有以下几种方式：</p>
-<div id="rgb或rgba" class="section level3" number="6.20.1">
+<div id="rgb或rgba" class="section level3" number="7.20.1">
 <h3>
-<span class="header-section-number">6.20.1</span> RGB或RGBA<a class="anchor" aria-label="anchor" href="#rgb%E6%88%96rgba"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.20.1</span> RGB或RGBA<a class="anchor" aria-label="anchor" href="#rgb%E6%88%96rgba"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb439"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb439-1"><a href="matplotlib.html#cb439-1" tabindex="-1"></a>plt.style.use(<span class="st">'default'</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb440"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb440-1"><a href="matplotlib.html#cb440-1" tabindex="-1"></a><span class="co"># 颜色用[0,1]之间的浮点数表示，四个分量按顺序分别为(red, green, blue, alpha)，其中alpha透明度可省略</span></span>
@@ -1610,9 +1611,9 @@ ytick.labelsize : 16</p>
 <span id="cb440-4"><a href="matplotlib.html#cb440-4" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/rgb1-11.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="hex-rgb-或-rgba" class="section level3" number="6.20.2">
+<div id="hex-rgb-或-rgba" class="section level3" number="7.20.2">
 <h3>
-<span class="header-section-number">6.20.2</span> HEX RGB 或 RGBA<a class="anchor" aria-label="anchor" href="#hex-rgb-%E6%88%96-rgba"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.20.2</span> HEX RGB 或 RGBA<a class="anchor" aria-label="anchor" href="#hex-rgb-%E6%88%96-rgba"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb441"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb441-1"><a href="matplotlib.html#cb441-1" tabindex="-1"></a><span class="co"># 用十六进制颜色码表示，同样最后两位表示透明度，可省略</span></span>
 <span id="cb441-2"><a href="matplotlib.html#cb441-2" tabindex="-1"></a>plt.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>],color<span class="op">=</span><span class="st">'#0f0f0f'</span>)</span>
@@ -1621,27 +1622,27 @@ ytick.labelsize : 16</p>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/hex1-13.png" width="95%" style="display: block; margin: auto;"></div>
 <p>RGB颜色和HEX颜色之间是可以一一对应的，以下网址提供了两种色彩表示方法的转换工具。<br><a href="https://www.colorhexa.com/">https://www.colorhexa.com/</a></p>
 </div>
-<div id="灰度色阶" class="section level3" number="6.20.3">
+<div id="灰度色阶" class="section level3" number="7.20.3">
 <h3>
-<span class="header-section-number">6.20.3</span> 灰度色阶<a class="anchor" aria-label="anchor" href="#%E7%81%B0%E5%BA%A6%E8%89%B2%E9%98%B6"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.20.3</span> 灰度色阶<a class="anchor" aria-label="anchor" href="#%E7%81%B0%E5%BA%A6%E8%89%B2%E9%98%B6"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb442"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb442-1"><a href="matplotlib.html#cb442-1" tabindex="-1"></a><span class="co"># 当只有一个位于[0,1]的值时，表示灰度色阶</span></span>
 <span id="cb442-2"><a href="matplotlib.html#cb442-2" tabindex="-1"></a>plt.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>],color<span class="op">=</span><span class="st">'0.5'</span>)</span>
 <span id="cb442-3"><a href="matplotlib.html#cb442-3" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/huidu-15.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="单字符基本颜色" class="section level3" number="6.20.4">
+<div id="单字符基本颜色" class="section level3" number="7.20.4">
 <h3>
-<span class="header-section-number">6.20.4</span> 单字符基本颜色<a class="anchor" aria-label="anchor" href="#%E5%8D%95%E5%AD%97%E7%AC%A6%E5%9F%BA%E6%9C%AC%E9%A2%9C%E8%89%B2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.20.4</span> 单字符基本颜色<a class="anchor" aria-label="anchor" href="#%E5%8D%95%E5%AD%97%E7%AC%A6%E5%9F%BA%E6%9C%AC%E9%A2%9C%E8%89%B2"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb443"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb443-1"><a href="matplotlib.html#cb443-1" tabindex="-1"></a><span class="co"># matplotlib有八个基本颜色，可以用单字符串来表示，分别是'b', 'g', 'r', 'c', 'm', 'y', 'k', 'w'，对应的是blue, green, red, cyan, magenta, yellow, black, and white的英文缩写</span></span>
 <span id="cb443-2"><a href="matplotlib.html#cb443-2" tabindex="-1"></a>plt.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>],color<span class="op">=</span><span class="st">'m'</span>)</span>
 <span id="cb443-3"><a href="matplotlib.html#cb443-3" tabindex="-1"></a>plt.show()</span></code></pre></div>
 <div class="inline-figure"><img src="matplotlib_files/figure-html/char-color-17.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="颜色名称" class="section level3" number="6.20.5">
+<div id="颜色名称" class="section level3" number="7.20.5">
 <h3>
-<span class="header-section-number">6.20.5</span> 颜色名称<a class="anchor" aria-label="anchor" href="#%E9%A2%9C%E8%89%B2%E5%90%8D%E7%A7%B0"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.20.5</span> 颜色名称<a class="anchor" aria-label="anchor" href="#%E9%A2%9C%E8%89%B2%E5%90%8D%E7%A7%B0"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb444"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb444-1"><a href="matplotlib.html#cb444-1" tabindex="-1"></a><span class="co"># matplotlib提供了颜色对照表，可供查询颜色对应的名称</span></span>
 <span id="cb444-2"><a href="matplotlib.html#cb444-2" tabindex="-1"></a>plt.plot([<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>],color<span class="op">=</span><span class="st">'tan'</span>)</span>
@@ -1650,9 +1651,9 @@ ytick.labelsize : 16</p>
 <div class="inline-figure"><img src="https://matplotlib.org/3.1.0/_images/sphx_glr_named_colors_002.png" width="95%" style="display: block; margin: auto;"></div>
 <div class="inline-figure"><img src="https://matplotlib.org/3.1.0/_images/sphx_glr_named_colors_003.png" width="95%" style="display: block; margin: auto;"></div>
 </div>
-<div id="使用colormap设置一组颜色" class="section level3" number="6.20.6">
+<div id="使用colormap设置一组颜色" class="section level3" number="7.20.6">
 <h3>
-<span class="header-section-number">6.20.6</span> 使用colormap设置一组颜色<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8colormap%E8%AE%BE%E7%BD%AE%E4%B8%80%E7%BB%84%E9%A2%9C%E8%89%B2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.20.6</span> 使用colormap设置一组颜色<a class="anchor" aria-label="anchor" href="#%E4%BD%BF%E7%94%A8colormap%E8%AE%BE%E7%BD%AE%E4%B8%80%E7%BB%84%E9%A2%9C%E8%89%B2"><i class="fas fa-link"></i></a>
 </h3>
 <p>有些图表支持使用colormap的方式配置一组颜色，从而在可视化中通过色彩的变化表达更多信息。</p>
 <p>在matplotlib中，colormap共有五种类型:</p>
@@ -1671,9 +1672,9 @@ ytick.labelsize : 16</p>
 <p>在以下官网页面可以查询上述五种colormap的字符串表示和颜色图的对应关系<br><a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html">https://matplotlib.org/stable/tutorials/colors/colormaps.html</a></p>
 </div>
 </div>
-<div id="思考题-4" class="section level2" number="6.21">
+<div id="思考题-4" class="section level2" number="7.21">
 <h2>
-<span class="header-section-number">6.21</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98-4"><i class="fas fa-link"></i></a>
+<span class="header-section-number">7.21</span> 思考题<a class="anchor" aria-label="anchor" href="#%E6%80%9D%E8%80%83%E9%A2%98-4"><i class="fas fa-link"></i></a>
 </h2>
 <ul>
 <li>学习如何自定义colormap，并将其应用到任意一个数据集中，绘制一幅图像，注意colormap的类型要和数据集的特性相匹配，并做简单解释</li>
@@ -1838,89 +1839,89 @@ function openTab(evt,tabName){
 </div>
 <div class="chapter-nav">
 <div class="prev"><a href="introduction-1.html">introduction</a></div>
-<div class="next"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">7</span> 图表实例</a></div>
+<div class="next"><a href="%E5%9B%BE%E8%A1%A8%E5%AE%9E%E4%BE%8B.html"><span class="header-section-number">8</span> 图表实例</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#matplotlib"><span class="header-section-number">6</span> matplotlib</a></li>
-<li><a class="nav-link" href="#%E8%AE%A4%E8%AF%86matplotlib"><span class="header-section-number">6.1</span> 认识matplotlib</a></li>
-<li><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%BB%98%E5%9B%BE%E4%BE%8B%E5%AD%90"><span class="header-section-number">6.2</span> 一个最简单的绘图例子</a></li>
-<li><a class="nav-link" href="#figure%E7%9A%84%E7%BB%84%E6%88%90"><span class="header-section-number">6.3</span> Figure的组成</a></li>
-<li><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E7%BB%98%E5%9B%BE%E6%8E%A5%E5%8F%A3"><span class="header-section-number">6.4</span> 两种绘图接口</a></li>
-<li><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E7%BB%98%E5%9B%BE%E6%A8%A1%E6%9D%BF"><span class="header-section-number">6.5</span> 通用绘图模板</a></li>
-<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="header-section-number">6.6</span> 思考题</a></li>
+<li><a class="nav-link" href="#matplotlib"><span class="header-section-number">7</span> matplotlib</a></li>
+<li><a class="nav-link" href="#%E8%AE%A4%E8%AF%86matplotlib"><span class="header-section-number">7.1</span> 认识matplotlib</a></li>
+<li><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%BB%98%E5%9B%BE%E4%BE%8B%E5%AD%90"><span class="header-section-number">7.2</span> 一个最简单的绘图例子</a></li>
+<li><a class="nav-link" href="#figure%E7%9A%84%E7%BB%84%E6%88%90"><span class="header-section-number">7.3</span> Figure的组成</a></li>
+<li><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E7%BB%98%E5%9B%BE%E6%8E%A5%E5%8F%A3"><span class="header-section-number">7.4</span> 两种绘图接口</a></li>
+<li><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E7%BB%98%E5%9B%BE%E6%A8%A1%E6%9D%BF"><span class="header-section-number">7.5</span> 通用绘图模板</a></li>
+<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="header-section-number">7.6</span> 思考题</a></li>
 <li>
-<a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="header-section-number">6.7</span> 概述</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#matplotlib%E7%9A%84%E4%B8%89%E5%B1%82api"><span class="header-section-number">6.7.1</span> matplotlib的三层api</a></li>
-<li><a class="nav-link" href="#artist%E7%9A%84%E5%88%86%E7%B1%BB"><span class="header-section-number">6.7.2</span> Artist的分类</a></li>
+<a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="header-section-number">7.7</span> 概述</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#matplotlib%E7%9A%84%E4%B8%89%E5%B1%82api"><span class="header-section-number">7.7.1</span> matplotlib的三层api</a></li>
+<li><a class="nav-link" href="#artist%E7%9A%84%E5%88%86%E7%B1%BB"><span class="header-section-number">7.7.2</span> Artist的分类</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0---primitives"><span class="header-section-number">6.8</span> 基本元素 - primitives</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#dlines"><span class="header-section-number">6.8.1</span> 2DLines</a></li>
-<li><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AEline2d%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="header-section-number">6.8.2</span> 如何设置Line2D的属性</a></li>
-<li><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6lines"><span class="header-section-number">6.8.3</span> 如何绘制lines</a></li>
-<li><a class="nav-link" href="#patches"><span class="header-section-number">6.8.4</span> patches</a></li>
-<li><a class="nav-link" href="#collections"><span class="header-section-number">6.8.5</span> collections</a></li>
-<li><a class="nav-link" href="#images"><span class="header-section-number">6.8.6</span> images</a></li>
+<a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%83%E7%B4%A0---primitives"><span class="header-section-number">7.8</span> 基本元素 - primitives</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#dlines"><span class="header-section-number">7.8.1</span> 2DLines</a></li>
+<li><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AEline2d%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="header-section-number">7.8.2</span> 如何设置Line2D的属性</a></li>
+<li><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%BB%98%E5%88%B6lines"><span class="header-section-number">7.8.3</span> 如何绘制lines</a></li>
+<li><a class="nav-link" href="#patches"><span class="header-section-number">7.8.4</span> patches</a></li>
+<li><a class="nav-link" href="#collections"><span class="header-section-number">7.8.5</span> collections</a></li>
+<li><a class="nav-link" href="#images"><span class="header-section-number">7.8.6</span> images</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%AE%B9%E5%99%A8---object-container"><span class="header-section-number">6.9</span> 对象容器 - Object container</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#figure%E5%AE%B9%E5%99%A8"><span class="header-section-number">6.9.1</span> Figure容器</a></li>
-<li><a class="nav-link" href="#axes%E5%AE%B9%E5%99%A8"><span class="header-section-number">6.9.2</span> Axes容器</a></li>
-<li><a class="nav-link" href="#axis%E5%AE%B9%E5%99%A8"><span class="header-section-number">6.9.3</span> Axis容器</a></li>
-<li><a class="nav-link" href="#tick%E5%AE%B9%E5%99%A8"><span class="header-section-number">6.9.4</span> Tick容器</a></li>
+<a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%AE%B9%E5%99%A8---object-container"><span class="header-section-number">7.9</span> 对象容器 - Object container</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#figure%E5%AE%B9%E5%99%A8"><span class="header-section-number">7.9.1</span> Figure容器</a></li>
+<li><a class="nav-link" href="#axes%E5%AE%B9%E5%99%A8"><span class="header-section-number">7.9.2</span> Axes容器</a></li>
+<li><a class="nav-link" href="#axis%E5%AE%B9%E5%99%A8"><span class="header-section-number">7.9.3</span> Axis容器</a></li>
+<li><a class="nav-link" href="#tick%E5%AE%B9%E5%99%A8"><span class="header-section-number">7.9.4</span> Tick容器</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-1"><span class="header-section-number">6.10</span> 思考题</a></li>
-<li><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="header-section-number">6.11</span> 参考资料</a></li>
+<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-1"><span class="header-section-number">7.10</span> 思考题</a></li>
+<li><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="header-section-number">7.11</span> 参考资料</a></li>
 <li>
-<a class="nav-link" href="#%E5%AD%90%E5%9B%BE"><span class="header-section-number">6.12</span> 子图</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-plt.subplots-%E7%BB%98%E5%88%B6%E5%9D%87%E5%8C%80%E7%8A%B6%E6%80%81%E4%B8%8B%E7%9A%84%E5%AD%90%E5%9B%BE"><span class="header-section-number">6.12.1</span> 使用 plt.subplots 绘制均匀状态下的子图</a></li>
-<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-gridspec-%E7%BB%98%E5%88%B6%E9%9D%9E%E5%9D%87%E5%8C%80%E5%AD%90%E5%9B%BE"><span class="header-section-number">6.12.2</span> 使用 GridSpec 绘制非均匀子图</a></li>
+<a class="nav-link" href="#%E5%AD%90%E5%9B%BE"><span class="header-section-number">7.12</span> 子图</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-plt.subplots-%E7%BB%98%E5%88%B6%E5%9D%87%E5%8C%80%E7%8A%B6%E6%80%81%E4%B8%8B%E7%9A%84%E5%AD%90%E5%9B%BE"><span class="header-section-number">7.12.1</span> 使用 plt.subplots 绘制均匀状态下的子图</a></li>
+<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-gridspec-%E7%BB%98%E5%88%B6%E9%9D%9E%E5%9D%87%E5%8C%80%E5%AD%90%E5%9B%BE"><span class="header-section-number">7.12.2</span> 使用 GridSpec 绘制非均匀子图</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#%E5%AD%90%E5%9B%BE%E4%B8%8A%E7%9A%84%E6%96%B9%E6%B3%95"><span class="header-section-number">6.13</span> 子图上的方法</a></li>
-<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><span class="header-section-number">6.14</span> 思考题</a></li>
+<li><a class="nav-link" href="#%E5%AD%90%E5%9B%BE%E4%B8%8A%E7%9A%84%E6%96%B9%E6%B3%95"><span class="header-section-number">7.13</span> 子图上的方法</a></li>
+<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-2"><span class="header-section-number">7.14</span> 思考题</a></li>
 <li>
-<a class="nav-link" href="#figure%E5%92%8Caxes%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><span class="header-section-number">6.15</span> Figure和Axes上的文本</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E6%96%87%E6%9C%ACapi%E7%A4%BA%E4%BE%8B"><span class="header-section-number">6.15.1</span> 文本API示例</a></li>
-<li><a class="nav-link" href="#text---%E5%AD%90%E5%9B%BE%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><span class="header-section-number">6.15.2</span> text - 子图上的文本</a></li>
-<li><a class="nav-link" href="#xlabel%E5%92%8Cylabel---%E5%AD%90%E5%9B%BE%E7%9A%84xy%E8%BD%B4%E6%A0%87%E7%AD%BE"><span class="header-section-number">6.15.3</span> xlabel和ylabel - 子图的x，y轴标签</a></li>
-<li><a class="nav-link" href="#title%E5%92%8Csuptitle---%E5%AD%90%E5%9B%BE%E5%92%8C%E7%94%BB%E5%B8%83%E7%9A%84%E6%A0%87%E9%A2%98"><span class="header-section-number">6.15.4</span> title和suptitle - 子图和画布的标题</a></li>
-<li><a class="nav-link" href="#annotate---%E5%AD%90%E5%9B%BE%E7%9A%84%E6%B3%A8%E8%A7%A3"><span class="header-section-number">6.15.5</span> annotate - 子图的注解</a></li>
-<li><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E7%9A%84%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE"><span class="header-section-number">6.15.6</span> 字体的属性设置</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#tick%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><span class="header-section-number">6.16</span> Tick上的文本</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%A8%A1%E5%BC%8F"><span class="header-section-number">6.16.1</span> 简单模式</a></li>
-<li><a class="nav-link" href="#tick-locators-and-formatters"><span class="header-section-number">6.16.2</span> Tick Locators and Formatters</a></li>
-<li><a class="nav-link" href="#tick-formatters"><span class="header-section-number">6.16.3</span> Tick Formatters</a></li>
-<li><a class="nav-link" href="#tick-locators"><span class="header-section-number">6.16.4</span> Tick Locators</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#legend%E5%9B%BE%E4%BE%8B"><span class="header-section-number">6.17</span> legend（图例）</a></li>
-<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-3"><span class="header-section-number">6.18</span> 思考题</a></li>
-<li>
-<a class="nav-link" href="#matplotlib%E7%9A%84%E7%BB%98%E5%9B%BE%E6%A0%B7%E5%BC%8Fstyle"><span class="header-section-number">6.19</span> matplotlib的绘图样式（style）</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#matplotlib%E9%A2%84%E5%85%88%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F"><span class="header-section-number">6.19.1</span> matplotlib预先定义样式</a></li>
-<li><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89stylesheet"><span class="header-section-number">6.19.2</span> 用户自定义stylesheet</a></li>
-<li><a class="nav-link" href="#%E8%AE%BE%E7%BD%AErcparams"><span class="header-section-number">6.19.3</span> 设置rcparams</a></li>
+<a class="nav-link" href="#figure%E5%92%8Caxes%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><span class="header-section-number">7.15</span> Figure和Axes上的文本</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E6%96%87%E6%9C%ACapi%E7%A4%BA%E4%BE%8B"><span class="header-section-number">7.15.1</span> 文本API示例</a></li>
+<li><a class="nav-link" href="#text---%E5%AD%90%E5%9B%BE%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><span class="header-section-number">7.15.2</span> text - 子图上的文本</a></li>
+<li><a class="nav-link" href="#xlabel%E5%92%8Cylabel---%E5%AD%90%E5%9B%BE%E7%9A%84xy%E8%BD%B4%E6%A0%87%E7%AD%BE"><span class="header-section-number">7.15.3</span> xlabel和ylabel - 子图的x，y轴标签</a></li>
+<li><a class="nav-link" href="#title%E5%92%8Csuptitle---%E5%AD%90%E5%9B%BE%E5%92%8C%E7%94%BB%E5%B8%83%E7%9A%84%E6%A0%87%E9%A2%98"><span class="header-section-number">7.15.4</span> title和suptitle - 子图和画布的标题</a></li>
+<li><a class="nav-link" href="#annotate---%E5%AD%90%E5%9B%BE%E7%9A%84%E6%B3%A8%E8%A7%A3"><span class="header-section-number">7.15.5</span> annotate - 子图的注解</a></li>
+<li><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E7%9A%84%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE"><span class="header-section-number">7.15.6</span> 字体的属性设置</a></li>
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#matplotlib%E7%9A%84%E8%89%B2%E5%BD%A9%E8%AE%BE%E7%BD%AEcolor"><span class="header-section-number">6.20</span> matplotlib的色彩设置（color）</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#rgb%E6%88%96rgba"><span class="header-section-number">6.20.1</span> RGB或RGBA</a></li>
-<li><a class="nav-link" href="#hex-rgb-%E6%88%96-rgba"><span class="header-section-number">6.20.2</span> HEX RGB 或 RGBA</a></li>
-<li><a class="nav-link" href="#%E7%81%B0%E5%BA%A6%E8%89%B2%E9%98%B6"><span class="header-section-number">6.20.3</span> 灰度色阶</a></li>
-<li><a class="nav-link" href="#%E5%8D%95%E5%AD%97%E7%AC%A6%E5%9F%BA%E6%9C%AC%E9%A2%9C%E8%89%B2"><span class="header-section-number">6.20.4</span> 单字符基本颜色</a></li>
-<li><a class="nav-link" href="#%E9%A2%9C%E8%89%B2%E5%90%8D%E7%A7%B0"><span class="header-section-number">6.20.5</span> 颜色名称</a></li>
-<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8colormap%E8%AE%BE%E7%BD%AE%E4%B8%80%E7%BB%84%E9%A2%9C%E8%89%B2"><span class="header-section-number">6.20.6</span> 使用colormap设置一组颜色</a></li>
+<a class="nav-link" href="#tick%E4%B8%8A%E7%9A%84%E6%96%87%E6%9C%AC"><span class="header-section-number">7.16</span> Tick上的文本</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%A8%A1%E5%BC%8F"><span class="header-section-number">7.16.1</span> 简单模式</a></li>
+<li><a class="nav-link" href="#tick-locators-and-formatters"><span class="header-section-number">7.16.2</span> Tick Locators and Formatters</a></li>
+<li><a class="nav-link" href="#tick-formatters"><span class="header-section-number">7.16.3</span> Tick Formatters</a></li>
+<li><a class="nav-link" href="#tick-locators"><span class="header-section-number">7.16.4</span> Tick Locators</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-4"><span class="header-section-number">6.21</span> 思考题</a></li>
+<li><a class="nav-link" href="#legend%E5%9B%BE%E4%BE%8B"><span class="header-section-number">7.17</span> legend（图例）</a></li>
+<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-3"><span class="header-section-number">7.18</span> 思考题</a></li>
+<li>
+<a class="nav-link" href="#matplotlib%E7%9A%84%E7%BB%98%E5%9B%BE%E6%A0%B7%E5%BC%8Fstyle"><span class="header-section-number">7.19</span> matplotlib的绘图样式（style）</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#matplotlib%E9%A2%84%E5%85%88%E5%AE%9A%E4%B9%89%E6%A0%B7%E5%BC%8F"><span class="header-section-number">7.19.1</span> matplotlib预先定义样式</a></li>
+<li><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89stylesheet"><span class="header-section-number">7.19.2</span> 用户自定义stylesheet</a></li>
+<li><a class="nav-link" href="#%E8%AE%BE%E7%BD%AErcparams"><span class="header-section-number">7.19.3</span> 设置rcparams</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#matplotlib%E7%9A%84%E8%89%B2%E5%BD%A9%E8%AE%BE%E7%BD%AEcolor"><span class="header-section-number">7.20</span> matplotlib的色彩设置（color）</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#rgb%E6%88%96rgba"><span class="header-section-number">7.20.1</span> RGB或RGBA</a></li>
+<li><a class="nav-link" href="#hex-rgb-%E6%88%96-rgba"><span class="header-section-number">7.20.2</span> HEX RGB 或 RGBA</a></li>
+<li><a class="nav-link" href="#%E7%81%B0%E5%BA%A6%E8%89%B2%E9%98%B6"><span class="header-section-number">7.20.3</span> 灰度色阶</a></li>
+<li><a class="nav-link" href="#%E5%8D%95%E5%AD%97%E7%AC%A6%E5%9F%BA%E6%9C%AC%E9%A2%9C%E8%89%B2"><span class="header-section-number">7.20.4</span> 单字符基本颜色</a></li>
+<li><a class="nav-link" href="#%E9%A2%9C%E8%89%B2%E5%90%8D%E7%A7%B0"><span class="header-section-number">7.20.5</span> 颜色名称</a></li>
+<li><a class="nav-link" href="#%E4%BD%BF%E7%94%A8colormap%E8%AE%BE%E7%BD%AE%E4%B8%80%E7%BB%84%E9%A2%9C%E8%89%B2"><span class="header-section-number">7.20.6</span> 使用colormap设置一组颜色</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#%E6%80%9D%E8%80%83%E9%A2%98-4"><span class="header-section-number">7.21</span> 思考题</a></li>
 </ul>
 
       <div class="book-extra">
